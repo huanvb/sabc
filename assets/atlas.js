@@ -369,7 +369,53 @@
       const el = document.getElementById(anchor);
       if (el) setTimeout(() => el.scrollIntoView({ block: "start" }), 0);
     }
+    trackRoute((location.hash || "#/").replace(/^#?\/?/, "#/"), title);
   }
+
+  /* ---------- analytics & đo thời gian ở lại từng trang ---------- */
+  let lastPath = null;
+  let lastTitle = null;
+  let lastEnterTime = Date.now();
+
+  function flushEngagement() {
+    if (!lastPath || typeof window.gtag !== "function") return;
+    const now = Date.now();
+    const elapsedMs = now - lastEnterTime;
+    const elapsedSec = Math.round(elapsedMs / 1000);
+    if (elapsedSec >= 1 && elapsedSec <= 7200) {
+      window.gtag("event", "user_engagement", {
+        engagement_time_msec: elapsedMs,
+        page_path: lastPath,
+        page_title: lastTitle
+      });
+      window.gtag("event", "page_dwell", {
+        page_path: lastPath,
+        page_title: lastTitle,
+        duration_seconds: elapsedSec
+      });
+    }
+    lastEnterTime = now;
+  }
+
+  function trackRoute(newPath, newTitle) {
+    flushEngagement();
+    lastPath = newPath;
+    lastTitle = newTitle;
+    lastEnterTime = Date.now();
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "page_view", {
+        page_title: newTitle,
+        page_location: window.location.href,
+        page_path: newPath
+      });
+    }
+  }
+
+  window.addEventListener("beforeunload", flushEngagement);
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") flushEngagement();
+    else lastEnterTime = Date.now();
+  });
 
   function go() {
     if (current !== null) scrollMem[current] = window.scrollY;

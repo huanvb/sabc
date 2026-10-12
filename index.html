@@ -4,7 +4,31 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Stop. Ask. Begin. · Dashboard</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="assets/atlas.css">
+
+<!-- Google Analytics 4 (GA4) -->
+<script>
+  // Điền mã GA4 của bạn tại đây (ví dụ: "G-XXXXXXXXXX")
+  window.GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
+
+  if (window.GA_MEASUREMENT_ID && window.GA_MEASUREMENT_ID.startsWith("G-") && window.GA_MEASUREMENT_ID !== "G-XXXXXXXXXX") {
+    const s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + window.GA_MEASUREMENT_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag("js", new Date());
+    gtag("config", window.GA_MEASUREMENT_ID, {
+      send_page_view: false // Tắt page_view tự động mặc định; atlas.js sẽ tự động gửi theo từng hash route và đo thời gian ở lại
+    });
+  }
+</script>
 </head>
 <body>
 
