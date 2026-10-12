@@ -44,6 +44,7 @@
   const fmt = s => esc(s).replace(/\*([^*\n]+)\*/g, "<em>$1</em>");
   const norm = s => String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d").replace(/Đ/g, "D").toLowerCase();
   const href = path => "#/" + path;
+  const isLocal = typeof window !== "undefined" && window.location.protocol === "file:";
   const fileHref = f => encodeURI("../" + f);
   const isTranslation = f => /\/(Chuong|Bai)_[^/]+\.md$/.test("/" + f);
   const fileLabel = (f, long) => isTranslation(f) ? (long ? "Mở bản dịch tiếng Việt ↗" : "Mở bản dịch ↗") : "Mở tài liệu ↗";
@@ -115,7 +116,7 @@
       (t.lead ? '<div class="lead">' + fmt(t.lead) + "</div>" : "") + '<div class="meta">';
     if (src) {
       h += '<span class="chip-w">📖 ' + esc(sourceLine(src)) + "</span>";
-      if (src.file) h += '<a class="chip-w" href="' + fileHref(src.file) + '" target="_blank" rel="noopener">' + fileLabel(src.file) + "</a>";
+      if (src.file && isLocal) h += '<a class="chip-w" href="' + fileHref(src.file) + '" target="_blank" rel="noopener">' + fileLabel(src.file) + "</a>";
     }
     h += '<span class="chip-w">' + t.items.length + " mục</span></div></section>";
     if (t.intro && t.intro.length) h += '<div class="intro">' + t.intro.map(p => "<p>" + fmt(p) + "</p>").join("") + "</div>";
@@ -166,7 +167,7 @@
     if (src) {
       const b = BOOKMAP[src.book];
       h += '<div class="pane src"><h4>Nguồn</h4><b>' + esc(b ? b.title : src.book) + "</b><span>" + esc(b ? b.author : "") + (src.where ? " · " + esc(src.where) : "") + "</span>" +
-        (src.file ? '<a class="open" href="' + fileHref(src.file) + '" target="_blank" rel="noopener">' + fileLabel(src.file, true) + "</a>" : "") +
+        (src.file && isLocal ? '<a class="open" href="' + fileHref(src.file) + '" target="_blank" rel="noopener">' + fileLabel(src.file, true) + "</a>" : "") +
         (b ? '<br><a class="open" href="#/index/books#b-' + esc(b.key) + '">Hồ sơ sách ›</a>' : "") + "</div>";
     }
     if (it.related && it.related.length) h += '<div class="pane"><h4>Liên quan</h4><div class="rel">' + it.related.map(relLink).join("") + "</div></div>";
@@ -263,8 +264,8 @@
         '<div class="by">' + esc(b.author) + (b.year ? " · " + b.year : "") + (b.words ? " · " + esc(b.words) : "") + '</div><div class="role">' + esc(b.role) + "</div>";
       if (tops.length) h += '<div class="tops">' + tops.map(t => '<a class="pill" href="' + href(topicPath(t)) + '"><span class="dot d-' + t.pillar + '"></span>' + esc(t.title) + "</a>").join("") + "</div>";
       if (b.chapters && b.chapters.length) {
-        h += "<details><summary>" + b.chapters.length + " file bản dịch</summary><ol>" +
-          b.chapters.map(c => '<li><a href="' + fileHref(b.folder + "/" + c[1]) + '" target="_blank" rel="noopener">' + esc(c[0]) + "</a></li>").join("") + "</ol></details>";
+        h += "<details><summary>" + b.chapters.length + " chương" + (isLocal ? " (file bản dịch)" : "") + "</summary><ol>" +
+          b.chapters.map(c => "<li>" + (isLocal ? '<a href="' + fileHref(b.folder + "/" + c[1]) + '" target="_blank" rel="noopener">' + esc(c[0]) + "</a>" : esc(c[0])) + "</li>").join("") + "</ol></details>";
       }
       h += "</div>";
     });
