@@ -400,56 +400,6 @@ ATLAS.add({
           ]
         }
       ]
-    },
-    {
-      id: "topics",
-      title: "Chuyên đề nghiên cứu sâu",
-      en: "Interactive Deep Dives & Neuroscience Playbooks",
-      count: "1",
-      lead: "Chuyên đề thần kinh học nhận thức về trải nghiệm không gian, thời gian và cái Bây giờ trong não bộ (2019-2026), kèm trang HTML tương tác (3 mô phỏng Canvas, 4 sơ đồ SVG sáng/tối và báo cáo lưu trữ).",
-      intro: [
-        "Chuyên đề kết nối nền tảng sinh học thần kinh của não bộ với các trụ cột STOP và CO-INTEL. Bấm nút Mở trang tương tác trên thẻ bên dưới để chạy trực tiếp 3 mô phỏng hoạt động và xem sơ đồ phóng to toàn màn hình."
-      ],
-      sections: [
-        {
-          title: "Khoa học thần kinh nhận thức và thực hành thời AI",
-          items: [
-            {
-              id: "khong-thoi-gian", k: "⏱",
-              title: "Trải nghiệm Không gian và Thời gian trong Não bộ (Buzsáki 2019-2026)",
-              en: "The Problem of Time & The Problem of Now · György Buzsáki, Carlo Rovelli, Jim Al-Khalili, Tom Griffiths",
-              web: "topics/khong-thoi-gian/index.html",
-              links: [
-                { label: "📄 Báo cáo nghiên cứu gốc (2019-2026) ↗", href: "topics/khong-thoi-gian/Bao_Cao_Nghien_Cuu_Khong_Thoi_Gian_Trong_Nao_Bo_Buzsaki_2019_2026.html" },
-                { label: "🗺 Bản đồ Chủ đề 5 ↗", href: "topics/khong-thoi-gian/index_md.html" }
-              ],
-              brief: "Giải phẫu cách não bộ kiến tạo không gian, thời gian sống và cái Bây giờ từ trong ra ngoài (Inside-Out), kèm 3 mô phỏng Canvas và 4 sơ đồ SVG.",
-              body: [
-                "Trong Chương 10 của cuốn The Brain from Inside Out (2019) và bài tổng quan năm 2025/2026 trên Nature Reviews Neuroscience, nhà thần kinh học György Buzsáki chỉ ra rằng não bộ không có bất kỳ cơ quan thụ cảm nào đo không gian tuyệt đối hay nhịp tích tắc của đồng hồ vật lý. Thay vì thụ động chờ tín hiệu từ ngoài vào (Outside-In), não bộ tự sinh ra các chuỗi quỹ đạo tập hợp nơ-ron nội sinh rồi dùng hành động để neo các chuỗi đó vào thế giới thực (Inside-Out).",
-                "Ba cơ chế sinh lý trụ cột tạo nên trải nghiệm không gian và thời gian của con người gồm: (1) kiểm soát độ lợi chú ý (gain control) làm co giãn mật độ sự kiện theo quy luật E = x của DeLong (1981); (2) bản sao lệnh vận động hay phóng điện hệ quả (corollary discharge) bù trừ độ trễ nhận thức 80 tới 500 ms để dệt nên cái Bây giờ; và (3) hồi hải mã hoạt động như một bộ sinh chuỗi con trỏ thứ tự đa năng (sequence generator) và người thủ thư giữ mục lục Trước - Sau cho tân vỏ não (thí nghiệm 11 sự kiện của Dede et al., 2016).",
-                "Đối chiếu với các công trình giai đoạn 2018 tới 2026 (phép biến đổi Laplace của Marc Howard, cơ chế học một lần thử BTSP của Jeffrey Magee, nhiệt động lực học của dấu vết ký ức của Carlo Rovelli và chưng cất tiên nghiệm Bayes của Tom Griffiths) giúp giải thích vì sao các mô hình ngôn ngữ lớn (LLMs) học thụ động từ văn bản tĩnh dễ rơi vào ảo giác tự duy trì: chúng thiếu vòng lặp cơ thể và thiếu tín hiệu corollary discharge để kiểm chứng lời mình nói với thực tại vật lý."
-              ],
-              quote: {
-                en: "The brain has no sensors for space or time. Instead, it is a self-organized sequence generator whose internal trajectories acquire meaning through action.",
-                vi: "Bộ não không có cảm biến cho không gian hay thời gian. Thay vào đó, nó là một bộ sinh chuỗi tự tổ chức mà các quỹ đạo nội sinh của nó giành được ý nghĩa thông qua hành động.",
-                where: "György Buzsáki · The Brain from Inside Out (2019, Ch. 10) & Nature Reviews Neuroscience (2025/2026)"
-              },
-              signs: [
-                "Ngồi bất động hàng giờ trước màn hình phẳng khiến các sự kiện thiếu mốc neo vận tốc (d = v · t), làm một ngày trôi qua rất nhanh nhưng khi nhớ lại lại thấy trống rỗng.",
-                "Lấp kín mọi khoảng nghỉ giữa các phiên làm việc bằng điện thoại, vô tình chặn đứng các cụm gợn sóng sắc nét (Sharp-Wave Ripples / SPW-Rs) phát lại chuỗi ký ức nhanh gấp 15 lần và điều hòa đường huyết.",
-                "Tin vào độ trôi chảy bề mặt của văn bản do AI sinh ra mà quên rằng AI không có cơ thể sinh học và không có tín hiệu corollary discharge để tự kiểm chứng thực tại."
-              ],
-              practice: [
-                "Đứng dậy đi bộ ngoài trời giữa các phiên làm việc sâu để cung cấp dòng vận tốc thực (optic flow và tiền đình), giúp Thủ thư hồi hải mã đóng dấu thứ tự rõ ràng cho từng chặng tư duy.",
-                "Bảo vệ các khoảng nghỉ không màn hình (5 tới 10 phút sau mỗi chặng tập trung) và giấc ngủ sâu NREM để hồi hải mã phát lại các cụm SPW-Rs.",
-                "Giữ vai trò Con người trong vòng lặp (Human in the Loop): đóng vai trò vòng lặp kiểm chứng thực tại (chạy thử code, đối chiếu nguồn gốc) cho đầu ra của AI."
-              ],
-              related: ["co/frontier/hallucination", "co/rules/human-in-loop", "stop/triggers", "stop/earned-life/action"],
-              note: "Chuyên đề nghiên cứu liên ngành (2019-2026) do người biên soạn thực hiện, tích hợp 3 mô phỏng HTML5 Canvas và 4 sơ đồ SVG."
-            }
-          ]
-        }
-      ]
     }
   ],
   glossary: [
