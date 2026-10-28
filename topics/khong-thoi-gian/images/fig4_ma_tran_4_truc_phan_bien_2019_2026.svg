@@ -1,0 +1,127 @@
+<svg viewBox="0 0 1420 857" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ma trận bốn giới hạn triết học và sinh lý học giúp hiệu chỉnh thuyết Từ trong ra ngoài giai đoạn 2019-2026: (1) Cấp độ 1 của David Marr và Khái niệm Biểu trưng (Poeppel &amp; Adolfi 2020 eNeuro, Barack &amp; Krakauer 2021, Rosa Cao 2022, Chirimuuta 2024), (2) Tư duy TRONG thời gian vs. Tư duy VỀ thời gian (Dennett &amp; Kinsbourne 1992 vehicle vs content, Hoerl &amp; McCormack 2019 BBS Temporal Updating vs Temporal Reasoning), (3) Học một lần thử BTSP vs. Từ điển tiền cấu hình đóng cứng (Bittner &amp; Magee 2017 Science, Gómez-Marín 2021 Current Biology, Silva &amp; Foster 2015), (4) Nhiệt động lực học của Ký ức và Ứng dụng cho AI/LLMs (Rovelli 2026 Lesson 4, Pezzulo et al. 2024 TiCS, McCoy &amp; Griffiths 2025 Nat. Commun., Mollo &amp; Millière 2026)."><style>
+  svg {
+    --bg: #ffffff;
+    --ink: #2b2f36;
+    --sub: #6b7280;
+    --flow: #8a94a3;
+    --grid: rgba(138,148,163,0.24);
+    --row: rgba(107,114,128,0.06);
+    --card: #f8fafc;
+    --ok: #2f9e5f;
+    --okText: #248a4e;
+    --okSoft: rgba(47,158,95,0.08);
+    --warn: #b98a2e;
+    --warnText: #8f6a22;
+    --warnSoft: rgba(185,138,46,0.10);
+    --bad: #c0554d;
+    --badText: #b0463e;
+    --badSoft: rgba(192,85,77,0.08);
+    --accent: #e07828;
+    --accentText: #b45f1e;
+    --accentSoft: rgba(224,120,40,0.08);
+    --info: #3f7fb8;
+    --infoText: #356a9c;
+    --infoSoft: rgba(63,127,184,0.08);
+    --onwarn: #2b2f36;
+  }
+  @media (prefers-color-scheme: dark) {
+    svg {
+      --bg: #1b1e23;
+      --ink: #e8ebef;
+      --sub: #9aa0a8;
+      --flow: #7d8794;
+      --grid: rgba(125,135,148,0.25);
+      --row: rgba(154,160,168,0.08);
+      --card: #22262d;
+      --ok: #3fb473;
+      --okText: #5cc98a;
+      --okSoft: rgba(63,180,115,0.14);
+      --warn: #d3ab52;
+      --warnText: #d3ab52;
+      --warnSoft: rgba(211,171,82,0.14);
+      --bad: #cf6a60;
+      --badText: #cf6a60;
+      --badSoft: rgba(207,106,96,0.15);
+      --accent: #e0925a;
+      --accentText: #e0925a;
+      --accentSoft: rgba(224,146,90,0.14);
+      --info: #6aa0d0;
+      --infoText: #6aa0d0;
+      --infoSoft: rgba(106,160,208,0.14);
+      --onwarn: #1b1e23;
+    }
+  }
+  .bg { fill: var(--bg); }
+  text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .ttl { font-size: 20.5px; font-weight: 700; fill: var(--ink); }
+  .sub1 { font-size: 14px; font-weight: 600; fill: var(--accentText); }
+  .src { font-size: 12px; font-weight: 500; fill: var(--sub); }
+  .cap { font-size: 13.5px; font-weight: 600; font-style: italic; fill: var(--sub); }
+  .sec { font-size: 15px; font-weight: 700; fill: var(--ink); }
+  .tag { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--sub); }
+  .tag-ok { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--okText); }
+  .tag-warn { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--warnText); }
+  .tag-bad { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--badText); }
+  .tag-accent { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--accentText); }
+  .tag-info { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--infoText); }
+  .bh { font-size: 14px; font-weight: 700; fill: var(--ink); }
+  .bh-ok { font-size: 14px; font-weight: 700; fill: var(--okText); }
+  .bh-warn { font-size: 14px; font-weight: 700; fill: var(--warnText); }
+  .bh-bad { font-size: 14px; font-weight: 700; fill: var(--badText); }
+  .bh-accent { font-size: 14px; font-weight: 700; fill: var(--accentText); }
+  .bh-info { font-size: 14px; font-weight: 700; fill: var(--infoText); }
+  .body { font-size: 12.5px; font-weight: 500; fill: var(--ink); }
+  .sub { font-size: 12px; font-weight: 500; fill: var(--sub); }
+  .motto { font-size: 12px; font-style: italic; font-weight: 600; fill: var(--sub); }
+  .b-neutral { fill: var(--row); stroke: var(--flow); stroke-width: 1.8; }
+  .b-panel { fill: none; stroke: var(--flow); stroke-width: 1.6; }
+  .b-ok { fill: var(--okSoft); stroke: var(--ok); stroke-width: 1.9; }
+  .b-warn { fill: var(--warnSoft); stroke: var(--warn); stroke-width: 1.9; }
+  .b-bad { fill: var(--badSoft); stroke: var(--bad); stroke-width: 1.9; }
+  .b-accent { fill: var(--accentSoft); stroke: var(--accent); stroke-width: 1.9; }
+  .b-info { fill: var(--infoSoft); stroke: var(--info); stroke-width: 1.9; }
+  .b-ok-dash { fill: var(--okSoft); stroke: var(--ok); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-warn-dash { fill: var(--warnSoft); stroke: var(--warn); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-bad-dash { fill: var(--badSoft); stroke: var(--bad); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-accent-dash { fill: var(--accentSoft); stroke: var(--accent); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-info-dash { fill: var(--infoSoft); stroke: var(--info); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .flow-line { stroke: var(--flow); stroke-width: 2; fill: none; }
+  .flow-dash { stroke: var(--flow); stroke-width: 2; stroke-dasharray: 6 5; fill: none; }
+  .ok-line { stroke: var(--ok); stroke-width: 2.2; fill: none; }
+  .warn-line { stroke: var(--warn); stroke-width: 2.2; fill: none; }
+  .warn-dash { stroke: var(--warn); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .bad-line { stroke: var(--bad); stroke-width: 2.2; fill: none; }
+  .bad-dash { stroke: var(--bad); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .accent-line { stroke: var(--accent); stroke-width: 2.2; fill: none; }
+  .accent-dash { stroke: var(--accent); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .info-line { stroke: var(--info); stroke-width: 2.2; fill: none; }
+  .div-line { stroke: var(--grid); stroke-width: 1.2; }
+  .badge-warn { fill: var(--warn); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-bad { fill: var(--bad); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-ok { fill: var(--ok); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-info { fill: var(--info); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-accent { fill: var(--accent); stroke: var(--bg); stroke-width: 1.8; }
+  .bang { font-size: 13px; font-weight: 800; fill: var(--onwarn); }
+  .bang-light { font-size: 12px; font-weight: 800; fill: var(--bg); }
+</style>
+  <defs>
+    <marker id="arr-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--flow)"/>
+    </marker>
+    <marker id="arr-ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--ok)"/>
+    </marker>
+    <marker id="arr-warn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--warn)"/>
+    </marker>
+    <marker id="arr-bad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--bad)"/>
+    </marker>
+    <marker id="arr-accent" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--accent)"/>
+    </marker>
+    <marker id="arr-info" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--info)"/>
+    </marker>
+  </defs>
+<rect class="bg" x="0" y="0" width="1420" height="857" rx="14"/><text x="36.0" y="38.0" class="ttl">Bốn giới hạn triết học và sinh lý học giúp hiệu chỉnh thuyết "Từ trong ra ngoài" giai đoạn 2017-2026</text><text x="36.0" y="68.0" class="sub1">Ma trận phân biệt [Phê bình trực tiếp] và [Đối trọng độc lập]: từ Ba cấp độ của Marr, Lý luận thời gian, Tính dẻo BTSP đến Nhiệt động lực học &amp; NeuroAI</text><text x="36.0" y="91.0" class="src">Nguồn đối chiếu: Poeppel &amp; Adolfi (2020) · Barack &amp; Krakauer (2021) · Hoerl &amp; McCormack (2019 BBS) · Bittner &amp; Magee (2017 Science) · Rovelli (2026) · Pezzulo et al. (2024) · McCoy &amp; Griffiths (2025)</text><rect x="36.0" y="114.0" width="660.0" height="249.0" rx="12" class="b-warn"/><text x="52.0" y="137.0" class="tag-warn">TRỤC 1 · TRIẾT HỌC KHOA HỌC [PHÊ BÌNH TRỰC TIẾP: POEPPEL 2020; KRAKAUER 2021]</text><text x="52.0" y="158.0" class="bh-warn">1. Cấp độ 1 của David Marr &amp; Khái niệm Biểu trưng (Poeppel 2020 · Krakauer 2021)</text><text x="52.0" y="184.5" class="body">• [Phê bình trực tiếp] Poeppel &amp; Adolfi (2020, eNeuro): Không thể chỉ nhìn vào phần cứng</text><text x="52.0" y="202.0" class="body">Cấp độ 3 (dao động Hz, chuỗi xung, gain control) mà bỏ qua từ vựng nhận thức ở Cấp độ 1</text><text x="52.0" y="219.5" class="body">(mục tiêu tính toán) và Cấp độ 2 (thuật toán).</text><text x="52.0" y="243.0" class="body">• [Phê bình trực tiếp] Barack &amp; Krakauer (2021, Nat. Rev. Neurosci.) &amp; [Đối trọng] Rosa Cao</text><text x="52.0" y="260.5" class="body">(2022), Chirimuuta (2024, MIT Press · perspectival/haptic realism): Quỹ đạo nội sinh khi được</text><text x="52.0" y="278.0" class="body">mạng hạ nguồn dùng để dẫn đường vẫn thực hiện chức năng đại diện định hướng hành động</text><text x="52.0" y="295.5" class="body">(representational function).</text><line x1="52.0" y1="316.0" x2="680.0" y2="316.0" class="div-line"/><text x="52.0" y="332.0" class="motto">Hiệu chỉnh: Kết hợp cơ chế sinh chuỗi Cấp độ 3 của Buzsáki với không gian tâm lý Cấp độ 1</text><text x="52.0" y="348.5" class="motto">(Griffiths 2026).</text><rect x="724.0" y="114.0" width="660.0" height="249.0" rx="12" class="b-info"/><text x="740.0" y="137.0" class="tag-info">TRỤC 2 · TRIẾT HỌC THỜI GIAN [ĐỐI TRỌNG ĐỘC LẬP: DENNETT 1992; HOERL &amp; MCCORMACK 2019]</text><text x="740.0" y="158.0" class="bh-info">2. Tư duy TRONG thời gian vs. Tư duy VỀ thời gian (Hoerl &amp; McCormack 2019 BBS)</text><text x="740.0" y="184.5" class="body">• Phân biệt phương tiện (vehicle) với nội dung (content · Dennett &amp; Kinsbourne 1992): Một</text><text x="740.0" y="202.0" class="body">chuỗi nơ-ron diễn ra theo trình tự thời gian (vehicle) khác về bản chất với việc tâm trí</text><text x="740.0" y="219.5" class="body">biểu trưng tường minh khái niệm thời gian (content).</text><text x="740.0" y="243.0" class="body">• [Đối trọng độc lập] Hệ thống kép về thời gian (Hoerl &amp; McCormack 2019, BBS): Chuỗi nơ-ron</text><text x="740.0" y="260.5" class="body">ở chuột giải thích thuyết phục Hệ thống Cập nhật Thời gian (Temporal Updating · Thinking IN</text><text x="740.0" y="278.0" class="body">time), còn con người phát triển thêm Hệ thống Lý luận Thời gian (Temporal Reasoning ·</text><text x="740.0" y="295.5" class="body">Thinking ABOUT time) trên trục quá khứ - hiện tại - tương lai.</text><line x1="740.0" y1="316.0" x2="1368.0" y2="316.0" class="div-line"/><text x="740.0" y="332.0" class="motto">Hiệu chỉnh: Cần bổ sung tầng ngôn ngữ văn hóa và công cụ đo ngoại hóa để giải thích Temporal</text><text x="740.0" y="348.5" class="motto">Reasoning ở người.</text><rect x="36.0" y="381.0" width="660.0" height="267.5" rx="12" class="b-bad"/><text x="52.0" y="404.0" class="tag-bad">TRỤC 3 · SINH LÝ TẾ BÀO &amp; HIỆN THÂN [ĐỐI TRỌNG: MAGEE 2017 · PHÊ BÌNH: GÓMEZ-MARÍN 2021]</text><text x="52.0" y="425.0" class="bh-bad">3. Học một lần thử (BTSP) &amp; Cảnh báo 'Duy nội tinh vi' (Magee 2017 · Gómez-Marín)</text><text x="52.0" y="451.5" class="body">• [Đối trọng độc lập] Tính dẻo synap thang thời gian hành vi (BTSP · Bittner &amp; Magee 2017,</text><text x="52.0" y="469.0" class="body">Science): Điện thế cao nguyên canxi ở nhánh gai (dendritic plateau potentials) mở cửa sổ</text><text x="52.0" y="486.5" class="body">hàng giây để tạo trường vị trí mới chỉ sau 1 lần chạy duy nhất.</text><text x="52.0" y="510.0" class="body">• [Phê bình trực tiếp] Àlex Gómez-Marín (2021, Current Biology) cảnh báo nguy cơ 'chủ nghĩa</text><text x="52.0" y="527.5" class="body">duy nội tinh vi' (sophisticated internalism); cùng Silva &amp; Foster (2015, Nat. Neurosci.) cho</text><text x="52.0" y="545.0" class="body">thấy nhiều chuỗi quỹ đạo đòi hỏi trải nghiệm thực tế để định hình rõ nét.</text><line x1="52.0" y1="601.5" x2="680.0" y2="601.5" class="div-line"/><text x="52.0" y="617.5" class="motto">Hiệu chỉnh: Khung tiền cấu hình (preconfigured scaffold) cung cấp nền tảng, còn BTSP ghi nhận</text><text x="52.0" y="634.0" class="motto">tức thì trải nghiệm mới.</text><rect x="724.0" y="381.0" width="660.0" height="267.5" rx="12" class="b-ok"/><text x="740.0" y="404.0" class="tag-ok">TRỤC 4 · NHIỆT ĐỘNG LỰC HỌC &amp; NEUROAI [ĐỐI CHIẾU MỞ RỘNG: ROVELLI · PEZZULO · GRIFFITHS]</text><text x="740.0" y="425.0" class="bh-ok">4. Nhiệt động lực học của Ký ức &amp; Ứng dụng cho AI/LLMs (Rovelli · Pezzulo ·</text><text x="740.0" y="443.5" class="bh-ok">Griffiths)</text><text x="740.0" y="470.0" class="body">• [Đối chiếu mở rộng] Vật lý học của Ký ức (Rovelli 2026, Lesson 4, tr. 77-98): Mọi dấu vết</text><text x="740.0" y="487.5" class="body">ký ức (traces) và khả năng dự báo tương lai của não bộ đều đòi hỏi tiêu tán nhiệt</text><text x="740.0" y="505.0" class="body">(dissipation) dọc theo gradient entropy vĩ mô.</text><text x="740.0" y="528.5" class="body">• Kiến trúc NeuroAI &amp; LLMs: LLMs học thụ động Outside-In trên văn bản tĩnh nên thiếu cơ thể</text><text x="740.0" y="546.0" class="body">nội môi và corollary discharge (Pezzulo et al. 2024, TiCS; đối trọng Vector Grounding của</text><text x="740.0" y="563.5" class="body">Mollo &amp; Millière 2026). McCoy &amp; Griffiths (2025, Nat. Commun.) chưng cất tiên nghiệm Bayes</text><text x="740.0" y="581.0" class="body">vào trọng số khởi tạo để mô hình hóa trạng thái preconfigured.</text><line x1="740.0" y1="601.5" x2="1368.0" y2="601.5" class="div-line"/><text x="740.0" y="617.5" class="motto">Hiệu chỉnh: Hợp nhất vật lý thống kê (Rovelli), sinh lý thần kinh (Buzsáki) và khoa học nhận</text><text x="740.0" y="634.0" class="motto">thức Bayes (Griffiths).</text><rect x="36.0" y="666.5" width="1348.0" height="112.5" rx="12" class="b-accent"/><text x="52.0" y="689.5" class="tag-accent">KHUNG TỔNG HỢP ĐA TẦNG (2017-2026) · TỪ VI MẠCH NỘI SINH ĐẾN NHẬN THỨC BẬC CAO VÀ NEUROAI</text><text x="52.0" y="710.5" class="bh-accent">Các phê bình trực tiếp và đối trọng độc lập giúp xác định rõ phạm vi giải thích của kiến trúc 'Từ trong ra ngoài'</text><text x="52.0" y="737.0" class="body">• Bộ sinh chuỗi tiền cấu hình của Buzsáki giải thích phần cứng sinh học (Marr Cấp độ 3) và hệ thống cập nhật thời gian tức thời; khi kết hợp với cơ chế học nhanh BTSP, nhiệt động lực học của</text><text x="52.0" y="754.5" class="body">dấu vết (Rovelli 2026) và tiên nghiệm Bayes ở Cấp độ 1 (Griffiths 2026), mỗi mô hình được đặt đúng vào tầng giải thích tương ứng.</text><text x="36.0" y="803.0" class="src">Quy ước màu: Vàng (warn) = Triết học khoa học &amp; Cấp độ Marr; Xanh dương (info) = Hệ thống kép về thời gian; Đỏ (bad) = Sinh lý tế bào BTSP; Xanh lá/Cam (ok/accent) = Nhiệt động lực học &amp; NeuroAI.</text><line x1="36.0" y1="815.0" x2="1384.0" y2="815.0" class="div-line"/><text x="710.0" y="837.0" class="cap" text-anchor="middle">Kết luận: Kết hợp bộ sinh chuỗi nội sinh của Buzsáki với Cấp độ 1 của Marr, cơ chế học nhanh BTSP và lý luận thời gian bậc cao giúp xác định rõ phạm vi của từng mô hình.</text></svg>

@@ -46,6 +46,8 @@ for (const pl in P) for (const t of P[pl].topics) for (const id in t.items) {
   words += (it.body || []).join(" ").split(/\s+/).length;
   for (const r of it.related || []) if (!resolve(r)) { console.log("REL BROKEN", it._p, "->", r); relBad++; }
   if (it.source && it.source.file && !fs.existsSync(path.join(dir, "..", it.source.file))) console.log("FILE MISSING", it._p, it.source.file);
+  if (it.web && !fs.existsSync(path.join(dir, it.web))) { console.log("WEB MISSING", it._p, it.web); relBad++; }
+  for (const lk of it.links || []) if (lk.href && !fs.existsSync(path.join(dir, lk.href))) { console.log("LINK MISSING", it._p, lk.href); relBad++; }
 }
 for (const pl in P) for (const t of P[pl].topics) if (t.source && t.source.file && !fs.existsSync(path.join(dir, "..", t.source.file))) console.log("FILE MISSING", pl + "/" + t.id, t.source.file);
 for (const g of G) if (g.ref && !resolve(g.ref)) { console.log("GLOSS BROKEN", g.en, "->", g.ref); relBad++; }

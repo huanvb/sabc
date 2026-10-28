@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BÁO CÁO NGHIÊN CỨU CHUYÊN SÂU: KHÔNG GIAN VÀ THỜI GIAN TRONG NÃO BỘ (TỪ CHƯƠNG 10 CỦA GYÖRGY BUZSÁKI NĂM 2019 ĐẾN CÁC CUỘC TRANH LUẬN THỰC NGHIỆM, TRIẾT HỌC VÀ VẬT LÝ 2019–2026) · Stop. Ask. Begin.</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon.png">
+  <link rel="shortcut icon" href="../../favicon.ico">
+  <!-- Google Analytics 4 (GA4 · Stop. Ask. Begin.) -->
+  <script>
+    window.GA_MEASUREMENT_ID = "G-16MPNM0F18";
+    if (window.GA_MEASUREMENT_ID && window.GA_MEASUREMENT_ID.startsWith("G-")) {
+      var s = document.createElement("script");
+      s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id=" + window.GA_MEASUREMENT_ID;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag("js", new Date());
+      gtag("config", window.GA_MEASUREMENT_ID);
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f4ee; --card: #ffffff; --ink: #1c1c1e; --muted: #5a5a60;
+      --line: #e2ddd3; --accent: #1d5c73; --soft: #eef4f6;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121716; --card: #19211f; --ink: #e7efed; --muted: #9aa8a4;
+        --line: #2a3633; --accent: #67bfd8; --soft: #1f2c29;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--ink);
+      font-family: "Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
+      font-size: 16px; line-height: 1.72; -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 920px; margin: 28px auto 64px; padding: 0 20px; }
+    article.doc {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: 18px; padding: 32px 36px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    }
+    h1 { font-size: 28px; line-height: 1.25; margin: 0 0 18px; letter-spacing: -0.5px; }
+    h2 { font-size: 21px; line-height: 1.35; margin: 32px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--line); color: var(--accent); }
+    h3 { font-size: 17.5px; line-height: 1.4; margin: 22px 0 8px; }
+    h4 { font-size: 15.5px; margin: 18px 0 6px; }
+    p { margin: 0 0 14px; }
+    ul, ol { margin: 0 0 16px 22px; padding: 0; }
+    li { margin-bottom: 6px; }
+    a { color: var(--accent); font-weight: 600; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      font-family: "JetBrains Mono", Consolas, monospace; font-size: 0.9em;
+      background: var(--soft); padding: 2px 6px; border-radius: 5px;
+    }
+    pre {
+      background: var(--soft); border: 1px solid var(--line);
+      border-radius: 12px; padding: 14px 16px; overflow-x: auto; margin: 0 0 16px;
+    }
+    pre code { background: none; padding: 0; }
+    blockquote {
+      margin: 16px 0; padding: 12px 18px; border-left: 4px solid var(--accent);
+      background: var(--soft); border-radius: 0 12px 12px 0;
+    }
+    blockquote p:last-child { margin-bottom: 0; }
+    hr { border: none; border-top: 1px dashed var(--line); margin: 26px 0; }
+    .table-wrap { overflow-x: auto; margin: 16px 0 20px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+    th, td { border: 1px solid var(--line); padding: 9px 12px; text-align: left; vertical-align: top; }
+    th { background: var(--soft); font-weight: 700; }
+    .cite-file {
+      display: inline-block; font-size: 0.92em; font-weight: 600;
+      background: var(--soft); border: 1px solid var(--line);
+      border-radius: 6px; padding: 1px 7px; color: var(--accent);
+    }
+    .doc-nav {
+      display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px;
+    }
+    .doc-nav a {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: 999px; padding: 6px 14px; font-size: 13px; font-weight: 700;
+    }
+    @media (max-width: 680px) {
+      article.doc { padding: 20px 18px; }
+      h1 { font-size: 23px; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="sabc-portal-bar" style="position:sticky;top:0;z-index:9999;background:rgba(28,28,30,0.94);backdrop-filter:blur(8px);color:#f7f4ee;padding:7px 20px;font-family:'Be Vietnam Pro','Segoe UI',system-ui,sans-serif;font-size:12.5px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid rgba(255,255,255,0.12)">
+  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+    <a href="../../#/" style="color:#fff;text-decoration:none;font-weight:800;letter-spacing:-0.2px"><span style="color:#ff6b7b">Stop.</span> <span style="color:#f5b041">Ask.</span> <span style="color:#58d68d">Begin.</span></a>
+    <span style="opacity:0.45">›</span>
+    <a href="../../#/ref/topics" style="color:#d7d2e9;text-decoration:none;font-weight:600">← Về cổng Chuyên đề</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px;font-size:12px">
+    <a href="index.html" style="color:#9ad1ea;text-decoration:none;font-weight:600">Trang tương tác chính</a>
+    <a href="../../#/index" style="color:#c2c2c7;text-decoration:none">Tra cứu Atlas</a>
+  </div>
+</div>
+<div class="wrap">
+  <div class="doc-nav">
+    <a href="index.html">🚀 Mở trang tương tác của chuyên đề (Không – Thời gian trong Não bộ)</a>
+    <a href="../../#/ref/topics">← Danh sách Chuyên đề</a>
+  </div>
+  <article class="doc">
+<h1>BÁO CÁO NGHIÊN CỨU CHUYÊN SÂU: KHÔNG GIAN VÀ THỜI GIAN TRONG NÃO BỘ (TỪ CHƯƠNG 10 CỦA GYÖRGY BUZSÁKI NĂM 2019 ĐẾN CÁC CUỘC TRANH LUẬN THỰC NGHIỆM, TRIẾT HỌC VÀ VẬT LÝ 2019–2026)</h1>
+<blockquote><p><strong>Phạm vi &amp; Nguồn đối chiếu</strong>: Báo cáo này tổng hợp và kiểm chứng toàn bộ lập luận của <strong>György Buzsáki</strong> tại *<em>Chương 10 (</em>Space and Time in the Brain<em>, tr. 241–278 sách / tr. 260–297 PDF)<strong> trong cuốn chuyên khảo <span class="cite-file" title="Tài liệu nguồn trong kho lưu trữ: ../../brain/_OceanofPDF.com_The_Brain_from_Inside_Out_-_Gyorgy_Buzsaki.pdf">📚 <strong><em>The Brain from Inside Out</em></strong></span> (Oxford University Press, 2019), đồng thời truy vết hệ thống các bài điểm sách học thuật, nghiên cứu thực nghiệm thần kinh học hệ thống, phê phán triết học – nhận thức luận và đối chiếu với 3 tác phẩm xuất bản năm 2026 trong kho cục bộ: </strong>Jim Al-Khalili</em><em> (<span class="cite-file" title="Tài liệu nguồn trong kho lưu trữ: ../../_OceanofPDF.com_On_Time_The_Physics_That_Makes_the_Universe_Tick_-_Jim_Al-Khalili.pdf">📚 </em>On Time<em></span>, 09/2026), <strong>Carlo Rovelli</strong> (<span class="cite-file" title="Tài liệu nguồn trong kho lưu trữ: ../../ON_THE_EQUALITY_OF_ALL_THINGS_-_Carlo_Rovelli.epub">📚 </em>On the Equality of All Things<em></span>, 09/2026) và <strong>Tom Griffiths</strong> (<span class="cite-file" title="Tài liệu nguồn trong kho lưu trữ: ../New/_OceanofPDF.com_The_Laws_of_Thought_-_Tom_Griffiths.epub">📚 </em>The Laws of Thought<em></span>, 02/2026). </em>(Ghi chú phạm vi kiểm chứng: Toàn văn Chương 10 của Buzsáki 2019, Chương 1–3 của Al-Khalili 2026, Lessons 2–6 của Rovelli 2026 và Chương 6–14 của Griffiths 2026 được đối chiếu trực tiếp từ tệp PDF/EPUB gốc trong kho cục bộ; các bài báo chuyên ngành giai đoạn 2018–2026 được tổng hợp và kiểm chứng qua hồ sơ xuất bản kèm DOI định danh).*</p><p><strong>Ngày hoàn tất kiểm chứng</strong>: <code>29/10/2026</code>.</p></blockquote>
+<hr>
+<h2>PHẦN I. GIẢI PHẪU CHƯƠNG 10 (<em>SPACE AND TIME IN THE BRAIN</em>) CỦA GYÖRGY BUZSÁKI (2019)</h2>
+<h3>1. Câu hỏi trung tâm: Chương 10 có mô tả trải nghiệm cá nhân về thời gian và không gian không?</h3>
+<p>Chương 10 giải quyết đồng thời hai tầng của bài toán không – thời gian:</p>
+<ol>
+<li>*<em>Ở tầng hiện tượng học cá nhân (</em>Subjective / Lived Space and Time<em>)</em><em>: Giải thích vì sao cảm nhận thời gian và không gian của từng cá nhân liên tục co giãn theo cảm xúc, mức dopamine, sự chú ý, tỷ lệ kích thước căn phòng, chuyển động mắt (</em>saccades*) và hành động của cơ thể; đồng thời giải thích vì sao não bộ có thể tự bù trừ độ trễ dẫn truyền thần kinh và đảo ngược thứ tự nhân quả của sự kiện mà ý thức không nhận ra.</li>
+<li>*<em>Ở tầng cơ chế vi mạch thần kinh (</em>Neural Circuit Mechanism<em>)<strong>: Chứng minh rằng bộ não sinh học </strong>không có bất kỳ thụ thể cảm giác hay vùng não chuyên biệt nào dùng để &quot;đo không gian&quot; hoặc &quot;đếm thời gian&quot; như hai thực thể tách rời<strong>. Việc con người cảm thấy mình đang sống trong một &quot;thùng chứa không gian&quot; và trôi trên một &quot;dòng thời gian&quot; là sản phẩm khái niệm do văn hóa, ngôn ngữ và các dụng cụ đo lường (thước đo, đồng hồ) kiến tạo nên, dựa trên một cơ chế gốc duy nhất của não bộ là </strong>tạo ra các chuỗi quỹ đạo tập hợp nơ-ron nối tiếp nhau (</em>sequential cell assembly trajectories<em>)</em>*.</li>
+</ol>
+<hr>
+<h3>2. Sáu luận điểm và bằng chứng thực nghiệm cốt lõi trong Chương 10 (tr. 241–278)</h3>
+<h4>Luận điểm 1: Phê phán cái bẫy &quot;Từ ngoài vào trong&quot; (<em>Outside-In</em>) áp đặt phạm trù Newton và Kant lên não bộ (tr. 241–252)</h4>
+<ul>
+<li>Khoa học thần kinh truyền thống chịu ảnh hưởng sâu sắc của vật lý cổ điển Newton (không gian là cái hộp rỗng ba chiều, thời gian là mũi tên một chiều trôi đều độc lập) và triết học Kant (không gian và thời gian là hai phạm trù tiên nghiệm có sẵn trong tâm trí trước mọi trải nghiệm). Từ bảng mục lục cuốn <em>The Principles of Psychology</em> (1890) của William James, giới nghiên cứu mặc định trí nhớ sự kiện (<em>episodic memory</em>) phải lưu trữ ba thành phần tách biệt: *<em>Cái gì (</em>What<em>) – Ở đâu (</em>Where<em>) – Khi nào (</em>When<em>)</em>*, rồi đi tìm các trung tâm &quot;đo không gian&quot; và &quot;đo thời gian&quot; trong não.</li>
+<li>Buzsáki dẫn các bằng chứng nhân học và ngôn ngữ học để chứng minh không gian và thời gian trừu tượng là công cụ khái niệm do văn hóa loài người kiến tạo:</li>
+<li>Bộ tộc <strong>Amondawa</strong> ở rừng Amazon không có từ ngữ chỉ &quot;thời gian&quot; trừu tượng, không có từ chỉ &quot;tháng&quot; hay &quot;năm&quot;, không tính tuổi theo lịch mà đổi tên mỗi khi một thành viên bước sang vị thế mới trong cộng đồng; họ hiểu trình tự sự kiện nhưng không coi &quot;thời gian&quot; là một bối cảnh độc lập bao trùm lên sự vật (Sinha et al., 2011).</li>
+<li>Ở các cộng đồng thổ dân nước Úc, khi được yêu cầu xếp các bức tranh theo trình tự thời gian (từ cậu bé đến người đàn ông trưởng thành rồi cụ già), họ xếp theo hướng <strong>Đông sang Tây</strong> tùy theo hướng cơ thể đang đứng (tr. 244, chú thích 10 dẫn Boroditsky; trong nghiên cứu gốc của Boroditsky &amp; Gaby 2010 chính là cộng đồng Pormpuraaw / Kuuk Thaayorre). Tương tự, người <strong>Kuuk Thaayorre</strong> ở miền bắc nước Úc định vị không gian quanh cơ thể hoàn toàn theo hướng địa lý tuyệt đối (<em>&quot;có con nhện trên tai phía Đông của bạn&quot; / &quot;There is a spider on your east ear&quot;</em>, tr. 244–245, chú thích 12 dẫn Levinson, 2003).</li>
+<li>Người bản địa <strong>Wintu</strong> ở thung lũng Sacramento (California) không phân biệt bên trái hay bên phải cơ thể mà gọi theo &quot;phía bờ sông&quot; hoặc &quot;phía sườn núi&quot; tùy hướng di chuyển Bắc – Nam (Lee, 1950).</li>
+<li>Về mặt sinh học, cơ thể có thụ thể cho ánh sáng (võng mạc), âm thanh (ốc tai), mùi, chạm và gia tốc chuyển động (hệ tiền đình), nhưng <strong>hoàn toàn không có thụ thể cảm nhận &quot;không gian&quot; hay &quot;thời gian&quot;</strong>. Khoa học hiện đại đã thay thế hai khái niệm vô hướng, không thể đo trực tiếp này bằng hai biến số đo được qua dụng cụ nhân tạo: *<em>quãng đường (</em>distance<em>, đo bằng thước)<strong> và </strong>thời lượng (</em>duration<em>, đo bằng việc đếm số dao động của con lắc hoặc nguyên tử cesium)</em>*.</li>
+</ul>
+<h4>Luận điểm 2: Trải nghiệm cá nhân về thời gian và không gian bị bóp méo, co giãn và chuyển hóa lẫn nhau (<em>Time &amp; Space Warping</em> · tr. 262–268)</h4>
+<ul>
+<li>*<em>Sự đối lập giữa &quot;cảm nhận khoảnh khắc đang diễn ra&quot; (</em>feeling the moment<em>) và &quot;nhớ lại khoảnh khắc đó&quot; (</em>remembering the moment<em>) (tr. 262–263)</em><em>: Trong các tình huống mới lạ đang diễn ra (</em>novel situations*, tr. 262) hoặc khi một diễn giả đang say sưa trình bày bài nói 30 phút và bị người điều phối nhắc đã hết 40 phút (tr. 263), thời gian cảm nhận trực tiếp trôi cực nhanh; nhưng khi hồi tưởng lại một khoảng thời gian chứa dày đặc sự kiện mới lạ, não bộ lại đánh giá khoảng thời gian đó dài hơn.</li>
+<li>*<em>Dopamine, kích thước vật thể và sự kiện bất ngờ (</em>oddball<em>) điều chỉnh nhịp thời gian chủ quan trên nhiều mạch tương đối độc lập (tr. 262–266)</em><em>: Buzsáki lưu ý các cơ chế ước lượng khoảng thời gian vận hành ở nhiều thang đo và biểu hiện tương đối độc lập ở các cấu trúc não khác nhau (</em>&quot;interval timer mechanisms run at multiple scales and manifest relatively independently in different structures&quot;<em>, tr. 265). Trạng thái tập trung cao hoặc có động lực mạnh làm thời gian chủ quan trôi nhanh; ngược lại, kích thích thị giác/thính giác bất ngờ ngắn hạn (</em>oddball* · Tse et al., 2004, tr. 266) làm thời lượng cảm nhận tức thời của kích thích đó giãn dài ra. Kích hoạt thoáng qua bằng quang di truyền các nơ-ron dopamine ở vùng VTA/chất đen trên chuột làm thay đổi trực tiếp phán đoán thời lượng (Honma et al., 2016; Soares et al., 2016), trong khi bệnh nhân Parkinson thiếu hụt dopamine ở thể vân thường ước lượng hụt các khoảng thời gian trên 10 giây (chú thích 61, tr. 262 cũng cảnh báo rằng mọi thao tác can thiệp lên hệ dopamine đều đồng thời ảnh hưởng tới mạch kiểm soát vận động lân cận).</li>
+<li>*<em>Não bộ tự bù trừ độ trễ vật lý và dựng lại nhân quả ngược chiều (</em>Postdiction &amp; Corollary Discharge<em> · tr. 263–265)</em>*:</li>
+<li><em>Thí nghiệm ngón chân chạm mũi</em>: Khi lấy ngón chân chạm vào mũi, xung thần kinh xúc giác từ ngón chân đi qua tủy sống lên vỏ não mất thời gian dài gấp nhiều lần tín hiệu từ mũi (vốn nằm ngay sát não), nhưng não đã học qua vận động để hiệu chỉnh độ trễ, giúp ta cảm nhận hai điểm chạm nhau <strong>đồng thời</strong>.</li>
+<li><em>Thí nghiệm thích nghi độ trễ nhấn phím – màn hình (Eagleman et al., 2005; Yarrow et al., 2001; Grey Walter, 1963; xem thêm Stetson et al., 2006)</em>: Khi người làm thí nghiệm chèn một độ trễ cố định giữa lúc người tham gia nhấn phím và lúc hình ảnh/tia sáng hiện lên màn hình, não nhanh chóng học cách kéo hai sự kiện lại gần nhau. Ngay khi người làm thí nghiệm bỏ độ trễ để hình ảnh hiện lên tức thì lúc nhấn phím, người tham gia lại cảm thấy <strong>hình ảnh xuất hiện trên màn hình trước khi tay họ kịp nhấn phím</strong> (đảo ngược trình tự nhân quả chủ quan).</li>
+<li><em>Tình huống đạp phanh khi gặp nai qua đường (tr. 264–265)</em>: Khi một con nai bất ngờ phóng qua đầu xe trên cao tốc, mạch phản xạ ngắn dưới vỏ đã điều khiển chân đạp phanh <strong>trước khi</strong> vỏ não kịp có nhận thức có ý thức (vốn cần khoảng <code>500 ms</code> đối với hành động tự ý theo Libet et al., 1979 tại chú thích 66). Thế nhưng bản sao lệnh vận động (*<em>phóng điện hệ quả / </em>corollary discharge**<em>) gửi lên vỏ não lại dựng nên câu chuyện chủ quan theo trình tự ngược lại: </em>&quot;Tôi nhìn thấy con nai nên tôi mới quyết định đạp phanh&quot;*.</li>
+<li><em>Nén và đảo ngược không-thời gian khi mắt đảo nhanh (Saccades · Morrone et al., 2005, tr. 264 &amp; 267)</em>: Trong mỗi cú nhảy của nhãn cầu (<em>saccade</em>), thời lượng của một kích thích thị giác <code>100 ms</code> bị não cảm nhận ngắn chỉ bằng kích thích <code>50 ms</code> khi mắt đứng yên; không gian xung quanh mục tiêu nhìn cũng bị nén lại, và trong cửa sổ từ <code>-70 ms</code> đến <code>-30 ms</code> trước cú đảo mắt, người tham gia thường xuyên <strong>đảo ngược thứ tự trước – sau</strong> của hai tia sáng. Sự biến dạng này bắt đầu hàng chục mili-giây trước khi nhãn cầu nhúc nhích, cho thấy nó do tín hiệu <em>corollary discharge</em> của vùng đỉnh bên (<em>LIP</em>) tạo ra.</li>
+<li><strong>Trải nghiệm thời gian gắn chặt với tỷ lệ không gian (Thí nghiệm mô hình kiến trúc thu nhỏ của DeLong, 1981 · tr. 266–267 &amp; chú thích 71)</strong>:</li>
+<li>Giáo sư Alton DeLong tại Khoa Kiến trúc (Đại học Tennessee) yêu cầu người tham gia quan sát và tưởng tượng mình là một hình nhân tý hon đang sinh hoạt bên trong các mô hình phòng chờ thu nhỏ theo tỷ lệ tuyến tính $s = 1/x \in \{1/6, 1/12, 1/24\}$ so với phòng thật (tức hệ số thu nhỏ không gian là $x \in \{6, 12, 24\}$), rồi báo hiệu khi nào họ cảm thấy 30 phút chủ quan ($t_{\text{chủ quan}} = 30\text{ phút}$) đã trôi qua.</li>
+<li>Tại chú thích 71 (tr. 267), Buzsáki dẫn công thức thực nghiệm của DeLong (1981), trong đó tỷ số gia tốc thời gian trải nghiệm $E = t_{\text{chủ quan}} / t_{\text{đồng hồ}}$ tăng tỷ lệ thuận với hệ số thu nhỏ không gian $x$ (nghịch đảo của tỷ lệ tuyến tính $s = 1/x$):</li>
+</ul>
+<p>$$E = x = \frac{1}{s} = \frac{t_{\text{chủ quan}}}{t_{\text{đồng hồ}}} \quad \Longrightarrow \quad t_{\text{đồng hồ}} = \frac{t_{\text{chủ quan}}}{x}$$</p>
+<p>Theo công thức $E = x$ này, để trải nghiệm đủ 30 phút chủ quan, thời gian đồng hồ thực tế ở mô hình <code>1/6</code> ($x = 6$) là $30 / 6 = 5\text{ phút}$ và ở mô hình <code>1/12</code> ($x = 12$) là $30 / 12 = 2,5\text{ phút}$ (khớp với số đo trung bình trong bài báo gốc của DeLong 1981). Trong thân văn bản ở tr. 267, để minh họa trực quan quy luật tỷ lệ 2:1 giữa hai mô hình <code>1/6</code> và <code>1/12</code>, Buzsáki diễn đạt bằng một câu điều kiện giả định: <em>&quot;nếu một người tham gia trải nghiệm 30 phút trong môi trường tỷ lệ 1/6 mất 10 phút đồng hồ, thì 30 phút chủ quan trong mô hình 1/12 chỉ diễn ra trong 5 phút&quot;</em>. Buzsáki đúc kết: <em>&quot;Trải nghiệm thời gian chính là trải nghiệm không gian&quot;</em> (<em>Experiencing time is experiencing space</em>, tr. 267).</p>
+<h4>Luận điểm 3: Giải cấu trúc cuộc tranh cãi &quot;Tế bào vị trí&quot; (<em>Place Cells</em>) và &quot;Tế bào thời gian&quot; (<em>Time Cells</em>) (tr. 253–262, 268–269)</h4>
+<ul>
+<li>Hai hệ thống chính thường được gán cho việc xử lý không gian trong não là:</li>
+</ul>
+<ol>
+<li>*<em>Vỏ não đỉnh sau (</em>Posterior Parietal Cortex<em>)</em><em>: Mã hóa tọa độ lấy cơ thể làm gốc (</em>egocentric<em>: không gian mắt, đầu, tầm tay với). Tổn thương vùng đỉnh sau bên phải gây hội chứng </em><em>bỏ quên nửa không gian bên trái (</em>hemineglect<em>)</em>* cả trong thị giác trực tiếp lẫn trong trí tưởng tượng: Buzsáki dẫn ca bệnh kinh điển ở Milan (Bisiach &amp; Luzzatti, 1978, tr. 254; bài gốc khảo sát 2 bệnh nhân), khi người bệnh nhắm mắt tưởng tượng mình đứng trước Nhà thờ chính tòa nhìn ra Quảng trường Duomo thì chỉ kể được các tòa nhà bên phải mà bỏ sót bên trái; nhưng khi được yêu cầu tưởng tượng mình đứng ở đầu đối diện của quảng trường nhìn lại phía Nhà thờ, bệnh nhân lại kể đúng các tòa nhà trước đó bị bỏ quên (vì nay chúng nằm ở phía bên phải trong tâm trí) và đồng thời bỏ quên chính những tòa nhà vừa kể lúc trước.</li>
+<li>*<em>Hệ hồi hải mã – vỏ não nội khứu (</em>Hippocampal–Entorhinal System<em>)</em><em>: Mã hóa bản đồ lấy môi trường làm gốc (</em>allocentric<em>) thông qua tế bào vị trí (</em>place cells<em> · O'Keefe &amp; Nadel, 1978) và tế bào lưới (</em>grid cells*).</li>
+</ol>
+<ul>
+<li>Khi nhóm của Howard Eichenbaum cho chuột chạy trên máy chạy bộ (<em>treadmill</em>) hoặc bánh xe tại chỗ để tách thời lượng khỏi sự thay đổi vị trí trong phòng và thấy các tập hợp nơ-ron hồi hải mã bắn xung nối tiếp nhau theo từng giây, họ đặt tên chúng là *<em>&quot;tế bào thời gian&quot; (</em>time cells<em>)</em>* (Pastalkova et al., 2008; MacDonald et al., 2011; Eichenbaum, 2014).</li>
+<li>Buzsáki chỉ ra rằng trong các thí nghiệm chạy máy chạy bộ đó, đại đa số nơ-ron hồi hải mã và tế bào lưới đều phản ứng với cả quãng đường lẫn thời lượng (Kraus et al., 2015). Vì quãng đường ($d$) và thời lượng ($t$) luôn khóa chặt với nhau qua vận tốc di chuyển ($v$) theo hệ thức:</li>
+</ul>
+<p>$$d = v \cdot t$$</p>
+<p>và tần số dao động của từng tế bào hồi hải mã biến thiên tuyến tính theo vận tốc chạy của con vật (<em>velocity-controlled oscillators</em> · Geisler et al., 2007), một vùng não đọc tín hiệu ở hạ lưu (<em>downstream reader</em>) không có cách nào tách riêng xem chuỗi xung điện đó đang báo &quot;mét&quot; hay &quot;giây&quot;. Buzsáki phát biểu điều kiện rào chắn rất rõ tại tr. 269: <em>&quot;Trừ phi chứng minh được sự tồn tại của các cơ chế đọc tín hiệu hạ lưu tách biệt có khả năng trích xuất độc lập thông tin quãng đường và thời lượng từ các chuỗi tập hợp nơ-ron, chúng ta buộc phải kết luận rằng các nơ-ron hồi hải mã chẳng phải tế bào vị trí mà cũng chẳng phải tế bào thời gian&quot;</em> (<em>&quot;Short of a demonstration of separate downstream reader mechanisms that can extract distance and duration information independently from assembly sequences, we are forced to conclude that hippocampal neurons are neither place cells nor time cells&quot;</em>).</p>
+<h4>Luận điểm 4: Ẩn dụ bảng đồng hồ chiếc xe Lotus Elise và sự thống nhất Quãng đường – Thời lượng (tr. 269–271)</h4>
+<ul>
+<li>Trên bảng điều khiển chiếc xe Lotus Elise có 3 đồng hồ: đồng hồ đo quãng đường (<em>odometer</em>), đồng hồ tốc độ (<em>speedometer</em>) và đồng hồ giờ (<em>clock</em>).</li>
+<li>Thực chất, động cơ xe chỉ có một quá trình cơ học duy nhất: <strong>pít-tông chuyển động lên xuống trong xi-lanh với một tốc độ nhất định</strong> (từ nhà ông tới phòng thí nghiệm tốn khoảng <code>1,5 triệu nhịp pít-tông</code>).</li>
+<li>Nhân số nhịp pít-tông với chu vi bánh xe và đối chiếu với cây thước của con người $\to$ ta gọi đó là <strong>quãng đường</strong>.</li>
+<li>Đo tốc độ biến thiên của nhịp pít-tông qua cảm biến từ trường ở trục quay $\to$ ta gọi đó là <strong>vận tốc</strong>.</li>
+<li>Chia tổng số nhịp pít-tông cho tốc độ trung bình và quy chiếu vào đồng hồ $\to$ ta gọi đó là <strong>thời lượng</strong>.</li>
+<li>Tự thân chiếc xe chỉ tạo ra chuyển động cơ học và không hề sinh ra &quot;không gian&quot; hay &quot;thời gian&quot;. Tương tự, bộ não có các &quot;đồng hồ tốc độ&quot; sinh học (hệ tiền đình đo gia tốc, dòng thị giác <em>optic flow</em>, cảm giác bản thể đếm bước chân, <em>corollary discharge</em>), và từ đó tự khắc suy ra mối quan hệ giữa các sự kiện mà không cần một &quot;đồng hồ đếm giờ&quot; hay &quot;thước đo&quot; riêng biệt trong đầu.</li>
+</ul>
+<h4>Luận điểm 5: Hồi hải mã thực chất là &quot;Bộ sinh chuỗi thứ tự&quot; (<em>Sequence Generator</em>) và &quot;Thủ thư giữ mục lục&quot; (tr. 272–275)</h4>
+<ul>
+<li>Thay vì lưu trữ tọa độ không-thời gian 4 chiều tốn kém, *<em>hồi hải mã là bộ sinh chuỗi thứ tự tổng quát (</em>general-purpose sequence generator<em>)</em>*.</li>
+<li><strong>Thí nghiệm đi dạo khuôn viên Đại học California trên bệnh nhân tổn thương hồi hải mã (Dede et al., 2016 · Hình 10.2, tr. 272–273)</strong>:</li>
+<li>Nhóm bệnh nhân tổn thương hồi hải mã và nhóm đối chứng khỏe mạnh được dẫn đi qua <strong>11 sự kiện</strong> sắp đặt sẵn dọc khuôn viên trường (ở tr. 272, Buzsáki liệt kê 5 sự kiện mẫu: <em>vứt cốc, khóa xe đạp, mua chuối, nhặt đồng xu, uống nước ở vòi</em>).</li>
+<li>Ngay sau chuyến đi, bệnh nhân tổn thương hồi hải mã làm kém hơn nhóm đối chứng ở hầu hết các bài kiểm tra; tuy nhiên số lượng sự kiện họ nhớ được và khả năng ước lượng thời lượng chuyến đi tương đương với nhóm đối chứng khỏe mạnh được hỏi lại sau 1 tháng, và họ vẫn nhớ được các chi tiết không gian – tri giác cụ thể (<em>&quot;chiếc xe đạp có đèn ở phía trước&quot;</em>).</li>
+<li><strong>Sự sụp đổ đặc hiệu nằm ở thứ tự chuỗi sự kiện</strong>: trong khi nhóm đối chứng (cả ngay sau chuyến đi lẫn sau 1 tháng) đều kể lại 11 sự kiện bám sát trình tự diễn ra thực tế, thứ tự kể lại của bệnh nhân hồi hải mã hoàn toàn không tương quan với thứ tự gốc (<em>&quot;unrelated to the order in which they occurred&quot;</em>, tr. 273).</li>
+<li>Từ đó, Buzsáki đề xuất mô hình <strong>Thư viện (Tân vỏ não) và Thủ thư (Hồi hải mã)</strong> (mở rộng từ Teyler &amp; DiScenna, 1986; Friston &amp; Buzsáki, 2016; Buzsáki &amp; Tingley, 2018):</li>
+<li>*<em>Tân vỏ não (</em>Neocortex<em>)</em><em> là thư viện lớn lưu trữ nội dung ngữ nghĩa chi tiết (</em>&quot;Cái gì&quot; / What*).</li>
+<li>*<em>Hồi hải mã (</em>Hippocampus<em>)<strong> là người thủ thư giữ </strong>chuỗi con trỏ đa hợp (</em>multiplexed pointer sequences<em>)</em><em> dọc theo từng chu kỳ sóng theta (mỗi chu kỳ nén khoảng $7 \pm 2$ mục) để ghép nối các mảnh </em>&quot;Cái gì&quot;<em> theo đúng trình tự trước – sau. Trí nhớ sự kiện (</em>episodic memory<em>) đơn giản là </em><em>một chuỗi có thứ tự của các &quot;Cái gì&quot; (</em>an ordered sequence of &quot;whats&quot;<em>, tr. 274)</em>*.</li>
+</ul>
+<h4>Luận điểm 6: &quot;Ký ức về tương lai&quot; (<em>Memory for the Future</em>), Độ lợi thần kinh (<em>Gain Control</em>) và Ranh giới tự giới hạn <em>&quot;With or Without Space and Time?&quot;</em> (tr. 275–278)</h4>
+<ul>
+<li>Vì các quỹ đạo tập hợp nơ-ron (<em>neuronal trajectories</em>) chỉ làm nhiệm vụ nối chuỗi các sự kiện, cùng một cơ chế đó vừa dùng để tái hiện quá khứ (<em>postdiction / replay</em>) vừa dùng để ghép thử các kịch bản tương lai (<em>prediction / preplay</em>). Điều này giải thích vì sao bệnh nhân tổn thương hồi hải mã hai bên vừa mất khả năng nhớ lại quá khứ vừa mất khả năng hình dung tương lai cá nhân của chính mình (Atance &amp; O'Neill, 2001; Hassabis et al., 2007).</li>
+<li><strong>Quy tắc phương pháp luận cốt lõi</strong>: Không được nhầm lẫn *<em>&quot;trình tự thời gian của các biểu trưng thần kinh&quot; (</em>temporal sequence of representations<em>)<strong> với </strong>&quot;biểu trưng của thời gian&quot; (</em>representation of temporal sequences<em>)<strong>. Để biến một chuỗi thứ tự thành cảm nhận thời lượng nhanh hay chậm, não bộ kết hợp </strong>thứ tự chuỗi (</em>sequential order<em>)<strong> với </strong>tốc độ chuyển tiếp (</em>rate of change<em>)<strong> thông qua cơ chế điều chỉnh </strong>độ lợi thần kinh (</em>gain control<em> · Chương 11)</em>*.</li>
+<li>*<em>Ranh giới tự giới hạn của chính Buzsáki (</em>&quot;With or Without Space and Time?&quot;<em>, tr. 275–278)<strong>: Ở tiểu mục khép lại Chương 10, Buzsáki nói rõ ông </strong>không</em><em> kêu gọi giới khoa học thần kinh vứt bỏ khái niệm không gian và thời gian hay ngừng sử dụng thước đo và đồng hồ trong thực hành nghiên cứu (</em>&quot;I am not suggesting that neuroscience researchers dispense with the concepts of space and time... I suggest that it is safe to continue to do neuroscience as we have done it over the past century, using measuring instruments and relating observations to their units&quot;<em>, tr. 275–277). Cảnh báo của ông nhắm vào bước nhảy nhận thức luận sai lầm khi đồng nhất đơn vị của dụng cụ đo với chức năng nội tại của mô não: </em>&quot;Tuy nhiên, sẽ là không an toàn nếu tuyên bố rằng một vùng não hay cơ chế thần kinh nào đó biểu trưng cho không gian hoặc thời gian, hay tính toán quãng đường hoặc thời lượng&quot;<em> (</em>&quot;However, it is not safe to declare that some brain region or mechanism represents space or time or calculates distance or duration&quot;*, tr. 277).</li>
+</ul>
+<hr>
+<h2>PHẦN II. CÁC BÀI ĐIỂM SÁCH HỌC THUẬT, CÔNG TRÌNH MỞ RỘNG &amp; NHÁNH ĐỒNG THUẬN (2019–2026)</h2>
+<h3>1. Điểm sách chính thức trên các tạp chí chuyên ngành (<em>Academic Book Reviews</em>, 2019–2021)</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Tác giả &amp; Năm</th><th>Tạp chí &amp; DOI / Liên kết</th><th>Nội dung đánh giá &amp; Điểm nhấn học thuật</th></tr></thead>
+<tbody>
+<tr><td><strong>David Poeppel &amp; Federico Adolfi</strong> (2020)&lt;br/&gt;<em>(kèm bài đối thoại của <strong>György Buzsáki</strong>, 2020)</em></td><td>• Poeppel &amp; Adolfi: <em>Against the Epistemological Primacy of the Hardware: The Brain from Inside Out, Turned Upside Down</em> · <strong>eNeuro</strong> 7(4), ENEURO.0215-20.2020 (<a href="https://doi.org/10.1523/ENEURO.0215-20.2020" target="_blank" rel="noopener">DOI: 10.1523/ENEURO.0215-20.2020</a>)&lt;br/&gt;• Buzsáki: <em>The Brain–Cognitive Behavior Problem: A Retrospective</em> · <strong>eNeuro</strong> 7(4), ENEURO.0069-20.2020 (<a href="https://doi.org/10.1523/ENEURO.0069-20.2020" target="_blank" rel="noopener">DOI: 10.1523/ENEURO.0069-20.2020</a>)</td><td>• <strong>Khen ngợi</strong>: Chỉ ra cực kỳ sắc bén căn bệnh của khoa học thần kinh nhận thức khi lấy các phạm trù tâm lý học dân gian thế kỷ 19 của William James làm điểm xuất phát rồi đi tìm &quot;vùng não trú ngụ&quot; của chúng.&lt;br/&gt;• <strong>Phản biện</strong>: Bác bỏ chủ trương &quot;tối thượng hóa phần cứng&quot; (<em>epistemological primacy of the hardware</em>) vì không thể bỏ qua Cấp độ 1 và 2 của David Marr (xem chi tiết tại Phần III.2).</td></tr>
+<tr><td><strong>Àlex Gómez-Marín</strong> (2021)</td><td><em>If the brain is the answer, what was the question?</em> [Book Review] · <strong>Current Biology</strong> 31(6), R221–R223 (<a href="https://doi.org/10.1016/j.cub.2021.01.044" target="_blank" rel="noopener">DOI: 10.1016/j.cub.2021.01.044</a>)</td><td>• <strong>Khen ngợi</strong>: Ca ngợi cuốn sách là đòn giáng cần thiết vào mô hình đầu vào – đầu ra thụ động (<em>Outside-In</em>), đồng tình rằng dữ liệu lớn (<em>Big Data / Connectomics</em>) sẽ giống như cỗ máy trả lời số &quot;42&quot; vô nghĩa nếu đặt sai câu hỏi, và tán dương việc đặt *<em>hành động (</em>action<em>)<strong> lên vị trí tiên khởi để neo giữ ngữ nghĩa.&lt;br/&gt;• </strong>Cảnh báo</em><em>: Lưu ý nguy cơ rơi vào &quot;chủ nghĩa duy nội tinh vi&quot; (</em>sophisticated internalism*) khi quá đề cao từ điển tiền cấu hình trong hộp sọ.</td></tr>
+<tr><td><strong>Rachel Denison</strong> (2019)</td><td><em>How Your Brain Makes Meaning</em> [Review of <em>The Brain from Inside Out</em>] · <strong>The Cooper Square Review</strong> (<code>coopersquarereview.org</code>)</td><td>Đánh giá cao cách Buzsáki giải thích ý nghĩa không nằm sẵn trong kích thích giác quan mà được kiến tạo qua cú pháp dao động nội sinh và hành động thăm dò; đặt câu hỏi về lộ trình mở rộng từ mạch hồi hải mã chuột sang tư duy trừu tượng ở người.</td></tr>
+<tr><td><strong>Aaron Kozbelt</strong> (2020)</td><td><em>Review of The Brain from Inside Out</em> · <strong>Evolutionary Studies in Imaginative Culture</strong> 4(1), 115–118 (<a href="https://doi.org/10.26613/esic.4.1.177" target="_blank" rel="noopener">DOI: 10.26613/esic.4.1.177</a>)</td><td>Ca ngợi tác phẩm là một <em>tour de force</em> của khoa học thần kinh hiện đại, đặc biệt là mô hình <strong>não bộ phân phối lệch log-normal</strong> (sự kết hợp giữa thiểu số nơ-ron liên kết mạnh, tốc độ nhanh và đa số nơ-ron liên kết thưa, tiết kiệm năng lượng).</td></tr>
+</tbody></table></div>
+<hr>
+<h3>2. Sáu công trình thực nghiệm và tổng quan mở rộng trực tiếp từ phòng thí nghiệm Buzsáki (2021–2026)</h3>
+<ol>
+<li><strong>McKenzie, S., Huszár, R., English, D. F., Kim, K., Christensen, F., Yoon, E., &amp; Buzsáki, G. (2021).</strong> <em>Preexisting hippocampal network dynamics constrain optogenetically induced place fields.</em> <strong>Neuron</strong>, 109(6), 1040–1054.e7. (<a href="https://doi.org/10.1016/j.neuron.2021.01.011" target="_blank" rel="noopener">DOI: 10.1016/j.neuron.2021.01.011</a>)</li>
+</ol>
+<ul>
+<li>Dùng quang di truyền học kích thích nhân tạo các nơ-ron hồi hải mã khi chuột chạy trong mê cung để ép tạo trường vị trí mới. Kết quả cho thấy mạch hồi hải mã bị ràng buộc chặt bởi cấu trúc có sẵn: chỉ những tổ hợp nơ-ron đã có liên kết động lực học nội sinh từ trước mới tái tổ chức bền vững.</li>
+</ul>
+<ol>
+<li><strong>Tingley, D., McClain, K., Kaya, E., Carpenter, J., &amp; Buzsáki, G. (2021).</strong> <em>A metabolic function of the hippocampal sharp wave-ripple.</em> <strong>Nature</strong>, 597(7874), 82–86. (<a href="https://doi.org/10.1038/s41586-021-03811-w" target="_blank" rel="noopener">DOI: 10.1038/s41586-021-03811-w</a>)</li>
+</ol>
+<ul>
+<li>Phát hiện các cụm gợn sóng sắc nét (<em>Sharp-Wave Ripples / SPW-Rs</em>) ở hồi hải mã ngoài chức năng nén chuỗi sự kiện 10–20 lần để củng cố ký ức còn truyền tín hiệu qua vách bên xuống vùng dưới đồi để <strong>làm giảm nồng độ đường huyết ngoại vi sau đó khoảng 10 phút</strong>, cho thấy các sóng <em>SPW-Rs</em> tham gia trực tiếp vào việc điều hòa trao đổi chất nội môi và củng cố giả thuyết rằng cơ chế sinh chuỗi nhận thức có liên hệ tiến hóa với các vòng lặp sinh lý cơ thể.</li>
+</ul>
+<ol>
+<li><strong>Zutshi, I., Valero, M., Fernández-Ruiz, A., &amp; Buzsáki, G. (2022).</strong> <em>Extrinsic control and intrinsic computation in the hippocampal CA1 circuit.</em> <strong>Neuron</strong>, 110(4), 658–673.e5 (<a href="https://doi.org/10.1016/j.neuron.2021.11.025" target="_blank" rel="noopener">DOI: 10.1016/j.neuron.2021.11.025</a>) &amp; <strong>Valero, M., Zutshi, I., Yoon, E., &amp; Buzsáki, G. (2022).</strong> <em>Probing subthreshold dynamics of hippocampal neurons by pulsed optogenetics.</em> <strong>Science</strong>, 375(6580), 570–574 (<a href="https://doi.org/10.1126/science.abm1891" target="_blank" rel="noopener">DOI: 10.1126/science.abm1891</a>)</li>
+</ol>
+<ul>
+<li>Cho thấy ngay cả khi cắt bỏ dòng đầu vào từ vỏ não nội khứu giữa (MEC), mạch nội tại vùng CA1 vẫn tự duy trì khả năng phát chuỗi tập hợp tế bào; và các tập hợp hoạt động trong sóng <em>SPW-Rs</em> lúc nghỉ ở chuồng nhà đã dự báo trước thứ tự chuỗi trường phóng điện trên đường chạy.</li>
+</ul>
+<ol>
+<li><strong>Huszár, R., Zhang, Y., Blockus, H., &amp; Buzsáki, G. (2022).</strong> <em>Preconfigured dynamics in the hippocampus are guided by embryonic birthdate and rate of neurogenesis.</em> <strong>Nature Neuroscience</strong>, 25(9), 1201–1212. (<a href="https://doi.org/10.1038/s41593-022-01138-x" target="_blank" rel="noopener">DOI: 10.1038/s41593-022-01138-x</a>)</li>
+</ol>
+<ul>
+<li>Cung cấp bằng chứng sinh học phát triển trực tiếp cho khái niệm *<em>&quot;Động lực học tiền cấu hình&quot; (</em>Preconfigured dynamics<em>)</em><em>: các nơ-ron tháp CA1 có cùng ngày sinh phôi thai (</em>embryonic birthdate<em>) được kết nối ưu tiên với nhau và cùng bắn xung trong các chuỗi </em>SPW-Rs<em> lẫn nhịp </em>theta* trước khi con vật bước vào môi trường mới.</li>
+</ul>
+<ol>
+<li><strong>Buzsáki, G., &amp; Tingley, D. (2023).</strong> <em>Cognition from the Body-Brain Partnership: Exaptation of Memory.</em> <strong>Annual Review of Neuroscience</strong>, 46, 191–210 (<a href="https://doi.org/10.1146/annurev-neuro-101222-110632" target="_blank" rel="noopener">DOI: 10.1146/annurev-neuro-101222-110632</a>) &amp; <strong>Zutshi, I., ... Savin, C., &amp; Buzsáki, G. (2025).</strong> <em>Hippocampal neuronal activity is aligned with action plans.</em> <strong>Nature</strong>, 638, 192–200 (<a href="https://doi.org/10.1038/s41586-024-08397-7" target="_blank" rel="noopener">DOI: 10.1038/s41586-024-08397-7</a>)</li>
+</ol>
+<ul>
+<li>Giải thích sự ra đời của ký ức và du hành thời gian tâm trí qua cơ chế *<em>tái dụng tiến hóa (</em>exaptation<em>)</em><em>: mạch điều phối nội môi tuần tự được tái dụng để dẫn đường trong không gian vật lý, và khi tách khỏi đầu ra vận động trực tiếp (</em>environment-disengaged mode<em>), chúng trở thành suy tưởng nội tâm và lập kế hoạch hành động (</em>action plans*).</li>
+</ul>
+<ol>
+<li><strong>Buzsáki, G. (2025/2026).</strong> <em>Time, space, memory and brain–body rhythms.</em> <strong>Nature Reviews Neuroscience</strong>, 27(1), 61–78. (<a href="https://doi.org/10.1038/s41583-025-00987-2" target="_blank" rel="noopener">DOI: 10.1038/s41583-025-00987-2</a>)</li>
+</ol>
+<ul>
+<li><strong>Bản cập nhật trực tiếp năm 2025/2026 cho Chương 10</strong>: Giải thích vì sao con người có cảm thức liên tục về thời gian trải nghiệm chủ quan (<em>lived time</em>) dù não không có đồng hồ cơ học trung tâm. Thời gian chủ quan và cấu trúc ký ức sự kiện được neo trực tiếp vào *<em>hệ thống phân cấp lồng ghép của các nhịp điệu Cơ thể – Não bộ (</em>nested hierarchy of brain–body rhythms<em>)</em><em>: từ nhịp thở, nhịp tim, nhịp dạ dày – ruột, dao động hệ thần kinh tự chủ cho tới các nhịp sóng chậm vỏ não, sóng </em>theta<em>, </em>SPW-Rs<em> và </em>gamma*.</li>
+</ul>
+<hr>
+<h3>3. Ba nhánh lý thuyết lớn đồng quy và bổ sung toán học cho Buzsáki (2017–2026)</h3>
+<ol>
+<li><strong>Hợp nhất Không gian, Thời gian và Quan hệ bằng Mô hình Tính toán</strong>:</li>
+</ol>
+<ul>
+<li>*<em>Bản đồ Dự báo (</em>Successor Representation / SR<em>)<strong>: </strong>Stachenfeld, K. L., Botvinick, M. M., &amp; Gershman, S. J. (2017)</em><em> (</em>The hippocampus as a predictive map*, <strong>Nature Neuroscience</strong>, 20(11), 1643–1653, <a href="https://doi.org/10.1038/nn.4650" target="_blank" rel="noopener">DOI: 10.1038/nn.4650</a>) đề xuất mô hình trong đó hồi hải mã mã hóa ma trận xác suất chiết khấu của các trạng thái tương lai dự kiến sẽ ghé thăm tiếp theo:</li>
+</ul>
+<p>$$M(s, s') = \mathbb{E}\left[\sum_{t=0}^{\infty} \gamma^t \mathbb{I}(s_t = s') \;\middle|\; s_0 = s\right]$$</p>
+<p>Trong khung toán học này, cả <em>place cells</em> lẫn <em>time cells</em> đều là các cột của cùng một ma trận chuyển tiếp trạng thái dự báo.</p>
+<ul>
+<li>*<em>Cỗ máy Tolman-Eichenbaum (</em>TEM<em>)<strong>: </strong>Whittington, J. C. R., Muller, T. H., Mark, S., Chen, G., Barry, C., Burgess, N., &amp; Behrens, T. E. J. (2020)</em><em> (</em>The Tolman-Eichenbaum Machine: Unifying Space and Relational Memory through Generalization in the Hippocampal Formation<em>, <strong>Cell</strong>, 183(5), 1249–1263.e23, <a href="https://doi.org/10.1016/j.cell.2020.10.024" target="_blank" rel="noopener">DOI: 10.1016/j.cell.2020.10.024</a>) xây dựng kiến trúc mạng trong đó vỏ não nội khứu học cấu trúc đồ thị quan hệ trừu tượng (</em>abstract relational graphs*), còn hồi hải mã gắn các nút đồ thị đó với nội dung cảm giác cụ thể.</li>
+</ul>
+<ol>
+<li>*<em>Tinh chỉnh chủng loại phát sinh (</em>Phylogenetic Refinement<em>) &amp; Não bộ Đan bện (</em>Entangled Brain<em>)</em>*:</li>
+</ol>
+<ul>
+<li>*<em>Paul Cisek (2019, </em>Attention, Perception, &amp; Psychophysics<em>, <a href="https://doi.org/10.3758/s13414-019-01760-1" target="_blank" rel="noopener">DOI: 10.3758/s13414-019-01760-1</a>; 2022, </em>Phil. Trans. R. Soc. B<em>, <a href="https://doi.org/10.1098/rstb.2020.0522" target="_blank" rel="noopener">DOI: 10.1098/rstb.2020.0522</a>)<strong> và </strong>Luiz Pessoa (2022, MIT Press, </em>The Entangled Brain<em>, <a href="https://doi.org/10.7551/mitpress/14636.001.0001" target="_blank" rel="noopener">DOI: 10.7551/mitpress/14636.001.0001</a>)</em>* đi đến cùng chẩn đoán lịch sử với Buzsáki: danh mục phân loại của William James (1890) không khớp với tiến hóa sinh học của hệ thần kinh động vật có dây sống.</li>
+</ul>
+<ol>
+<li><strong>Ứng dụng vào cuộc tranh luận NeuroAI &amp; Giới hạn của LLMs (2023–2026)</strong>:</li>
+</ol>
+<ul>
+<li><strong>Pezzulo, G., Parr, T., Cisek, P., Clark, A., &amp; Friston, K. (2024).</strong> <em>Generating meaning: active inference and the scope and limits of passive AI.</em> <strong>Trends in Cognitive Sciences</strong>, 28(2), 97–112 (<a href="https://doi.org/10.1016/j.tics.2023.10.002" target="_blank" rel="noopener">DOI: 10.1016/j.tics.2023.10.002</a>): Vận dụng trực tiếp khung <em>Inside-Out</em> và <em>corollary discharge</em> của Buzsáki để phân biệt *<em>AI tạo sinh thụ động (</em>Passive AI / LLMs<em>)</em><em> với các tác nhân sinh học chủ động. Vì học thuần túy theo chiều </em>Outside-In<em> trên kho văn bản tĩnh mà không có cơ thể nội môi và không có tín hiệu </em>corollary discharge* đối chiếu hành động với thế giới độc lập, LLM nạp lại chính các token mình vừa sinh ra vào cửa sổ ngữ cảnh mà không tự kiểm chứng được thực tại.</li>
+<li><strong>Zador, A., ... Bengio, Y., LeCun, Y., Sejnowski, T., &amp; Tsao, D. (2023).</strong> <em>Catalyzing next-generation Artificial Intelligence through NeuroAI.</em> <strong>Nature Communications</strong>, 14(1), 1597 (<a href="https://doi.org/10.1038/s41467-023-37180-x" target="_blank" rel="noopener">DOI: 10.1038/s41467-023-37180-x</a>) &amp; <strong>McCoy, R. T., &amp; Griffiths, T. L. (2025).</strong> <em>Modeling rapid language learning by distilling Bayesian priors into artificial neural networks.</em> <strong>Nature Communications</strong>, 16, 4676 (<a href="https://doi.org/10.1038/s41467-025-59957-y" target="_blank" rel="noopener">DOI: 10.1038/s41467-025-59957-y</a>): Cung cấp mô hình toán học ở Cấp độ 1–2 của Marr cho trạng thái <em>preconfigured</em> của Buzsáki bằng cách dùng <em>meta-learning</em> chưng cất tiên nghiệm tiến hóa vào thẳng bộ trọng số khởi tạo của mạng thần kinh.</li>
+</ul>
+<hr>
+<h2>PHẦN III. BỐN MŨI PHẢN BIỆN TRỰC TIẾP &amp; ĐỐI TRỌNG ĐỘC LẬP (2017–2026)</h2>
+<blockquote><p><strong>Phân loại phạm vi phản biện</strong>: Để đảm bảo tính chuẩn xác lịch sử khoa học, báo cáo phân biệt rõ hai nhóm công trình:</p><p>1. <strong>[Phê bình trực tiếp]</strong>: Các bài viết học thuật trích dẫn và thảo luận trực diện cuốn <em>The Brain from Inside Out</em> (2019) của Buzsáki (như Poeppel &amp; Adolfi, 2020; Gómez-Marín, 2021; Barack &amp; Krakauer, 2021).</p><p>2. <strong>[Đối trọng độc lập / Mở rộng phân tích]</strong>: Các chương trình thực nghiệm và triết học độc lập (như mô hình biến đổi Laplace của Howard/Moser, các bản ghi <em>human time cells</em> ở $v = 0$, hệ thống kép của Hoerl &amp; McCormack 2019, cơ chế học một lần thử <em>BTSP</em> của Bittner &amp; Magee 2017) được đặt đối xứng để kiểm chứng giới hạn giải thích của thuyết <em>Inside-Out</em>.</p></blockquote>
+<h3>1. Mũi 1 · Thực nghiệm Hệ thống [Đối trọng độc lập]: Tranh luận về cách giải thích tính toán của chuỗi xung ở $v = 0$ (Biến đổi Laplace về Thời gian vs. Quỹ đạo Tập hợp Nội sinh)</h3>
+<p>Ngay trong Chương 10 (tr. 260–261 &amp; Hình 7.6), Buzsáki đã ghi nhận rằng các quỹ đạo tập hợp nơ-ron nội sinh (<em>internally generated assembly trajectories</em>) ở vùng CA1 vẫn diễn tiến để duy trì thông tin khoảng trễ ngay cả khi con vật không di chuyển trong không gian (<em>&quot;without spatial displacement&quot;</em>, $v = 0$). Do đó, cuộc tranh luận giữa trường phái Marc Howard / Edvard &amp; May-Britt Moser / Bradley Lega với trường phái Buzsáki xoay quanh <strong>cách giải thích tính toán</strong> của các chuỗi xung khi cơ thể bất động:</p>
+<ol>
+<li><strong>Ghi nhận điện cực nội sọ đơn vị ở người nằm yên trên giường bệnh ($v = 0$)</strong>:</li>
+</ol>
+<ul>
+<li><strong>Umbach, G., Kantak, P., Jacobs, J., Kahana, M., Pfeiffer, B. E., Sperling, M., &amp; Lega, B. (2020).</strong> <em>Time cells in the human hippocampus and entorhinal cortex support episodic memory.</em> <strong>PNAS</strong>, 117(45), 28463–28474 (<a href="https://doi.org/10.1073/pnas.2013250117" target="_blank" rel="noopener">DOI: 10.1073/pnas.2013250117</a>): Ghi nhận quần thể <em>human time cells</em> ở hồi hải mã và vỏ não nội khứu của bệnh nhân động kinh nằm yên thực hiện tác vụ nhớ danh sách từ; độ ổn định của các tế bào này dự báo trực tiếp khả năng gom cụm ký ức theo thời gian (<em>temporal clustering</em>).</li>
+<li><strong>Reddy, L., Zoefel, B., Possel, J. K., Peters, J., Dijksterhuis, D. E., Poncet, M., ... &amp; Self, M. W. (2021).</strong> <em>Human Hippocampal Neurons Track Moments in a Sequence of Events.</em> <strong>Journal of Neuroscience</strong>, 41(31), 6714–6725 (<a href="https://doi.org/10.1523/JNEUROSCI.3157-20.2021" target="_blank" rel="noopener">DOI: 10.1523/JNEUROSCI.3157-20.2021</a>): Ngay trong <strong>khoảng trống chờ đợi 10 giây hoàn toàn trống rỗng</strong> (chỉ có màn hình đen, không có kích thích bên ngoài hay chuyển động cơ thể), các nơ-ron hồi hải mã của con người vẫn kích hoạt nối tiếp nhau tại các thời điểm xác định.</li>
+</ul>
+<ol>
+<li>*<em>Mạch con hoạt động khi đứng yên và khả năng co giãn tỷ lệ (</em>Temporal Scaling<em>) ở loài gặm nhấm</em>*:</li>
+</ol>
+<ul>
+<li><strong>Heys, J. G., &amp; Dombeck, D. A. (2018).</strong> <em>Evidence for a subcircuit in medial entorhinal cortex representing elapsed time during immobility.</em> <strong>Nature Neuroscience</strong>, 21(11), 1574–1582 (<a href="https://doi.org/10.1038/s41593-018-0252-8" target="_blank" rel="noopener">DOI: 10.1038/s41593-018-0252-8</a>) <em>(công bố cuối năm 2018 khi sách của Buzsáki đang in ấn)</em> &amp; <strong>Issa, J. B., Tocker, G., Hasselmo, M. E., Heys, J. G., &amp; Dombeck, D. A. (2020).</strong> <strong>Annual Review of Neuroscience</strong>, 43, 73–93 (<a href="https://doi.org/10.1146/annurev-neuro-092619-094138" target="_blank" rel="noopener">DOI: 10.1146/annurev-neuro-092619-094138</a>): Phát hiện một mạch con ở vỏ não nội khứu giữa (MEC) hoạt động chọn lọc khi chuột đứng chờ bất động, tách biệt với quần thể định vị khi chạy.</li>
+<li><strong>Taxidis, J., Garg, A., Pinto, S. R., Buonomano, D. V., &amp; Golshani, P. (2020).</strong> <strong>Neuron</strong>, 108(5), 984–998.e9 (<a href="https://doi.org/10.1016/j.neuron.2020.08.028" target="_blank" rel="noopener">DOI: 10.1016/j.neuron.2020.08.028</a>) &amp; <strong>Shimbo, A., Izawa, E.-I., &amp; Fujisawa, S. (2021).</strong> <em>Scalable representation of time in the hippocampus.</em> <strong>Science Advances</strong>, 7(6), eabd7013 (<a href="https://doi.org/10.1126/sciadv.abd7013" target="_blank" rel="noopener">DOI: 10.1126/sciadv.abd7013</a>): Cho thấy các chuỗi tế bào ở vùng CA1 tự co giãn tỷ lệ (<em>scalable</em>) khi đổi tổng thời lượng khoảng chờ (ví dụ giữa các khoảng 10 giây, 20 giây và 30 giây trong thực nghiệm phân biệt thời lượng của Shimbo et al., 2021).</li>
+</ul>
+<ol>
+<li>*<em>Biến đổi Laplace về Thời gian (</em>Laplace Transform of Time<em>) từ Vỏ não Nội khứu Bên (LEC) sang Hồi hải mã</em>*:</li>
+</ol>
+<ul>
+<li><strong>Tsao, A., Sugar, J., Lu, L., Wang, C., Knierim, J. J., Moser, M.-B., &amp; Moser, E. I. (2018).</strong> <em>Integrating time from experience in the lateral entorhinal cortex.</em> <strong>Nature</strong>, 561(7721), 57–62 (<a href="https://doi.org/10.1038/s41586-018-0459-6" target="_blank" rel="noopener">DOI: 10.1038/s41586-018-0459-6</a>) &amp; <strong>Cao, R., Bladon, J. H., Charczynski, S. J., Hasselmo, M. E., &amp; Howard, M. W. (2022).</strong> <em>Internally generated time in the rodent hippocampus is logarithmically compressed.</em> <strong>eLife</strong>, 11, e75353 (<a href="https://doi.org/10.7554/eLife.75353" target="_blank" rel="noopener">DOI: 10.7554/eLife.75353</a>): Đề xuất rằng các tế bào tăng/giảm dần theo hàm mũ $\exp(-st)$ ở vùng LEC thực hiện <strong>phép biến đổi Laplace thực</strong> của lịch sử trải nghiệm, còn mạng CA1 thực hiện <strong>phép biến đổi Laplace ngược</strong> để sinh ra các <em>time cells</em> có mật độ đỉnh phân bố nén theo trục logarit ($\log t$).</li>
+<li><strong>Đối chiếu theo khung của Buzsáki</strong>: Trong khung lý thuyết của Buzsáki (2019, tr. 260–261; Buzsáki &amp; Tingley, 2023; Buzsáki, 2025/2026), việc chuỗi nơ-ron tiếp tục diễn tiến khi $v = 0$ phản ánh *<em>quỹ đạo tập hợp nội sinh (</em>internally generated trajectories<em>)<strong> phục vụ trí nhớ làm việc và lập kế hoạch hành động, còn sự phân bố nén dạng $\log t$ là hệ quả tự nhiên của cấu trúc mạng hồi hải mã có phân phối tốc độ bắn xung và trọng số synap lệch </strong>log-normal</em>* (Chương 6). Hơn nữa, ngay trong thí nghiệm của Tsao et al. (2018), khi con chuột chạy lặp lại đường số 8 quen thuộc, hoạt động của LEC ngừng phân tách thời gian tuyệt đối qua hàng giờ mà lặp lại theo từng lượt thử (ủng hộ nhận định rằng LEC theo dõi sự biến thiên của bối cảnh trải nghiệm).</li>
+</ul>
+<h3>2. Mũi 2 · Triết học Khoa học [Phê bình trực tiếp]: Không thể thủ tiêu Cấp độ 1 của David Marr và khái niệm &quot;Biểu trưng&quot; (<em>Representation</em>)</h3>
+<ul>
+<li>*<em>Poeppel &amp; Adolfi (2020, </em>eNeuro<em>, <a href="https://doi.org/10.1523/ENEURO.0215-20.2020" target="_blank" rel="noopener">DOI: 10.1523/ENEURO.0215-20.2020</a>) [Phê bình trực tiếp]</em><em>: Chỉ ra rằng việc Buzsáki đòi xuất phát thuần túy từ phần cứng thần kinh (Cấp độ 3 của Marr: dao động, chuỗi xung, </em>gain control*) để định nghĩa lại tâm trí là bất khả thi về mặt nhận thức luận. Nếu thiếu lý thuyết ở Cấp độ 1 (hệ thống đang giải bài toán gì trong môi trường?) và Cấp độ 2 (thuật toán và cấu trúc biểu trưng nào?), nhà thần kinh học không thể xác định một chuỗi xung ở hồi hải mã đang phục vụ chức năng nhận thức nào.</li>
+<li><strong>David L. Barack &amp; John W. Krakauer (2021).</strong> <em>Two views on the cognitive brain.</em> <strong>Nature Reviews Neuroscience</strong>, 22(6), 359–371 (<a href="https://doi.org/10.1038/s41583-021-00448-6" target="_blank" rel="noopener">DOI: 10.1038/s41583-021-00448-6</a>) <strong>[Phê bình trực tiếp]</strong> &amp; *<em>Rosa Cao (2022, </em>Synthese<em>, <a href="https://doi.org/10.1007/s11229-022-03522-3" target="_blank" rel="noopener">DOI: 10.1007/s11229-022-03522-3</a>)<strong>: Phân biệt giữa </strong>cơ chế hiện thực hóa thứ cấp (</em>secondary implementation<em>)<strong> và </strong>lời giải thích nhận thức sơ cấp (</em>primary cognitive explanation<em>)<strong>. Khi các quỹ đạo trạng thái nội sinh của hồi hải mã được các mạng lưới hạ nguồn sử dụng để lập kế hoạch và điều hướng hành vi, chúng thực hiện chức năng </strong>biểu trưng (</em>representational content<em>)<strong> vượt lên trên các xung điện cơ học đơn thuần. Cùng mạch thảo luận này, </strong>Mazviita Chirimuuta (2024, MIT Press, </em>The Brain Abstracted<em>, <a href="https://doi.org/10.7551/mitpress/15043.001.0001" target="_blank" rel="noopener">DOI: 10.7551/mitpress/15043.001.0001</a>) [Đối trọng độc lập]</em><em> phê phán chủ nghĩa hiện thực biểu trưng ngây thơ (</em>naive representationalism<em>) nhưng đề xuất </em><em>&quot;chủ nghĩa hiện thực góc nhìn / xúc giác&quot; (</em>perspectival / haptic realism<em>)</em>*: các mô hình thần kinh là những bản trừu tượng hóa giản lược vẫn mang chức năng đại diện hữu dụng để dẫn dắt tương tác với thế giới.</li>
+</ul>
+<h3>3. Mũi 3 · Triết học về Thời gian [Đối trọng độc lập]: Phân biệt &quot;Tư duy TRONG thời gian&quot; với &quot;Tư duy VỀ thời gian&quot;</h3>
+<ul>
+<li>Dựa trên nguyên tắc phân biệt *<em>phương tiện mang thông tin (</em>vehicle<em>)<strong> và </strong>nội dung được biểu trưng (</em>content<em>)<strong> của </strong>Dennett &amp; Kinsbourne (1992, </em>BBS<em>, <a href="https://doi.org/10.1017/S0140525X00068229" target="_blank" rel="noopener">DOI: 10.1017/S0140525X00068229</a>)<strong>, bài báo mục tiêu của </strong>Christoph Hoerl &amp; Teresa McCormack (2019)</em><em> (</em>Thinking in and about time: A dual systems perspective on temporal cognition*, <strong>Behavioral and Brain Sciences</strong>, 42, e244, <a href="https://doi.org/10.1017/S0140525X18002157" target="_blank" rel="noopener">DOI: 10.1017/S0140525X18002157</a>) tách bạch hai hệ thống nhận thức thời gian:</li>
+</ul>
+<ol>
+<li>*<em>Hệ thống Cập nhật Thời gian (</em>Temporal Updating System<em> · &quot;Thinking IN time&quot;)</em>*: Có ở động vật (như chuột) và trẻ sơ sinh, giúp sinh vật theo dõi chuỗi sự kiện nối tiếp và cập nhật mô hình thế giới ở thì hiện tại.</li>
+<li>*<em>Hệ thống Lý luận Thời gian (</em>Temporal Reasoning System<em> · &quot;Thinking ABOUT time&quot;)</em>*: Đặc trưng ở con người trưởng thành, cho phép biểu trưng tường minh thời gian như một chiều kích tuyến tính quá khứ – hiện tại – tương lai độc lập với hành động tức thời.</li>
+</ol>
+<ul>
+<li>Đặt cạnh Chương 10 của Buzsáki, khung phân tích của Hoerl &amp; McCormack (2019) cho thấy cơ chế <em>&quot;Bộ sinh chuỗi + Kiểm soát độ lợi&quot;</em> ở vùng hải mã loài gặm nhấm giải thích rất thuyết phục cho <strong>Hệ thống Cập nhật Thời gian</strong>, nhưng để sang được <strong>Hệ thống Lý luận Thời gian</strong> của con người thì cần thêm sự kết hợp giữa mạch sinh chuỗi với ngôn ngữ biểu tượng và công cụ văn hóa (điều mà chính Buzsáki cũng gợi mở ở tr. 244–248 khi bàn về lịch và đồng hồ).</li>
+</ul>
+<h3>4. Mũi 4 · Sinh lý Tế bào &amp; Thuyết Hiện thân [Đối trọng độc lập &amp; Phê bình trực tiếp]: Cơ chế học một lần thử (<em>BTSP</em>) và nguy cơ &quot;Duy nội tinh vi&quot;</h3>
+<ul>
+<li><strong>Bittner, K. C., Milstein, A. D., Grienberger, C., Romani, S., &amp; Magee, J. C. (2017).</strong> <em>Behavioral time scale synaptic plasticity underlies CA1 place fields.</em> <strong>Science</strong>, 357(6355), 1033–1036 (<a href="https://doi.org/10.1126/science.aan3846" target="_blank" rel="noopener">DOI: 10.1126/science.aan3846</a>) &amp; <strong>Silva, D., Feng, T., &amp; Foster, D. J. (2015).</strong> <em>Trajectory events across hippocampal place cells require previous experience.</em> <strong>Nature Neuroscience</strong>, 18(12), 1772–1779 (<a href="https://doi.org/10.1038/nn.4133" target="_blank" rel="noopener">DOI: 10.1038/nn.4133</a>) <strong>[Đối trọng độc lập]</strong>:</li>
+<li>Nhóm của David Foster cho thấy bằng kiểm định thống kê nghiêm ngặt rằng các chuỗi quỹ đạo <em>preplay</em> đòi hỏi trải nghiệm trước đó để định hình rõ nét.</li>
+<li>Nhóm của Jeffrey Magee phát hiện cơ chế *<em>Tính dẻo synap thang thời gian hành vi (</em>Behavioral Timescale Synaptic Plasticity / BTSP<em>)</em><em>: các điện thế cao nguyên canxi ở nhánh gai (</em>dendritic plateau potentials<em>) cho phép nơ-ron CA1 thay đổi trọng số synap trên cửa sổ hàng giây để </em><em>tạo mới một trường vị trí chỉ sau một lần chạy duy nhất (</em>single-trial learning<em>)<strong>. Kết hợp với bài điểm sách của </strong>Àlex Gómez-Marín (2021, </em>Current Biology<em>) [Phê bình trực tiếp]</em><em> cảnh báo nguy cơ &quot;chủ nghĩa duy nội tinh vi&quot; (</em>sophisticated internalism<em>), các bằng chứng này cho thấy thực tại sinh học là sự tương tác hai chiều giữa </em><em>khung xương động lực học tiền cấu hình (</em>preconfigured backbone<em>)<strong> và </strong>khả năng ghi nhanh theo trải nghiệm (</em>BTSP<em>)</em>*.</li>
+</ul>
+<hr>
+<h2>PHẦN IV. MA TRẬN ĐỐI CHIẾU VỚI BA TÁC PHẨM NĂM 2026 TRONG KHO CỤC BỘ (<code>Resources/</code>)</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Trục vấn đề</th><th>György Buzsáki (2019, Ch. 10; 2022; 2023; 2025/2026)</th><th>Jim Al-Khalili (<span class="cite-file" title="Tài liệu nguồn trong kho lưu trữ: ../../_OceanofPDF.com_On_Time_The_Physics_That_Makes_the_Universe_Tick_-_Jim_Al-Khalili.pdf">📚 <em>On Time</em></span>, 09/2026 · Ch. 3: <em>Psychological Time</em>, PDF tr. 67–83)</th><th>Carlo Rovelli (<span class="cite-file" title="Tài liệu nguồn trong kho lưu trữ: ../../ON_THE_EQUALITY_OF_ALL_THINGS_-_Carlo_Rovelli.epub">📚 <em>On the Equality of All Things</em></span>, 09/2026 · Lessons 2, 3, 4, 6)</th><th>Tom Griffiths (<span class="cite-file" title="Tài liệu nguồn trong kho lưu trữ: ../New/_OceanofPDF.com_The_Laws_of_Thought_-_Tom_Griffiths.epub">📚 <em>The Laws of Thought</em></span>, 02/2026 · Ch. 6–10, 14)</th></tr></thead>
+<tbody>
+<tr><td><strong>1. Bản chất của Không gian &amp; Thời gian</strong></td><td>Không có thụ thể cho không gian hay thời gian; không-thời gian là <strong>cấu trúc quan hệ tuần tự</strong> của các sự kiện. Thời gian chủ quan neo vào <strong>nhịp điệu Cơ thể – Não bộ</strong> (<em>brain–body rhythms</em>, Buzsáki 2025/2026).</td><td><strong>Đồng quy</strong>: Không có giác quan đo thời gian (PDF tr. 69); ngôn ngữ không gian hóa thời gian (người Aymara, PDF tr. 68).&lt;br/&gt;<strong>Xung đột</strong>: Giữ ẩn dụ não như &quot;máy tính sinh học chạy phần mềm&quot; (PDF tr. 85).</td><td><strong>Đồng quy nền tảng</strong> (Buzsáki 2019 tr. 249–250 chú thích 25, 28, 30 dẫn Rovelli 2016; mở rộng trong Rovelli 09/2026): Không gian là mạng lưới các *<em>quan hệ kề cận (</em>adjacencies<em>)<strong>; không-thời gian là </strong>quá trình lượng tử</em><em> (</em>Lesson Three*, tr. 49–76).</td><td>Ở Cấp độ 1 của Marr, &quot;không gian tâm lý&quot; (<em>psychological space</em> · Shepard 1987, Ch. 6–7) biểu trưng độ tương đồng khái niệm; não bộ tái dụng (<em>exapt</em>) mạch định vị không gian để suy luận trên không gian trừu tượng này.</td></tr>
+<tr><td>*<em>2. &quot;Tế bào Thời gian&quot; (</em>Time Cells<em>) vs. Bộ sinh chuỗi (</em>Sequence Generator<em>)</em>*</td><td>Bác bỏ sự tách biệt &quot;tế bào thời gian&quot; vs. &quot;tế bào vị trí&quot;: vì $d = v \cdot t$, hồi hải mã chỉ là *<em>bộ sinh chuỗi quỹ đạo nơ-ron đa năng (</em>general-purpose sequence generator<em>)</em>*.</td><td>*<em>Mắc bẫy </em>Outside-In**<em> (PDF tr. 76): Chấp nhận cách diễn giải đại chúng rằng hồi hải mã có &quot;tế bào thời gian&quot; (</em>time cells<em>) tách biệt với &quot;tế bào không gian&quot; (</em>space cells*) để lưu trữ âm nhạc và ký ức.</td><td>Cung cấp nền tảng vật lý cho Buzsáki: thời gian là tương quan biến thiên giữa các biến số vật lý (<em>partial observables</em>) cùng sự hình thành dấu vết (<em>traces</em>) do tiêu tán nhiệt (<em>dissipation</em>, <em>Lesson Four</em>, tr. 77–98), thay vì một &quot;sân khấu nền&quot; độc lập.</td><td>Dẫn mô hình <strong>Complementary Learning Systems</strong> (McClelland, McNaughton &amp; O'Reilly 1995, Ch. 9): chuỗi phát lại (<em>replay</em>) của hồi hải mã giúp vỏ não tích hợp tri thức dần dần mà không bị quên thảm khốc (<em>catastrophic forgetting</em>).</td></tr>
+<tr><td>*<em>3. Trạng thái khởi đầu: </em>Preconfigured Dynamics<em> vs. </em>Tabula Rasa***</td><td>Mạng nơ-ron sinh học được *<em>tiền cấu hình (</em>preconfigured<em>)</em><em> bởi lịch sử tiến hóa và ngày sinh phôi thai (Huszár et al., </em>Nat. Neurosci.<em> 2022); học tập là </em><em>khớp chọn (</em>matching<em>)</em>* quỹ đạo có sẵn.</td><td>Giải thích cảm nhận thời gian trôi nhanh hơn khi già đi dựa trên lượng thông tin mới cần xử lý (<em>new experiences theory</em>, PDF tr. 72–73).</td><td>Tri thức không bao giờ bắt đầu từ con số 0 hay từ một nền tảng tuyệt đối; mọi hệ nhận thức đều tiến hóa bằng cách điều chỉnh các khuôn mẫu có sẵn từ *<em>&quot;bên trong vòng tròn&quot; (</em>From Inside the Circle<em>, </em>Lesson Two<em>, tr. 29–48)</em>*.</td><td><strong>Khớp nối toán học trực tiếp (Ch. 14)</strong>: Mạng thần kinh khởi tạo trọng số ngẫu nhiên có <em>inductive bias</em> quá yếu (cần lượng dữ liệu gấp 1.000 lần trẻ em). *<em>McCoy &amp; Griffiths (</em>Nat. Commun.<em> 2025)</em><em> dùng </em>meta-learning<em> chưng cất tiên nghiệm Bayes vào <strong>trọng số khởi tạo</strong>, mô hình hóa trạng thái </em>preconfigured* của Buzsáki.</td></tr>
+<tr><td>*<em>4. Neo nghĩa qua Hành động (</em>Inside-Out Grounding<em>) vs. </em>Outside-In LLMs***</td><td>Xung thần kinh tự thân là &quot;vô nghĩa&quot; (<em>gibberish</em>) cho đến khi được hiệu chuẩn qua <strong>hành động chủ động</strong> và tín hiệu *<em>phóng điện hệ quả (</em>corollary discharge<em>)</em>*.</td><td>Nhấn mạnh hiện tượng <strong>Temporal / Intentional Binding</strong> (PDF tr. 74–75) và khẳng định mọi dự báo tương lai đều xuất phát từ hậu đoán quá khứ (PDF tr. 80–82).</td><td>Tác quyền (<em>agency/freedom</em> · <em>Lesson Four</em>, tr. 89–98) là quá trình vật lý có thật, trong đó hệ thống quyết định hành động thông qua việc <strong>mô phỏng và đánh giá các tương lai khả dĩ thay thế</strong>.</td><td>*<em>McCoy et al. (</em>PNAS<em> 2024 · Ch. 14)</em><em>: LLM bị chi phối bởi &quot;tàn dư tự hồi quy&quot; (</em>embers of autoregression<em>) vì học thụ động </em>Outside-In<em>; cần vòng lặp </em>Active Inference<em> &amp; hành động (Pezzulo et al., </em>TiCS<em> 2024; đối trọng với </em>Vector Grounding* của Mollo &amp; Millière, 2026).</td></tr>
+</tbody></table></div>
+
+  </article>
+</div>
+</body>
+</html>

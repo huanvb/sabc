@@ -1,0 +1,127 @@
+<svg viewBox="0 0 1420 927" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sơ đồ ba cột so sánh mô hình Từ ngoài vào trong (Outside-In của Newton, Kant, William James 1890) với sự thật sinh học - nhân học (0 thụ thể cảm nhận không gian hay thời gian; bằng chứng từ bộ tộc Amondawa, Kuuk Thaayorre, Wintu và Aymara) và kiến trúc Từ trong ra ngoài (Inside-Out của Buzsáki 2019 và Rovelli 2026) với chuỗi quỹ đạo nơ-ron nội sinh, hành động chủ động, phóng điện hệ quả và các mối quan hệ kề cận."><style>
+  svg {
+    --bg: #ffffff;
+    --ink: #2b2f36;
+    --sub: #6b7280;
+    --flow: #8a94a3;
+    --grid: rgba(138,148,163,0.24);
+    --row: rgba(107,114,128,0.06);
+    --card: #f8fafc;
+    --ok: #2f9e5f;
+    --okText: #248a4e;
+    --okSoft: rgba(47,158,95,0.08);
+    --warn: #b98a2e;
+    --warnText: #8f6a22;
+    --warnSoft: rgba(185,138,46,0.10);
+    --bad: #c0554d;
+    --badText: #b0463e;
+    --badSoft: rgba(192,85,77,0.08);
+    --accent: #e07828;
+    --accentText: #b45f1e;
+    --accentSoft: rgba(224,120,40,0.08);
+    --info: #3f7fb8;
+    --infoText: #356a9c;
+    --infoSoft: rgba(63,127,184,0.08);
+    --onwarn: #2b2f36;
+  }
+  @media (prefers-color-scheme: dark) {
+    svg {
+      --bg: #1b1e23;
+      --ink: #e8ebef;
+      --sub: #9aa0a8;
+      --flow: #7d8794;
+      --grid: rgba(125,135,148,0.25);
+      --row: rgba(154,160,168,0.08);
+      --card: #22262d;
+      --ok: #3fb473;
+      --okText: #5cc98a;
+      --okSoft: rgba(63,180,115,0.14);
+      --warn: #d3ab52;
+      --warnText: #d3ab52;
+      --warnSoft: rgba(211,171,82,0.14);
+      --bad: #cf6a60;
+      --badText: #cf6a60;
+      --badSoft: rgba(207,106,96,0.15);
+      --accent: #e0925a;
+      --accentText: #e0925a;
+      --accentSoft: rgba(224,146,90,0.14);
+      --info: #6aa0d0;
+      --infoText: #6aa0d0;
+      --infoSoft: rgba(106,160,208,0.14);
+      --onwarn: #1b1e23;
+    }
+  }
+  .bg { fill: var(--bg); }
+  text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .ttl { font-size: 20.5px; font-weight: 700; fill: var(--ink); }
+  .sub1 { font-size: 14px; font-weight: 600; fill: var(--accentText); }
+  .src { font-size: 12px; font-weight: 500; fill: var(--sub); }
+  .cap { font-size: 13.5px; font-weight: 600; font-style: italic; fill: var(--sub); }
+  .sec { font-size: 15px; font-weight: 700; fill: var(--ink); }
+  .tag { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--sub); }
+  .tag-ok { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--okText); }
+  .tag-warn { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--warnText); }
+  .tag-bad { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--badText); }
+  .tag-accent { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--accentText); }
+  .tag-info { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--infoText); }
+  .bh { font-size: 14px; font-weight: 700; fill: var(--ink); }
+  .bh-ok { font-size: 14px; font-weight: 700; fill: var(--okText); }
+  .bh-warn { font-size: 14px; font-weight: 700; fill: var(--warnText); }
+  .bh-bad { font-size: 14px; font-weight: 700; fill: var(--badText); }
+  .bh-accent { font-size: 14px; font-weight: 700; fill: var(--accentText); }
+  .bh-info { font-size: 14px; font-weight: 700; fill: var(--infoText); }
+  .body { font-size: 12.5px; font-weight: 500; fill: var(--ink); }
+  .sub { font-size: 12px; font-weight: 500; fill: var(--sub); }
+  .motto { font-size: 12px; font-style: italic; font-weight: 600; fill: var(--sub); }
+  .b-neutral { fill: var(--row); stroke: var(--flow); stroke-width: 1.8; }
+  .b-panel { fill: none; stroke: var(--flow); stroke-width: 1.6; }
+  .b-ok { fill: var(--okSoft); stroke: var(--ok); stroke-width: 1.9; }
+  .b-warn { fill: var(--warnSoft); stroke: var(--warn); stroke-width: 1.9; }
+  .b-bad { fill: var(--badSoft); stroke: var(--bad); stroke-width: 1.9; }
+  .b-accent { fill: var(--accentSoft); stroke: var(--accent); stroke-width: 1.9; }
+  .b-info { fill: var(--infoSoft); stroke: var(--info); stroke-width: 1.9; }
+  .b-ok-dash { fill: var(--okSoft); stroke: var(--ok); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-warn-dash { fill: var(--warnSoft); stroke: var(--warn); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-bad-dash { fill: var(--badSoft); stroke: var(--bad); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-accent-dash { fill: var(--accentSoft); stroke: var(--accent); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-info-dash { fill: var(--infoSoft); stroke: var(--info); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .flow-line { stroke: var(--flow); stroke-width: 2; fill: none; }
+  .flow-dash { stroke: var(--flow); stroke-width: 2; stroke-dasharray: 6 5; fill: none; }
+  .ok-line { stroke: var(--ok); stroke-width: 2.2; fill: none; }
+  .warn-line { stroke: var(--warn); stroke-width: 2.2; fill: none; }
+  .warn-dash { stroke: var(--warn); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .bad-line { stroke: var(--bad); stroke-width: 2.2; fill: none; }
+  .bad-dash { stroke: var(--bad); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .accent-line { stroke: var(--accent); stroke-width: 2.2; fill: none; }
+  .accent-dash { stroke: var(--accent); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .info-line { stroke: var(--info); stroke-width: 2.2; fill: none; }
+  .div-line { stroke: var(--grid); stroke-width: 1.2; }
+  .badge-warn { fill: var(--warn); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-bad { fill: var(--bad); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-ok { fill: var(--ok); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-info { fill: var(--info); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-accent { fill: var(--accent); stroke: var(--bg); stroke-width: 1.8; }
+  .bang { font-size: 13px; font-weight: 800; fill: var(--onwarn); }
+  .bang-light { font-size: 12px; font-weight: 800; fill: var(--bg); }
+</style>
+  <defs>
+    <marker id="arr-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--flow)"/>
+    </marker>
+    <marker id="arr-ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--ok)"/>
+    </marker>
+    <marker id="arr-warn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--warn)"/>
+    </marker>
+    <marker id="arr-bad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--bad)"/>
+    </marker>
+    <marker id="arr-accent" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--accent)"/>
+    </marker>
+    <marker id="arr-info" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--info)"/>
+    </marker>
+  </defs>
+<rect class="bg" x="0" y="0" width="1420" height="927" rx="14"/><text x="36.0" y="38.0" class="ttl">Khung "Từ ngoài vào trong" áp đặt hộp không-thời gian lên não, còn kiến trúc "Từ trong ra ngoài" suy diễn từ hành động</text><text x="36.0" y="68.0" class="sub1">Sự chuyển dịch mô hình từ phạm trù tiên nghiệm (Newton · Kant · James 1890) sang chuỗi quỹ đạo nơ-ron nội sinh (Buzsáki 2019 · Rovelli 2016, 2026)</text><text x="36.0" y="91.0" class="src">Nguồn đối chiếu: Buzsáki (2019 Ch. 10) · Rovelli (2016; 2026 Lessons 2-3) · Al-Khalili (2026 Ch. 3) · Sinha et al. (2011) · Boroditsky · Levinson (2003) · Lee (1950)</text><rect x="36.0" y="114.0" width="426.0" height="733.0" rx="12" class="b-panel"/><text x="50.0" y="136.0" class="tag-bad">KHUNG CỔ ĐIỂN · OUTSIDE-IN (TỪ NGOÀI VÀO TRONG)</text><text x="50.0" y="157.0" class="sec">1. Mô hình 'Từ ngoài vào trong'</text><line x1="50.0" y1="167.0" x2="448.0" y2="167.0" class="div-line"/><rect x="50.0" y="182.0" width="398.0" height="207.0" rx="12" class="b-bad"/><text x="66.0" y="205.0" class="tag-bad">NỀN TẢNG TRIẾT HỌC &amp; TÂM LÝ HỌC CỔ ĐIỂN</text><text x="66.0" y="226.0" class="bh-bad">1a. Hộp không gian 3D &amp; Mũi tên thời gian</text><text x="66.0" y="244.5" class="bh-bad">(Newton · Kant · James 1890)</text><text x="66.0" y="271.0" class="body">• Giả định Không gian (hộp rỗng 3 chiều) và Thời gian</text><text x="66.0" y="288.5" class="body">(mũi tên trôi đều) tồn tại tiên nghiệm, độc lập với</text><text x="66.0" y="306.0" class="body">cơ thể.</text><text x="66.0" y="329.5" class="body">• Từ mục lục The Principles of Psychology (1890) của</text><text x="66.0" y="347.0" class="body">William James, thần kinh học mặc định trí nhớ sự kiện</text><text x="66.0" y="364.5" class="body">lưu tách biệt 3 thành phần: What - Where - When.</text><rect x="50.0" y="401.0" width="398.0" height="224.5" rx="12" class="b-bad-dash"/><text x="66.0" y="424.0" class="tag-bad">HỆ QUẢ TRONG THẦN KINH HỌC ĐẠI CHÚNG</text><text x="66.0" y="445.0" class="bh-bad">1b. Đi tìm vùng lưu trữ không gian và thời gian</text><text x="66.0" y="463.5" class="bh-bad">riêng rẽ</text><text x="66.0" y="490.0" class="body">• Cắt nhỏ nhận thức thành các hộp chức năng rời rạc,</text><text x="66.0" y="507.5" class="body">đi tìm 'tế bào không gian' (space cells) và 'tế bào</text><text x="66.0" y="525.0" class="body">thời gian' (time cells) như hai bộ đếm độc lập.</text><text x="66.0" y="548.5" class="body">• Ví dụ cách diễn giải đại chúng trong Al-Khalili</text><text x="66.0" y="566.0" class="body">(2026, Ch. 3): xem hồi hải mã có các tế bào chuyên</text><text x="66.0" y="583.5" class="body">đếm thời gian tách rời khỏi tế bào định vị không</text><text x="66.0" y="601.0" class="body">gian.</text><rect x="50.0" y="637.5" width="398.0" height="191.5" rx="12" class="b-bad"/><text x="66.0" y="660.5" class="tag-bad">SAI LẦM PHƯƠNG PHÁP LUẬN</text><text x="66.0" y="681.5" class="bh-bad">1c. Đánh đồng dụng cụ đo bên ngoài với cơ chế</text><text x="66.0" y="700.0" class="bh-bad">trong não</text><text x="66.0" y="726.5" class="body">• Đem cây thước (đo mét) và chiếc đồng hồ (đếm giây)</text><text x="66.0" y="744.0" class="body">của nhà thực nghiệm ở bên ngoài gán thành biến số vật</text><text x="66.0" y="761.5" class="body">lý có sẵn bên trong hộp sọ.</text><line x1="66.0" y1="782.0" x2="432.0" y2="782.0" class="div-line"/><text x="66.0" y="798.0" class="motto">Hệ quả: Đặt sai câu hỏi khi đi tìm trung tâm đếm giờ và</text><text x="66.0" y="814.5" class="motto">đo khoảng cách tách biệt.</text><rect x="497.0" y="114.0" width="426.0" height="733.0" rx="12" class="b-panel"/><text x="511.0" y="136.0" class="tag-warn">CẦU NỐI KIỂM CHỨNG · SINH HỌC &amp; NHÂN HỌC</text><text x="511.0" y="157.0" class="sec">2. Sự thật sinh học &amp; nhân học</text><line x1="511.0" y1="167.0" x2="909.0" y2="167.0" class="div-line"/><rect x="511.0" y="182.0" width="398.0" height="265.5" rx="12" class="b-warn"/><text x="527.0" y="205.0" class="tag-warn">SỰ THẬT SINH HỌC GIÁC QUAN</text><text x="527.0" y="226.0" class="bh-warn">2a. Cơ thể có 0 thụ thể cảm nhận Không gian hay</text><text x="527.0" y="244.5" class="bh-warn">Thời gian</text><text x="527.0" y="271.0" class="body">• Hệ thần kinh có thụ thể chuyên biệt cho ánh sáng</text><text x="527.0" y="288.5" class="body">(võng mạc), âm thanh (ốc tai), gia tốc tiền đình và</text><text x="527.0" y="306.0" class="body">hướng đầu.</text><text x="527.0" y="329.5" class="body">• Hoàn toàn có 0 thụ thể sinh học nào tiếp nhận trực</text><text x="527.0" y="347.0" class="body">tiếp 'không gian' hay 'thời gian' như hai thực thể</text><text x="527.0" y="364.5" class="body">vật lý.</text><text x="527.0" y="388.0" class="body">• Khoa học thực nghiệm đã thay thế hai khái niệm trừu</text><text x="527.0" y="405.5" class="body">tượng này bằng quãng đường (distance · đo bằng thước)</text><text x="527.0" y="423.0" class="body">và thời lượng (duration · đếm dao động chuẩn).</text><rect x="511.0" y="459.5" width="398.0" height="369.5" rx="12" class="b-info"/><text x="527.0" y="482.5" class="tag-info">BẰNG CHỨNG NHÂN HỌC &amp; NGÔN NGỮ HỌC</text><text x="527.0" y="503.5" class="bh-info">2b. Bốn nền văn hóa kiến tạo không - thời gian</text><text x="527.0" y="522.0" class="bh-info">khác biệt</text><text x="527.0" y="548.5" class="body">• Bộ tộc Amondawa (Amazon · Sinha 2011): Thiếu từ chỉ</text><text x="527.0" y="566.0" class="body">'thời gian' trừu tượng, 'tháng' hay 'năm'; không tính</text><text x="527.0" y="583.5" class="body">tuổi theo lịch mà đổi tên theo vị thế cộng đồng.</text><text x="527.0" y="607.0" class="body">• Thổ dân Úc / Kuuk Thaayorre (Boroditsky; Levinson</text><text x="527.0" y="624.5" class="body">2003, tr. 244-245): Xếp thẻ thời gian Đông - Tây và</text><text x="527.0" y="642.0" class="body">định vị cơ thể theo hướng địa lý ('tai phía Đông').</text><text x="527.0" y="665.5" class="body">• Người Wintu (California · Lee 1950): Định vị cơ thể</text><text x="527.0" y="683.0" class="body">theo 'phía bờ sông' hoặc 'phía sườn núi' thay vì phân</text><text x="527.0" y="700.5" class="body">biệt bên trái - bên phải.</text><text x="527.0" y="724.0" class="body">• Người Aymara (Andes · Al-Khalili 2026): Đặt quá khứ</text><text x="527.0" y="741.5" class="body">(đã biết, đã thấy) ở phía trước mặt và tương lai</text><text x="527.0" y="759.0" class="body">(chưa thấy) ở phía sau lưng.</text><line x1="527.0" y1="782.0" x2="893.0" y2="782.0" class="div-line"/><text x="527.0" y="798.0" class="motto">Không gian và thời gian trừu tượng là công cụ văn hóa</text><text x="527.0" y="814.5" class="motto">được ngoại hóa qua ngôn ngữ.</text><rect x="958.0" y="114.0" width="426.0" height="733.0" rx="12" class="b-panel"/><text x="972.0" y="136.0" class="tag-ok">KIẾN TRÚC NỘI SINH · INSIDE-OUT (TỪ TRONG RA NGOÀI)</text><text x="972.0" y="157.0" class="sec">3. Kiến trúc 'Từ trong ra ngoài'</text><line x1="972.0" y1="167.0" x2="1370.0" y2="167.0" class="div-line"/><rect x="972.0" y="182.0" width="398.0" height="189.5" rx="12" class="b-ok"/><text x="988.0" y="205.0" class="tag-ok">ĐỘNG LỰC HỌC NỘI SINH (BUZSÁKI 2019 CH. 10; ROVELLI 2026)</text><text x="988.0" y="226.0" class="bh-ok">3a. Não bộ đóng kín 'bên trong vòng tròn' (From</text><text x="988.0" y="244.5" class="bh-ok">Inside the Circle)</text><text x="988.0" y="271.0" class="body">• Bộ não đóng kín trong hộp sọ tự phát các chuỗi quỹ</text><text x="988.0" y="288.5" class="body">đạo tập hợp nơ-ron nội sinh (sequential cell assembly</text><text x="988.0" y="306.0" class="body">trajectories) theo phân phối log-normal.</text><text x="988.0" y="329.5" class="body">• Xung thần kinh tự thân ban đầu chưa mang nghĩa cho</text><text x="988.0" y="347.0" class="body">đến khi hệ vận động chủ động thăm dò môi trường.</text><rect x="972.0" y="383.5" width="398.0" height="207.0" rx="12" class="b-accent"/><text x="988.0" y="406.5" class="tag-accent">CƠ CHẾ NEO NGHĨA QUA HÀNH ĐỘNG</text><text x="988.0" y="427.5" class="bh-accent">3b. Hành động chủ động &amp; Phóng điện hệ quả</text><text x="988.0" y="446.0" class="bh-accent">(Corollary Discharge)</text><text x="988.0" y="472.5" class="body">• Trung tâm vận động phát lệnh điều khiển cơ thể,</text><text x="988.0" y="490.0" class="body">đồng thời gửi bản sao lệnh (phóng điện hệ quả ·</text><text x="988.0" y="507.5" class="body">corollary discharge) quay về các vùng cảm giác.</text><text x="988.0" y="531.0" class="body">• Não bộ đối chiếu dự báo nội sinh với phản hồi giác</text><text x="988.0" y="548.5" class="body">quan để hiệu chuẩn khoảng cách, vận tốc và trình tự</text><text x="988.0" y="566.0" class="body">sự kiện.</text><rect x="972.0" y="602.5" width="398.0" height="226.5" rx="12" class="b-ok"/><text x="988.0" y="625.5" class="tag-ok">ĐỒNG QUY VẬT LÝ LƯỢNG TỬ (ROVELLI 2016; 2026 LESSONS 2-3)</text><text x="988.0" y="646.5" class="bh-ok">3c. Mạng lưới quan hệ kề cận (Adjacencies) &amp;</text><text x="988.0" y="665.0" class="bh-ok">Chuỗi 'What'</text><text x="988.0" y="691.5" class="body">• Không gian quy về mạng lưới các mối quan hệ kề cận</text><text x="988.0" y="709.0" class="body">(adjacencies); thời gian quy về tương quan biến thiên</text><text x="988.0" y="726.5" class="body">giữa các quá trình vật lý (Rovelli 2016 tr. 250; 2026).</text><line x1="988.0" y1="782.0" x2="1354.0" y2="782.0" class="div-line"/><text x="988.0" y="798.0" class="motto">Ký ức sự kiện là chuỗi có thứ tự của các 'Cái gì'</text><text x="988.0" y="814.5" class="motto">(ordered sequence of Whats).</text><line x1="466.0" y1="370.6" x2="493.0" y2="370.6" class="bad-dash" marker-end="url(#arr-warn)"/><line x1="466.0" y1="612.4" x2="493.0" y2="612.4" class="bad-dash" marker-end="url(#arr-warn)"/><line x1="927.0" y1="370.6" x2="954.0" y2="370.6" class="ok-line" marker-end="url(#arr-ok)"/><line x1="927.0" y1="612.4" x2="954.0" y2="612.4" class="accent-line" marker-end="url(#arr-accent)"/><text x="36.0" y="873.0" class="src">Quy ước màu &amp; nét: Đỏ = Giả định Outside-In; Vàng/Xanh dương = Bằng chứng sinh học &amp; nhân học; Xanh lá/Cam = Cơ chế Inside-Out. Nét đứt = Giả định áp đặt bị chất vấn; Nét liền = Nhân quả thực nghiệm.</text><line x1="36.0" y1="885.0" x2="1384.0" y2="885.0" class="div-line"/><text x="710.0" y="907.0" class="cap" text-anchor="middle">Kết luận: Không gian và thời gian trừu tượng là công cụ đo lường do văn hóa ngoại hóa qua thước đo và đồng hồ, còn não bộ chỉ tính toán chuỗi sự kiện và tốc độ biến thiên.</text></svg>

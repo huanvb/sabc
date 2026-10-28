@@ -1,0 +1,2118 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bộ não không có giác quan đo không gian hay thời gian: Cơ chế sinh chuỗi nơ-ron và Trải nghiệm Cái "Bây giờ" (2019–2026)</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cstyle%3E.r%7Bstroke:%2300ADEF%7D.c%7Bfill:%23FFB703%7D@media (prefers-color-scheme:light)%7B.r%7Bstroke:%230066B3%7D.c%7Bfill:%23F59E0B%7D%7D%3C/style%3E%3Cpath class='r' d='M12.5 3.5L2.5 16l10 12.5M19.5 3.5L29.5 16l-10 12.5' fill='none' stroke-width='4.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpolygon class='c' points='16,9.5 22.5,16 16,22.5 9.5,16'/%3E%3C/svg%3E">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap">
+<style>
+:root {
+  --paper: #f5f7f6;
+  --sheet: #ffffff;
+  --sheet-alt: #f0f4f2;
+  --ink: #182220;
+  --muted: #52605c;
+  --rule: #d5deda;
+  --accent: #1d5c73;
+  --accent-soft: #e1eef2;
+  --ok: #1e6f50;
+  --ok-soft: #e2f3ec;
+  --warn: #94620a;
+  --warn-soft: #f9eed8;
+  --bad: #9e2a2b;
+  --bad-soft: #f9e5e5;
+  --info: #28558a;
+  --info-soft: #e3ecf7;
+  --code-bg: #ecf1ef;
+  --font-display: "Source Serif 4", "Noto Serif", Georgia, serif;
+  --font-body: "Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --step--1: 0.875rem;
+  --step-0: 1rem;
+  --step-1: 1.15rem;
+  --step-2: 1.38rem;
+  --step-3: 1.72rem;
+  --step-4: 2.15rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0f1514;
+    --sheet: #17201e;
+    --sheet-alt: #1e2926;
+    --ink: #e5ecea;
+    --muted: #96a7a2;
+    --rule: #2a3834;
+    --accent: #67bfd8;
+    --accent-soft: #1a333b;
+    --ok: #5cd6a5;
+    --ok-soft: #18352a;
+    --warn: #f0b44c;
+    --warn-soft: #362a15;
+    --bad: #f2797a;
+    --bad-soft: #381d1e;
+    --info: #7ab3ef;
+    --info-soft: #1b2c40;
+    --code-bg: #1e2826;
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper: #0f1514;
+  --sheet: #17201e;
+  --sheet-alt: #1e2926;
+  --ink: #e5ecea;
+  --muted: #96a7a2;
+  --rule: #2a3834;
+  --accent: #67bfd8;
+  --accent-soft: #1a333b;
+  --ok: #5cd6a5;
+  --ok-soft: #18352a;
+  --warn: #f0b44c;
+  --warn-soft: #362a15;
+  --bad: #f2797a;
+  --bad-soft: #381d1e;
+  --info: #7ab3ef;
+  --info-soft: #1b2c40;
+  --code-bg: #1e2826;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.72;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+.shell {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  display: grid;
+  grid-template-columns: 270px minmax(0, 82ch);
+  gap: 2.8rem;
+  align-items: start;
+}
+
+header.masthead {
+  grid-column: 1 / -1;
+  background: var(--sheet);
+  border: 1px solid var(--rule);
+  border-top: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 1.8rem 2rem;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--accent);
+  margin: 0 0 0.55rem;
+  font-weight: 600;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.7vw, var(--step-4));
+  line-height: 1.24;
+  margin: 0 0 0.9rem;
+  font-weight: 700;
+}
+
+.sapo {
+  font-size: var(--step-1);
+  color: var(--ink);
+  margin: 0 0 1.1rem;
+  max-width: 78ch;
+}
+
+.meta-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.2rem;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--rule);
+  font-size: var(--step--1);
+  color: var(--muted);
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+button.btn-tool {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.38rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid var(--rule);
+  background: var(--sheet-alt);
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+button.btn-tool:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+button.btn-tool.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+aside.toc {
+  position: sticky;
+  top: 1.25rem;
+  background: var(--sheet);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  font-size: var(--step--1);
+  max-height: calc(100vh - 2.5rem);
+  overflow-y: auto;
+}
+aside.toc summary {
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+aside.toc ol {
+  margin: 0.4rem 0 0;
+  padding-left: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.38rem;
+}
+aside.toc a {
+  color: var(--muted);
+  text-decoration: none;
+  display: block;
+  padding: 0.15rem 0.3rem;
+  border-radius: 4px;
+  line-height: 1.38;
+}
+aside.toc a:hover, aside.toc a.active {
+  color: var(--accent);
+  background: var(--accent-soft);
+  font-weight: 600;
+}
+
+main.article {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+}
+
+section.card-sec {
+  background: var(--sheet);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 1.75rem 2rem;
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  line-height: 1.28;
+  margin: 0 0 0.85rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 2px solid var(--accent-soft);
+  color: var(--ink);
+}
+
+h3 {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  line-height: 1.34;
+  margin: 1.5rem 0 0.55rem;
+  color: var(--ink);
+}
+
+p { margin: 0 0 1rem; }
+ul, ol { margin: 0 0 1rem; padding-left: 1.35rem; }
+li { margin-bottom: 0.4rem; }
+a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 1.25rem;
+}
+.tier-card {
+  background: var(--sheet-alt);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 0.95rem 1.1rem;
+  font-size: 0.92rem;
+}
+.tier-card.ok { border-left-color: var(--ok); }
+.tier-card.warn { border-left-color: var(--warn); }
+.tier-card.bad { border-left-color: var(--bad); }
+.tier-card strong.title {
+  display: block;
+  font-size: 0.98rem;
+  margin-bottom: 0.35rem;
+  color: var(--ink);
+}
+
+.callout {
+  background: var(--accent-soft);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 0.95rem 1.2rem;
+  margin: 1rem 0 1.2rem;
+  font-size: 0.95rem;
+}
+.callout.warn {
+  background: var(--warn-soft);
+  border-left-color: var(--warn);
+}
+.callout.ok {
+  background: var(--ok-soft);
+  border-left-color: var(--ok);
+}
+
+figure.diagram {
+  margin: 1.35rem 0;
+  background: var(--sheet-alt);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 0.9rem;
+  text-align: center;
+  position: relative;
+}
+figure.diagram img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto;
+  cursor: zoom-in;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+figure.diagram img:hover {
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.14);
+}
+.zoom-hint {
+  display: inline-block;
+  margin-top: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 0.15rem 0.55rem;
+  border-radius: 99px;
+  cursor: zoom-in;
+}
+figure.diagram figcaption {
+  margin-top: 0.55rem;
+  font-size: var(--step--1);
+  color: var(--muted);
+  text-align: left;
+  padding: 0 0.4rem;
+}
+
+/* Lightbox Modal for full-resolution SVG inspection */
+.lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(10, 16, 15, 0.88);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.lightbox-backdrop.open {
+  display: flex;
+}
+.lightbox-inner {
+  position: relative;
+  max-width: 96vw;
+  max-height: 92vh;
+  background: var(--sheet);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 1rem;
+  overflow: auto;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+}
+.lightbox-inner img {
+  display: block;
+  width: min(1420px, 92vw);
+  height: auto;
+  margin: 0 auto;
+}
+.lightbox-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.65rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+details.basis {
+  margin: 0.85rem 0 1.1rem;
+  background: var(--sheet-alt);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+}
+details.basis summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--accent);
+  user-select: none;
+}
+details.basis ul {
+  margin: 0.6rem 0 0.2rem;
+  padding-left: 1.2rem;
+}
+
+span.tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.73rem;
+  font-weight: 600;
+  padding: 0.1rem 0.42rem;
+  border-radius: 4px;
+  margin-right: 0.35rem;
+  vertical-align: baseline;
+}
+span.tag.src { background: var(--info-soft); color: var(--info); }
+span.tag.ext { background: var(--ok-soft); color: var(--ok); }
+span.tag.cnt { background: var(--warn-soft); color: var(--warn); }
+span.tag.lim { background: var(--bad-soft); color: var(--bad); }
+
+.formula-box {
+  font-family: var(--font-mono);
+  background: var(--code-bg);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 0.75rem 1.1rem;
+  margin: 0.85rem 0 1.1rem;
+  font-size: 0.93rem;
+  overflow-x: auto;
+}
+
+/* Interactive Simulation Lab Styles */
+.sim-lab {
+  margin: 1.5rem 0;
+  background: var(--sheet-alt);
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  padding: 1.25rem 1.35rem;
+}
+.sim-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--rule);
+}
+.sim-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+}
+.sim-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 0.2rem 0.55rem;
+  border-radius: 99px;
+  font-weight: 600;
+}
+.sim-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1rem;
+  align-items: center;
+  margin-bottom: 0.9rem;
+}
+.sim-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+}
+.sim-group label {
+  font-weight: 600;
+  color: var(--muted);
+}
+.sim-canvas-wrap {
+  background: var(--sheet);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 0.5rem;
+  overflow: hidden;
+}
+.sim-canvas-wrap canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.sim-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  gap: 0.65rem;
+  margin-top: 0.85rem;
+}
+.metric-box {
+  background: var(--sheet);
+  border: 1px solid var(--rule);
+  border-radius: 7px;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.82rem;
+}
+.metric-box .m-label {
+  color: var(--muted);
+  display: block;
+  font-size: 0.76rem;
+}
+.metric-box .m-val {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0 1.25rem;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+th, td {
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid var(--rule);
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  background: var(--sheet-alt);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+@media (max-width: 900px) {
+  .shell {
+    grid-template-columns: 1fr;
+    padding: 1rem 1rem 3rem;
+  }
+  aside.toc {
+    position: static;
+    max-height: none;
+  }
+  section.card-sec {
+    padding: 1.25rem 1.2rem;
+  }
+}
+</style>
+
+  <!-- Google Analytics 4 (GA4 · Stop. Ask. Begin.) -->
+  <script>
+    window.GA_MEASUREMENT_ID = "G-16MPNM0F18";
+    if (window.GA_MEASUREMENT_ID && window.GA_MEASUREMENT_ID.startsWith("G-")) {
+      var s = document.createElement("script");
+      s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id=" + window.GA_MEASUREMENT_ID;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag("js", new Date());
+      gtag("config", window.GA_MEASUREMENT_ID);
+    }
+  </script>
+</head>
+<body>
+
+<div id="sabc-portal-bar" style="position:sticky;top:0;z-index:9999;background:rgba(28,28,30,0.94);backdrop-filter:blur(8px);color:#f7f4ee;padding:7px 20px;font-family:'Be Vietnam Pro','Segoe UI',system-ui,sans-serif;font-size:12.5px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid rgba(255,255,255,0.12)">
+  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+    <a href="../../#/" style="color:#fff;text-decoration:none;font-weight:800;letter-spacing:-0.2px"><span style="color:#ff6b7b">Stop.</span> <span style="color:#f5b041">Ask.</span> <span style="color:#58d68d">Begin.</span></a>
+    <span style="opacity:0.45">›</span>
+    <a href="../../#/ref/topics" style="color:#d7d2e9;text-decoration:none;font-weight:600">← Về cổng Chuyên đề</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px;font-size:12px">
+    <a href="index.html" style="color:#9ad1ea;text-decoration:none;font-weight:600">Trang tương tác chính</a>
+    <a href="../../#/index" style="color:#c2c2c7;text-decoration:none">Tra cứu Atlas</a>
+  </div>
+</div>
+
+<div class="shell">
+  <header class="masthead">
+    <p class="eyebrow">Chủ đề 5 · Khoa học thần kinh hệ thống · Vật lý học &amp; Hiện tượng học Thời gian (2019–2026)</p>
+    <h1>Bộ não không có giác quan đo không gian hay thời gian: Cơ chế sinh chuỗi nơ-ron tạo nên trải nghiệm cái "Bây giờ", các ảo giác co giãn thời gian và cuộc tranh luận khoa học 2019–2026</h1>
+    <p class="sapo">
+      Cơ thể con người có thụ thể cảm nhận photon ánh sáng ở võng mạc, sóng âm ở ốc tai và gia tốc ở tiền đình, nhưng hoàn toàn không có bất kỳ cơ quan thụ cảm nào để đo "không gian" hay "thời gian". Từ Chương 10 (<em>Space and Time in the Brain</em>) của György Buzsáki (2019) đến các thực nghiệm ghi điện cực nội sọ ở người và vật lý lượng tử quan hệ giai đoạn 2020–2026, bức tranh khoa học cho thấy: cảm giác về cái "Bây giờ kéo dài" và khả năng du hành tâm trí được kiến tạo từ các <strong>chuỗi quỹ đạo tập hợp nơ-ron nội sinh</strong> kết hợp với nhịp điệu Cơ thể – Não bộ, trong khi "không gian" và "thời gian" trừu tượng là công cụ đo lường do văn hóa loài người ngoại hóa qua thước đo và đồng hồ.
+    </p>
+    <div class="meta-bar">
+      <span><strong>Đối chiếu nguồn:</strong> Toàn văn cục bộ Buzsáki (2019 Ch. 10), Al-Khalili (09/2026 Ch. 1–3), Rovelli (09/2026), Griffiths (02/2026) &amp; 32 bài báo chuyên ngành có DOI (2015–2026) · Kiểm chứng: <code>29/10/2026</code></span>
+      <div class="toolbar">
+        <button type="button" class="btn-tool" id="btn-theme">Chuyển Sáng / Tối</button>
+        <button type="button" class="btn-tool" id="btn-open-all">Mở toàn bộ căn cứ</button>
+        <button type="button" class="btn-tool" id="btn-close-all">Thu gọn căn cứ</button>
+      </div>
+    </div>
+  </header>
+
+  <aside class="toc">
+    <details id="toc-details" open>
+      <summary>Mục lục &amp; Phòng thí nghiệm</summary>
+      <ol>
+        <li><a href="#mo-dau">Mở đầu: Ba tầng của bài toán Không – Thời gian</a></li>
+        <li><a href="#phan-1">1. Phá vỡ cái bẫy "Từ ngoài vào trong" (Outside-In)</a></li>
+        <li><a href="#phan-2">2. Giải phẫu trải nghiệm cá nhân &amp; 4 cơ chế bóp méo thời gian</a></li>
+        <li><a href="#sim-warping">↳ [Mô phỏng 1] Lab Co giãn Không – Thời gian Chủ quan</a></li>
+        <li><a href="#phan-3">3. Bảng đồng hồ xe Lotus Elise &amp; Thủ thư Hồi hải mã</a></li>
+        <li><a href="#sim-lotus-ca1">↳ [Mô phỏng 2] Xe Lotus Elise &amp; Bộ sinh chuỗi CA1</a></li>
+        <li><a href="#sim-librarian">↳ [Mô phỏng 3] Thủ thư Hồi hải mã &amp; 11 Sự kiện</a></li>
+        <li><a href="#phan-4">4. Tranh luận thực nghiệm 2018–2026 khi cơ thể bất động (v = 0)</a></li>
+        <li><a href="#phan-5">5. Bốn giới hạn triết học &amp; sinh lý học giúp hiệu chỉnh thuyết Inside-Out</a></li>
+        <li><a href="#phan-6">6. Ma trận đối chiếu 2026, Hàm ý thực hành &amp; Nguồn tham khảo</a></li>
+      </ol>
+    </details>
+  </aside>
+
+  <main class="article">
+
+    <!-- ============ MỞ ĐẦU ============ -->
+    <section class="card-sec" id="mo-dau">
+      <h2>Mở đầu: Chương 10 của György Buzsáki giải quyết đồng thời hiện tượng học cá nhân lẫn cơ chế vi mạch của bộ não</h2>
+      <p>
+        Khi đọc Chương 10 (<em>Space and Time in the Brain</em>, tr. 241–278 sách / tr. 260–297 PDF) trong chuyên khảo <a href="#cite" onclick="return false" title="Tài liệu nguồn trong kho lưu trữ: _OceanofPDF.com_The_Brain_from_Inside_Out_-_Gyorgy_Buzsaki.pdf"><em>The Brain from Inside Out</em></a> (Oxford University Press, 2019) và bài tổng quan cập nhật năm 2025/2026 trên <em>Nature Reviews Neuroscience</em> của György Buzsáki, độc giả thường băn khoăn liệu tác giả đang mô tả cảm nhận tâm lý cá nhân về thời gian và không gian hay chỉ bàn về cơ chế bắn xung của nơ-ron. Câu trả lời chuẩn xác đòi hỏi tách bạch <strong>ba tầng phân tích</strong> vốn thường bị trộn lẫn trong cả sách phổ biến khoa học lẫn thực nghiệm thần kinh học:
+      </p>
+
+      <div class="grid-3">
+        <div class="tier-card ok">
+          <strong class="title">Tầng 1 · Hiện tượng học cá nhân (Lived Space &amp; Time)</strong>
+          Trải nghiệm ngôi thứ nhất về cái "Bây giờ kéo dài" (~100 ms đến 3 giây), cảm giác thời gian trôi nhanh khi say sưa làm việc nhưng giãn dài khi gặp kích thích bất ngờ, sự bù trừ độ trễ dẫn truyền thần kinh và sự phụ thuộc của thời lượng chủ quan vào kích thước căn phòng.
+        </div>
+        <div class="tier-card">
+          <strong class="title">Tầng 2 · Cơ chế vi mạch nội sinh (Inside-Out Neural Syntax)</strong>
+          Não bộ không có "đồng hồ" hay "thước đo" chuyên biệt. Hồi hải mã và vỏ não chỉ tạo ra các <strong>chuỗi quỹ đạo tập hợp nơ-ron nối tiếp nhau</strong> (<em>sequential cell assembly trajectories</em>) khóa pha theo sóng <em>theta</em> (6–10 Hz), các cụm gợn sóng sắc nét (<em>Sharp-Wave Ripples / SPW-Rs</em>, 150–250 Hz) và nhịp điệu Cơ thể – Não bộ.
+        </div>
+        <div class="tier-card warn">
+          <strong class="title">Tầng 3 · Công cụ văn hóa ngoại hóa (Cultural Metric Instruments)</strong>
+          Khái niệm "không gian ba chiều rỗng" và "dòng thời gian tuyến tính" là sản phẩm do văn hóa loài người kiến tạo sau khi phát minh ra thước đo và đồng hồ, rồi chiếu ngược vào trong não (sai lầm <em>Outside-In</em>).
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Luận điểm xuyên suốt của bài toàn cảnh:</strong> Trải nghiệm cá nhân về thời gian và không gian là có thật về mặt tâm lý – sinh học, nhưng cơ chế tạo ra nó trong não bộ là <strong>bộ sinh chuỗi thứ tự sự kiện</strong> kết hợp với <strong>các cảm biến tốc độ biến thiên của cơ thể</strong>. Việc gán nhãn từng nơ-ron hồi hải mã thành "tế bào thời gian" (<em>time cells</em>) tách biệt với "tế bào vị trí" (<em>place cells</em>) là hệ quả của việc lấy chiếc đồng hồ và cây thước của người làm thí nghiệm áp đặt lên xung điện thần kinh.
+      </div>
+    </section>
+
+    <!-- ============ PHẦN 1 ============ -->
+    <section class="card-sec" id="phan-1">
+      <h2>1. Phá vỡ cái bẫy "Từ ngoài vào trong" (Outside-In): Không gian và thời gian trừu tượng là công cụ đo lường do văn hóa ngoại hóa</h2>
+      <p>
+        Trong hơn một thế kỷ, khoa học thần kinh nhận thức chịu sự chi phối của hai di sản tư tưởng phương Tây: vật lý học cổ điển của <strong>Isaac Newton</strong> (coi không gian là một chiếc hộp rỗng 3 chiều tĩnh tại và thời gian là một dòng chảy tuyến tính đồng đều, độc lập với vạn vật bên trong) và triết học tiên nghiệm của <strong>Immanuel Kant</strong> (coi không gian và thời gian là hai khung trực quan có sẵn trong tâm trí con người trước mọi trải nghiệm). Khi kết hợp với bảng mục lục cuốn <em>The Principles of Psychology</em> (1890) của William James và định nghĩa trí nhớ sự kiện (<em>episodic memory</em>) của Endel Tulving (1972) gồm ba thành phần <strong>Cái gì (<em>What</em>) · Ở đâu (<em>Where</em>) · Khi nào (<em>When</em>)</strong>, các nhà thần kinh học mặc nhiên đi tìm những vùng não chuyên "lưu trữ tọa độ không gian" và "đếm thời gian".
+      </p>
+
+      <figure class="diagram">
+        <img src="images/fig1_outside_in_vs_inside_out_khong_thoi_gian.svg" alt="So sánh khung Từ ngoài vào trong áp đặt hộp không-thời gian Newton với kiến trúc Từ trong ra ngoài của Buzsáki và Rovelli">
+        <span class="zoom-hint">🔍 Bấm vào sơ đồ để phóng to toàn màn hình</span>
+        <figcaption>Hình 1: Khung "Từ ngoài vào trong" (Outside-In, cột trái) biến công cụ đo lường nhân tạo thành các hộp chức năng giả định trong não; ngược lại, kiến trúc "Từ trong ra ngoài" (Inside-Out, cột phải) xuất phát từ chuỗi quỹ đạo nơ-ron nội sinh và hành động thăm dò để neo giữ ngữ nghĩa.</figcaption>
+      </figure>
+
+      <h3>1.1. Bằng chứng nhân học – ngôn ngữ: Con người sống được mà không cần khái niệm "thời gian" trừu tượng</h3>
+      <p>
+        Nếu khung tọa độ không gian lấy cơ thể làm gốc (trái – phải – trước – sau) và dòng thời gian tuyến tính là hai phạm trù sinh học bẩm sinh trong mọi bộ não người, mọi nền văn hóa phải chia sẻ chung cấu trúc này. Tuy nhiên, dữ liệu nhân học thực địa được Buzsáki dẫn tại tr. 244–245 cho thấy điều ngược lại:
+      </p>
+      <ul>
+        <li><strong>Bộ tộc Amondawa ở rừng Amazon (Sinha et al., 2011 · tr. 244):</strong> Ngôn ngữ Amondawa không có từ ngữ chỉ "thời gian" trừu tượng, không có từ chỉ "tháng" hay "năm". Người Amondawa không tính tuổi theo con số mà đổi tên gọi mỗi khi một cá nhân bước sang giai đoạn sống hoặc vị thế xã hội mới. Họ nhận biết trọn vẹn trình tự sự kiện trước – sau nhưng không hình dung "thời gian" như một dòng chảy độc lập bao trùm lên sự kiện.</li>
+        <li><strong>Các cộng đồng thổ dân nước Úc và người Kuuk Thaayorre ở bán đảo Cape York (Boroditsky; Levinson, 2003 · tr. 244–245):</strong> Ở tr. 244 (chú thích 10 dẫn Lera Boroditsky; nghiên cứu thực địa của Boroditsky &amp; Gaby 2010 tại cộng đồng Pormpuraaw / Kuuk Thaayorre), khi được yêu cầu sắp xếp các tấm ảnh theo trình tự lão hóa (từ cậu bé đến người đàn ông trưởng thành rồi cụ già), người bản địa luôn xếp theo hướng từ <strong>Đông sang Tây</strong> tùy theo hướng cơ thể đang đứng: nếu quay mặt về hướng Nam thì thời gian chảy từ trái sang phải; nếu quay mặt về hướng Bắc thì thời gian chảy từ phải sang trái. Ở tr. 244–245 (chú thích 12 dẫn Stephen Levinson, 2003), người <strong>Kuuk Thaayorre</strong> cũng định vị không gian quanh cơ thể hoàn toàn theo bốn hướng địa lý tuyệt đối: <em>"Có một con nhện trên tai phía Đông của bạn"</em> (<em>"There is a spider on your east ear"</em>).</li>
+        <li><strong>Người bản địa Wintu ở thung lũng Sacramento, California (Lee, 1950 · tr. 245) &amp; người Aymara ở dãy Andes (Núñez &amp; Sweetser, 2006; Al-Khalili, 2026, PDF tr. 68):</strong> Người Wintu gọi tên hai bên cơ thể theo địa hình môi trường ("phía bờ sông" hoặc "phía sườn núi") tùy theo hướng họ đang đi lên phía Bắc hay xuống phía Nam; còn người Aymara đặt <strong>quá khứ ở phía trước mặt</strong> (vì đã nhìn thấy và đã biết) và đặt <strong>tương lai ở sau lưng</strong> (vì chưa nhìn thấy được).</li>
+      </ul>
+
+      <h3>1.2. Sự đồng quy giữa Thần kinh học (Buzsáki) và Vật lý Lượng tử Quan hệ (Carlo Rovelli, 2016 &amp; 2026)</h3>
+      <p>
+        Tại Chương 10 (tr. 249–250, chú thích 25, 28, 30), Buzsáki dẫn trực tiếp cuốn <em>Reality Is Not What It Seems</em> (2016) của nhà vật lý lý thuyết <strong>Carlo Rovelli</strong> để chỉ ra rằng: ngay trong vật lý học hiện đại, chúng ta cũng không bao giờ đo được "không gian" hay "thời gian" tự thân. Thước đo chỉ so sánh chiều dài của một vật với một thanh chuẩn; đồng hồ chỉ đếm số chu kỳ dao động của con lắc cơ học hoặc bức xạ nguyên tử cesium-133 rồi so sánh tốc độ biến thiên của sự kiện A với sự kiện B.
+      </p>
+      <p>
+        Trong tác phẩm mới xuất bản <a href="#cite" onclick="return false" title="Tài liệu nguồn trong kho lưu trữ: ON_THE_EQUALITY_OF_ALL_THINGS_-_Carlo_Rovelli.epub"><em>On the Equality of All Things</em></a> (Scribner, 09/2026 · <em>Lesson Two: From Inside the Circle</em>, tr. 29–48 &amp; <em>Lesson Three: Spacetime Is a Quantum Process</em>, tr. 49–76), Rovelli tiếp tục mở rộng lập luận này tới cấp độ bản thể luận: cái mà ta gọi là "không gian" thực chất là <strong>mạng lưới các mối quan hệ kề cận (<em>network of adjacencies / contacts</em>)</strong> giữa các lượng tử trường hấp dẫn, và phương trình Wheeler–DeWitt của hấp dẫn lượng tử hoàn toàn không chứa biến thời gian ngoại tại <em>t</em>. Khi hai hệ quy chiếu này gặp nhau, trọng tâm của khoa học thần kinh chuyển dịch trực tiếp sang câu hỏi cơ chế: <em>Mạch thần kinh sắp xếp thứ tự các sự kiện và tốc độ thay đổi bằng cách nào?</em>
+      </p>
+
+      <details class="basis">
+        <summary>Căn cứ thực nghiệm &amp; đối chiếu nguồn (Phần 1)</summary>
+        <ul>
+          <li><span class="tag src">Nguồn</span> <strong>Buzsáki, G. (2019).</strong> <em>The Brain from Inside Out.</em> Oxford University Press, Ch. 10 (tr. 241–252 sách / tr. 260–271 PDF): Phân tích di sản Newton, Kant, James (1890), trích dẫn Rovelli (2016) tại chú thích 25, 28, 30 (tr. 249–250) và chỉ ra sự vắng mặt của thụ thể cảm giác cho không gian/thời gian.</li>
+          <li><span class="tag src">Nguồn</span> <strong>Sinha, C., Sinha, V. D. S., Zinken, J., &amp; Sampaio, W. (2011).</strong> When time is not space: The social and linguistic construction of time intervals and temporal event relations in an Amazonian culture. <em>Language and Cognition</em>, 3(1), 137–169; <strong>Levinson, S. C. (2003).</strong> <em>Space in Language and Cognition.</em> Cambridge University Press; <strong>Boroditsky, L., &amp; Gaby, A. (2010).</strong> Remembrances of times East. <em>Psychological Science</em>, 21(11), 1635–1639.</li>
+          <li><span class="tag ext">Mở rộng 2026</span> <strong>Rovelli, C. (09/2026).</strong> <em>On the Equality of All Things: Lessons on Physics and Philosophy.</em> Scribner, <em>Lesson Two</em> (tr. 29–48) &amp; <em>Lesson Three</em> (tr. 49–76): Không gian là mạng lưới các quan hệ tiếp xúc (<em>adjacencies</em>), thời gian vĩ mô là tương quan giữa các biến số quan sát được từng phần (<em>partial observables</em>).</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- ============ PHẦN 2 ============ -->
+    <section class="card-sec" id="phan-2">
+      <h2>2. Giải phẫu trải nghiệm cá nhân: Bốn cơ chế thần kinh làm co giãn, bù trừ độ trễ và đảo ngược không – thời gian chủ quan</h2>
+      <p>
+        Nếu đồng hồ cơ học được chế tạo để gõ nhịp bất biến trước mọi biến động của môi trường, thì trải nghiệm thời gian và không gian cá nhân của con người lại co giãn liên tục theo trạng thái sinh lý, cảm xúc, chuyển động nhãn cầu và tỷ lệ kích thước của môi trường xung quanh. Tại tr. 262–268 của Chương 10 (đặt đối xứng với Chương 3: <em>Psychological Time</em> trong cuốn <a href="#cite" onclick="return false" title="Tài liệu nguồn trong kho lưu trữ: _OceanofPDF.com_On_Time_The_Physics_That_Makes_the_Universe_Tick_-_Jim_Al-Khalili.pdf"><em>On Time</em></a> của Jim Al-Khalili, 09/2026, PDF tr. 67–83), Buzsáki lưu ý rằng các cơ chế ước lượng khoảng thời gian vận hành ở nhiều thang đo và biểu hiện tương đối độc lập ở các cấu trúc não khác nhau (<em>"interval timer mechanisms run at multiple scales and manifest relatively independently in different structures"</em>, tr. 265), thể hiện rõ qua bốn nhóm hiện tượng thực nghiệm:
+      </p>
+
+      <figure class="diagram">
+        <img src="images/fig2_co_che_co_gian_khong_thoi_gian_chu_quan.svg" alt="Bốn cơ chế thần kinh làm co giãn, bù trừ độ trễ và đảo ngược trình tự không - thời gian trong trải nghiệm cá nhân">
+        <span class="zoom-hint">🔍 Bấm vào sơ đồ để phóng to toàn màn hình</span>
+        <figcaption>Hình 2: Bốn cơ chế sinh lý thần kinh làm biến dạng không – thời gian chủ quan: (1) Nghịch lý cảm nhận trực tiếp vs. hồi tưởng và điều biến Dopamine, (2) Phóng điện hệ quả và hậu đoán (postdiction), (3) Nén không-thời gian khi đảo mắt (saccades), và (4) Sự phụ thuộc của thời gian chủ quan vào tỷ lệ thu nhỏ không gian (DeLong, 1981).</figcaption>
+      </figure>
+
+      <h3>2.1. Nghịch lý giữa "cảm nhận khoảnh khắc" (Feeling) với "nhớ lại khoảnh khắc" (Remembering) và vai trò của Dopamine</h3>
+      <p>
+        Trong các tình huống mới lạ đang diễn ra (<em>novel situations</em>, tr. 262) hoặc khi một diễn giả đang say sưa trình bày bài nói 30 phút và ngỡ ngàng khi người điều phối thông báo đã trôi qua 40 phút (tr. 263), toàn bộ sự chú ý dồn vào hành động khiến thời gian cảm nhận trực tiếp trôi cực nhanh, trong khi khán giả ngồi nghe thụ động cảm thấy từng phút lê thê. Tuy nhiên, khi <strong>hồi tưởng lại</strong> (<em>remembering the moment</em>, tr. 263), nghịch lý đảo chiều xuất hiện: một khoảng thời gian chứa dày đặc sự kiện mới lạ được ký ức đánh giá là dài hơn nhiều so với một khoảng thời gian lặp đi lặp lại đơn điệu.
+      </p>
+      <p>
+        Ngược lại với tình huống mới lạ kéo dài, một kích thích thị giác hoặc thính giác bất ngờ ngắn hạn (hiệu ứng <em>oddball</em> · Tse et al., 2004, tr. 266) lại làm thời lượng cảm nhận tức thời của chính kích thích đó giãn nở ra. Ở cấp độ chất dẫn truyền thần kinh, kích hoạt thoáng qua bằng quang di truyền các nơ-ron <strong>dopamine</strong> ở vùng trần bụng (VTA) và chất đen (<em>substantia nigra</em>) làm thay đổi trực tiếp phán đoán thời lượng trên chuột (Soares et al., 2016; Honma et al., 2016), trong khi bệnh nhân Parkinson bị thoái hóa đường dẫn dopamine thể vân thường ước lượng hụt các khoảng thời gian dài trên 10 giây (tại chú thích 61, tr. 262, Buzsáki cũng cảnh báo rằng mọi thao tác can thiệp lên hệ dopamine đều đồng thời tác động tới các mạch kiểm soát vận động lân cận).
+      </p>
+
+      <h3>2.2. Não bộ tự bù trừ độ trễ dẫn truyền và đảo ngược nhân quả qua "Phóng điện hệ quả" (Corollary Discharge &amp; Postdiction)</h3>
+      <p>
+        Tốc độ truyền xung điện dọc theo sợi trục thần kinh là hữu hạn. Khi bạn <strong>lấy ngón chân chạm vào chóp mũi</strong> (tr. 263), quãng đường dẫn truyền từ ngón chân qua tủy sống lên vỏ não cảm giác dài gấp nhiều lần quãng đường từ mũi vào não, nhưng bạn vẫn cảm nhận hai điểm chạm nhau <strong>đồng thời</strong> vì hệ vận động đã tự động hiệu chỉnh độ trễ.
+      </p>
+      <p>
+        Đáng chú ý hơn, não bộ thường xuyên <strong>đảo ngược thứ tự thời gian của nhân quả trong ý thức</strong> (tr. 264–265):
+      </p>
+      <ul>
+        <li><strong>Tình huống đạp phanh khi gặp nai phóng qua đầu xe (Buzsáki, 2019, tr. 264–265):</strong> Theo thực nghiệm của Benjamin Libet (1979, được Buzsáki dẫn ở chú thích 66, tr. 265), vỏ não cần tới khoảng <code>500 ms</code> hoạt động thần kinh để một hành động tự ý hoặc kích thích bước vào nhận thức có ý thức. Khi con nai bất ngờ nhảy ra đường cao tốc, các mạch phản xạ nhanh dưới vỏ đã điều khiển bàn chân đạp phanh <strong>trước khi</strong> vỏ não kịp có nhận thức có ý thức về con nai. Thế nhưng bản sao lệnh vận động (<strong>phóng điện hệ quả / <em>corollary discharge</em></strong>) gửi lên vỏ não kết hợp với cơ chế <strong>hậu đoán (<em>postdiction</em> · Eagleman &amp; Sejnowski, 2000)</strong> đã dựng lại câu chuyện chủ quan theo trình tự ngược lại: <em>"Tôi nhìn thấy con nai nên tôi mới quyết định đạp phanh"</em>.</li>
+        <li><strong>Ảo giác hành động đi sau kết quả khi thích nghi độ trễ nhấn phím (Eagleman et al., 2005; Yarrow et al., 2001; Grey Walter, 1963 · chú thích 64, tr. 264; xem thêm Stetson et al., 2006):</strong> Khi người làm thí nghiệm cài đặt một độ trễ cố định giữa lúc người tham gia nhấn nút và lúc hình ảnh/tia sáng hiện lên màn hình, não bộ nhanh chóng hiệu chỉnh để kéo hai sự kiện sát lại nhau (<em>intentional/temporal binding</em> · Al-Khalili, 2026, PDF tr. 74–75). Ngay khi người làm thí nghiệm bỏ độ trễ để tia sáng hiện lên tức thì lúc nhấn nút, người tham gia cảm thấy <strong>tia sáng đã xuất hiện trên màn hình trước khi ngón tay họ kịp nhấn nút</strong>.</li>
+        <li><strong>Nén 50% thời gian và đảo thứ tự khi mắt nhảy nhanh (Saccades · Morrone et al., 2005, tr. 264 &amp; 267):</strong> Trong mỗi cú đảo mắt nhanh, một kích thích thị giác kéo dài <code>100 ms</code> trên màn hình bị não cảm nhận ngắn chỉ bằng <code>50 ms</code> khi mắt đứng yên; không gian quanh mục tiêu nhìn cũng bị nén lại, và trong cửa sổ từ <code>-70 ms</code> đến <code>-30 ms</code> trước khi nhãn cầu nhúc nhích, thứ tự xuất hiện của hai tia sáng thường bị đảo ngược hoàn toàn do tín hiệu <em>corollary discharge</em> ở vùng đỉnh bên (LIP).</li>
+      </ul>
+
+      <h3>2.3. Thí nghiệm mô hình phòng thu nhỏ của Alton DeLong (1981): "Trải nghiệm thời gian chính là trải nghiệm không gian"</h3>
+      <p>
+        Bằng chứng trực quan cho thấy sự gắn kết giữa không gian và thời gian trong tâm trí con người đến từ thí nghiệm của giáo sư kiến trúc <strong>Alton J. DeLong</strong> (công bố trên tạp chí <em>Science</em> năm 1981, được Buzsáki phân tích tại tr. 266–267 và chú thích 71). DeLong yêu cầu người tham gia quan sát các mô hình phòng chờ được thu nhỏ theo tỷ lệ tuyến tính <code>s = 1/x ∈ {1/6, 1/12, 1/24}</code> (tức hệ số thu nhỏ không gian là <code>x ∈ {6, 12, 24}</code>), tưởng tượng một hình nhân tỷ lệ tương ứng đang sinh hoạt bên trong phòng đó, và báo hiệu khi họ cảm thấy <strong>30 phút chủ quan</strong> (<code>t_chủ_quan = 30 phút</code>) đã trôi qua.
+      </p>
+      <div class="formula-box">
+        • Công thức thực nghiệm DeLong (1981) tại Chú thích 71 (tr. 267):
+          E = x = 1 / s = t_chủ_quan / t_đồng_hồ   ⇒   t_đồng_hồ = t_chủ_quan / x   (với hệ số thu nhỏ x ∈ {1, 6, 12, 24})
+          – Phòng thật (1:1, x = 1):   30 phút chủ quan = 30,00 phút đồng hồ vật lý
+          – Mô hình 1/6 (x = 6):       30 phút chủ quan =  5,00 phút đồng hồ (theo E = x; ví dụ minh họa tr. 267 của Buzsáki giả định 10,0 phút)
+          – Mô hình 1/12 (x = 12):     30 phút chủ quan =  2,50 phút đồng hồ (theo E = x; ví dụ minh họa tỷ lệ 2:1 tr. 267 của Buzsáki là 5,0 phút)
+          – Mô hình 1/24 (x = 24):     30 phút chủ quan =  1,25 phút đồng hồ (theo E = x)
+      </div>
+      <p>
+        Tại chú thích 71 (tr. 267), Buzsáki nêu công thức <code>E = x</code> (tỷ số gia tốc thời gian trải nghiệm bằng đúng hệ số thu nhỏ không gian <code>x</code>), còn trong văn bản chính ở tr. 267 ông minh họa quy luật tỷ lệ 2:1 giữa mô hình <code>1/6</code> và <code>1/12</code> bằng câu điều kiện giả định (<em>"nếu một người trải nghiệm 30 phút ở tỷ lệ 1/6 trong 10 phút đồng hồ, thì 30 phút chủ quan ở mô hình 1/12 chỉ diễn ra trong 5 phút"</em>). Hãy trực tiếp kiểm nghiệm cả hai cơ chế này trong <strong>Phòng thí nghiệm tương tác số 1</strong> dưới đây:
+      </p>
+
+      <!-- ============ MÔ PHỎNG 1: WARPING LAB ============ -->
+      <div class="sim-lab" id="sim-warping">
+        <div class="sim-header">
+          <h4 class="sim-title">Mô phỏng 1 · Phòng thí nghiệm Co giãn Không – Thời gian &amp; Đảo ngược Nhân quả</h4>
+          <span class="sim-badge">HTML5 Canvas · DeLong (1981), Libet (1979), Eagleman (2005) &amp; Morrone (2005)</span>
+        </div>
+        <div class="sim-controls">
+          <div class="sim-group">
+            <label>Chế độ thí nghiệm:</label>
+            <button type="button" class="btn-tool active" data-wmode="delong">1A. Phòng kiến trúc thu nhỏ (DeLong 1981)</button>
+            <button type="button" class="btn-tool" data-wmode="deer">1B. Đạp phanh gặp nai (Libet 500 ms &amp; Postdiction)</button>
+            <button type="button" class="btn-tool" data-wmode="saccade">1C. Thích nghi nhấn phím &amp; Nén khi đảo mắt (Eagleman · Morrone)</button>
+          </div>
+          <div class="sim-group" id="delong-controls">
+            <label>Hệ số thu nhỏ không gian (x):</label>
+            <button type="button" class="btn-tool" data-scale="1">1:1 (x = 1)</button>
+            <button type="button" class="btn-tool" data-scale="6">1:6 (x = 6)</button>
+            <button type="button" class="btn-tool active" data-scale="12">1:12 (x = 12)</button>
+            <button type="button" class="btn-tool" data-scale="24">1:24 (x = 24)</button>
+            <button type="button" class="btn-tool" id="btn-w-reset">Đặt lại đồng hồ</button>
+          </div>
+          <div class="sim-group" id="deer-controls" style="display:none;">
+            <button type="button" class="btn-tool active" id="btn-trigger-event">Kích hoạt sự kiện (Chạy lại xung thần kinh)</button>
+          </div>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="canvas-warping" width="920" height="330" aria-label="Mô phỏng tương tác ba chế độ: (1A) Quy luật DeLong E = x trong mô hình phòng thu nhỏ 1:1, 1:6, 1:12, 1:24; (1B) Phản xạ đạp phanh khi gặp nai qua đường trước ngưỡng nhận thức 500 ms của Libet và cơ chế hậu đoán; (1C) Thích nghi độ trễ nhấn phím của Eagleman và nén 50% thời gian từ 100 ms xuống 50 ms khi đảo mắt của Morrone."></canvas>
+        </div>
+        <div class="sim-metrics">
+          <div class="metric-box">
+            <span class="m-label" id="wm-label-1">Hệ số thu nhỏ không gian (x)</span>
+            <span class="m-val" id="wm-val-1">x = 12 (Tỷ lệ phòng s = 1/12)</span>
+          </div>
+          <div class="metric-box">
+            <span class="m-label" id="wm-label-2">Thời gian Đồng hồ (t_đồng_hồ = 30/x)</span>
+            <span class="m-val" id="wm-val-2">2,50 phút (Ví dụ tr. 267: 5,00p)</span>
+          </div>
+          <div class="metric-box">
+            <span class="m-label" id="wm-label-3">Trải nghiệm Chủ quan (t_chủ_quan = x · t)</span>
+            <span class="m-val" id="wm-val-3">30,00 phút chủ quan (E = x)</span>
+          </div>
+          <div class="metric-box">
+            <span class="m-label" id="wm-label-4">Quy luật DeLong (Science, 1981)</span>
+            <span class="m-val" id="wm-val-4">E = x = t_chủ_quan / t_đồng_hồ</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="basis">
+        <summary>Căn cứ thực nghiệm &amp; đối chiếu nguồn (Phần 2)</summary>
+        <ul>
+          <li><span class="tag src">Nguồn</span> <strong>DeLong, A. J. (1981).</strong> Phenomenological space-time: Toward an experiential relativity. <em>Science</em>, 213(4508), 681–683 (<a href="https://doi.org/10.1126/science.7256273">DOI: 10.1126/science.7256273</a>); được Buzsáki phân tích tại tr. 266–267 và chú thích 71 (<code>E = x</code>).</li>
+          <li><span class="tag src">Nguồn</span> <strong>Libet, B., Wright, E. W., Feinstein, B., &amp; Pearl, D. K. (1979).</strong> Subjective referral of the timing for a conscious sensory experience. <em>Brain</em>, 102(1), 193–224 (chú thích 66, tr. 265); <strong>Eagleman, D. M., &amp; Sejnowski, T. J. (2000).</strong> <em>Science</em>, 287(5460), 2036–2038; <strong>Morrone, M. C., Ross, J., &amp; Burr, D. (2005).</strong> Saccadic eye movements cause compression of time as well as space. <em>Nature Neuroscience</em>, 8(7), 950–954 (tr. 264).</li>
+          <li><span class="tag src">Nguồn</span> <strong>Soares, S., Atallah, B. V., &amp; Paton, J. J. (2016).</strong> Midbrain dopamine neurons control judgment of time. <em>Science</em>, 354(6317), 1273–1277; <strong>Honma, M., et al. (2016).</strong> <em>Scientific Reports</em>, 6, 25421 (chú thích 61, tr. 262).</li>
+          <li><span class="tag ext">Đối chiếu 2026</span> <strong>Al-Khalili, J. (09/2026).</strong> <em>On Time: The Physics That Makes the Universe Tick.</em> Princeton University Press, Ch. 3 (<em>Psychological Time</em>, tr. 56–72 sách / PDF tr. 67–83): Trình bày hiện tượng <em>Temporal Binding</em> và cửa sổ tích hợp cái "Bây giờ".</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- ============ PHẦN 3 ============ -->
+    <section class="card-sec" id="phan-3">
+      <h2>3. Bảng đồng hồ chiếc xe Lotus Elise, phương trình d = v · t và Thủ thư Hồi hải mã</h2>
+      <p>
+        Từ thập niên 1970, khoa học thần kinh hệ thống phân chia bản đồ không gian trong não thành hai nhánh lớn:
+      </p>
+      <ol>
+        <li><strong>Vỏ não đỉnh sau (<em>Posterior Parietal Cortex</em> · Hệ tọa độ lấy cơ thể làm gốc / <em>Egocentric</em>):</strong> Tính toán vị trí sự vật theo góc nhìn của mắt, đầu và tầm tay với. Tổn thương vùng đỉnh sau bên phải gây ra hội chứng <strong>bỏ quên nửa không gian bên trái (<em>hemineglect</em>)</strong> cả khi nhìn trực tiếp lẫn khi tưởng tượng trong tâm trí. Trong ca bệnh nổi tiếng tại Milan do Edoardo Bisiach và Claudio Luzzatti công bố năm 1978 (được Buzsáki dẫn tại tr. 254; bài báo gốc khảo sát 2 bệnh nhân), khi người bệnh nhắm mắt tưởng tượng mình đang đứng trước cổng Nhà thờ chính tòa nhìn ra Quảng trường Duomo, bệnh nhân chỉ kể được các tòa nhà nằm bên tay phải và bỏ sót dãy nhà bên trái. Ngay sau đó, khi được yêu cầu tưởng tượng mình đứng ở đầu đối diện của quảng trường và quay mặt nhìn lại phía Nhà thờ, bệnh nhân lại mô tả đúng các tòa nhà trước đó bị bỏ quên (vì nay chúng đã nằm ở phía bên phải trong tâm trí) và bỏ quên chính những tòa nhà vừa mới kể!</li>
+        <li><strong>Hệ hồi hải mã – vỏ não nội khứu (<em>Hippocampal–Entorhinal System</em> · Hệ tọa độ lấy môi trường làm gốc / <em>Allocentric</em>):</strong> Nơi John O'Keefe phát hiện <strong>tế bào vị trí (<em>place cells</em>, 1971/1978)</strong> và Edvard cùng May-Britt Moser phát hiện <strong>tế bào lưới (<em>grid cells</em>, 2005)</strong> (Giải Nobel Y sinh học 2014).</li>
+      </ol>
+
+      <h3>3.1. Các "Tế bào Thời gian" (Time Cells) trên máy chạy bộ là hệ quả trực tiếp của phương trình d = v · t</h3>
+      <p>
+        Để kiểm tra xem hồi hải mã có lưu trữ chiều thời gian ("Khi nào" / <em>When</em>) bên cạnh chiều không gian ("Ở đâu" / <em>Where</em>) hay không, nhóm nghiên cứu của György Buzsáki (Pastalkova et al., 2008) và Howard Eichenbaum (MacDonald et al., 2011; Eichenbaum, 2014) đã cho chuột chạy trên <strong>bánh xe chạy hoặc máy chạy bộ tại chỗ (<em>treadmill</em>)</strong> ở giữa hai nhánh mê cung. Mặc dù vị trí tọa độ của con chuột trong căn phòng được giữ cố định, các tập hợp nơ-ron vùng CA1 hồi hải mã vẫn bắn xung nối tiếp nhau từng giây một. Eichenbaum đặt tên cho chúng là <strong>"tế bào thời gian" (<em>time cells</em>)</strong>, và khái niệm này nhanh chóng lan truyền sang các sách phổ biến khoa học (chẳng hạn Chương 3 cuốn <em>On Time</em> của Jim Al-Khalili, 09/2026, PDF tr. 76 mô tả não có các <em>"time cells"</em> riêng biệt với <em>"space cells"</em> để ghi nhớ giai điệu âm nhạc và sự kiện).
+      </p>
+      <p>
+        Tuy nhiên, khi Benjamin Kraus cùng nhóm của Eichenbaum và Hasselmo (2015) thay đổi tốc độ băng chuyền của máy chạy bộ để tách thời gian khỏi quãng đường bước chạy, họ nhận thấy đại đa số nơ-ron hồi hải mã và tế bào lưới đều phản ứng với cả hai biến số. Buzsáki chỉ ra nguyên nhân vật lý cốt lõi: trong mọi chuyển động cơ học hay sinh học, <strong>quãng đường (<em>d</em>) và thời lượng (<em>t</em>) luôn khóa chặt với nhau qua vận tốc (<em>v</em>)</strong>:
+      </p>
+      <div class="formula-box">
+        d = v · t     ⇔     t = d / v     (với tần số dao động của nơ-ron hồi hải mã biến thiên tuyến tính theo vận tốc v · Geisler et al., 2007)
+      </div>
+      <p>
+        Để làm rõ điểm này, Buzsáki đưa ra <strong>ẩn dụ bảng đồng hồ chiếc xe thể thao Lotus Elise</strong> của ông (tr. 269–271): trên bảng điều khiển có đồng hồ đo quãng đường (<em>odometer</em>), đồng hồ tốc độ (<em>speedometer</em>) và đồng hồ giờ (<em>clock</em>). Nhưng bên dưới nắp ca-pô, động cơ xe chỉ thực hiện một quá trình cơ học duy nhất là <strong>pít-tông chuyển động lên xuống trong xi-lanh</strong> (chuyến đi từ nhà ông đến phòng thí nghiệm tốn khoảng <code>1,5 triệu nhịp pít-tông</code>). Nhân số nhịp pít-tông với chu vi bánh xe và đối chiếu với cây thước thì ta gọi là "quãng đường"; chia cho tốc độ trung bình và đối chiếu với đồng hồ thì ta gọi là "thời lượng". Tương tự, tại tr. 269 Buzsáki nêu rõ điều kiện rào chắn: <em>"Trừ phi chứng minh được sự tồn tại của các cơ chế đọc tín hiệu hạ lưu tách biệt (separate downstream reader mechanisms) có khả năng trích xuất độc lập thông tin quãng đường và thời lượng từ các chuỗi tập hợp nơ-ron, chúng ta buộc phải kết luận rằng các nơ-ron hồi hải mã chẳng phải tế bào vị trí mà cũng chẳng phải tế bào thời gian."</em>
+      </p>
+
+      <!-- ============ MÔ PHỎNG 2: LOTUS ELISE & CA1 SEQUENCE GENERATOR ============ -->
+      <div class="sim-lab" id="sim-lotus-ca1">
+        <div class="sim-header">
+          <h4 class="sim-title">Mô phỏng 2 · Bảng điều khiển Lotus Elise &amp; Bộ sinh chuỗi Hồi hải mã CA1 (d = v · t vs. Mô hình Laplace khi v = 0)</h4>
+          <span class="sim-badge">HTML5 Canvas · Kraus et al. (2015), Buzsáki (2019 tr. 269–271) &amp; Cao/Howard (2022)</span>
+        </div>
+        <div class="sim-controls">
+          <div class="sim-group">
+            <label>Bối cảnh thực nghiệm:</label>
+            <button type="button" class="btn-tool active" data-cmode="track">2A. Chạy hành lang (Free Run · v &gt; 0)</button>
+            <button type="button" class="btn-tool" data-cmode="treadmill">2B. Chạy máy tại chỗ (Treadmill · v &gt; 0)</button>
+            <button type="button" class="btn-tool" data-cmode="immobile">2C. Bất động chờ 10s (v = 0 · Mô hình Laplace Howard)</button>
+          </div>
+          <div class="sim-group">
+            <label>Lăng kính người quan sát:</label>
+            <button type="button" class="btn-tool active" data-clens="theta">Nội tại: Chuỗi pha sóng Theta (Sequence)</button>
+            <button type="button" class="btn-tool" data-clens="space">Chiếu lên Thước (Place Cells · d [cm])</button>
+            <button type="button" class="btn-tool" data-clens="time">Chiếu lên Đồng hồ (Time Cells · t = d/v [s])</button>
+          </div>
+          <div class="sim-group" id="speed-control-group">
+            <label for="slider-velocity">Vận tốc chạy (v):</label>
+            <input type="range" id="slider-velocity" min="10" max="50" step="5" value="25">
+            <span id="label-velocity" style="font-family:var(--font-mono);font-weight:600;">25 cm/s</span>
+          </div>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="canvas-lotus" width="920" height="350" aria-label="Mô phỏng tương tác bảng điều khiển xe Lotus Elise (1,5 triệu nhịp pít-tông) và 7 tập hợp nơ-ron vùng CA1 hồi hải mã (A đến G): khi chạy với vận tốc v &gt; 0, cả ba lăng kính đều giữ nguyên cùng một chuỗi đỉnh xung tuyến tính và chỉ đổi đơn vị trục hoành giữa pha Theta, quãng đường d (cm) và thời lượng t = d/v (giây); khi chuyển sang chế độ 2C bất động (v = 0), hiển thị mô hình biến đổi Laplace LEC sang CA1 nén theo hàm log(t)."></canvas>
+        </div>
+        <div class="sim-metrics">
+          <div class="metric-box">
+            <span class="m-label">Vận tốc &amp; Tần số sóng Theta</span>
+            <span class="m-val" id="cm-val-1">v = 25 cm/s · f_θ = 8,2 Hz</span>
+          </div>
+          <div class="metric-box">
+            <span class="m-label">Bộ đếm Pít-tông Nội sinh</span>
+            <span class="m-val" id="cm-val-2">Chuỗi A → G (Thang 1,50 triệu nhịp)</span>
+          </div>
+          <div class="metric-box">
+            <span class="m-label">Diễn giải theo Lăng kính</span>
+            <span class="m-val" id="cm-val-3">Cùng 1 chuỗi xung · Chỉ đổi thước đo trục X</span>
+          </div>
+          <div class="metric-box">
+            <span class="m-label">Đầu vào Vỏ não Nội khứu</span>
+            <span class="m-val" id="cm-val-4">MEC dao động tuyến tính theo v</span>
+          </div>
+        </div>
+      </div>
+
+      <h3>3.2. Thí nghiệm đi dạo khuôn viên đại học (Dede et al., 2016): Hồi hải mã là "Thủ thư giữ mục lục thứ tự"</h3>
+      <p>
+        Nếu hồi hải mã không phải là chiếc hộp lưu trữ không gian hay chiếc đồng hồ đếm thời gian riêng rẽ, chức năng cốt lõi của nó là gì? Tại tr. 272–275, Buzsáki dẫn thí nghiệm của <strong>Adam J. O. Dede, Larry R. Squire và cộng sự (2016)</strong> tại Đại học California, San Diego. Nhóm nghiên cứu dẫn các bệnh nhân bị tổn thương hồi hải mã nặng và nhóm người khỏe mạnh đi dạo qua <strong>11 sự kiện được dàn dựng sẵn</strong> trong khuôn viên trường (ở tr. 272, Buzsáki nêu đích danh 5 sự kiện mẫu: <em>vứt chiếc cốc, khóa xe đạp, mua chuối, nhặt đồng xu rơi, uống nước tại vòi...</em>).
+      </p>
+      <p>
+        Kết quả kiểm tra sau chuyến đi (tr. 273 &amp; Hình 10.2) cho thấy một sự phân tách chức năng sắc nét: ngay sau chuyến đi, bệnh nhân tổn thương hồi hải mã thực hiện kém hơn nhóm đối chứng ở hầu hết các bài kiểm tra; tuy nhiên <strong>số lượng sự kiện họ nhớ được và khả năng ước lượng thời lượng chuyến đi tương đương với nhóm người khỏe mạnh được hỏi lại sau một tháng</strong>, và họ vẫn nhớ được nhiều chi tiết không gian – tri giác cụ thể (<em>"chiếc xe đạp có gắn đèn ở phía trước"</em>). <strong>Sự sụp đổ đặc hiệu nằm ở thứ tự trước – sau của chuỗi sự kiện</strong>: trong khi người khỏe mạnh (cả ngay sau chuyến đi lẫn sau 1 tháng) đều kể lại 11 sự kiện bám sát trình tự diễn ra thực tế, thứ tự kể lại của bệnh nhân tổn thương hồi hải mã hoàn toàn không liên quan đến trình tự gốc (<em>"unrelated to the order in which they occurred"</em>, tr. 273).
+      </p>
+      <p>
+        Từ đó, Buzsáki đề xuất kiến trúc <strong>Thư viện Tân vỏ não và Thủ thư Hồi hải mã</strong> (mở rộng từ lý thuyết chỉ mục của Teyler &amp; DiScenna, 1986; Friston &amp; Buzsáki, 2016; Buzsáki &amp; Tingley, 2018):
+      </p>
+      <ul>
+        <li><strong>Tân vỏ não (<em>Neocortex</em>) là Thư viện khổng lồ:</strong> Chứa toàn bộ nội dung ngữ nghĩa, hình ảnh, âm thanh và cảm giác chi tiết của từng sự kiện (các tập sách <em>"Cái gì" / What</em>).</li>
+        <li><strong>Hồi hải mã (<em>Hippocampus</em>) là Người thủ thư giữ chuỗi con trỏ (<em>Multiplexed Pointer Generator</em>):</strong> Không lưu trữ lại nội dung chi tiết của cuốn sách, mà dùng chuỗi sóng <em>theta</em> (đóng gói <code>7 ± 2</code> tiểu tập hợp gamma mỗi chu kỳ ~125 ms) và các cụm <strong>gợn sóng sắc nét (<em>Sharp-Wave Ripples / SPW-Rs</em>, 150–250 Hz)</strong> nén chuỗi sự kiện nhanh gấp 10–20 lần để nối các con trỏ theo đúng thứ tự <code>Sự kiện 1 → Sự kiện 2 → ... → Sự kiện 11</code>. Trí nhớ sự kiện (<em>episodic memory</em>) thực chất là <strong>một chuỗi có thứ tự của các "Cái gì" (<em>an ordered sequence of "whats"</em>, tr. 274)</strong>.</li>
+        <li><strong>Sự thống nhất giữa Hồi tưởng Quá khứ (<em>Replay</em>) và Dự phóng Tương lai (<em>Preplay / Memory for the Future</em>):</strong> Cùng một bộ sinh chuỗi con trỏ đó khi chạy xuôi/ngược trên các dấu vết đã học sẽ tạo ra ký ức quá khứ, và khi ghép thử các chặng đường tiếp theo ở ngã ba mê cung sẽ tạo ra khả năng hình dung tương lai (giải thích vì sao bệnh nhân tổn thương hồi hải mã hai bên vừa mất khả năng nhớ lại quá khứ vừa mất khả năng tưởng tượng tương lai cá nhân · Atance &amp; O'Neill, 2001; Hassabis et al., 2007).</li>
+      </ul>
+
+      <h3>3.3. Ranh giới tự giới hạn của chính Buzsáki: "Có hay không có Không gian và Thời gian?" (With or Without Space and Time?, tr. 275–278)</h3>
+      <p>
+        Ở tiểu mục kết thúc Chương 10 (<em>"With or Without Space and Time?"</em>, tr. 275–278), Buzsáki chủ động đặt ra giới hạn cho lập luận của chính mình để tránh sự hiểu lầm cực đoan. Ông khẳng định rõ: <strong>ông không đề nghị giới khoa học thần kinh vứt bỏ khái niệm không gian và thời gian hay ngừng sử dụng thước đo và đồng hồ trong phòng thí nghiệm</strong> (<em>"I am not suggesting that neuroscience researchers dispense with the concepts of space and time... I suggest that it is safe to continue to do neuroscience as we have done it over the past century, using measuring instruments and relating observations to their units"</em>, tr. 275–277).
+      </p>
+      <p>
+        Điều ông cảnh báo là bước nhảy nhận thức luận khi đánh đồng đơn vị của dụng cụ đo với cơ chế tính toán nội tại của mô não: <em>"Tuy nhiên, sẽ là không an toàn nếu tuyên bố rằng một vùng não hay cơ chế thần kinh nào đó biểu trưng cho không gian hoặc thời gian, hay tính toán quãng đường hoặc thời lượng"</em> (tr. 277). Đồng thời, ông nhấn mạnh quy tắc phân biệt giữa <strong>"trình tự thời gian của các biểu trưng thần kinh" (<em>temporal sequence of representations</em>)</strong> với <strong>"biểu trưng của thời gian" (<em>representation of temporal sequences</em>)</strong>: để chuyển một chuỗi thứ tự thành cảm nhận thời lượng nhanh hay chậm, mạch thần kinh chỉ cần kết hợp thứ tự chuỗi với <strong>tốc độ chuyển tiếp (<em>rate of change</em>)</strong> thông qua cơ chế điều chỉnh <strong>độ lợi thần kinh (<em>gain control</em> · Chương 11)</strong>.
+      </p>
+
+      <!-- ============ MÔ PHỎNG 3: HIPPOCAMPAL LIBRARIAN & DEDE ET AL. 2016 ============ -->
+      <div class="sim-lab" id="sim-librarian">
+        <div class="sim-header">
+          <h4 class="sim-title">Mô phỏng 3 · Thủ thư Hồi hải mã &amp; Thư viện Tân vỏ não (11 Sự kiện Dede et al. 2016, Nén 15x SPW-Rs &amp; BTSP)</h4>
+          <span class="sim-badge">HTML5 Canvas · Dede et al. (2016 Hình 10.2), Tingley &amp; Buzsáki (2021), Bittner &amp; Magee (2017)</span>
+        </div>
+        <div class="sim-controls">
+          <div class="sim-group">
+            <label>Trạng thái mạch thần kinh:</label>
+            <button type="button" class="btn-tool active" data-lmode="intact">3A. Hồi hải mã nguyên vẹn (Đúng trình tự 1 → 11)</button>
+            <button type="button" class="btn-tool" data-lmode="lesion">3B. Tổn thương Hồi hải mã (Dede 2016 · Thứ tự xáo trộn)</button>
+            <button type="button" class="btn-tool" data-lmode="spwr">3C. Phát lại SPW-Rs khi nghỉ (Nén đúng 15x &amp; Hạ đường huyết)</button>
+            <button type="button" class="btn-tool" data-lmode="btsp">3D. Học 1 lần thử qua xung Canxi BTSP (Magee 2017)</button>
+          </div>
+          <div class="sim-group">
+            <button type="button" class="btn-tool" id="btn-reshuffle">Xáo lại hoán vị 11 sự kiện (Tính lại Spearman ρ)</button>
+          </div>
+        </div>
+        <div class="sim-canvas-wrap">
+          <canvas id="canvas-librarian" width="920" height="340" aria-label="Mô phỏng tương tác 11 sự kiện trong thí nghiệm đi dạo khuôn viên trường của Dede et al. (2016, Hình 10.2): Tầng 1 là Thủ thư Hồi hải mã giữ 11 con trỏ P1 đến P11, Tầng 2 là Thư viện Tân vỏ não giữ 11 hộp nội dung sự kiện (1. Vứt cốc, 2. Khóa xe, 3. Mua chuối, 4. Nhặt xu, 5. Uống nước và Sự kiện 6 đến 11). Bấm Xáo lại sẽ hoán vị ngẫu nhiên 11 sự kiện ở chế độ tổn thương hồi hải mã và tính trực tiếp hệ số tương quan hạng Spearman rho."></canvas>
+        </div>
+        <div class="sim-metrics">
+          <div class="metric-box">
+            <span class="m-label">Nội dung "Cái gì" (Tân vỏ não)</span>
+            <span class="m-val" id="lm-val-1">11/11 sự kiện (Ngang nhóm chứng sau 1 tháng)</span>
+          </div>
+          <div class="metric-box">
+            <span class="m-label">Tương quan thứ tự [Lượt mô phỏng]</span>
+            <span class="m-val" id="lm-val-2">Spearman ρ = +1,00 (Đúng trình tự 1 → 11)</span>
+          </div>
+          <div class="metric-box">
+            <span class="m-label">Cơ chế đóng gói dao động</span>
+            <span class="m-val" id="lm-val-3">Theta (8 Hz) nối chuỗi con trỏ P1 → P11</span>
+          </div>
+          <div class="metric-box">
+            <span class="m-label">Hệ quả nhận thức &amp; nội môi</span>
+            <span class="m-val" id="lm-val-4">Hồi tưởng quá khứ &amp; Dự phóng tương lai</span>
+          </div>
+        </div>
+      </div>
+
+      <details class="basis">
+        <summary>Căn cứ thực nghiệm &amp; đối chiếu nguồn (Phần 3)</summary>
+        <ul>
+          <li><span class="tag src">Nguồn</span> <strong>Dede, A. J. O., Frascino, J. C., Wixted, J. T., &amp; Squire, L. R. (2016).</strong> Learning and remembering real-world events after medial temporal lobe damage. <em>PNAS</em>, 113(47), 13480–13485 (<a href="https://doi.org/10.1073/pnas.1617025113">DOI: 10.1073/pnas.1617025113</a>); được Buzsáki phân tích tại tr. 272–273 và Hình 10.2.</li>
+          <li><span class="tag src">Nguồn</span> <strong>Kraus, B. J., Brandon, M. P., Robinson, R. J., Connerney, M. A., Hasselmo, M. E., &amp; Eichenbaum, H. (2015).</strong> During running in place, grid cells integrate elapsed time and distance run. <em>Neuron</em>, 88(3), 578–589; <strong>Buzsáki, G., &amp; Tingley, D. (2018).</strong> Space and time: The hippocampus as a sequence generator. <em>Trends in Cognitive Sciences</em>, 22(10), 853–869.</li>
+          <li><span class="tag ext">Mở rộng 2021</span> <strong>Tingley, D., McClain, K., Kaya, E., Carpenter, J., &amp; Buzsáki, G. (2021).</strong> A metabolic function of the hippocampal sharp wave-ripple. <em>Nature</em>, 597(7874), 82–86 (<a href="https://doi.org/10.1038/s41586-021-03811-w">DOI: 10.1038/s41586-021-03811-w</a>): Phát hiện các cụm <em>SPW-Rs</em> truyền tín hiệu qua vách bên xuống vùng dưới đồi làm giảm nồng độ đường huyết ngoại vi sau ~10 phút, cho thấy mối liên hệ giữa bộ sinh chuỗi ký ức với điều hòa trao đổi chất nội môi.</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- ============ PHẦN 4 ============ -->
+    <section class="card-sec" id="phan-4">
+      <h2>4. Tranh luận thực nghiệm 2018–2026 khi cơ thể bất động (v = 0): Phép biến đổi Laplace mã hóa thời gian đối đầu Quỹ đạo tập hợp nội sinh</h2>
+      <p>
+        Cần lưu ý ngay từ đầu rằng trong chương 7 và chương 10 của <em>The Brain from Inside Out</em> (2019, tr. 260–261 &amp; Hình 7.6), chính Buzsáki đã mô tả các quỹ đạo tập hợp nơ-ron nội sinh (<em>internally generated cell assembly trajectories</em>) hoạt động ngay cả khi con vật không di chuyển trong không gian vật lý (<code>v = 0</code>, chẳng hạn lúc suy tính ở ngã rẽ hoặc trong bộ nhớ làm việc). Do đó, cuộc đối đầu thực nghiệm giai đoạn 2018–2026 xoay quanh cách diễn giải bản chất tính toán của các chuỗi này: <strong>Khi cơ thể hoàn toàn bất động (<code>v = 0</code>), các chuỗi xung tuần tự ở hồi hải mã là một bộ đếm thời gian chuyên biệt (thực hiện phép biến đổi Laplace về thời gian) hay là quỹ đạo chuyển trạng thái nội sinh trên mạng lưới log-normal tiền cấu hình?</strong>
+      </p>
+
+      <figure class="diagram">
+        <img src="images/fig3_tranh_luan_time_cells_vs_sequence_generator.svg" alt="Cuộc đối đầu thực nghiệm 2018-2026 giữa Biến đổi Laplace thời gian và Bộ sinh chuỗi quan hệ tiền cấu hình">
+        <figcaption>Hình 3: Đối xứng hai chương trình thực nghiệm 2018–2026: Nhánh trái chứng minh sự tồn tại của Time Cells khi v = 0 và phép biến đổi Laplace về thời gian (LEC → CA1); Nhánh phải chứng minh các chuỗi đó chính là quỹ đạo suy tưởng nội sinh (internal trajectories) trên mạng lưới log-normal và được thống nhất bởi ma trận dự báo Successor Representation / Tolman-Eichenbaum Machine. <span class="zoom-hint">🔍 Bấm vào sơ đồ để phóng to toàn màn hình</span></figcaption>
+      </figure>
+
+      <h3>4.1. Đòn phản công của phe "Time Cells &amp; Biến đổi Laplace về Thời gian" (2018–2022)</h3>
+      <ul>
+        <li><strong>Ghi nhận đơn vị nơ-ron nội sọ ở người nằm yên trên giường bệnh (v = 0):</strong> Nhóm của Bradley Lega (<strong>Umbach et al., 2020, <em>PNAS</em></strong>) ghi điện cực vi mô ở 27 bệnh nhân động kinh khi nằm yên thực hiện tác vụ ghi nhớ danh sách từ và phát hiện quần thể <em>human time cells</em> ở cả hồi hải mã lẫn vỏ não nội khứu; độ ổn định của các tế bào này dự báo trực tiếp khả năng gom cụm ký ức theo thời gian (<em>temporal clustering</em>). Ngay sau đó, nhóm của Leila Reddy, Matthew W. Self và Pieter Roelfsema (<strong>Reddy et al., 2021, <em>Journal of Neuroscience</em></strong>) thử nghiệm chèn một <strong>khoảng chờ 10 giây hoàn toàn trống rỗng</strong> (màn hình đen, không có kích thích thị giác và không có chuyển động cơ thể): các nơ-ron hồi hải mã người vẫn kích hoạt nối tiếp nhau để lấp đầy khoảng trống 10 giây đó.</li>
+        <li><strong>Mạch con chuyên biệt khi bất động và khả năng co giãn thời lượng (<em>Temporal Scaling</em>):</strong> Nhóm của Daniel Dombeck (<strong>Heys &amp; Dombeck, 2018, <em>Nature Neuroscience</em>; Issa et al., 2020</strong>) dùng kính hiển vi hai photon chứng minh <strong>vỏ não nội khứu giữa (<em>Medial Entorhinal Cortex / MEC</em>)</strong> có một mạch con riêng chỉ bật lên để đếm thời gian khi con chuột đứng yên chờ phần thưởng và tắt đi khi chuột bắt đầu chạy. Đồng thời, nhóm của Peyman Golshani &amp; Dean Buonomano (<strong>Taxidis et al., 2020, <em>Neuron</em></strong>) trên khoảng chờ 3 giây vs. 6 giây và nhóm của Shigeyoshi Fujisawa (<strong>Shimbo et al., 2021, <em>Science Advances</em></strong>) trên các khoảng thời lượng <strong>10 giây, 20 giây và 30 giây</strong> chứng minh các chuỗi <em>time cells</em> ở vùng CA1 tự động kéo giãn hoặc nén lại theo tỷ lệ (<em>temporal rescaling</em>).</li>
+        <li><strong>Phép biến đổi Laplace về Thời gian từ Vỏ não Nội khứu Bên (LEC) sang Hồi hải mã (Tsao, Moser et al., 2018; Cao &amp; Howard, 2022):</strong> Nhóm của May-Britt và Edvard Moser (<strong>Tsao et al., 2018, <em>Nature</em></strong>) phát hiện các nơ-ron ở <strong>vỏ não nội khứu bên (<em>Lateral Entorhinal Cortex / LEC</em>)</strong> tăng hoặc suy giảm tốc độ bắn xung theo hàm mũ <code>exp(-s · t)</code> với hàng loạt hằng số tốc độ <em>s</em> khác nhau kể từ lúc một sự kiện xảy ra. Nhóm của Marc Howard (<strong>Cao et al., 2022, <em>eLife</em></strong>) chứng minh về mặt toán học rằng vùng LEC thực hiện <strong>phép biến đổi Laplace thực của lịch sử trải nghiệm F(s)</strong>, còn vùng CA1 hồi hải mã thực hiện <strong>phép biến đổi Laplace ngược</strong> để tái tạo trục thời gian nội sinh bị nén theo hàm logarit (<code>log t</code>), giải thích trực tiếp vì sao các sự kiện càng lùi xa vào quá khứ càng có độ phân giải thời gian mờ dần (quy luật Weber–Fechner).</li>
+      </ul>
+
+      <h3>4.2. Đòn đáp trả từ phòng thí nghiệm Buzsáki (2021–2026) và sự hợp nhất qua Mô hình Đồ thị Quan hệ</h3>
+      <p>
+        Trước các dữ liệu <code>v = 0</code> và biến đổi Laplace, phòng thí nghiệm Buzsáki cùng các nhà lý thuyết thần kinh học hệ thống đưa ra ba lập luận thực nghiệm và toán học để hợp nhất hai nhánh:
+      </p>
+      <ol>
+        <li><strong>Chuỗi xung khi v = 0 chính là "Quỹ đạo suy tưởng nội sinh" (<em>Internally Generated Trajectories / Action Plans</em>):</strong> Khi một người nằm yên trên giường bệnh chờ đợi 10 giây hoặc ghi nhớ từ vựng, cơ thể họ đứng yên nhưng tâm trí họ đang di chuyển qua các trạng thái nhận thức. Trong công trình đăng trên <em>Nature</em> năm 2025 (<strong>Zutshi, Savin &amp; Buzsáki, 2025</strong>), nhóm Buzsáki chứng minh hoạt động của nơ-ron hồi hải mã luôn bám sát <strong>kế hoạch hành động nội tâm (<em>action plans</em>)</strong> ngay cả khi vị trí vật lý không đổi. Như phân tích đối chiếu với chính bài báo của Tsao et al. (2018) cho thấy: khi con chuột chạy lặp đi lặp lại trên đường chạy hình số 8 quen thuộc, các tế bào vùng LEC ngừng theo dõi thời gian tuyệt đối hàng giờ và co lại theo từng vòng chạy, chứng tỏ LEC theo dõi <strong>tốc độ biến thiên của trạng thái trải nghiệm</strong> thay vì đếm giờ đồng hồ độc lập.</li>
+        <li><strong>Cấu trúc mạng phân phối lệch Log-Normal định sẵn theo ngày sinh phôi thai (Huszár et al., 2022, <em>Nature Neuroscience</em>):</strong> Vì sao các chuỗi nơ-ron hồi hải mã luôn có một số ít tập hợp bắn xung ngắn, sắc nét ở đầu khoảng chờ và một số lượng lớn tập hợp bắn xung kéo dài, rải thưa ở cuối khoảng chờ (tạo ra sự nén logarit <code>log t</code> của Marc Howard)? Nhóm Buzsáki chứng minh rằng đặc tính này bắt nguồn từ <strong>phân phối lệch log-normal của trọng số synap và tốc độ bắn xung</strong> được định hình ngay từ ngày sinh phôi thai (<em>embryonic birthdate</em>): các nơ-ron sinh ra cùng ngày trong phôi thai ưu tiên kết nối với nhau thành các quỹ đạo tiền cấu hình sẵn <strong>trước khi con vật bước vào môi trường mới</strong>.</li>
+        <li><strong>Hợp nhất Toán học qua "Bản đồ Dự báo" (<em>Successor Representation</em>) và "Cỗ máy Tolman-Eichenbaum" (<em>TEM</em>) + Nhịp điệu Cơ thể – Não bộ (2025/2026):</strong>
+          <ul>
+            <li>Công trình của <strong>Stachenfeld, Botvinick &amp; Gershman (2017, <em>Nature Neuroscience</em>)</strong> chứng minh hồi hải mã lưu trữ ma trận <strong>Biểu trưng Kế tiếp (<em>Successor Representation / SR</em>)</strong>: <code>M(s, s') = E[ Σ γ^t · I(s_t = s') | s_0 = s ]</code>, dự báo xác suất chiết khấu của các trạng thái tương lai sắp tới. Trong ma trận này, <em>place cells</em> và <em>time cells</em> chỉ là hai lát cắt của cùng một toán tử dự báo chuỗi trạng thái.</li>
+            <li>Công trình <strong>Cỗ máy Tolman–Eichenbaum (<em>TEM</em> · Whittington, Burgess &amp; Behrens, 2020, <em>Cell</em>)</strong> chứng minh hệ vỏ não nội khứu – hồi hải mã tách bạch <strong>cấu trúc đồ thị quan hệ trừu tượng</strong> khỏi <strong>nội dung cảm giác cụ thể</strong>.</li>
+            <li>Trong bài tổng quan mới nhất trên <em>Nature Reviews Neuroscience</em> (<strong>Buzsáki, 2025/2026</strong>, <em>Time, space, memory and brain–body rhythms</em>), Buzsáki bổ sung mảnh ghép còn thiếu ở năm 2019: cảm thức liên tục về thời gian sống (<em>lived time</em>) của con người được neo giữ bởi <strong>hệ thống phân cấp lồng ghép của các nhịp điệu Cơ thể – Não bộ</strong> (từ nhịp hô hấp, nhịp tim, sóng chậm dạ dày – ruột, trương lực giao cảm/đối giao cảm cho tới sóng chậm vỏ não, sóng <em>theta</em>, <em>SPW-Rs</em> và <em>gamma</em>).</li>
+          </ul>
+        </li>
+      </ol>
+
+      <details class="basis">
+        <summary>Căn cứ thực nghiệm &amp; đối chiếu nguồn (Phần 4)</summary>
+        <ul>
+          <li><span class="tag cnt">Đối trọng Time Cells</span> <strong>Umbach, G., et al. (2020).</strong> Time cells in the human hippocampus and entorhinal cortex support episodic memory. <em>PNAS</em>, 117(45), 28463–28474; <strong>Reddy, L., Self, M. W., Zoefel, B., Poncet, M., Possel, J. K., Peters, J. C., Baayen, J. C., Idema, S., VanRullen, R., &amp; Roelfsema, P. R. (2021).</strong> Human hippocampal neurons track moments in a sequence of events. <em>Journal of Neuroscience</em>, 41(31), 6714–6725.</li>
+          <li><span class="tag cnt">Biến đổi Laplace</span> <strong>Tsao, A., Sugar, J., Lu, L., Wang, C., Knierim, J. J., Moser, M.-B., &amp; Moser, E. I. (2018).</strong> Integrating time from experience in the lateral entorhinal cortex. <em>Nature</em>, 561(7721), 57–62; <strong>Cao, R., Bladon, J. H., Charczynski, S. J., Hasselmo, M. E., &amp; Howard, M. W. (2022).</strong> Internally generated time in the rodent hippocampus is logarithmically compressed. <em>eLife</em>, 11, e75353.</li>
+          <li><span class="tag ext">Hợp nhất &amp; Mở rộng</span> <strong>Stachenfeld, K. L., Botvinick, M. M., &amp; Gershman, S. J. (2017).</strong> The hippocampus as a predictive map. <em>Nature Neuroscience</em>, 20(11), 1643–1653; <strong>Whittington, J. C. R., et al. (2020).</strong> The Tolman-Eichenbaum Machine. <em>Cell</em>, 183(5), 1249–1263; <strong>Huszár, R., et al. &amp; Buzsáki, G. (2022).</strong> Preconfigured dynamics in the hippocampus are guided by embryonic birthdate and rate of neurogenesis. <em>Nature Neuroscience</em>, 25(9), 1201–1212; <strong>Buzsáki, G. (2025/2026).</strong> Time, space, memory and brain–body rhythms. <em>Nature Reviews Neuroscience</em>, 27(1), 61–78 (<a href="https://doi.org/10.1038/s41583-025-00987-2">DOI: 10.1038/s41583-025-00987-2</a>).</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- ============ PHẦN 5 ============ -->
+    <section class="card-sec" id="phan-5">
+      <h2>5. Bốn giới hạn triết học và sinh lý học giúp hiệu chỉnh thuyết "Từ trong ra ngoài" giai đoạn 2019–2026</h2>
+      <p>
+        Một bức tranh khoa học trung thực đòi hỏi đặt lý thuyết của Buzsáki dưới sự chất vấn nghiêm ngặt của triết học khoa học, tâm lý học phát triển và sinh lý học tế bào. Để giữ kỷ luật học thuật, phần này phân biệt rõ hai nhóm tài liệu: <strong>(a) <code>[Phê bình trực tiếp]</code></strong> nhắm thẳng vào cuốn <em>The Brain from Inside Out</em> (Poeppel &amp; Adolfi, 2020; Barack &amp; Krakauer, 2021; Gómez-Marín, 2021) và <strong>(b) <code>[Đối trọng độc lập / Mở rộng phân tích]</code></strong> là các công trình nghiên cứu độc lập đặt ra giới hạn thực nghiệm hoặc khuôn khổ bổ sung cho luận điểm của Buzsáki (Chirimuuta, 2024; Hoerl &amp; McCormack, 2019; Bittner &amp; Magee, 2017; Rovelli, 2026; Griffiths, 2026).
+      </p>
+
+      <figure class="diagram">
+        <img src="images/fig4_ma_tran_4_truc_phan_bien_2019_2026.svg" alt="Bốn giới hạn triết học và sinh lý học giúp hiệu chỉnh thuyết Từ trong ra ngoài giai đoạn 2019-2026">
+        <figcaption>Hình 4: Bốn mũi phản biện học thuật giai đoạn 2019–2026 giúp hiệu chỉnh thuyết Inside-Out: (1) Không thể bỏ qua Cấp độ 1 của David Marr và khái niệm Biểu trưng, (2) Sự khác biệt giữa Hệ thống Cập nhật Thời gian ở động vật và Hệ thống Lý luận Thời gian ở người, (3) Cơ chế học một lần thử BTSP của Jeffrey Magee, và (4) Nền tảng nhiệt động lực học của dấu vết ký ức cùng cuộc tranh luận NeuroAI / LLMs. <span class="zoom-hint">🔍 Bấm vào sơ đồ để phóng to toàn màn hình</span></figcaption>
+      </figure>
+
+      <h3>5.1. Mũi phản biện 1: Không thể thủ tiêu Cấp độ 1 của David Marr và khái niệm "Biểu trưng" (Representation)</h3>
+      <p>
+        <strong><code>[Phê bình trực tiếp]</code></strong> Trong bài điểm sách đối thoại trực tiếp với Buzsáki trên tạp chí <em>eNeuro</em> năm 2020 (<em>Against the Epistemological Primacy of the Hardware: The Brain from Inside Out, Turned Upside Down</em>), <strong>David Poeppel và Federico Adolfi</strong> chỉ ra rằng: việc Buzsáki bác bỏ các thuật ngữ tâm lý học cổ điển của William James là hoàn toàn xác đáng, nhưng đòi xuất phát thuần túy từ "phần cứng thần kinh" (Cấp độ 3 của David Marr: sóng dao động, chuỗi xung, <em>gain control</em>) để định nghĩa lại nhận thức là bất khả thi về mặt nhận thức luận. Một nhà thần kinh học ghi được chuỗi xung <code>A → B → C</code> ở hồi hải mã sẽ không bao giờ biết chuỗi xung đó đang phục vụ việc dẫn đường, củng cố ký ức hay hạ đường huyết nếu không có một giả thuyết chức năng ở <strong>Cấp độ 1 (bài toán tính toán)</strong> và <strong>Cấp độ 2 (thuật toán)</strong>.
+      </p>
+      <p>
+        <strong><code>[Phê bình trực tiếp &amp; Đối trọng triết học]</code></strong> Tương tự, <strong>David Barack &amp; John Krakauer (2021, <em>Nature Reviews Neuroscience</em>)</strong> và <strong>Rosa Cao (2022, <em>Synthese</em>)</strong> chỉ ra rằng khi quỹ đạo trạng thái của hồi hải mã được các vùng vỏ não hạ lưu sử dụng như một bản đồ đại diện để lập kế hoạch hành động khi vắng mặt kích thích, quỹ đạo đó thực sự mang <strong>nội dung biểu trưng (<em>representational content</em>)</strong>. Ở một hướng tiếp cận tinh tế hơn trong cuốn <em>The Brain Abstracted</em> (<strong>2024, MIT Press</strong>), <strong>Mazviita Chirimuuta</strong> đề xuất <strong>chủ nghĩa hiện thực góc nhìn / xúc giác (<em>perspectival / haptic realism</em>)</strong>: bà đồng cảm với phê phán chống thuyết biểu trưng thụ động của Buzsáki (rằng não bộ tiếp xúc chủ động với thực tại thông qua vòng lặp hành động), nhưng cảnh báo rằng các mô hình động lực học trong thần kinh học tính toán cũng là những <strong>sự trừu tượng hóa lý tưởng hóa của nhà khoa học</strong>, cần được phân biệt với thực tại sinh học đa tầng của mô thần kinh.
+      </p>
+
+      <h3>5.2. Mũi phản biện 2: "Tư duy TRONG thời gian" (Temporal Updating) khác hẳn với "Tư duy VỀ thời gian" (Temporal Reasoning)</h3>
+      <p>
+        <strong><code>[Đối trọng độc lập / Mở rộng phân tích]</code></strong> Dựa trên nguyên tắc phân biệt <strong>phương tiện mang thông tin (<em>vehicle</em>)</strong> và <strong>nội dung được biểu trưng (<em>content</em>)</strong> của <strong>Daniel Dennett &amp; Marcel Kinsbourne (1992, <em>Behavioral and Brain Sciences</em>)</strong>, một chuỗi nơ-ron diễn ra <em>trong thời gian</em> không đồng nghĩa với việc chủ thể có khái niệm <em>về thời gian</em>. Trong bài báo mục tiêu độc lập xuất bản cùng năm 2019 trên <em>Behavioral and Brain Sciences</em>, <strong>Christoph Hoerl và Teresa McCormack</strong> chứng minh sự tồn tại của hai hệ thống nhận thức tách biệt:
+      </p>
+      <ul>
+        <li><strong>Hệ thống Cập nhật Thời gian (<em>Temporal Updating System</em> · "Thinking IN time"):</strong> Có ở động vật (như chuột) và trẻ sơ sinh. Hệ thống này chỉ duy trì một mô hình về thế giới ở thì hiện tại và cập nhật mô hình đó khi các sự kiện nối tiếp nhau diễn ra, hoàn toàn không có khái niệm về quá khứ hay tương lai như những vùng miền thời gian độc lập.</li>
+        <li><strong>Hệ thống Lý luận Thời gian (<em>Temporal Reasoning System</em> · "Thinking ABOUT time"):</strong> Phát triển muộn ở trẻ em loài người nhờ ngôn ngữ và văn hóa. Hệ thống này cho phép định vị các sự kiện trên một trục thời gian tuyến tính (<em>tiêu chuẩn Chuỗi B: sớm hơn / muộn hơn</em> và <em>tiêu chuẩn Chuỗi A: quá khứ / hiện tại / tương lai</em>), suy luận nguyên nhân – kết quả ngược chiều và cảm nhận sự "trôi qua" của thời gian (xem thêm <strong>Simon Prosser, 2016, <em>Experiencing Time</em></strong>).</li>
+      </ul>
+      <p>
+        Đặt hai công trình cạnh nhau có thể thấy: cơ chế <em>"Bộ sinh chuỗi hồi hải mã + Kiểm soát độ lợi"</em> của Buzsáki giải thích thuyết phục cho <strong>Hệ thống Cập nhật Thời gian</strong>, nhưng để bước sang <strong>Hệ thống Lý luận Thời gian</strong> của con người trưởng thành, não bộ cần thêm sự phối hợp của vỏ não trước trán (PFC), mạng lưới ngôn ngữ và các công cụ văn hóa ngoại hóa.
+      </p>
+
+      <h3>5.3. Mũi phản biện 3: Cơ chế "Học một lần thử" qua BTSP (Jeffrey Magee, 2017) bác bỏ một "Từ điển Tiền cấu hình" đóng cứng</h3>
+      <p>
+        <strong><code>[Đối trọng thực nghiệm &amp; Phê bình trực tiếp]</code></strong> Buzsáki ví mạng lưới hồi hải mã như một cuốn từ điển chứa sẵn các từ vô nghĩa (<em>preconfigured nonsense words</em>) được nối dây từ thời kỳ phôi thai, và trải nghiệm thực tế chỉ việc "chọn ra một quỹ đạo có sẵn" để gán nghĩa (<em>matching</em> thay vì <em>instructing</em>). Tuy nhiên, hai chuỗi thực nghiệm độc lập và một bài phê bình trực tiếp đã chứng minh môi trường bên ngoài có quyền năng <strong>tạo mới và viết lại</strong> mạch hồi hải mã mạnh hơn nhiều:
+      </p>
+      <ul>
+        <li><strong>Silva, Feng &amp; Foster (2015, <em>Nature Neuroscience</em>) <code>[Đối trọng thực nghiệm]</code>:</strong> Bằng các kiểm định thống kê nghiêm ngặt trên số lượng lớn tế bào, nhóm của David Foster chứng minh các sự kiện phát trước (<em>preplay</em>) trước khi chuột bước vào đường chạy mới là cực kỳ yếu; các chuỗi quỹ đạo mạch lạc đòi hỏi phải có trải nghiệm thực tế trong môi trường mới hình thành được.</li>
+        <li><strong>Bittner, Milstein, Grienberger, Romani &amp; Magee (2017, <em>Science</em>) <code>[Đối trọng thực nghiệm]</code> &amp; Gómez-Marín (2021, <em>Current Biology</em>) <code>[Phê bình trực tiếp]</code>:</strong> Nhóm của Jeffrey Magee phát hiện cơ chế <strong>Tính dẻo synap thang thời gian hành vi (<em>Behavioral Timescale Synaptic Plasticity / BTSP</em>)</strong>. Khác với quy tắc Hebb/STDP cổ điển chỉ hoạt động trên cửa sổ <code>~20 ms</code>, một <strong>điện thế cao nguyên canxi ở nhánh gai đỉnh (<em>dendritic plateau potential</em>)</strong> do đầu vào từ vỏ não nội khứu kích hoạt có thể mở ra cửa sổ dẻo kéo dài nhiều giây (<code>~3–5 giây</code>), cho phép một nơ-ron CA1 <strong>tạo mới hoàn toàn một trường vị trí chỉ sau một lần chạy duy nhất (<em>single-trial learning</em>)</strong> tại bất kỳ vị trí nào con vật gặp sự kiện quan trọng. Trong bài điểm sách trực tiếp <em>If the brain is the answer, what was the question?</em> (<strong>2021, <em>Current Biology</em></strong>), <strong>Àlex Gómez-Marín</strong> nhấn mạnh rằng não bộ là sự kết hợp động giữa cấu trúc khung tiền cấu hình (<em>preconfigured scaffold</em>) và khả năng ghi nhanh thích nghi theo hành vi (<em>BTSP</em>).</li>
+      </ul>
+
+      <h3>5.4. Mũi phản biện 4: Nền tảng Nhiệt động lực học của Ký ức (Rovelli, 2026) và Cuộc tranh luận về AI / LLMs (2024–2026)</h3>
+      <p>
+        <strong><code>[Mở rộng phân tích liên ngành 2024–2026]</code></strong> Cuối cùng, vì sao các chuỗi quỹ đạo nơ-ron của chúng ta chỉ nhớ được quá khứ để dự phóng tương lai, mà không bao giờ "nhớ được tương lai"? Tại <strong>Lesson Four (<em>Inhabiting the Flow of Time</em>, tr. 77–98)</strong> trong cuốn <a href="#cite" onclick="return false" title="Tài liệu nguồn trong kho lưu trữ: ON_THE_EQUALITY_OF_ALL_THINGS_-_Carlo_Rovelli.epub"><em>On the Equality of All Things</em></a> (09/2026), Carlo Rovelli chỉ ra rằng bản thân cơ chế sinh chuỗi của não bộ phải tuân theo <strong>Định luật II Nhiệt động lực học</strong>: mọi dấu vết ký ức (<em>traces</em>, từ hố va chạm thiên thạch trên Mặt Trăng đến trọng số synap được củng cố qua <em>SPW-Rs</em>) chỉ có thể hình thành khi có một quá trình <strong>tiêu tán năng lượng không thuận nghịch (<em>dissipation</em>)</strong> làm tăng entropy, bắt nguồn từ trạng thái entropy thấp của vũ trụ sơ khai. Chính sự tiêu tán nhiệt động lực học này mở ra không gian cho <strong>tác quyền sinh học (<em>agency</em>)</strong>: não bộ dùng các dấu vết của quá khứ để mô phỏng nhiều nhánh tương lai khả dĩ và chọn lấy một hành động.
+      </p>
+      <p>
+        Khung lý thuyết <em>Inside-Out</em> của Buzsáki cũng trở thành tâm điểm của cuộc tranh luận <strong>NeuroAI (2023–2026)</strong> về các Mô hình Ngôn ngữ Lớn (LLMs):
+      </p>
+      <ul>
+        <li><strong>Phê phán LLMs thiếu cơ thể và thiếu <em>Corollary Discharge</em> (Pezzulo, Parr, Cisek, Clark &amp; Friston, 2024, <em>Trends in Cognitive Sciences</em>):</strong> Các tác giả vận dụng trực tiếp lập luận của Buzsáki để chỉ ra rằng LLMs học thuần túy theo chiều <em>Outside-In</em> từ kho văn bản tĩnh của loài người. Vì không có vòng lặp nội môi và không có tín hiệu <em>corollary discharge</em> phân biệt giữa dữ liệu do mình tự sinh ra với thực tại vật lý độc lập, LLMs dễ rơi vào trạng thái ảo giác tự duy trì.</li>
+        <li><strong>Chưng cất tiên nghiệm tiến hóa vào trọng số khởi tạo (McCoy &amp; Griffiths, 2025, <em>Nature Communications</em>; Griffiths, 02/2026, <a href="#cite" onclick="return false" title="Tài liệu nguồn trong kho lưu trữ: _OceanofPDF.com_The_Laws_of_Thought_-_Tom_Griffiths.epub"><em>The Laws of Thought</em></a>, Ch. 14):</strong> Tom Griffiths chứng minh rằng để khắc phục "tàn dư tự hồi quy" (<em>embers of autoregression</em> · McCoy et al., 2024, <em>PNAS</em>) và giúp mạng thần kinh nhân tạo học nhanh như trẻ em, có thể dùng <em>meta-learning</em> để chưng cất các tiên nghiệm Bayes vào thẳng <strong>bộ trọng số khởi tạo của mạng</strong>, cung cấp bản dịch toán học chính xác ở Cấp độ 1–2 của Marr cho trạng thái <em>preconfigured dynamics</em> của Buzsáki. (Ở chiều đối trọng, <strong>Mollo &amp; Millière, 2026</strong> lập luận rằng các mô hình đa phương thức quy mô lớn vẫn đạt được <em>neo nghĩa quan hệ / relational vector grounding</em> đối với cấu trúc khái niệm, nhưng vẫn cần tác nhân hành động chủ động để neo nghĩa cảm giác – vận động).</li>
+      </ul>
+
+      <details class="basis">
+        <summary>Căn cứ thực nghiệm &amp; đối chiếu nguồn (Phần 5)</summary>
+        <ul>
+          <li><span class="tag cnt">Phản biện Marr</span> <strong>Poeppel, D., &amp; Adolfi, F. (2020).</strong> Against the epistemological primacy of the hardware: The Brain from Inside Out, turned upside down. <em>eNeuro</em>, 7(4), ENEURO.0215-20.2020; <strong>Buzsáki, G. (2020).</strong> <em>eNeuro</em>, 7(4), ENEURO.0069-20.2020; <strong>Barack, D. L., &amp; Krakauer, J. W. (2021).</strong> Two views on the cognitive brain. <em>Nature Reviews Neuroscience</em>, 22(6), 359–371; <strong>Chirimuuta, M. (2024).</strong> <em>The Brain Abstracted: Simplification in the History and Philosophy of Neuroscience</em>. MIT Press.</li>
+          <li><span class="tag cnt">Phản biện Thời gian</span> <strong>Hoerl, C., &amp; McCormack, T. (2019).</strong> Thinking in and about time: A dual systems perspective on temporal cognition. <em>Behavioral and Brain Sciences</em>, 42, e244; <strong>Dennett, D. C., &amp; Kinsbourne, M. (1992).</strong> <em>BBS</em>, 15(2), 183–247.</li>
+          <li><span class="tag cnt">Phản biện BTSP</span> <strong>Bittner, K. C., Milstein, A. D., Grienberger, C., Romani, S., &amp; Magee, J. C. (2017).</strong> Behavioral time scale synaptic plasticity underlies CA1 place fields. <em>Science</em>, 357(6355), 1033–1036; <strong>Gómez-Marín, À. (2021).</strong> If the brain is the answer, what was the question? <em>Current Biology</em>, 31(6), R221–R223.</li>
+          <li><span class="tag ext">NeuroAI 2024–2026</span> <strong>Pezzulo, G., Parr, T., Cisek, P., Clark, A., &amp; Friston, K. (2024).</strong> Generating meaning: active inference and the scope and limits of passive AI. <em>Trends in Cognitive Sciences</em>, 28(2), 97–112; <strong>McCoy, R. T., &amp; Griffiths, T. L. (2025).</strong> <em>Nature Communications</em>, 16, 4676.</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- ============ PHẦN 6 ============ -->
+    <section class="card-sec" id="phan-6">
+      <h2>6. Ma trận đối chiếu bốn tác phẩm (2019–2026), Hàm ý thực hành và Danh mục tài liệu tham khảo</h2>
+      <p>
+        Bảng dưới đây đặt <strong>György Buzsáki (2019, Ch. 10 &amp; 2025/2026)</strong> cạnh ba tác phẩm xuất bản năm 2026 trong kho tài liệu cục bộ để người đọc tra cứu nhanh các điểm đồng quy và xung đột:
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Trục vấn đề</th>
+              <th>György Buzsáki (<em>The Brain from Inside Out</em>, 2019 Ch. 10; <em>Nat. Rev. Neurosci.</em> 2025/2026)</th>
+              <th>Jim Al-Khalili (<em>On Time</em>, 09/2026 · Ch. 3: <em>Psychological Time</em>, PDF tr. 67–83)</th>
+              <th>Carlo Rovelli (<em>Reality Is Not What It Seems</em>, 2016; <em>On the Equality of All Things</em>, 09/2026 · <em>Lessons 2–4</em>)</th>
+              <th>Tom Griffiths (<em>The Laws of Thought</em>, 02/2026 · Ch. 6–10, 14)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. Bản chất của Không gian &amp; Thời gian</strong></td>
+              <td>Không có thụ thể đo không gian hay thời gian; không-thời gian là cấu trúc quan hệ tuần tự của các sự kiện. Thời gian chủ quan neo vào <strong>nhịp điệu Cơ thể – Não bộ</strong>.</td>
+              <td><strong>Đồng quy:</strong> Không có giác quan đo thời gian (PDF tr. 69); ngôn ngữ không gian hóa thời gian (người Aymara, tr. 68).<br><strong>Xung đột:</strong> Vẫn dùng ẩn dụ não như "máy tính chạy phần mềm" (tr. 85).</td>
+              <td><strong>Đồng quy nền tảng</strong> (Buzsáki 2019 tr. 249–250 dẫn Rovelli 2016; mở rộng trong Rovelli 09/2026): Không gian chỉ là mạng lưới <strong>quan hệ kề cận (<em>adjacencies</em>)</strong>; không-thời gian là quá trình lượng tử không có biến <em>t</em> toàn cục.</td>
+              <td>Ở Cấp độ 1 của Marr, "không gian tâm lý" (<em>psychological space</em> · Shepard 1987) biểu trưng độ tương đồng khái niệm; não bộ tái dụng mạch định vị không gian để suy luận khái niệm.</td>
+            </tr>
+            <tr>
+              <td><strong>2. "Tế bào Thời gian" vs. Bộ sinh chuỗi</strong></td>
+              <td>Bác bỏ sự tách biệt <em>time cells</em> vs. <em>place cells</em> vì <code>d = v · t</code>; hồi hải mã là <strong>bộ sinh chuỗi con trỏ đa năng</strong> và <strong>người thủ thư</strong> giữ mục lục thứ tự (trừ khi chứng minh được <em>downstream reader</em> tách riêng, tr. 269).</td>
+              <td><strong>Mắc bẫy <em>Outside-In</em> (PDF tr. 76):</strong> Lặp lại cách diễn giải đại chúng rằng hồi hải mã có "tế bào thời gian" tách biệt với "tế bào không gian".</td>
+              <td>Cung cấp cơ sở nhiệt động lực học: đồng hồ vật lý chỉ so sánh hai quá trình biến thiên; sự tiêu tán nhiệt (<em>dissipation</em>) tạo ra <strong>dấu vết ký ức (<em>traces</em>)</strong>.</td>
+              <td>Dẫn mô hình <em>Complementary Learning Systems</em> (Ch. 9): chuỗi phát lại (<em>replay</em>) của hồi hải mã giúp tân vỏ não học dần mà không bị quên thảm khốc.</td>
+            </tr>
+            <tr>
+              <td><strong>3. Khởi tạo mạch: Tiền cấu hình vs. Học mới</strong></td>
+              <td>Mạng nơ-ron có phân phối <strong>log-normal tiền cấu hình</strong> theo ngày sinh phôi thai (Huszár et al. 2022), kết hợp với học nhanh qua hành động.</td>
+              <td>Giải thích cảm giác thời gian trôi nhanh khi tuổi già dựa trên sự suy giảm mật độ trải nghiệm mới (<em>new experiences theory</em>, PDF tr. 72–73).</td>
+              <td>Mọi tri thức đều bắt đầu từ <strong>"bên trong vòng tròn" (<em>From Inside the Circle</em> · Lesson 2)</strong>, liên tục hiệu chỉnh các khuôn mẫu tiến hóa và văn hóa có sẵn, hoàn toàn vắng bóng một điểm tựa tuyệt đối bên ngoài.</td>
+              <td><strong>Khớp nối toán học (Ch. 14):</strong> Dùng <em>meta-learning</em> chưng cất tiên nghiệm Bayes vào <strong>bộ trọng số khởi tạo</strong> (McCoy &amp; Griffiths 2025), mô hình hóa trạng thái <em>preconfigured</em>.</td>
+            </tr>
+            <tr>
+              <td><strong>4. Cái "Bây giờ", Hành động &amp; AI</strong></td>
+              <td>Cái "Bây giờ" có độ trễ <code>~80–500 ms</code> được hiệu chỉnh bởi <strong>phóng điện hệ quả (<em>corollary discharge</em>)</strong>; xung điện chỉ có nghĩa khi gắn với hành động.</td>
+              <td>Trình bày cơ chế <strong>Gắn kết Thời gian / Chủ đích (<em>Temporal Binding</em>, PDF tr. 74–75)</strong> và khẳng định dự phóng tương lai dựa trên hậu đoán quá khứ.</td>
+              <td>Tác quyền (<em>agency</em> · Lesson 4, tr. 89–98) là quá trình vật lý có thật khi não bộ mô phỏng các nhánh tương lai khả dĩ để quyết định hành động.</td>
+              <td>Chỉ ra giới hạn "tàn dư tự hồi quy" của LLMs thụ động (McCoy et al. 2024 <em>PNAS</em>) và nhu cầu kết hợp mô hình xác suất với tương tác chủ động.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>6.1. Ba hàm ý thực hành trực tiếp cho người làm việc trí óc và điều phối AI</h3>
+      <div class="grid-3">
+        <div class="tier-card ok">
+          <strong class="title">1. Thay đổi không gian vật lý để mở rộng thời gian chủ quan</strong>
+          Vì hồi hải mã neo giữ thứ tự sự kiện vào vận tốc chuyển động và các mốc ranh giới không gian (<em>d = v · t</em>), việc ngồi bất động hàng giờ trước một màn hình phẳng làm các sự kiện thiếu mốc neo phân tách, khiến một ngày trôi qua vùn vụt nhưng khi nhớ lại lại trống rỗng. Đứng dậy đi bộ ngoài trời giữa các phiên làm việc giúp cung cấp dòng vận tốc thực (<em>optic flow</em> + tiền đình) để "Thủ thư hồi hải mã" đóng dấu thứ tự rõ ràng cho từng chặng tư duy.
+        </div>
+        <div class="tier-card">
+          <strong class="title">2. Bảo vệ khoảng nghỉ không màn hình để kích hoạt gợn sóng SPW-Rs</strong>
+          Các cụm gợn sóng sắc nét (<em>Sharp-Wave Ripples</em>, nén chuỗi sự kiện 10–20 lần) chỉ xuất hiện khi não bộ tạm ngắt dòng kích thích ngoại cảnh (lúc nghỉ ngơi tĩnh tại sau phiên làm việc hoặc trong giấc ngủ sâu NREM). Theo phát hiện của Tingley &amp; Buzsáki (2021, <em>Nature</em>), mỗi cụm <em>SPW-Rs</em> vừa sắp xếp lại mục lục ký ức cho tân vỏ não vừa gửi tín hiệu xuống vùng dưới đồi để điều hòa đường huyết. Lấp kín mọi khe nghỉ bằng điện thoại sẽ chặn đứng quá trình này.
+        </div>
+        <div class="tier-card warn">
+          <strong class="title">3. Cảnh giác với ảo giác đồng thuận của AI tạo sinh thụ động</strong>
+          Các mô hình ngôn ngữ lớn (LLMs) có "tư duy TRONG chuỗi token" rất mạnh nhưng không có cơ thể sinh học, không có nhịp điệu nội môi và không có tín hiệu <em>corollary discharge</em> để tự kiểm chứng câu chữ của mình với thế giới vật lý (Pezzulo et al., 2024). Người điều phối AI phải đóng vai trò là <strong>vòng lặp kiểm chứng thực tại</strong> (chạy thử code, đối chiếu nguồn gốc, kiểm tra thực nghiệm) thay vì tin vào độ trôi chảy bề mặt của văn bản.
+        </div>
+      </div>
+
+      <h3>6.2. Hồ sơ lưu trữ &amp; Tài liệu tham khảo chọn lọc</h3>
+      <ul>
+        <li><strong>Báo cáo nghiên cứu gốc đầy đủ (Markdown):</strong> <a href="Bao_Cao_Nghien_Cuu_Khong_Thoi_Gian_Trong_Nao_Bo_Buzsaki_2019_2026.html"><code>Bao_Cao_Nghien_Cuu_Khong_Thoi_Gian_Trong_Nao_Bo_Buzsaki_2019_2026.md</code></a></li>
+        <li><strong>Kế hoạch kiến trúc bài toàn cảnh:</strong> <a href="KE_HOACH_BAI_TOAN_CANH_TRAI_NGHIEM_KHONG_THOI_GIAN.html"><code>KE_HOACH_BAI_TOAN_CANH_TRAI_NGHIEM_KHONG_THOI_GIAN.md</code></a></li>
+        <li><strong>Bản đồ Chủ đề 5 (Vật lý, Siêu hình học &amp; Hiện tượng học Thần kinh về Thời gian):</strong> <a href="index_md.html"><code>index.md</code></a></li>
+      </ul>
+    </section>
+
+  </main>
+</div>
+
+<!-- Lightbox Modal cho 4 sơ đồ SVG -->
+<div class="lightbox-backdrop" id="svg-lightbox" role="dialog" aria-modal="true" aria-label="Xem sơ đồ phóng to toàn màn hình">
+  <div class="lightbox-inner">
+    <div class="lightbox-bar">
+      <span class="lightbox-caption" id="lightbox-caption">Sơ đồ phóng to</span>
+      <button class="lightbox-close" id="lightbox-close" type="button">✕ Đóng (Esc)</button>
+    </div>
+    <div class="lightbox-body">
+      <img id="lightbox-img" src="" alt="Sơ đồ phóng to">
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ============ 1. THEME, LIGHTBOX, DETAILS & TOC SCROLLSPY ============ */
+  var root = document.documentElement;
+  var btnTheme = document.getElementById("btn-theme");
+  var prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function isDark() {
+    var attr = root.getAttribute("data-theme");
+    if (attr === "dark") return true;
+    if (attr === "light") return false;
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  }
+  function getPalette() {
+    var dark = isDark();
+    return {
+      dark: dark,
+      bg: dark ? "#17201e" : "#ffffff",
+      bgAlt: dark ? "#1e2926" : "#f0f4f2",
+      ink: dark ? "#e5ecea" : "#182220",
+      muted: dark ? "#96a7a2" : "#52605c",
+      rule: dark ? "#2a3834" : "#d5deda",
+      accent: dark ? "#67bfd8" : "#1d5c73",
+      ok: dark ? "#5cd6a5" : "#1e6f50",
+      warn: dark ? "#f0b44c" : "#94620a",
+      bad: dark ? "#f2797a" : "#9e2a2b",
+      info: dark ? "#7ab3ef" : "#28558a",
+      cells: dark
+        ? ["#7ab3ef", "#67bfd8", "#5cd6a5", "#8ce09a", "#f0b44c", "#f59356", "#f2797a"]
+        : ["#28558a", "#1d5c73", "#1e6f50", "#3b875e", "#94620a", "#c86d1f", "#9e2a2b"]
+    };
+  }
+  btnTheme.addEventListener("click", function () {
+    root.setAttribute("data-theme", isDark() ? "light" : "dark");
+  });
+
+  document.getElementById("btn-open-all").addEventListener("click", function () {
+    document.querySelectorAll("details.basis").forEach(function (d) { d.open = true; });
+  });
+  document.getElementById("btn-close-all").addEventListener("click", function () {
+    document.querySelectorAll("details.basis").forEach(function (d) { d.open = false; });
+  });
+
+  /* Lightbox for SVG diagrams */
+  var lightbox = document.getElementById("svg-lightbox");
+  var lightboxImg = document.getElementById("lightbox-img");
+  var lightboxCaption = document.getElementById("lightbox-caption");
+  var lightboxClose = document.getElementById("lightbox-close");
+
+  function openLightbox(imgEl, captionText) {
+    if (!lightbox || !imgEl) return;
+    lightboxImg.src = imgEl.getAttribute("src");
+    lightboxImg.alt = imgEl.getAttribute("alt") || "Sơ đồ phóng to";
+    lightboxCaption.textContent = captionText || imgEl.getAttribute("alt") || "Sơ đồ phóng to";
+    lightbox.classList.add("open");
+  }
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.remove("open");
+  }
+  document.querySelectorAll("figure.diagram").forEach(function (fig) {
+    var img = fig.querySelector("img");
+    var cap = fig.querySelector("figcaption");
+    var hint = fig.querySelector(".zoom-hint");
+    var cleanCap = "";
+    if (cap) {
+      cleanCap = cap.textContent.replace("🔍 Bấm vào sơ đồ để phóng to toàn màn hình", "").trim();
+    }
+    if (img) {
+      img.addEventListener("click", function () { openLightbox(img, cleanCap); });
+    }
+    if (hint && img) {
+      hint.addEventListener("click", function () { openLightbox(img, cleanCap); });
+    }
+  });
+  if (lightboxClose) {
+    lightboxClose.addEventListener("click", closeLightbox);
+  }
+  if (lightbox) {
+    lightbox.addEventListener("click", function (ev) {
+      if (ev.target === lightbox) closeLightbox();
+    });
+  }
+  document.addEventListener("keydown", function (ev) {
+    if (ev.key === "Escape" && lightbox && lightbox.classList.contains("open")) {
+      closeLightbox();
+    }
+  });
+
+  var tocDetails = document.getElementById("toc-details");
+  if (window.matchMedia && window.matchMedia("(max-width: 900px)").matches && tocDetails) {
+    tocDetails.open = false;
+  }
+
+  var links = Array.prototype.slice.call(document.querySelectorAll(".toc a"));
+  var targets = links.map(function (a) {
+    var id = a.getAttribute("href");
+    return id && id.charAt(0) === "#" ? document.getElementById(id.slice(1)) : null;
+  }).filter(Boolean);
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          var id = e.target.id;
+          links.forEach(function (a) {
+            a.classList.toggle("active", a.getAttribute("href") === "#" + id);
+          });
+        }
+      });
+    }, { rootMargin: "0px 0px -72% 0px" });
+    targets.forEach(function (t) { io.observe(t); });
+  }
+
+  /* Visibility tracking for the 3 canvases to avoid offscreen CPU drain */
+  var canvasVisible = {
+    "canvas-warping": true,
+    "canvas-lotus": true,
+    "canvas-librarian": true
+  };
+  if ("IntersectionObserver" in window) {
+    var canvasIo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.target && e.target.id) {
+          canvasVisible[e.target.id] = e.isIntersecting;
+        }
+      });
+    }, { rootMargin: "120px 0px 120px 0px" });
+    ["canvas-warping", "canvas-lotus", "canvas-librarian"].forEach(function (cid) {
+      var el = document.getElementById(cid);
+      if (el) canvasIo.observe(el);
+    });
+  }
+
+  /* ============ 2. SIMULATION 1: SUBJECTIVE SPACE-TIME WARPING LAB ============ */
+  var wCanvas = document.getElementById("canvas-warping");
+  var wCtx = wCanvas.getContext("2d");
+  var wMode = "delong";
+  var wScale = 12;
+  var wTimePhys = 0; // simulated physical minutes
+  var wPulseTime = 0; // ms for deer/saccade mode
+  var wLastNow = performance.now();
+
+  var delongControls = document.getElementById("delong-controls");
+  var deerControls = document.getElementById("deer-controls");
+  var wmL1 = document.getElementById("wm-label-1"), wmV1 = document.getElementById("wm-val-1");
+  var wmL2 = document.getElementById("wm-label-2"), wmV2 = document.getElementById("wm-val-2");
+  var wmL3 = document.getElementById("wm-label-3"), wmV3 = document.getElementById("wm-val-3");
+  var wmL4 = document.getElementById("wm-label-4"), wmV4 = document.getElementById("wm-val-4");
+
+  document.querySelectorAll("[data-wmode]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll("[data-wmode]").forEach(function (b) { b.classList.remove("active"); });
+      btn.classList.add("active");
+      wMode = btn.getAttribute("data-wmode");
+      wTimePhys = 0;
+      wPulseTime = 0;
+      if (wMode === "delong") {
+        delongControls.style.display = "flex";
+        deerControls.style.display = "none";
+      } else {
+        delongControls.style.display = "none";
+        deerControls.style.display = "flex";
+      }
+      updateWarpingMetrics();
+    });
+  });
+
+  document.querySelectorAll("[data-scale]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll("[data-scale]").forEach(function (b) { b.classList.remove("active"); });
+      btn.classList.add("active");
+      wScale = parseInt(btn.getAttribute("data-scale"), 10);
+      wTimePhys = 0;
+      updateWarpingMetrics();
+    });
+  });
+
+  document.getElementById("btn-w-reset").addEventListener("click", function () {
+    wTimePhys = 0;
+  });
+  document.getElementById("btn-trigger-event").addEventListener("click", function () {
+    wPulseTime = 0;
+  });
+
+  function updateWarpingMetrics() {
+    if (wMode === "delong") {
+      var targetPhys = (30 / wScale).toFixed(2).replace(".", ",");
+      wmL1.textContent = "Hệ số thu nhỏ không gian (x)";
+      wmV1.textContent = "1 : " + wScale + (wScale === 1 ? " (Phòng thật)" : " (x = " + wScale + ")");
+      wmL2.textContent = "Thời gian Đồng hồ Vật lý cho 30p chủ quan";
+      wmV2.textContent = targetPhys + " phút đồng hồ (30 / " + wScale + ")";
+      wmL3.textContent = "Trải nghiệm Chủ quan (t_chủ_quan = x · t_đồng_hồ)";
+      wmV3.textContent = "30,00 phút chủ quan (E = x = " + wScale + ")";
+      wmL4.textContent = "DeLong (1981) & Ví dụ Buzsáki (tr. 267)";
+      wmV4.textContent = "E = x (2,5p ở 1:12); tr. 267 nêu ví dụ 2:1 (10p → 5p)";
+    } else if (wMode === "deer") {
+      wmL1.textContent = "Mốc sự kiện Vật lý [Mốc 0 ms]";
+      wmV1.textContent = "0 ms: Nai phóng qua đường";
+      wmL2.textContent = "Phản xạ Thân não [Minh họa cơ chế]";
+      wmV2.textContent = "~150 ms: Chân đạp phanh trước khi có ý thức";
+      wmL3.textContent = "Ngưỡng Ý thức Vỏ não [Số đo thực nghiệm]";
+      wmV3.textContent = "~500 ms (Libet et al., 1979 · tr. 261)";
+      wmL4.textContent = "Bù trừ Corollary Discharge [Minh họa cơ chế]";
+      wmV4.textContent = "Hậu đoán gán nhãn lùi về ~80 ms trước đạp phanh";
+    } else {
+      wmL1.textContent = "Thích nghi độ trễ (Stetson & Eagleman, 2006)";
+      wmV1.textContent = "Quen độ trễ 200 ms nhấn phím → đèn sáng [Minh họa]";
+      wmL2.textContent = "Khi bỏ độ trễ (Đèn sáng ở 0 ms)";
+      wmV2.textContent = "Cảm nhận đèn sáng trước khi nhấn phím (~ -150 ms)";
+      wmL3.textContent = "Khi mắt nhảy nhanh (Saccade · Morrone 2005)";
+      wmV3.textContent = "100 ms bị nén còn 50 ms [Số đo thực nghiệm]";
+      wmL4.textContent = "Cửa sổ đảo ngược thứ tự [Số đo thực nghiệm]";
+      wmV4.textContent = "-70 đến -30 ms trước cú nhảy mắt (tr. 262)";
+    }
+  }
+  updateWarpingMetrics();
+
+  function drawClock(ctx, cx, cy, r, minutes, maxMinutes, color, label, sublabel, pal) {
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(cx, cy, r, 0, Math.PI * 2);
+    ctx.fillStyle = pal.bgAlt;
+    ctx.fill();
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = color;
+    ctx.stroke();
+
+    // Progress arc
+    var frac = Math.min(1, minutes / maxMinutes);
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.arc(cx, cy, r - 4, -Math.PI / 2, -Math.PI / 2 + frac * Math.PI * 2);
+    ctx.closePath();
+    ctx.fillStyle = color + "33";
+    ctx.fill();
+
+    // Ticks
+    for (var i = 0; i < 12; i++) {
+      var ang = (i / 12) * Math.PI * 2 - Math.PI / 2;
+      ctx.beginPath();
+      ctx.moveTo(cx + Math.cos(ang) * (r - 10), cy + Math.sin(ang) * (r - 10));
+      ctx.lineTo(cx + Math.cos(ang) * (r - 3), cy + Math.sin(ang) * (r - 3));
+      ctx.strokeStyle = pal.muted;
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+    }
+
+    // Hand
+    var handAng = -Math.PI / 2 + (minutes / 30) * Math.PI * 2;
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.lineTo(cx + Math.cos(handAng) * (r - 14), cy + Math.sin(handAng) * (r - 14));
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 3.5;
+    ctx.stroke();
+
+    ctx.fillStyle = pal.ink;
+    ctx.font = "600 14px 'Be Vietnam Pro', sans-serif";
+    ctx.textAlign = "center";
+    ctx.fillText(label, cx, cy + r + 24);
+    ctx.fillStyle = color;
+    ctx.font = "600 15px 'JetBrains Mono', monospace";
+    ctx.fillText(minutes.toFixed(1).replace(".", ",") + " / 30,0 phút", cx, cy + r + 45);
+    ctx.fillStyle = pal.muted;
+    ctx.font = "12px 'Be Vietnam Pro', sans-serif";
+    ctx.fillText(sublabel, cx, cy + r + 64);
+    ctx.restore();
+  }
+
+  function renderWarping(now) {
+    var dt = Math.min(50, Math.max(0, (now || performance.now()) - wLastNow)) / 16.667;
+    wLastNow = now || performance.now();
+
+    if (!canvasVisible["canvas-warping"]) {
+      requestAnimationFrame(renderWarping);
+      return;
+    }
+
+    var pal = getPalette();
+    wCtx.clearRect(0, 0, wCanvas.width, wCanvas.height);
+    wCtx.fillStyle = pal.bg;
+    wCtx.fillRect(0, 0, wCanvas.width, wCanvas.height);
+
+    if (wMode === "delong") {
+      var maxPhysFor30 = 30 / wScale;
+      if (prefersReducedMotion) {
+        wTimePhys = maxPhysFor30 * 0.65;
+      } else {
+        wTimePhys += 0.022 * dt;
+        if (wTimePhys > maxPhysFor30) wTimePhys = 0;
+      }
+      var subjMinutes = Math.min(30, wTimePhys * wScale);
+
+      // Left: Scaled Room Box
+      var rx = 40, ry = 38, rw = 270, rh = 205;
+      wCtx.strokeStyle = pal.rule;
+      wCtx.lineWidth = 1.5;
+      wCtx.strokeRect(rx, ry, rw, rh);
+      wCtx.fillStyle = pal.ink;
+      wCtx.font = "600 13.5px 'Be Vietnam Pro', sans-serif";
+      wCtx.fillText("Mô hình Không gian (Tỷ lệ 1:" + wScale + ")", rx + 12, ry + 24);
+
+      var scaleVisual = wScale === 1 ? 1 : (wScale === 6 ? 0.68 : (wScale === 12 ? 0.48 : 0.34));
+      var boxW = (rw - 44) * scaleVisual;
+      var boxH = (rh - 68) * scaleVisual;
+      var bx = rx + (rw - boxW) / 2;
+      var by = ry + 36 + (rh - 52 - boxH) / 2;
+
+      wCtx.fillStyle = pal.bgAlt;
+      wCtx.fillRect(bx, by, boxW, boxH);
+      wCtx.strokeStyle = pal.accent;
+      wCtx.lineWidth = 2.2;
+      wCtx.strokeRect(bx, by, boxW, boxH);
+
+      // Moving agent inside scaled room
+      var agentPhase = (wTimePhys * wScale * 0.45) % 2;
+      var normX = agentPhase <= 1 ? agentPhase : (2 - agentPhase);
+      var ax = bx + 14 + normX * Math.max(10, boxW - 28);
+      var ay = by + boxH * 0.58;
+      wCtx.beginPath();
+      wCtx.arc(ax, ay, Math.max(4, 8 * scaleVisual), 0, Math.PI * 2);
+      wCtx.fillStyle = pal.ok;
+      wCtx.fill();
+
+      wCtx.fillStyle = pal.muted;
+      wCtx.font = "12px 'Be Vietnam Pro', sans-serif";
+      wCtx.fillText("DeLong (1981): E = x = t_chủ_quan / t_đồng_hồ = " + wScale, rx + 12, ry + rh + 24);
+      wCtx.fillText("Ví dụ giả định Buzsáki (tr. 267): Nén 2:1 (10p → 5p)", rx + 12, ry + rh + 44);
+
+      // Middle: Physical Clock
+      drawClock(wCtx, 470, 130, 74, wTimePhys, 30, pal.info, "Đồng hồ Vật lý (Clock Time)", "Trôi đều theo nguyên tử Cesium", pal);
+      // Right: Subjective Clock
+      drawClock(wCtx, 745, 130, 74, subjMinutes, 30, pal.ok, "Đồng hồ Chủ quan (Lived Time)", "Đạt 30 phút chỉ sau " + maxPhysFor30.toFixed(2).replace(".", ",") + "p vật lý", pal);
+
+    } else if (wMode === "deer") {
+      if (prefersReducedMotion) {
+        wPulseTime = 500;
+      } else {
+        wPulseTime = (wPulseTime + 2.4 * dt) % 620;
+      }
+      var tlX = 65, tlW = 790;
+      var yPhys = 95, ySubj = 235;
+
+      wCtx.fillStyle = pal.ink;
+      wCtx.font = "600 13.5px 'Be Vietnam Pro', sans-serif";
+      wCtx.fillText("1. Trục Thời gian Vật lý & Vi mạch Thần kinh (500 ms Libet là số đo thực nghiệm; 150 ms là mốc minh họa):", tlX, 42);
+      wCtx.fillText("2. Trục Trải nghiệm Chủ quan sau khi Phóng điện hệ quả (Corollary Discharge) hiệu chỉnh [Minh họa cơ chế]:", tlX, 185);
+
+      // Draw Physical Timeline
+      wCtx.strokeStyle = pal.rule;
+      wCtx.lineWidth = 4;
+      wCtx.beginPath();
+      wCtx.moveTo(tlX, yPhys);
+      wCtx.lineTo(tlX + tlW, yPhys);
+      wCtx.stroke();
+
+      // Draw Subjective Timeline
+      wCtx.beginPath();
+      wCtx.moveTo(tlX, ySubj);
+      wCtx.lineTo(tlX + tlW, ySubj);
+      wCtx.stroke();
+
+      var physEvents = [
+        { ms: 0, label: "0 ms: Nai phóng qua", sub: "Kích thích võng mạc [Mốc 0 ms]", col: pal.warn },
+        { ms: 150, label: "~150 ms: Chân ĐẠP PHANH", sub: "Phản xạ Thân não [Minh họa cơ chế]", col: pal.ok },
+        { ms: 500, label: "500 ms: Vỏ não CÓ Ý THỨC", sub: "Ngưỡng Libet [Số đo thực nghiệm]", col: pal.bad }
+      ];
+      physEvents.forEach(function (ev) {
+        var x = tlX + (ev.ms / 600) * tlW;
+        wCtx.beginPath();
+        wCtx.arc(x, yPhys, 9, 0, Math.PI * 2);
+        wCtx.fillStyle = ev.col;
+        wCtx.fill();
+        wCtx.fillStyle = pal.ink;
+        wCtx.font = "600 12.5px 'Be Vietnam Pro', sans-serif";
+        wCtx.fillText(ev.label, x - 20, yPhys - 18);
+        wCtx.fillStyle = pal.muted;
+        wCtx.font = "11.5px 'Be Vietnam Pro', sans-serif";
+        wCtx.fillText(ev.sub, x - 20, yPhys + 26);
+      });
+
+      // Subjective events (reordered by Postdiction)
+      var subjEvents = [
+        { ms: 80, label: "Nhãn chủ quan ~80 ms: 'Tôi THẤY con nai'", sub: "Hậu đoán lùi nhãn [Minh họa cơ chế]", col: pal.info },
+        { ms: 220, label: "Nhãn chủ quan ~220 ms: 'Nên tôi mới ĐẠP PHANH'", sub: "Bảo toàn nhân quả [Minh họa cơ chế]", col: pal.ok }
+      ];
+      subjEvents.forEach(function (ev) {
+        var x = tlX + (ev.ms / 600) * tlW;
+        wCtx.beginPath();
+        wCtx.arc(x, ySubj, 9, 0, Math.PI * 2);
+        wCtx.fillStyle = ev.col;
+        wCtx.fill();
+        wCtx.fillStyle = pal.ink;
+        wCtx.font = "600 12.5px 'Be Vietnam Pro', sans-serif";
+        wCtx.fillText(ev.label, x - 10, ySubj - 18);
+        wCtx.fillStyle = pal.muted;
+        wCtx.font = "11.5px 'Be Vietnam Pro', sans-serif";
+        wCtx.fillText(ev.sub, x - 10, ySubj + 26);
+      });
+
+      // Curved arrow showing Postdiction backward referral from 500ms to 80ms
+      var x500 = tlX + (500 / 600) * tlW;
+      var x80 = tlX + (80 / 600) * tlW;
+      wCtx.save();
+      wCtx.setLineDash([6, 4]);
+      wCtx.strokeStyle = pal.accent;
+      wCtx.lineWidth = 2.2;
+      wCtx.beginPath();
+      wCtx.moveTo(x500, yPhys + 12);
+      wCtx.bezierCurveTo(x500 - 120, yPhys + 85, x80 + 140, ySubj - 85, x80, ySubj - 12);
+      wCtx.stroke();
+      wCtx.restore();
+
+      // Moving pulse cursor
+      var curX = tlX + (wPulseTime / 600) * tlW;
+      wCtx.strokeStyle = pal.accent;
+      wCtx.lineWidth = 2;
+      wCtx.beginPath();
+      wCtx.moveTo(curX, 55);
+      wCtx.lineTo(curX, 275);
+      wCtx.stroke();
+      wCtx.fillStyle = pal.accent;
+      wCtx.font = "600 12px 'JetBrains Mono', monospace";
+      wCtx.fillText("t = " + Math.round(wPulseTime) + " ms", curX - 28, 302);
+
+    } else {
+      // Mode 1C: Key-press adaptation & Saccadic Compression
+      wPulseTime = prefersReducedMotion ? 200 : ((wPulseTime + 1.8 * dt) % 400);
+      var leftX = 48, wBar = 385;
+      wCtx.fillStyle = pal.ink;
+      wCtx.font = "600 13.5px 'Be Vietnam Pro', sans-serif";
+      wCtx.fillText("A. Thích nghi Nhấn phím → Đèn sáng (Stetson & Eagleman)", leftX, 44);
+      wCtx.fillText("B. Nén 50% khi Đảo mắt nhanh (Morrone et al., 2005)", leftX + 425, 44);
+
+      // Left box: Keypress vs Flash
+      wCtx.fillStyle = pal.bgAlt;
+      wCtx.fillRect(leftX, 62, wBar, 228);
+      wCtx.strokeStyle = pal.rule;
+      wCtx.strokeRect(leftX, 62, wBar, 228);
+
+      wCtx.fillStyle = pal.muted;
+      wCtx.font = "12px 'Be Vietnam Pro', sans-serif";
+      wCtx.fillText("1. Quen độ trễ 200 ms: Não kéo 'Nhấn' & 'Đèn' lại gần.", leftX + 14, 90);
+      wCtx.fillText("2. Khi bỏ độ trễ (Đèn sáng ngay lúc nhấn t = 0 ms):", leftX + 14, 140);
+      wCtx.fillStyle = pal.bad;
+      wCtx.font = "600 12.5px 'Be Vietnam Pro', sans-serif";
+      wCtx.fillText("→ Cảm nhận: ĐÈN SÁNG (-150 ms) TRƯỚC KHI NHẤN!", leftX + 14, 168);
+      wCtx.fillStyle = pal.muted;
+      wCtx.font = "11.5px 'Be Vietnam Pro', sans-serif";
+      wCtx.fillText("[Minh họa cơ chế hiệu chỉnh Corollary Discharge, tr. 262]", leftX + 14, 192);
+
+      // Visual timeline bar inside Left box
+      wCtx.strokeStyle = pal.rule;
+      wCtx.lineWidth = 3;
+      wCtx.beginPath();
+      wCtx.moveTo(leftX + 30, 236);
+      wCtx.lineTo(leftX + wBar - 30, 236);
+      wCtx.stroke();
+      wCtx.fillStyle = pal.bad;
+      wCtx.beginPath(); wCtx.arc(leftX + 95, 236, 8, 0, Math.PI * 2); wCtx.fill();
+      wCtx.fillText("Đèn sáng (~ -150 ms)", leftX + 35, 264);
+      wCtx.fillStyle = pal.ok;
+      wCtx.beginPath(); wCtx.arc(leftX + 265, 236, 8, 0, Math.PI * 2); wCtx.fill();
+      wCtx.fillText("Ngón tay nhấn (0 ms)", leftX + 205, 264);
+
+      // Right box: Saccadic compression
+      var rx2 = leftX + 425;
+      wCtx.fillStyle = pal.bgAlt;
+      wCtx.fillRect(rx2, 62, wBar, 228);
+      wCtx.strokeStyle = pal.rule;
+      wCtx.strokeRect(rx2, 62, wBar, 228);
+
+      wCtx.fillStyle = pal.ink;
+      wCtx.font = "12px 'Be Vietnam Pro', sans-serif";
+      wCtx.fillText("Kích thích thực tế: 100 ms [Số đo thực nghiệm, tr. 262]", rx2 + 16, 94);
+      wCtx.fillStyle = pal.info;
+      wCtx.fillRect(rx2 + 16, 106, 280, 24);
+      wCtx.fillStyle = "#fff";
+      wCtx.fillText("100 ms (Khi mắt đứng yên)", rx2 + 26, 123);
+
+      wCtx.fillStyle = pal.ink;
+      wCtx.fillText("Cảm nhận khi mắt nhảy (Saccade): 50 ms [Số đo thực nghiệm]", rx2 + 16, 168);
+      wCtx.fillStyle = pal.warn;
+      wCtx.fillRect(rx2 + 16, 180, 140, 24);
+      wCtx.fillStyle = "#fff";
+      wCtx.fillText("50 ms (Nén 50%)", rx2 + 24, 197);
+
+      wCtx.fillStyle = pal.muted;
+      wCtx.font = "11.5px 'Be Vietnam Pro', sans-serif";
+      wCtx.fillText("Đảo ngược thứ tự chủ quan trong cửa sổ -70 đến -30 ms", rx2 + 16, 236);
+      wCtx.fillText("trước cú nhảy mắt (Morrone et al., 2005 · Nature Neurosci.).", rx2 + 16, 256);
+    }
+
+    requestAnimationFrame(renderWarping);
+  }
+  requestAnimationFrame(renderWarping);
+
+  /* ============ 3. SIMULATION 2: LOTUS ELISE & CA1 SEQUENCE GENERATOR ============ */
+  var cCanvas = document.getElementById("canvas-lotus");
+  var cCtx = cCanvas.getContext("2d");
+  var cMode = "track"; // track | treadmill | immobile
+  var cLens = "theta"; // theta | space | time
+  var cVel = 25; // cm/s
+  var cTick = 0;
+  var cLastNow = performance.now();
+
+  var sliderVel = document.getElementById("slider-velocity");
+  var labelVel = document.getElementById("label-velocity");
+  var speedGroup = document.getElementById("speed-control-group");
+  var cmV1 = document.getElementById("cm-val-1");
+  var cmV2 = document.getElementById("cm-val-2");
+  var cmV3 = document.getElementById("cm-val-3");
+  var cmV4 = document.getElementById("cm-val-4");
+
+  var cellNames = ["A", "B", "C", "D", "E", "F", "G"];
+
+  function updateLotusMetrics() {
+    var effV = cMode === "immobile" ? 0 : cVel;
+    var fTheta = cMode === "immobile" ? 6.5 : (7.0 + (cVel / 50) * 2.4);
+    cmV1.textContent = "v = " + effV + " cm/s · f_θ = " + fTheta.toFixed(1).replace(".", ",") + " Hz";
+    if (cMode === "immobile") {
+      cmV2.textContent = "Quỹ đạo nội sinh khi v = 0 (Reddy 2021; Howard 2022)";
+      cmV4.textContent = "Mô hình Laplace (2C): LEC exp(-s·t) → CA1 nén log(t)";
+    } else if (cMode === "treadmill") {
+      cmV2.textContent = "Tọa độ phòng cố định · Pít-tông quay 1,50 triệu nhịp";
+      cmV4.textContent = "Kraus et al. (2015): Cùng 1 chuỗi nơ-ron cho cả d và t";
+    } else {
+      cmV2.textContent = "Chuỗi A → B → C → D → E → F → G (Cùng vị trí đỉnh)";
+      cmV4.textContent = "d = v · t: Đổi lăng kính chỉ đổi nhãn trục hoành (cm ↔ s)";
+    }
+    if (cMode === "immobile") {
+      cmV3.textContent = "Nén logarit log(t) khi v = 0 (Cao & Howard, 2022)";
+    } else if (cLens === "theta") {
+      cmV3.textContent = "Lăng kính Nội tại: Thứ tự Pha Chuỗi Tập hợp Nơ-ron";
+    } else if (cLens === "space") {
+      cmV3.textContent = "Chiếu lên Thước (0 → 200 cm) → Gọi là Place Cells";
+    } else {
+      cmV3.textContent = "Chiếu lên Đồng hồ (t = d/v) → Gọi là Time Cells (Cùng chuỗi!)";
+    }
+  }
+
+  document.querySelectorAll("[data-cmode]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll("[data-cmode]").forEach(function (b) { b.classList.remove("active"); });
+      btn.classList.add("active");
+      cMode = btn.getAttribute("data-cmode");
+      speedGroup.style.opacity = cMode === "immobile" ? "0.45" : "1";
+      updateLotusMetrics();
+    });
+  });
+
+  document.querySelectorAll("[data-clens]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll("[data-clens]").forEach(function (b) { b.classList.remove("active"); });
+      btn.classList.add("active");
+      cLens = btn.getAttribute("data-clens");
+      updateLotusMetrics();
+    });
+  });
+
+  sliderVel.addEventListener("input", function () {
+    cVel = parseInt(sliderVel.value, 10);
+    labelVel.textContent = cVel + " cm/s";
+    updateLotusMetrics();
+  });
+  updateLotusMetrics();
+
+  function renderLotus(now) {
+    var dt = Math.min(50, Math.max(0, (now || performance.now()) - cLastNow)) / 16.667;
+    cLastNow = now || performance.now();
+
+    if (!canvasVisible["canvas-lotus"]) {
+      requestAnimationFrame(renderLotus);
+      return;
+    }
+
+    var pal = getPalette();
+    var cellColors = pal.cells;
+    cCtx.clearRect(0, 0, cCanvas.width, cCanvas.height);
+    cCtx.fillStyle = pal.bg;
+    cCtx.fillRect(0, 0, cCanvas.width, cCanvas.height);
+
+    var rate = cMode === "immobile" ? 0.0045 : (0.0025 + (cVel / 50) * 0.0075);
+    if (prefersReducedMotion) {
+      cTick = 0.50;
+    } else {
+      cTick = (cTick + rate * dt) % 1;
+    }
+
+    // Top Panel: Lotus Elise Dashboard / Track vs. Bottom Panel: 7 CA1 Cell Assemblies
+    var padX = 48, plotW = 824;
+    cCtx.fillStyle = pal.ink;
+    cCtx.font = "600 13.5px 'Be Vietnam Pro', sans-serif";
+    var topTitle = cMode === "track"
+      ? "1. Hành lang thực tế (v > 0): Quãng đường (d) và Thời gian (t) khóa chặt qua Vận tốc (d = v · t)"
+      : (cMode === "treadmill"
+          ? "1. Máy chạy bộ tại chỗ (Kraus et al., 2015; Lotus Elise tr. 266): Đếm 1,50 triệu nhịp pít-tông nội sinh"
+          : "1. Chờ đợi bất động 10 giây (v = 0 · Chế độ 2C: Tsao et al., 2018; Cao & Howard, 2022): Biến đổi Laplace LEC exp(-s·t)");
+    cCtx.fillText(topTitle, padX, 28);
+
+    // Draw top bar or LEC decay curves
+    if (cMode !== "immobile") {
+      cCtx.fillStyle = pal.bgAlt;
+      cCtx.fillRect(padX, 40, plotW, 54);
+      cCtx.strokeStyle = pal.rule;
+      cCtx.strokeRect(padX, 40, plotW, 54);
+
+      var agentX = cMode === "track" ? (padX + 20 + cTick * (plotW - 40)) : (padX + plotW * 0.5);
+      if (cMode === "treadmill") {
+        cCtx.strokeStyle = pal.warn;
+        cCtx.lineWidth = 2;
+        cCtx.strokeRect(agentX - 70, 78, 140, 10);
+      }
+      cCtx.beginPath();
+      cCtx.arc(agentX, 65, 11, 0, Math.PI * 2);
+      cCtx.fillStyle = pal.accent;
+      cCtx.fill();
+
+      var distCm = (cTick * 200).toFixed(0);
+      var timeSec = (200 / cVel * cTick).toFixed(1).replace(".", ",");
+      var pistonMillions = (cTick * 1.50).toFixed(2).replace(".", ",");
+      cCtx.fillStyle = pal.ink;
+      cCtx.font = "600 12px 'JetBrains Mono', monospace";
+      cCtx.fillText("Bộ đếm Lotus Elise: " + pistonMillions + " / 1,50 triệu nhịp pít-tông  |  d = " + distCm + " cm  |  t = d/v = " + timeSec + " s", padX + 16, 69);
+    } else {
+      // Draw LEC exponential decay curves exp(-s*t)
+      cCtx.fillStyle = pal.bgAlt;
+      cCtx.fillRect(padX, 40, plotW, 60);
+      cCtx.strokeStyle = pal.rule;
+      cCtx.strokeRect(padX, 40, plotW, 60);
+      var rates = [1.5, 3.0, 6.0, 11.0];
+      rates.forEach(function (s, idx) {
+        cCtx.beginPath();
+        for (var px = 0; px <= plotW; px += 6) {
+          var normT = px / plotW;
+          var y = 94 - Math.exp(-s * normT) * 46;
+          if (px === 0) cCtx.moveTo(padX + px, y);
+          else cCtx.lineTo(padX + px, y);
+        }
+        cCtx.strokeStyle = cellColors[idx * 2];
+        cCtx.lineWidth = 1.8;
+        cCtx.stroke();
+      });
+      cCtx.fillStyle = pal.muted;
+      cCtx.font = "12px 'Be Vietnam Pro', sans-serif";
+      cCtx.fillText("Đầu vào Vỏ não Nội khứu Bên (LEC): Họ đường cong suy giảm hàm mũ exp(-s·t) thực hiện Biến đổi Laplace thực", padX + 16, 60);
+    }
+
+    // Bottom Panel: 7 CA1 Cell Assemblies Tuning Curves
+    // KEY INVARIANT (Decision 2a): When moving (v > 0, Mode 2A & 2B), all 3 lenses (theta, space, time)
+    // display the EXACT SAME linear neural sequence peaks, changing ONLY the X-axis unit label (d [cm] <-> t = d/v [s]).
+    // Logarithmic compression (log t) is isolated to Mode 2C (immobile v = 0, Howard's Laplace model).
+    var chartTop = 128, chartH = 166;
+    var useLog = (cMode === "immobile");
+    cCtx.fillStyle = pal.ink;
+    cCtx.font = "600 13px 'Be Vietnam Pro', sans-serif";
+    var lensTitle;
+    if (useLog) {
+      lensTitle = "2. Khi bất động (v = 0 · Chế độ 2C): Chuỗi CA1 giải mã ngược Laplace tạo độ nén logarit log(t) (Cao & Howard, 2022)";
+    } else if (cLens === "theta") {
+      lensTitle = "2. Lăng kính Nội tại: Chuỗi quỹ đạo tập hợp nơ-ron CA1 (A → G) giữ nguyên hình dạng bất kể thước hay đồng hồ";
+    } else if (cLens === "space") {
+      lensTitle = "2. Lăng kính Chiếu lên THƯỚC ĐO (d = 0 → 200 cm): Cùng chuỗi nơ-ron A → G được gọi tên là 'Place Cells'";
+    } else {
+      lensTitle = "2. Lăng kính Chiếu lên ĐỒNG HỒ (t = d/v = 0 → " + (200 / cVel).toFixed(1).replace(".", ",") + " s): CÙNG CHUỖI ĐỈNH A → G được gọi tên là 'Time Cells'!";
+    }
+    cCtx.fillText(lensTitle, padX, 118);
+
+    cCtx.fillStyle = pal.bgAlt;
+    cCtx.fillRect(padX, chartTop, plotW, chartH);
+    cCtx.strokeStyle = pal.rule;
+    cCtx.strokeRect(padX, chartTop, plotW, chartH);
+
+    var centers = useLog
+      ? [0.06, 0.13, 0.22, 0.34, 0.49, 0.68, 0.89]
+      : [0.10, 0.23, 0.36, 0.50, 0.64, 0.77, 0.90];
+    var widths = useLog
+      ? [0.032, 0.042, 0.055, 0.072, 0.092, 0.115, 0.14]
+      : [0.055, 0.055, 0.055, 0.055, 0.055, 0.055, 0.055];
+
+    centers.forEach(function (mu, idx) {
+      var sigma = widths[idx];
+      var col = cellColors[idx];
+      var rowY = chartTop + 21 + idx * 20;
+
+      cCtx.beginPath();
+      for (var px = 0; px <= plotW; px += 4) {
+        var u = px / plotW;
+        var g = Math.exp(-0.5 * Math.pow((u - mu) / sigma, 2));
+        var y = chartTop + chartH - 12 - g * (chartH - 34);
+        if (px === 0) cCtx.moveTo(padX + px, y);
+        else cCtx.lineTo(padX + px, y);
+      }
+      cCtx.strokeStyle = col;
+      cCtx.lineWidth = Math.abs(cTick - mu) < sigma ? 3.2 : 1.7;
+      cCtx.stroke();
+
+      var cx = padX + mu * plotW;
+      var activeNow = Math.abs(cTick - mu) < sigma * 0.85;
+      cCtx.fillStyle = activeNow ? col : pal.muted;
+      cCtx.font = (activeNow ? "700 " : "500 ") + "12px 'JetBrains Mono', monospace";
+      cCtx.fillText("Tập hợp " + cellNames[idx], cx - 32, rowY);
+
+      // Tick mark on X-axis showing exact correspondence of peaks across lenses when v > 0
+      var tickLabel = "";
+      if (useLog) {
+        tickLabel = (mu * 10).toFixed(1).replace(".", ",") + "s";
+      } else if (cLens === "theta") {
+        tickLabel = "θ_" + (idx + 1);
+      } else if (cLens === "space") {
+        tickLabel = Math.round(mu * 200) + "cm";
+      } else {
+        tickLabel = ((mu * 200) / cVel).toFixed(1).replace(".", ",") + "s";
+      }
+      cCtx.fillStyle = activeNow ? col : pal.muted;
+      cCtx.font = "600 11px 'JetBrains Mono', monospace";
+      cCtx.fillText(tickLabel, cx - 16, chartTop + chartH + 15);
+    });
+
+    // Cursor line
+    var curX2 = padX + cTick * plotW;
+    cCtx.strokeStyle = pal.accent;
+    cCtx.lineWidth = 2.2;
+    cCtx.beginPath();
+    cCtx.moveTo(curX2, chartTop);
+    cCtx.lineTo(curX2, chartTop + chartH);
+    cCtx.stroke();
+
+    // X-axis label based on Lens & Mode
+    cCtx.fillStyle = pal.ink;
+    cCtx.font = "600 12px 'JetBrains Mono', monospace";
+    var xAxisLabel;
+    if (useLog) {
+      xAxisLabel = "Trục Hoành (Chế độ 2C · v = 0): Thời gian chờ t = 0,0 s ────────────► 10,0 s (Các trường thời gian giãn rộng theo log t)";
+    } else if (cLens === "theta") {
+      xAxisLabel = "Trục Hoành Nội tại: Thứ tự Pha Chuỗi Tập hợp Nơ-ron (θ_1 → θ_7 · Hồi hải mã chỉ phát chuỗi thứ tự nội sinh)";
+    } else if (cLens === "space") {
+      xAxisLabel = "Trục Hoành Ngoại chiếu (Thước đo): Quãng đường d = 0 cm ────────────► 200 cm (Đỉnh A..G giữ nguyên, đổi đơn vị thành cm)";
+    } else {
+      xAxisLabel = "Trục Hoành Ngoại chiếu (Đồng hồ): Thời lượng t = d/v = 0,0 s ────────► " + (200 / cVel).toFixed(1).replace(".", ",") + " s (Đỉnh A..G giữ nguyên, chỉ chia trục cho v!)";
+    }
+    cCtx.fillText(xAxisLabel, padX + 8, chartTop + chartH + 34);
+
+    requestAnimationFrame(renderLotus);
+  }
+  requestAnimationFrame(renderLotus);
+
+  /* ============ 4. SIMULATION 3: HIPPOCAMPAL LIBRARIAN & ALL 11 EVENTS OF DEDE ET AL. (2016) ============ */
+  var lCanvas = document.getElementById("canvas-librarian");
+  var lCtx = lCanvas.getContext("2d");
+  var lMode = "intact"; // intact | lesion | spwr | btsp
+  var lPhase = 0;
+  var lLastNow = performance.now();
+
+  // All 11 staged events of Dede et al. (2016): 5 named on p. 273 of Buzsáki (2019) + 6 remaining events (6..11)
+  var events11 = [
+    { id: 1, name: "1. Vứt cốc" },
+    { id: 2, name: "2. Khóa xe" },
+    { id: 3, name: "3. Mua chuối" },
+    { id: 4, name: "4. Nhặt xu" },
+    { id: 5, name: "5. Uống nước" },
+    { id: 6, name: "6. Sự kiện 6" },
+    { id: 7, name: "7. Sự kiện 7" },
+    { id: 8, name: "8. Sự kiện 8" },
+    { id: 9, name: "9. Sự kiện 9" },
+    { id: 10, name: "10. Sự kiện 10" },
+    { id: 11, name: "11. Sự kiện 11" }
+  ];
+  // Initial permutation of 0..10 with sum(d_i^2) = 212 => Spearman rho = 1 - 6*212/1320 = +0.036 (+0,04)
+  var scrambledMap = [5, 1, 9, 2, 7, 0, 10, 4, 8, 3, 6];
+
+  function computeSpearmanRho(perm) {
+    var n = perm.length;
+    var sumD2 = 0;
+    for (var i = 0; i < n; i++) {
+      var d = i - perm[i];
+      sumD2 += d * d;
+    }
+    return 1 - (6 * sumD2) / (n * (n * n - 1));
+  }
+  function formatRho(rho) {
+    var sign = rho >= 0 ? "+" : "";
+    return sign + rho.toFixed(2).replace(".", ",");
+  }
+
+  var lmV1 = document.getElementById("lm-val-1");
+  var lmV2 = document.getElementById("lm-val-2");
+  var lmV3 = document.getElementById("lm-val-3");
+  var lmV4 = document.getElementById("lm-val-4");
+
+  function updateLibrarianMetrics() {
+    var currentRho = computeSpearmanRho(scrambledMap);
+    if (lMode === "intact") {
+      lmV1.textContent = "11/11 sự kiện được bảo tồn (5 mốc tr. 273 + 6 mốc)";
+      lmV2.textContent = "ρ = +1,00 (Đúng trình tự 11 sự kiện)";
+      lmV3.textContent = "Sóng Theta (8 Hz) nối chuỗi con trỏ P1 → P11";
+      lmV4.textContent = "Kể đúng thứ tự & Dự phóng được tương lai";
+    } else if (lMode === "lesion") {
+      lmV1.textContent = "11/11 sự kiện vẫn nhớ chi tiết (Dede 2016, tr. 273)";
+      lmV2.textContent = "ρ = " + formatRho(currentRho) + " (Xáo trộn thứ tự 11 sự kiện!)";
+      lmV3.textContent = "Mất Thủ thư Hồi hải mã giữ mục lục thứ tự";
+      lmV4.textContent = "Nhớ 'Cái gì' nhưng mất trình tự Trước – Sau";
+    } else if (lMode === "spwr") {
+      lmV1.textContent = "Phát lại nén nhanh đúng 15x khi nghỉ/ngủ";
+      lmV2.textContent = "Gợn sóng sắc nét SPW-Rs (150–250 Hz)";
+      lmV3.textContent = "Củng cố synap vỏ não (Complementary Learning)";
+      lmV4.textContent = "Hạ đường huyết ngoại vi sau ~10 phút (Tingley 2021)";
+    } else {
+      lmV1.textContent = "Sự kiện số 5 kích hoạt Xung Canxi Nhánh gai";
+      lmV2.textContent = "Cửa sổ dẻo BTSP mở rộng ~3–5 giây";
+      lmV3.textContent = "Ghi mới trường vị trí chỉ sau 1 lần chạy";
+      lmV4.textContent = "Hiệu chỉnh Từ điển tiền cấu hình (Magee 2017)";
+    }
+  }
+
+  document.querySelectorAll("[data-lmode]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll("[data-lmode]").forEach(function (b) { b.classList.remove("active"); });
+      btn.classList.add("active");
+      lMode = btn.getAttribute("data-lmode");
+      lPhase = 0;
+      updateLibrarianMetrics();
+    });
+  });
+
+  document.getElementById("btn-reshuffle").addEventListener("click", function () {
+    // Fisher-Yates shuffle for all 11 events, ensuring a genuinely scrambled order (|rho| <= 0.35)
+    var bestArr = scrambledMap.slice();
+    for (var attempt = 0; attempt < 12; attempt++) {
+      var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      for (var i = arr.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = arr[i]; arr[i] = arr[j]; arr[j] = tmp;
+      }
+      bestArr = arr;
+      if (Math.abs(computeSpearmanRho(arr)) <= 0.35) break;
+    }
+    scrambledMap = bestArr;
+    lPhase = 0;
+    updateLibrarianMetrics();
+  });
+  updateLibrarianMetrics();
+
+  function renderLibrarian(now) {
+    var dt = Math.min(50, Math.max(0, (now || performance.now()) - lLastNow)) / 16.667;
+    lLastNow = now || performance.now();
+
+    if (!canvasVisible["canvas-librarian"]) {
+      requestAnimationFrame(renderLibrarian);
+      return;
+    }
+
+    var pal = getPalette();
+    lCtx.clearRect(0, 0, lCanvas.width, lCanvas.height);
+    lCtx.fillStyle = pal.bg;
+    lCtx.fillRect(0, 0, lCanvas.width, lCanvas.height);
+
+    // Exact 15x compression ratio in SPW-Rs mode relative to normal Theta mode
+    var baseThetaSpeed = 0.016;
+    var speed = lMode === "spwr" ? (baseThetaSpeed * 15) : baseThetaSpeed;
+    if (prefersReducedMotion) {
+      lPhase = 4;
+    } else {
+      lPhase = (lPhase + speed * dt) % 11;
+    }
+    var activeIdx = Math.floor(lPhase);
+
+    var startX = 20, stepX = 80, boxW = 73;
+    var yHippo = 82, yNeo = 258;
+
+    // Titles
+    lCtx.fillStyle = pal.ink;
+    lCtx.font = "600 13px 'Be Vietnam Pro', sans-serif";
+    lCtx.fillText("TẦNG 1 · THỦ THƯ HỒI HẢI MÃ (11 con trỏ thứ tự P1 → P11 · Không lưu nội dung chi tiết):", startX, 32);
+    lCtx.fillText("TẦNG 2 · THƯ VIỆN TÂN VỎ NÃO (11 sự kiện Dede et al., 2016: 5 mốc tr. 273 + 6 mốc còn lại):", startX, 208);
+
+    // Draw Hippocampal sequence nodes & links (all 11 pointers)
+    for (var i = 0; i < 11; i++) {
+      var hx = startX + i * stepX + boxW / 2;
+      var targetNeoIdx = lMode === "lesion" ? scrambledMap[i] : i;
+      var nx = startX + targetNeoIdx * stepX + boxW / 2;
+      var isCurrent = (i === activeIdx);
+
+      // Horizontal link in Hippocampus (broken in lesion mode)
+      if (i < 10) {
+        lCtx.save();
+        if (lMode === "lesion") {
+          lCtx.setLineDash([4, 5]);
+          lCtx.strokeStyle = pal.bad;
+        } else {
+          lCtx.strokeStyle = lMode === "spwr" ? pal.warn : pal.ok;
+        }
+        lCtx.lineWidth = isCurrent ? 3.2 : 1.8;
+        lCtx.beginPath();
+        lCtx.moveTo(hx + 17, yHippo);
+        lCtx.lineTo(hx + stepX - 17, yHippo);
+        lCtx.stroke();
+        lCtx.restore();
+      }
+
+      // Pointer line from Hippocampus to Neocortex
+      lCtx.save();
+      if (lMode === "lesion") {
+        lCtx.setLineDash([5, 5]);
+        lCtx.strokeStyle = isCurrent ? pal.bad : pal.rule;
+      } else if (lMode === "btsp" && i === 4) {
+        lCtx.strokeStyle = pal.warn;
+      } else {
+        lCtx.strokeStyle = isCurrent ? pal.accent : pal.rule;
+      }
+      lCtx.lineWidth = isCurrent || (lMode === "btsp" && i === 4) ? 2.6 : 1.2;
+      lCtx.beginPath();
+      lCtx.moveTo(hx, yHippo + 17);
+      lCtx.lineTo(nx, yNeo - 24);
+      lCtx.stroke();
+      lCtx.restore();
+
+      // Hippocampal pointer node
+      lCtx.beginPath();
+      lCtx.arc(hx, yHippo, 16, 0, Math.PI * 2);
+      var nodeCol = lMode === "lesion" ? pal.bad : (lMode === "spwr" ? pal.warn : pal.accent);
+      if (lMode === "btsp" && i === 4) nodeCol = pal.ok;
+      lCtx.fillStyle = isCurrent ? nodeCol : pal.bgAlt;
+      lCtx.fill();
+      lCtx.lineWidth = 2;
+      lCtx.strokeStyle = nodeCol;
+      lCtx.stroke();
+
+      lCtx.fillStyle = isCurrent ? "#fff" : pal.ink;
+      lCtx.font = "600 11px 'JetBrains Mono', monospace";
+      lCtx.textAlign = "center";
+      lCtx.fillText("P" + (i + 1), hx, yHippo + 4);
+      lCtx.textAlign = "left";
+    }
+
+    // Draw Neocortical Semantic Modules ("What" books) - all 11 events ALWAYS INTACT!
+    for (var j = 0; j < 11; j++) {
+      var bx = startX + j * stepX;
+      var highlighted = (lMode === "lesion" ? scrambledMap[activeIdx] === j : activeIdx === j);
+      var isBtspNode = (lMode === "btsp" && j === 4);
+
+      lCtx.fillStyle = highlighted ? pal.accent : (isBtspNode ? pal.ok : pal.bgAlt);
+      lCtx.strokeStyle = isBtspNode ? pal.ok : pal.info;
+      lCtx.lineWidth = highlighted || isBtspNode ? 2.4 : 1.4;
+      lCtx.fillRect(bx, yNeo - 22, boxW, 48);
+      lCtx.strokeRect(bx, yNeo - 22, boxW, 48);
+
+      lCtx.fillStyle = highlighted || isBtspNode ? "#fff" : pal.ink;
+      lCtx.font = "600 10.5px 'Be Vietnam Pro', sans-serif";
+      lCtx.textAlign = "center";
+      lCtx.fillText(events11[j].name, bx + boxW / 2, yNeo + 5);
+      lCtx.textAlign = "left";
+    }
+
+    // Bottom status explanation with live Spearman rho
+    var liveRho = formatRho(computeSpearmanRho(scrambledMap));
+    lCtx.fillStyle = pal.muted;
+    lCtx.font = "12px 'Be Vietnam Pro', sans-serif";
+    var statusMsg = lMode === "intact"
+      ? "Trạng thái Khỏe mạnh: Thủ thư Hồi hải mã gọi đúng thứ tự P1 → P11 (5 mốc cụ thể tr. 273 + 6 mốc), tương quan hạng Spearman ρ = +1,00."
+      : (lMode === "lesion"
+          ? "Tổn thương Hồi hải mã (Dede et al., 2016): Cả 11 hộp nội dung 'Cái gì' ở Tân vỏ não còn nguyên, nhưng thứ tự kể lại bị xáo trộn (ρ thực tế = " + liveRho + ")!"
+          : (lMode === "spwr"
+               ? "Gợn sóng sắc nét SPW-Rs (150–250 Hz): Phát lại chuỗi 11 con trỏ nhanh đúng gấp 15 lần nhịp Theta để củng cố ký ức và hạ đường huyết (Tingley & Buzsáki, 2021)."
+               : "Tính dẻo BTSP (Bittner & Magee, 2017): Xung cao nguyên Canxi nhánh gai tại P5 mở cửa sổ dẻo 3–5 giây, ghi mới liên kết chỉ sau 1 lần trải nghiệm!"));
+    lCtx.fillText(statusMsg, startX, 316);
+
+    requestAnimationFrame(renderLibrarian);
+  }
+  requestAnimationFrame(renderLibrarian);
+})();
+</script>
+</body>
+</html>

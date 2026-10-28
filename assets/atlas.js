@@ -125,9 +125,20 @@
       if (s.title || t.sections.length > 1) h += '<div class="sec-h"><h2>' + esc(s.title || "Danh sách") + '</h2><span class="rule"></span><span class="cnt">' + s.items.length + "</span></div>";
       h += '<div class="cards">';
       s.items.forEach(it => {
-        h += '<a class="card" id="c-' + esc(it.id) + '" href="' + href(itemPath(it)) + '"><span class="kk">' + esc(it.k || "•") + "</span><div><h3>" + esc(it.title) + "</h3>" +
+        const inner = '<a class="card" id="c-' + esc(it.id) + '" href="' + href(itemPath(it)) + '"><span class="kk">' + esc(it.k || "•") + "</span><div><h3>" + esc(it.title) + "</h3>" +
           (it.en ? '<div class="en">' + esc(it.en) + "</div>" : "") + "<p>" + fmt(it.brief || "") + "</p>" +
           (it.note ? '<span class="flag">tổng hợp</span>' : "") + "</div></a>";
+        if (it.web || (it.links && it.links.length)) {
+          let acts = '<div class="card-actions">';
+          if (it.web) acts += '<a class="btn-web" href="' + esc(it.web) + '">🚀 Mở trang tương tác ↗</a>';
+          (it.links || []).forEach(lk => {
+            if (lk.href !== it.web) acts += '<a class="btn-web alt" href="' + esc(lk.href) + '">' + esc(lk.label) + "</a>";
+          });
+          acts += '<a class="btn-web alt" href="' + href(itemPath(it)) + '">Điểm nối SABC ›</a></div>';
+          h += '<div class="card-wrap">' + inner + acts + "</div>";
+        } else {
+          h += inner;
+        }
       });
       h += "</div></div>";
     });
@@ -147,7 +158,9 @@
     let h = crumbs([[meta.name, href(pl)], [t.title, href(topicPath(t))], [it.title, ""]]);
     h += '<section class="hero">' + (it.k ? '<div class="badge">' + esc(it.k) + "</div>" : "") +
       '<div class="step">' + esc(meta.name) + " · " + esc(t.title) + (it.section && it.section.title ? " · " + esc(it.section.title) : "") + "</div>" +
-      "<h1>" + esc(it.title) + "</h1>" + (it.en ? '<div class="en">' + esc(it.en) + "</div>" : "") + "</section>";
+      "<h1>" + esc(it.title) + "</h1>" + (it.en ? '<div class="en">' + esc(it.en) + "</div>" : "") +
+      (it.web ? '<div class="meta"><a class="chip-w" href="' + esc(it.web) + '">🚀 Mở trang HTML tương tác toàn màn hình ↗</a></div>' : "") +
+      "</section>";
     h += '<div class="detail"><article class="art">';
     if (it.brief) h += '<p class="lead">' + fmt(it.brief) + "</p>";
     if (it.body && it.body.length) h += '<div class="body">' + it.body.map(p => "<p>" + fmt(p) + "</p>").join("") + "</div>";
@@ -164,6 +177,14 @@
       (next ? '<a class="nx" href="' + href(itemPath(next)) + '"><small>Tiếp →</small><b>' + esc(next.title) + "</b></a>" : "<span></span>") + "</div>";
     h += '<div class="kbd"><kbd>←</kbd> <kbd>→</kbd> chuyển mục · <kbd>Esc</kbd> về danh sách</div>';
     h += "</article><aside class=\"side\">";
+    if (it.web || (it.links && it.links.length)) {
+      h += '<div class="pane src"><h4>Bản tương tác &amp; Tài liệu</h4>';
+      if (it.web) h += '<a class="btn-web" style="width:100%;justify-content:center;margin-bottom:6px" href="' + esc(it.web) + '">🚀 Mở bài tương tác ↗</a>';
+      (it.links || []).forEach(lk => {
+        if (lk.href !== it.web) h += '<a class="open" style="display:block;margin-top:6px" href="' + esc(lk.href) + '">' + esc(lk.label) + "</a>";
+      });
+      h += "</div>";
+    }
     if (src) {
       const b = BOOKMAP[src.book];
       h += '<div class="pane src"><h4>Nguồn</h4><b>' + esc(b ? b.title : src.book) + "</b><span>" + esc(b ? b.author : "") + (src.where ? " · " + esc(src.where) : "") + "</span>" +
@@ -182,9 +203,9 @@
   function allItems() { return allTopics().flatMap(t => t.items); }
 
   function tabs(on) {
-    const T = [["map", "Mục lục"], ["terms", "Thuật ngữ A-Z"], ["books", "Sách"], ["hbr", "HBR đối chiếu"], ["debates", "Tranh luận"]];
+    const T = [["map", "Mục lục"], ["terms", "Thuật ngữ A-Z"], ["books", "Sách"], ["hbr", "HBR đối chiếu"], ["debates", "Tranh luận"], ["topics", "Chuyên đề"]];
     return '<div class="tabs">' + T.map(([k, n]) => {
-      const to = k === "hbr" ? "#/ref/hbr" : k === "debates" ? "#/ref/debates" : "#/index/" + k;
+      const to = k === "hbr" ? "#/ref/hbr" : k === "debates" ? "#/ref/debates" : k === "topics" ? "#/ref/topics" : "#/index/" + k;
       return '<a class="' + (on === k ? "on" : "") + '" href="' + to + '">' + n + "</a>";
     }).join("") + "</div>";
   }
@@ -350,7 +371,7 @@
     } else if (P[parts[0]]) {
       const r = resolve(parts.slice(0, 3).join("/"));
       cls = "v-" + parts[0];
-      nav = parts[0] === "ref" ? "ref" : "";
+      nav = parts[0] === "ref" ? (parts[1] === "topics" ? "topics" : "ref") : "";
       if (!r) {
         html = crumbs([[PILLARS[parts[0]].name, href(parts[0])], ["Đang biên soạn", ""]]) +
           '<div class="empty">Mục <b>' + esc(parts.join("/")) + '</b> đang được biên soạn. Quay lại <a href="' + href(parts[0]) + '">' + esc(PILLARS[parts[0]].name) + "</a> hoặc xem <a href=\"#/index\">Mục lục</a>.</div>";

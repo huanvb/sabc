@@ -1,0 +1,127 @@
+<svg viewBox="0 0 1420 931" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sơ đồ cuộc đối đầu thực nghiệm 2018-2026 giữa hai trường phái: Bên trái là Phe Time Cells và Biến đổi Laplace (Eichenbaum, Howard, Moser, Lega, Reddy) với bằng chứng điện cực nội sọ ở người nằm yên v=0 trong 10 giây (Umbach 2020 PNAS, Reddy 2021), mạch con MEC đứng yên (Heys &amp; Dombeck 2018), temporal scaling ở CA1 (Taxidis 2020, Shimbo &amp; Fujisawa 2021) và tế bào suy giảm hàm mũ e^(-st) ở LEC (Tsao &amp; Moser 2018 Nature, Cao &amp; Howard 2022 eLife). Bên phải là Phe Sequence Generator / Inside-Out (Buzsáki, Tingley, Gershman, Behrens) với phương trình d = v * t (ẩn dụ 1,5 triệu nhịp pít-tông xe Lotus Elise), quỹ đạo suy tưởng nội sinh khi v=0 (Zutshi &amp; Buzsáki 2025 Nature), mạng log-normal tiền cấu hình từ ngày sinh phôi thai (Huszár 2022) và mô hình Thủ thư Hồi hải mã (Dede 2016, Stachenfeld 2017, Whittington 2020 Cell, Buzsáki 2025/2026)."><style>
+  svg {
+    --bg: #ffffff;
+    --ink: #2b2f36;
+    --sub: #6b7280;
+    --flow: #8a94a3;
+    --grid: rgba(138,148,163,0.24);
+    --row: rgba(107,114,128,0.06);
+    --card: #f8fafc;
+    --ok: #2f9e5f;
+    --okText: #248a4e;
+    --okSoft: rgba(47,158,95,0.08);
+    --warn: #b98a2e;
+    --warnText: #8f6a22;
+    --warnSoft: rgba(185,138,46,0.10);
+    --bad: #c0554d;
+    --badText: #b0463e;
+    --badSoft: rgba(192,85,77,0.08);
+    --accent: #e07828;
+    --accentText: #b45f1e;
+    --accentSoft: rgba(224,120,40,0.08);
+    --info: #3f7fb8;
+    --infoText: #356a9c;
+    --infoSoft: rgba(63,127,184,0.08);
+    --onwarn: #2b2f36;
+  }
+  @media (prefers-color-scheme: dark) {
+    svg {
+      --bg: #1b1e23;
+      --ink: #e8ebef;
+      --sub: #9aa0a8;
+      --flow: #7d8794;
+      --grid: rgba(125,135,148,0.25);
+      --row: rgba(154,160,168,0.08);
+      --card: #22262d;
+      --ok: #3fb473;
+      --okText: #5cc98a;
+      --okSoft: rgba(63,180,115,0.14);
+      --warn: #d3ab52;
+      --warnText: #d3ab52;
+      --warnSoft: rgba(211,171,82,0.14);
+      --bad: #cf6a60;
+      --badText: #cf6a60;
+      --badSoft: rgba(207,106,96,0.15);
+      --accent: #e0925a;
+      --accentText: #e0925a;
+      --accentSoft: rgba(224,146,90,0.14);
+      --info: #6aa0d0;
+      --infoText: #6aa0d0;
+      --infoSoft: rgba(106,160,208,0.14);
+      --onwarn: #1b1e23;
+    }
+  }
+  .bg { fill: var(--bg); }
+  text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .ttl { font-size: 20.5px; font-weight: 700; fill: var(--ink); }
+  .sub1 { font-size: 14px; font-weight: 600; fill: var(--accentText); }
+  .src { font-size: 12px; font-weight: 500; fill: var(--sub); }
+  .cap { font-size: 13.5px; font-weight: 600; font-style: italic; fill: var(--sub); }
+  .sec { font-size: 15px; font-weight: 700; fill: var(--ink); }
+  .tag { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--sub); }
+  .tag-ok { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--okText); }
+  .tag-warn { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--warnText); }
+  .tag-bad { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--badText); }
+  .tag-accent { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--accentText); }
+  .tag-info { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--infoText); }
+  .bh { font-size: 14px; font-weight: 700; fill: var(--ink); }
+  .bh-ok { font-size: 14px; font-weight: 700; fill: var(--okText); }
+  .bh-warn { font-size: 14px; font-weight: 700; fill: var(--warnText); }
+  .bh-bad { font-size: 14px; font-weight: 700; fill: var(--badText); }
+  .bh-accent { font-size: 14px; font-weight: 700; fill: var(--accentText); }
+  .bh-info { font-size: 14px; font-weight: 700; fill: var(--infoText); }
+  .body { font-size: 12.5px; font-weight: 500; fill: var(--ink); }
+  .sub { font-size: 12px; font-weight: 500; fill: var(--sub); }
+  .motto { font-size: 12px; font-style: italic; font-weight: 600; fill: var(--sub); }
+  .b-neutral { fill: var(--row); stroke: var(--flow); stroke-width: 1.8; }
+  .b-panel { fill: none; stroke: var(--flow); stroke-width: 1.6; }
+  .b-ok { fill: var(--okSoft); stroke: var(--ok); stroke-width: 1.9; }
+  .b-warn { fill: var(--warnSoft); stroke: var(--warn); stroke-width: 1.9; }
+  .b-bad { fill: var(--badSoft); stroke: var(--bad); stroke-width: 1.9; }
+  .b-accent { fill: var(--accentSoft); stroke: var(--accent); stroke-width: 1.9; }
+  .b-info { fill: var(--infoSoft); stroke: var(--info); stroke-width: 1.9; }
+  .b-ok-dash { fill: var(--okSoft); stroke: var(--ok); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-warn-dash { fill: var(--warnSoft); stroke: var(--warn); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-bad-dash { fill: var(--badSoft); stroke: var(--bad); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-accent-dash { fill: var(--accentSoft); stroke: var(--accent); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-info-dash { fill: var(--infoSoft); stroke: var(--info); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .flow-line { stroke: var(--flow); stroke-width: 2; fill: none; }
+  .flow-dash { stroke: var(--flow); stroke-width: 2; stroke-dasharray: 6 5; fill: none; }
+  .ok-line { stroke: var(--ok); stroke-width: 2.2; fill: none; }
+  .warn-line { stroke: var(--warn); stroke-width: 2.2; fill: none; }
+  .warn-dash { stroke: var(--warn); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .bad-line { stroke: var(--bad); stroke-width: 2.2; fill: none; }
+  .bad-dash { stroke: var(--bad); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .accent-line { stroke: var(--accent); stroke-width: 2.2; fill: none; }
+  .accent-dash { stroke: var(--accent); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .info-line { stroke: var(--info); stroke-width: 2.2; fill: none; }
+  .div-line { stroke: var(--grid); stroke-width: 1.2; }
+  .badge-warn { fill: var(--warn); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-bad { fill: var(--bad); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-ok { fill: var(--ok); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-info { fill: var(--info); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-accent { fill: var(--accent); stroke: var(--bg); stroke-width: 1.8; }
+  .bang { font-size: 13px; font-weight: 800; fill: var(--onwarn); }
+  .bang-light { font-size: 12px; font-weight: 800; fill: var(--bg); }
+</style>
+  <defs>
+    <marker id="arr-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--flow)"/>
+    </marker>
+    <marker id="arr-ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--ok)"/>
+    </marker>
+    <marker id="arr-warn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--warn)"/>
+    </marker>
+    <marker id="arr-bad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--bad)"/>
+    </marker>
+    <marker id="arr-accent" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--accent)"/>
+    </marker>
+    <marker id="arr-info" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--info)"/>
+    </marker>
+  </defs>
+<rect class="bg" x="0" y="0" width="1420" height="931" rx="14"/><text x="36.0" y="38.0" class="ttl">Tranh luận thực nghiệm 2018-2026 về cách giải thích tính toán của chuỗi xung: Biến đổi Laplace vs. Bộ sinh chuỗi</text><text x="36.0" y="68.0" class="sub1">Cả hai phía đều ghi nhận chuỗi xung khi bất động (v = 0), nhưng bất đồng về cơ chế: Mã hóa biến thời gian log(t) hay Quỹ đạo nội sinh log-normal</text><text x="36.0" y="91.0" class="src">Nguồn đối chiếu: Umbach et al. (2020 PNAS) · Reddy et al. (2021) · Tsao &amp; Moser (2018 Nature) · Cao &amp; Howard (2022 eLife) · Huszár et al. (2022) · Zutshi &amp; Buzsáki (2025) · Whittington et al. (2020 Cell)</text><rect x="36.0" y="114.0" width="656.0" height="737.0" rx="12" class="b-panel"/><text x="51.0" y="136.0" class="tag-info">HƯỚNG GIẢI THÍCH 1 [ĐỐI TRỌNG ĐỘC LẬP] · TIME CELLS &amp; LAPLACE (HOWARD · MOSER · LEGA)</text><text x="51.0" y="157.0" class="sec">1. Mô hình 'Time Cells &amp; Biến đổi Laplace thời gian'</text><line x1="51.0" y1="167.0" x2="677.0" y2="167.0" class="div-line"/><rect x="51.0" y="182.0" width="626.0" height="207.0" rx="12" class="b-info"/><text x="67.0" y="205.0" class="tag-info">BẰNG CHỨNG 1 · ĐIỆN CỰC NỘI SỌ Ở NGƯỜI NẰM YÊN (v = 0)</text><text x="67.0" y="226.0" class="bh-info">1a. Human Time Cells trong khoảng chờ trống 10 giây (Umbach 2020 · Reddy</text><text x="67.0" y="244.5" class="bh-info">2021)</text><text x="67.0" y="271.0" class="body">• Umbach et al. (2020, PNAS) &amp; Lega: Ghi nhận đơn vị nội sọ ở người nằm yên trên giường</text><text x="67.0" y="288.5" class="body">bệnh (v = 0) khi nhớ danh sách từ; quần thể human time cells ở hồi hải mã và vỏ não nội</text><text x="67.0" y="306.0" class="body">khứu dự báo trực tiếp khả năng gom cụm ký ức theo thời gian (temporal clustering).</text><text x="67.0" y="329.5" class="body">• Reddy, ..., Self (2021, J. Neurosci.): Ngay trong khoảng chờ trống 10 giây hoàn toàn</text><text x="67.0" y="347.0" class="body">trống rỗng (màn hình đen, 0 kích thích ngoài, 0 vận động), các nơ-ron hồi hải mã người</text><text x="67.0" y="364.5" class="body">vẫn bắn xung nối tiếp nhau tại các thời điểm xác định.</text><rect x="51.0" y="401.0" width="626.0" height="188.5" rx="12" class="b-info"/><text x="67.0" y="424.0" class="tag-info">BẰNG CHỨNG 2 · MẠCH CON ĐỨNG YÊN &amp; CO GIÃN THỜI GIAN (TEMPORAL SCALING)</text><text x="67.0" y="445.0" class="bh-info">1b. Mạch con MEC khi bất động &amp; Chuỗi CA1 co giãn tỷ lệ (2018-2021)</text><text x="67.0" y="471.5" class="body">• Heys &amp; Dombeck (2018, Nat. Neurosci.) &amp; Issa et al. (2020): Phát hiện mạch con ở vỏ</text><text x="67.0" y="489.0" class="body">não nội khứu giữa (MEC) hoạt động chọn lọc khi chuột đứng yên bất động, tách biệt với</text><text x="67.0" y="506.5" class="body">quần thể tế bào định vị khi chạy.</text><text x="67.0" y="530.0" class="body">• Taxidis et al. (2020, Neuron) &amp; Shimbo &amp; Fujisawa (2021, Sci. Adv.): Chuỗi tế bào ở</text><text x="67.0" y="547.5" class="body">vùng CA1 tự co giãn tỷ lệ (temporal scaling) khi đổi tổng thời lượng khoảng chờ (ví dụ</text><text x="67.0" y="565.0" class="body">giữa các khoảng 10 giây, 20 giây và 30 giây).</text><rect x="51.0" y="601.5" width="626.0" height="231.5" rx="12" class="b-info"/><text x="67.0" y="624.5" class="tag-info">BẰNG CHỨNG 3 · PHÉP BIẾN ĐỔI LAPLACE THỜI GIAN (LEC -&gt; CA1)</text><text x="67.0" y="645.5" class="bh-info">1c. Tế bào suy giảm hàm mũ e^(-st) ở LEC &amp; Trục nén log(t) ở CA1</text><text x="67.0" y="672.0" class="body">• Tsao &amp; Moser (2018, Nature): Các tế bào tăng/giảm dần theo hàm mũ e^(-st) ở vỏ não</text><text x="67.0" y="689.5" class="body">nội khứu bên (LEC) với phổ hằng số thời gian rộng thực hiện phép biến đổi Laplace thực</text><text x="67.0" y="707.0" class="body">của lịch sử trải nghiệm.</text><text x="67.0" y="730.5" class="body">• Cao &amp; Howard (2022, eLife): Kết hợp đầu vào hàm mũ từ LEC với mạch CA1 (biến đổi</text><text x="67.0" y="748.0" class="body">Laplace ngược) tạo ra trục thời gian nội sinh nén theo hàm logarit log(t).</text><line x1="67.0" y1="786.0" x2="661.0" y2="786.0" class="div-line"/><text x="67.0" y="802.0" class="motto">Diễn giải 1: Mạch LEC - CA1 thực hiện phép biến đổi Laplace chuyên biệt để mã hóa biến</text><text x="67.0" y="818.5" class="motto">thời gian.</text><rect x="728.0" y="114.0" width="656.0" height="737.0" rx="12" class="b-panel"/><text x="743.0" y="136.0" class="tag-ok">HƯỚNG GIẢI THÍCH 2 · SEQUENCE GENERATOR &amp; INSIDE-OUT (BUZSÁKI · TINGLEY · BEHRENS)</text><text x="743.0" y="157.0" class="sec">2. Giải thích &amp; Hợp nhất của 'Sequence Generator / Inside-Out'</text><line x1="743.0" y1="167.0" x2="1369.0" y2="167.0" class="div-line"/><rect x="743.0" y="182.0" width="626.0" height="207.0" rx="12" class="b-ok"/><text x="759.0" y="205.0" class="tag-ok">LUẬN ĐIỂM 1 · PHƯƠNG TRÌNH d = v · t, XE LOTUS ELISE &amp; ĐIỀU KIỆN NGƯỜI ĐỌC HẠ LƯU</text><text x="759.0" y="226.0" class="bh-ok">2a. Cùng một chuỗi xung, hai dụng cụ đo bên ngoài (Buzsáki 2019, tr. 269-271)</text><text x="759.0" y="252.5" class="body">• Phương trình d = v · t &amp; Điều kiện tr. 269: Trừ phi chứng minh được có vùng đọc hạ lưu</text><text x="759.0" y="270.0" class="body">(downstream reader) tách riêng được quãng đường và thời lượng từ chuỗi xung, nơ-ron hồi</text><text x="759.0" y="287.5" class="body">hải mã chẳng phải place cells mà cũng chẳng phải time cells (Kraus et al. 2015).</text><text x="759.0" y="311.0" class="body">• Ẩn dụ 1,5 triệu nhịp pít-tông xe Lotus Elise &amp; Ranh giới tr. 275-278: Tiếp tục dùng</text><text x="759.0" y="328.5" class="body">thước đo và đồng hồ trong thực nghiệm là an toàn, nhưng gán cho vùng não chức năng 'biểu</text><text x="759.0" y="346.0" class="body">trưng không gian hay thời gian' là bước nhảy nhận thức luận rủi ro.</text><rect x="743.0" y="401.0" width="626.0" height="188.5" rx="12" class="b-accent"/><text x="759.0" y="424.0" class="tag-accent">LUẬN ĐIỂM 2 · QUỸ ĐẠO NỘI SINH Ở v = 0 (TR. 260-261) &amp; MẠNG LOG-NORMAL</text><text x="759.0" y="445.0" class="bh-accent">2b. Quỹ đạo nội sinh (Internally Generated Trajectories) &amp; Mạng Log-Normal</text><text x="759.0" y="471.5" class="body">• Ngay từ Ch. 10 (tr. 260-261), Buzsáki đã nêu quỹ đạo nội sinh vận hành không cần dịch</text><text x="759.0" y="489.0" class="body">chuyển không gian (v = 0) để giữ trí nhớ làm việc và lập kế hoạch hành động (Zutshi &amp;</text><text x="759.0" y="506.5" class="body">Buzsáki 2025); ở đường số 8 lặp lại (Tsao 2018), LEC co lại theo từng lượt thử.</text><text x="759.0" y="530.0" class="body">• Phân bố nén log(t) phát sinh tự nhiên từ mạng hồi hải mã có phân phối lệch log-normal</text><text x="759.0" y="547.5" class="body">được tiền cấu hình theo ngày sinh phôi thai (Huszár et al. 2022, Nat. Neurosci.).</text><rect x="743.0" y="601.5" width="626.0" height="231.5" rx="12" class="b-ok"/><text x="759.0" y="624.5" class="tag-ok">HỢP NHẤT · THỦ THƯ HỒI HẢI MÃ, ĐỒ THỊ QUAN HỆ &amp; NHỊP CƠ THỂ - NÃO BỘ</text><text x="759.0" y="645.5" class="bh-ok">2c. Thí nghiệm 11 sự kiện (Dede 2016), SR, TEM &amp; Brain-Body Rhythms</text><text x="759.0" y="672.0" class="body">• Thủ thư Hồi hải mã &amp; Thư viện Tân vỏ não: Trong thí nghiệm đi dạo 11 sự kiện (Dede et</text><text x="759.0" y="689.5" class="body">al. 2016, tr. 272-273), bệnh nhân hỏng hồi hải mã nhớ số sự kiện và thời lượng ngang nhóm</text><text x="759.0" y="707.0" class="body">chứng sau 1 tháng, nhưng thứ tự kể lại hoàn toàn không tương quan ('unrelated').</text><text x="759.0" y="730.5" class="body">• Hợp nhất toán học &amp; sinh lý: Bản đồ dự báo Successor Representation (Stachenfeld</text><text x="759.0" y="748.0" class="body">2017), Cỗ máy Tolman-Eichenbaum (Whittington et al. 2020, Cell) và phân cấp nhịp Cơ thể</text><text x="759.0" y="765.5" class="body">- Não bộ (Buzsáki 2025/2026, Nat. Rev. Neurosci.).</text><line x1="759.0" y1="786.0" x2="1353.0" y2="786.0" class="div-line"/><text x="759.0" y="802.0" class="motto">Diễn giải 2: Hồi hải mã là bộ sinh chuỗi quan hệ đa năng (general-purpose sequence</text><text x="759.0" y="818.5" class="motto">generator).</text><line x1="696.0" y1="285.5" x2="724.0" y2="285.5" class="info-line" marker-start="url(#arr-info)" marker-end="url(#arr-ok)"/><line x1="696.0" y1="495.2" x2="724.0" y2="495.2" class="accent-dash" marker-start="url(#arr-info)" marker-end="url(#arr-accent)"/><line x1="696.0" y1="717.2" x2="724.0" y2="717.2" class="ok-line" marker-start="url(#arr-info)" marker-end="url(#arr-ok)"/><text x="36.0" y="877.0" class="src">Quy ước màu &amp; nét: Xanh dương = Mô hình Time Cells &amp; Laplace; Xanh lá/Cam = Bộ sinh chuỗi nội sinh &amp; Hợp nhất SR/TEM. Nét liền = Đối chiếu trực tiếp; Nét đứt = Bất đồng giải thích ở v = 0.</text><line x1="36.0" y1="889.0" x2="1384.0" y2="889.0" class="div-line"/><text x="710.0" y="911.0" class="cap" text-anchor="middle">Kết luận: Hồi hải mã hoạt động như một bộ sinh chuỗi quan hệ đa năng được neo vào nhịp điệu cơ thể - não bộ, phục vụ cả định vị không gian lẫn trình tự ký ức khi bất động.</text></svg>

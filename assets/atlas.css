@@ -46,7 +46,7 @@ a{color:inherit}
 .formula a{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-weight:700;font-size:13px;white-space:nowrap;text-decoration:none;transition:border-color .15s}
 .formula a:hover{border-color:var(--ink)}
 .formula b{font-weight:800}
-.f-stop b{color:var(--stop)} .f-ask b{color:var(--ask)} .f-begin b{color:var(--begin)} .f-co b{color:var(--co)}
+.f-stop b{color:var(--stop)} .f-ask b{color:var(--ask)} .f-begin b{color:var(--begin)} .f-co b{color:var(--co)} .f-ref b{color:var(--ref)}
 
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:stretch}
 .col{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
@@ -152,6 +152,14 @@ a.chip-w:hover{background:rgba(255,255,255,.3)}
 .card p{font-size:13px;color:#3b3b3f;margin-top:6px;line-height:1.5}
 .card::after{content:"›";position:absolute;right:12px;top:10px;color:var(--muted);font-size:17px}
 .card .flag{display:inline-block;margin-top:6px;font-size:11px;font-weight:700;color:var(--muted);background:#f3f1ec;border-radius:6px;padding:1px 6px}
+.card-wrap{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:border-color .12s, transform .12s, box-shadow .12s}
+.card-wrap:hover{border-color:var(--c);transform:translateY(-1px);box-shadow:0 3px 0 var(--soft)}
+.card-wrap > .card{border:none;border-radius:0;box-shadow:none !important;transform:none !important;flex:1}
+.card-actions{display:flex;flex-wrap:wrap;gap:6px;padding:9px 14px 11px 54px;background:#faf8f3;border-top:1px dashed var(--line)}
+.btn-web{display:inline-flex;align-items:center;gap:5px;text-decoration:none;font-weight:700;font-size:12px;padding:5px 11px;border-radius:999px;background:var(--c);color:#fff;transition:opacity .12s}
+.btn-web:hover{opacity:.9}
+.btn-web.alt{background:var(--card);color:var(--deep);border:1px solid var(--line)}
+.btn-web.alt:hover{border-color:var(--c);background:var(--soft)}
 
 .others{margin-top:34px;padding-top:16px;border-top:1px dashed var(--line)}
 .others h4{font-size:12px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}

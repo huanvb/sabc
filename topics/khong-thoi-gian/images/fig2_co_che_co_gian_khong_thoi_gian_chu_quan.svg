@@ -1,0 +1,127 @@
+<svg viewBox="0 0 1420 868" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sơ đồ bốn cơ chế thần kinh làm co giãn, bù trừ độ trễ và đảo ngược trình tự không - thời gian trong trải nghiệm cá nhân: (1) Cảm nhận vs. Nhớ lại và Dopamine (Tse 2004, Honma 2016, Wearden 2015), (2) Bù độ trễ và Đảo ngược nhân quả Postdiction (ngón chân chạm mũi, đạp phanh gặp nai qua đường trước ngưỡng nhận thức ~500 ms của Libet 1979, Eagleman 2005), (3) Nén không-thời gian khi đảo mắt Saccadic Compression (100 ms còn 50 ms, đảo thứ tự -70 ms đến -30 ms, Morrone 2005, vùng LIP), (4) Tỷ lệ không gian quyết định thời gian Scale Relativity (phòng thu nhỏ 1/6, 1/12, 1/24 của DeLong 1981 Science, E = x)."><style>
+  svg {
+    --bg: #ffffff;
+    --ink: #2b2f36;
+    --sub: #6b7280;
+    --flow: #8a94a3;
+    --grid: rgba(138,148,163,0.24);
+    --row: rgba(107,114,128,0.06);
+    --card: #f8fafc;
+    --ok: #2f9e5f;
+    --okText: #248a4e;
+    --okSoft: rgba(47,158,95,0.08);
+    --warn: #b98a2e;
+    --warnText: #8f6a22;
+    --warnSoft: rgba(185,138,46,0.10);
+    --bad: #c0554d;
+    --badText: #b0463e;
+    --badSoft: rgba(192,85,77,0.08);
+    --accent: #e07828;
+    --accentText: #b45f1e;
+    --accentSoft: rgba(224,120,40,0.08);
+    --info: #3f7fb8;
+    --infoText: #356a9c;
+    --infoSoft: rgba(63,127,184,0.08);
+    --onwarn: #2b2f36;
+  }
+  @media (prefers-color-scheme: dark) {
+    svg {
+      --bg: #1b1e23;
+      --ink: #e8ebef;
+      --sub: #9aa0a8;
+      --flow: #7d8794;
+      --grid: rgba(125,135,148,0.25);
+      --row: rgba(154,160,168,0.08);
+      --card: #22262d;
+      --ok: #3fb473;
+      --okText: #5cc98a;
+      --okSoft: rgba(63,180,115,0.14);
+      --warn: #d3ab52;
+      --warnText: #d3ab52;
+      --warnSoft: rgba(211,171,82,0.14);
+      --bad: #cf6a60;
+      --badText: #cf6a60;
+      --badSoft: rgba(207,106,96,0.15);
+      --accent: #e0925a;
+      --accentText: #e0925a;
+      --accentSoft: rgba(224,146,90,0.14);
+      --info: #6aa0d0;
+      --infoText: #6aa0d0;
+      --infoSoft: rgba(106,160,208,0.14);
+      --onwarn: #1b1e23;
+    }
+  }
+  .bg { fill: var(--bg); }
+  text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .ttl { font-size: 20.5px; font-weight: 700; fill: var(--ink); }
+  .sub1 { font-size: 14px; font-weight: 600; fill: var(--accentText); }
+  .src { font-size: 12px; font-weight: 500; fill: var(--sub); }
+  .cap { font-size: 13.5px; font-weight: 600; font-style: italic; fill: var(--sub); }
+  .sec { font-size: 15px; font-weight: 700; fill: var(--ink); }
+  .tag { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--sub); }
+  .tag-ok { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--okText); }
+  .tag-warn { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--warnText); }
+  .tag-bad { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--badText); }
+  .tag-accent { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--accentText); }
+  .tag-info { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--infoText); }
+  .bh { font-size: 14px; font-weight: 700; fill: var(--ink); }
+  .bh-ok { font-size: 14px; font-weight: 700; fill: var(--okText); }
+  .bh-warn { font-size: 14px; font-weight: 700; fill: var(--warnText); }
+  .bh-bad { font-size: 14px; font-weight: 700; fill: var(--badText); }
+  .bh-accent { font-size: 14px; font-weight: 700; fill: var(--accentText); }
+  .bh-info { font-size: 14px; font-weight: 700; fill: var(--infoText); }
+  .body { font-size: 12.5px; font-weight: 500; fill: var(--ink); }
+  .sub { font-size: 12px; font-weight: 500; fill: var(--sub); }
+  .motto { font-size: 12px; font-style: italic; font-weight: 600; fill: var(--sub); }
+  .b-neutral { fill: var(--row); stroke: var(--flow); stroke-width: 1.8; }
+  .b-panel { fill: none; stroke: var(--flow); stroke-width: 1.6; }
+  .b-ok { fill: var(--okSoft); stroke: var(--ok); stroke-width: 1.9; }
+  .b-warn { fill: var(--warnSoft); stroke: var(--warn); stroke-width: 1.9; }
+  .b-bad { fill: var(--badSoft); stroke: var(--bad); stroke-width: 1.9; }
+  .b-accent { fill: var(--accentSoft); stroke: var(--accent); stroke-width: 1.9; }
+  .b-info { fill: var(--infoSoft); stroke: var(--info); stroke-width: 1.9; }
+  .b-ok-dash { fill: var(--okSoft); stroke: var(--ok); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-warn-dash { fill: var(--warnSoft); stroke: var(--warn); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-bad-dash { fill: var(--badSoft); stroke: var(--bad); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-accent-dash { fill: var(--accentSoft); stroke: var(--accent); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-info-dash { fill: var(--infoSoft); stroke: var(--info); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .flow-line { stroke: var(--flow); stroke-width: 2; fill: none; }
+  .flow-dash { stroke: var(--flow); stroke-width: 2; stroke-dasharray: 6 5; fill: none; }
+  .ok-line { stroke: var(--ok); stroke-width: 2.2; fill: none; }
+  .warn-line { stroke: var(--warn); stroke-width: 2.2; fill: none; }
+  .warn-dash { stroke: var(--warn); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .bad-line { stroke: var(--bad); stroke-width: 2.2; fill: none; }
+  .bad-dash { stroke: var(--bad); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .accent-line { stroke: var(--accent); stroke-width: 2.2; fill: none; }
+  .accent-dash { stroke: var(--accent); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .info-line { stroke: var(--info); stroke-width: 2.2; fill: none; }
+  .div-line { stroke: var(--grid); stroke-width: 1.2; }
+  .badge-warn { fill: var(--warn); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-bad { fill: var(--bad); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-ok { fill: var(--ok); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-info { fill: var(--info); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-accent { fill: var(--accent); stroke: var(--bg); stroke-width: 1.8; }
+  .bang { font-size: 13px; font-weight: 800; fill: var(--onwarn); }
+  .bang-light { font-size: 12px; font-weight: 800; fill: var(--bg); }
+</style>
+  <defs>
+    <marker id="arr-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--flow)"/>
+    </marker>
+    <marker id="arr-ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--ok)"/>
+    </marker>
+    <marker id="arr-warn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--warn)"/>
+    </marker>
+    <marker id="arr-bad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--bad)"/>
+    </marker>
+    <marker id="arr-accent" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--accent)"/>
+    </marker>
+    <marker id="arr-info" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--info)"/>
+    </marker>
+  </defs>
+<rect class="bg" x="0" y="0" width="1420" height="868" rx="14"/><text x="36.0" y="38.0" class="ttl">Bốn cơ chế thần kinh làm co giãn, bù trừ độ trễ và đảo ngược trình tự không - thời gian trong trải nghiệm cá nhân</text><text x="36.0" y="68.0" class="sub1">Giải phẫu hiện tượng học về cái 'Bây giờ' (Subjective Now): từ điều biến Dopamine, hiệu ứng Hậu đoán (Postdiction) đến Tương đối quy mô không gian</text><text x="36.0" y="91.0" class="src">Nguồn đối chiếu: Buzsáki (2019 Ch. 10, tr. 262-268) · Tse et al. (2004) · Honma et al. (2016) · Wearden (2015) · Libet (1979) · Eagleman et al. (2005) · Morrone et al. (2005) · DeLong (1981 Science)</text><rect x="36.0" y="114.0" width="660.0" height="272.5" rx="12" class="b-accent"/><text x="52.0" y="137.0" class="tag-accent">CƠ CHẾ 1 · CẢM NHẬN TRỰC TIẾP VS. HỒI TƯỞNG &amp; ĐIỀU BIẾN DOPAMINE</text><text x="52.0" y="158.0" class="bh-accent">1. Cảm nhận vs. Nhớ lại &amp; Dopamine (Tse 2004 · Honma 2016 · Wearden 2015)</text><text x="52.0" y="184.5" class="body">• Cảm nhận trực tiếp vs. Nhớ lại (tr. 262-263): Khi đang say sưa thuyết trình hoặc trong tình</text><text x="52.0" y="202.0" class="body">huống mới lạ, thời gian trải nghiệm trực tiếp trôi nhanh (40 phút ngỡ như 30 phút).</text><text x="52.0" y="225.5" class="body">• Kích thích bất ngờ (Oddball · Tse 2004, tr. 266) &amp; Hồi tưởng: Kích thích lạ ngắn hạn làm</text><text x="52.0" y="243.0" class="body">thời lượng tức thời giãn ra; giai đoạn giàu sự kiện mới khi nhớ lại cũng dài hơn.</text><text x="52.0" y="266.5" class="body">• Điều biến Dopamine VTA - chất đen (Honma 2016; Soares 2016): Kích hoạt quang di truyền</text><text x="52.0" y="284.0" class="body">dopamine làm thay đổi phán đoán thời lượng (chú thích 61 lưu ý ảnh hưởng đồng thời lên vận</text><text x="52.0" y="301.5" class="body">động); bệnh nhân Parkinson thường ước lượng hụt các khoảng trên 10 giây.</text><line x1="52.0" y1="339.5" x2="680.0" y2="339.5" class="div-line"/><text x="52.0" y="355.5" class="motto">Quy luật: Tập trung cao làm thời gian đang sống trôi nhanh; kích thích oddball và mật độ sự</text><text x="52.0" y="372.0" class="motto">kiện mới làm thời gian giãn ra.</text><rect x="724.0" y="114.0" width="660.0" height="272.5" rx="12" class="b-warn"/><text x="740.0" y="137.0" class="tag-warn">CƠ CHẾ 2 · BÙ TRỪ ĐỘ TRỄ DẪN TRUYỀN &amp; ĐẢO NGƯỢC NHÂN QUẢ (POSTDICTION)</text><text x="740.0" y="158.0" class="bh-warn">2. Bù độ trễ &amp; Đảo ngược Nhân quả (Libet 1979 · Eagleman 2005)</text><text x="740.0" y="184.5" class="body">• Ngón chân chạm mũi &amp; Thích nghi phím bấm (Eagleman 2005; Yarrow 2001): Não tự bù độ trễ</text><text x="740.0" y="202.0" class="body">tủy sống để cảm thấy chạm đồng thời; khi bỏ độ trễ nhân tạo giữa nhấn phím và tia sáng,</text><text x="740.0" y="219.5" class="body">người thử cảm thấy tia sáng xuất hiện trước khi tay kịp nhấn phím.</text><text x="740.0" y="243.0" class="body">• Đạp phanh khi gặp nai qua đường (tr. 264-265): Mạch phản xạ dưới vỏ điều khiển chân đạp</text><text x="740.0" y="260.5" class="body">phanh trước khi vỏ não kịp có nhận thức có ý thức (~500 ms · Libet et al. 1979, chú thích 66).</text><text x="740.0" y="284.0" class="body">• Dựng truyện ngược chiều: Bản sao lệnh vận động (phóng điện hệ quả · corollary discharge)</text><text x="740.0" y="301.5" class="body">gửi lên vỏ não dựng lại trình tự nhân quả chủ quan: 'Tôi nhìn thấy con nai nên mới quyết</text><text x="740.0" y="319.0" class="body">định đạp phanh'.</text><line x1="740.0" y1="339.5" x2="1368.0" y2="339.5" class="div-line"/><text x="740.0" y="355.5" class="motto">Quy luật: Ý thức vận hành theo cơ chế Hậu đoán (Postdiction · Eagleman &amp; Sejnowski 2000) sau khi</text><text x="740.0" y="372.0" class="motto">gom dữ kiện.</text><rect x="36.0" y="404.5" width="660.0" height="255.0" rx="12" class="b-bad"/><text x="52.0" y="427.5" class="tag-bad">CƠ CHẾ 3 · NÉN KHÔNG - THỜI GIAN KHI ĐẢO MẮT (SACCADIC COMPRESSION)</text><text x="52.0" y="448.5" class="bh-bad">3. Nén không-thời gian khi đảo mắt (Morrone et al. 2005 · Vùng đỉnh bên LIP)</text><text x="52.0" y="475.0" class="body">• Nén một nửa thời lượng &amp; khoảng cách: Trong cú nhảy nhãn cầu (saccade), một tia sáng dài</text><text x="52.0" y="492.5" class="body">100 ms bị não cảm nhận ngắn chỉ như 50 ms khi mắt đứng yên; không gian thị giác quanh mục</text><text x="52.0" y="510.0" class="body">tiêu nhìn cũng bị co cụm lại.</text><text x="52.0" y="533.5" class="body">• Đảo ngược trình tự sự kiện (-70 ms đến -30 ms): Hai sự kiện thị giác xuất hiện nối tiếp</text><text x="52.0" y="551.0" class="body">trong cửa sổ từ -70 ms đến -30 ms trước cú đảo mắt bị tri giác đảo ngược thứ tự trước - sau.</text><text x="52.0" y="574.5" class="body">• Cơ chế vùng đỉnh bên (LIP): Sự biến dạng khởi phát trước khi nhãn cầu di chuyển nhờ tín</text><text x="52.0" y="592.0" class="body">hiệu corollary discharge chủ động dịch chuyển trường tiếp nhận.</text><line x1="52.0" y1="612.5" x2="680.0" y2="612.5" class="div-line"/><text x="52.0" y="628.5" class="motto">Quy luật: Lệnh vận động nhãn cầu làm co giãn đồng thời cả thước đo không gian lẫn thời lượng</text><text x="52.0" y="645.0" class="motto">mili-giây.</text><rect x="724.0" y="404.5" width="660.0" height="255.0" rx="12" class="b-info"/><text x="740.0" y="427.5" class="tag-info">CƠ CHẾ 4 · TỶ LỆ KHÔNG GIAN QUYẾT ĐỊNH THỜI GIAN (SCALE RELATIVITY)</text><text x="740.0" y="448.5" class="bh-info">4. Tỷ lệ Không gian quyết định Thời gian (DeLong 1981, Science · E = x)</text><text x="740.0" y="475.0" class="body">• Thí nghiệm mô hình phòng thu nhỏ (tỷ lệ s = 1/x ∈ {1/6, 1/12, 1/24}): Người tham gia quan</text><text x="740.0" y="492.5" class="body">sát và tưởng tượng mình sinh hoạt trong phòng chờ thu nhỏ với hệ số thu nhỏ x ∈ {6, 12, 24},</text><text x="740.0" y="510.0" class="body">rồi báo hiệu khi cảm thấy 30 phút chủ quan đã trôi qua.</text><text x="740.0" y="533.5" class="body">• Công thức chú thích 71 (E = x = t_chủ_quan / t_đồng_hồ): Thời gian chủ quan tăng tốc theo</text><text x="740.0" y="551.0" class="body">hệ số thu nhỏ x (để đạt 30 phút chủ quan mất 30/x phút: 5 phút ở 1/6; 2,5 phút ở 1/12).</text><text x="740.0" y="574.5" class="body">• Ví dụ minh họa tỷ lệ 2:1 (Buzsáki tr. 267): Nếu trải nghiệm 30 phút ở mô hình 1/6 mất 10</text><text x="740.0" y="592.0" class="body">phút đồng hồ, thì ở mô hình 1/12 chỉ mất 5 phút đồng hồ.</text><line x1="740.0" y1="612.5" x2="1368.0" y2="612.5" class="div-line"/><text x="740.0" y="628.5" class="motto">Quy luật: 'Trải nghiệm thời gian chính là trải nghiệm không gian' (Experiencing time is</text><text x="740.0" y="645.0" class="motto">experiencing space · Buzsáki 2019).</text><rect x="36.0" y="677.5" width="1348.0" height="112.5" rx="12" class="b-ok"/><text x="52.0" y="700.5" class="tag-ok">TỔNG HỢP CƠ CHẾ (TR. 265-268) · ĐA THANG ĐO &amp; CẤU TRÚC TƯƠNG ĐỐI ĐỘC LẬP + ĐỘ LỢI THẦN KINH + COROLLARY DISCHARGE</text><text x="52.0" y="721.5" class="bh-ok">Các cơ chế thời gian vận hành ở nhiều thang đo và cấu trúc tương đối độc lập (tr. 265)</text><text x="52.0" y="748.0" class="body">• Các mạch ước lượng thời gian biểu hiện tương đối độc lập ở nhiều cấu trúc não (thể vân, vỏ não, tiểu não, đỉnh bên LIP), nhưng đều quy chiếu vào: (1) Số bước chuyển tiếp tập hợp nơ-ron,</text><text x="52.0" y="765.5" class="body">(2) Tốc độ biến thiên được điều biến bởi độ lợi thần kinh (gain control · Chương 11) và (3) Bản sao lệnh vận động (corollary discharge).</text><text x="36.0" y="814.0" class="src">Quy ước màu: Cam (accent) = Điều biến Dopamine &amp; chú ý; Vàng (warn) = Bù trừ độ trễ &amp; Hậu đoán; Đỏ (bad) = Nén &amp; đảo thứ tự khi đảo mắt; Xanh dương (info) = Tỷ lệ không gian E = x.</text><line x1="36.0" y1="826.0" x2="1384.0" y2="826.0" class="div-line"/><text x="710.0" y="848.0" class="cap" text-anchor="middle">Kết luận: Trải nghiệm cá nhân về cái "Bây giờ" luôn là bản dựng lại có độ trễ (~80-500 ms) và gắn chặt với quy mô không gian cũng như hành động của cơ thể.</text></svg>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KẾ HOẠCH XÂY DỰNG BÀI TOÀN CẢNH TƯƠNG TÁC (HTML + DIAGRAM + SIMULATION): TRẢI NGHIỆM KHÔNG GIAN VÀ THỜI GIAN TRONG NÃO BỘ (2019–2026) · Stop. Ask. Begin.</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon.png">
+  <link rel="shortcut icon" href="../../favicon.ico">
+  <!-- Google Analytics 4 (GA4 · Stop. Ask. Begin.) -->
+  <script>
+    window.GA_MEASUREMENT_ID = "G-16MPNM0F18";
+    if (window.GA_MEASUREMENT_ID && window.GA_MEASUREMENT_ID.startsWith("G-")) {
+      var s = document.createElement("script");
+      s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id=" + window.GA_MEASUREMENT_ID;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag("js", new Date());
+      gtag("config", window.GA_MEASUREMENT_ID);
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f4ee; --card: #ffffff; --ink: #1c1c1e; --muted: #5a5a60;
+      --line: #e2ddd3; --accent: #1d5c73; --soft: #eef4f6;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121716; --card: #19211f; --ink: #e7efed; --muted: #9aa8a4;
+        --line: #2a3633; --accent: #67bfd8; --soft: #1f2c29;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--ink);
+      font-family: "Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
+      font-size: 16px; line-height: 1.72; -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 920px; margin: 28px auto 64px; padding: 0 20px; }
+    article.doc {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: 18px; padding: 32px 36px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    }
+    h1 { font-size: 28px; line-height: 1.25; margin: 0 0 18px; letter-spacing: -0.5px; }
+    h2 { font-size: 21px; line-height: 1.35; margin: 32px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--line); color: var(--accent); }
+    h3 { font-size: 17.5px; line-height: 1.4; margin: 22px 0 8px; }
+    h4 { font-size: 15.5px; margin: 18px 0 6px; }
+    p { margin: 0 0 14px; }
+    ul, ol { margin: 0 0 16px 22px; padding: 0; }
+    li { margin-bottom: 6px; }
+    a { color: var(--accent); font-weight: 600; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      font-family: "JetBrains Mono", Consolas, monospace; font-size: 0.9em;
+      background: var(--soft); padding: 2px 6px; border-radius: 5px;
+    }
+    pre {
+      background: var(--soft); border: 1px solid var(--line);
+      border-radius: 12px; padding: 14px 16px; overflow-x: auto; margin: 0 0 16px;
+    }
+    pre code { background: none; padding: 0; }
+    blockquote {
+      margin: 16px 0; padding: 12px 18px; border-left: 4px solid var(--accent);
+      background: var(--soft); border-radius: 0 12px 12px 0;
+    }
+    blockquote p:last-child { margin-bottom: 0; }
+    hr { border: none; border-top: 1px dashed var(--line); margin: 26px 0; }
+    .table-wrap { overflow-x: auto; margin: 16px 0 20px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+    th, td { border: 1px solid var(--line); padding: 9px 12px; text-align: left; vertical-align: top; }
+    th { background: var(--soft); font-weight: 700; }
+    .cite-file {
+      display: inline-block; font-size: 0.92em; font-weight: 600;
+      background: var(--soft); border: 1px solid var(--line);
+      border-radius: 6px; padding: 1px 7px; color: var(--accent);
+    }
+    .doc-nav {
+      display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px;
+    }
+    .doc-nav a {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: 999px; padding: 6px 14px; font-size: 13px; font-weight: 700;
+    }
+    @media (max-width: 680px) {
+      article.doc { padding: 20px 18px; }
+      h1 { font-size: 23px; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="sabc-portal-bar" style="position:sticky;top:0;z-index:9999;background:rgba(28,28,30,0.94);backdrop-filter:blur(8px);color:#f7f4ee;padding:7px 20px;font-family:'Be Vietnam Pro','Segoe UI',system-ui,sans-serif;font-size:12.5px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid rgba(255,255,255,0.12)">
+  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+    <a href="../../#/" style="color:#fff;text-decoration:none;font-weight:800;letter-spacing:-0.2px"><span style="color:#ff6b7b">Stop.</span> <span style="color:#f5b041">Ask.</span> <span style="color:#58d68d">Begin.</span></a>
+    <span style="opacity:0.45">›</span>
+    <a href="../../#/ref/topics" style="color:#d7d2e9;text-decoration:none;font-weight:600">← Về cổng Chuyên đề</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px;font-size:12px">
+    <a href="index.html" style="color:#9ad1ea;text-decoration:none;font-weight:600">Trang tương tác chính</a>
+    <a href="../../#/index" style="color:#c2c2c7;text-decoration:none">Tra cứu Atlas</a>
+  </div>
+</div>
+<div class="wrap">
+  <div class="doc-nav">
+    <a href="index.html">🚀 Mở trang tương tác của chuyên đề (Không – Thời gian trong Não bộ)</a>
+    <a href="../../#/ref/topics">← Danh sách Chuyên đề</a>
+  </div>
+  <article class="doc">
+<h1>KẾ HOẠCH XÂY DỰNG BÀI TOÀN CẢNH TƯƠNG TÁC (HTML + DIAGRAM + SIMULATION): TRẢI NGHIỆM KHÔNG GIAN VÀ THỜI GIAN TRONG NÃO BỘ (2019–2026)</h1>
+<blockquote><p><strong>Tệp đích dự kiến</strong>: <code>c:\Users\minhp\Development\Bai-Dich\Resources\3.topics\5. The Problem of Time &amp; The Problem of Now\Toan_Canh_Trai_Nghiem_Khong_Thoi_Gian_Trong_Nao_Bo.html</code></p><p><strong>Thư mục sơ đồ SVG</strong>: <code>c:\Users\minhp\Development\Bai-Dich\Resources\3.topics\5. The Problem of Time &amp; The Problem of Now\images\</code></p><p><strong>Nguồn dữ liệu nền tảng</strong>: <a href="Bao_Cao_Nghien_Cuu_Khong_Thoi_Gian_Trong_Nao_Bo_Buzsaki_2019_2026.html"><code>Bao_Cao_Nghien_Cuu_Khong_Thoi_Gian_Trong_Nao_Bo_Buzsaki_2019_2026.md</code></a> &amp; <a href="index_md.html"><code>index.md</code></a>.</p><p><strong>Bộ kỹ năng áp dụng</strong>: <code>tdx-writing</code> (cấu trúc Guide HTML + Essay có căn cứ, khử 100% LLM voice) · <code>diagram</code> (4 sơ đồ SVG phong cách Addy Osmani tự đổi Sáng/Tối) · <code>generative_ui</code> (3 mô phỏng tương tác HTML5 Canvas/JS chạy trực tiếp trong bài) · <code>html-favicon</code> (gắn biểu tượng Kim Cương Phân Luồng).</p></blockquote>
+<hr>
+<h2>I. MỤC TIÊU &amp; ĐỊNH VỊ BÀI VIẾT TOÀN CẢNH</h2>
+<ol>
+<li><strong>Câu hỏi trung tâm dẫn dắt toàn bài</strong>:</li>
+</ol>
+<p><em>Làm thế nào một bộ não bị đóng kín trong hộp sọ tối tăm và không hề có bất kỳ cơ quan thụ cảm nào dành cho &quot;không gian&quot; hay &quot;thời gian&quot; lại kiến tạo nên trải nghiệm sống động về cái &quot;Bây giờ kéo dài&quot;, sự co giãn kỳ lạ của thời gian cá nhân và khả năng du hành tâm trí giữa quá khứ với tương lai?</em></p>
+<ol>
+<li><strong>Tiêu đề chính (H1 theo chuẩn <code>tdx-writing</code>, câu khẳng định kiểm chứng được)</strong>:</li>
+</ol>
+<p><strong>Bộ não không có giác quan đo không gian hay thời gian: Cơ chế sinh chuỗi nơ-ron tạo nên trải nghiệm cái &quot;Bây giờ&quot;, các ảo giác co giãn thời gian và cuộc tranh luận khoa học 2019–2026</strong></p>
+<ol>
+<li><strong>Định dạng đầu ra (<code>Toan_Canh_Trai_Nghiem_Khong_Thoi_Gian_Trong_Nao_Bo.html</code>)</strong>:</li>
+</ol>
+<ul>
+<li>Trang HTML độc lập (self-contained), bố cục 2 cột (Mục lục dính bên trái tự động sáng mục đang đọc + Cột nội dung chính <code>max-width: 82ch</code>).</li>
+<li>Hỗ trợ chuyển đổi giao diện <strong>Sáng / Tối (<code>prefers-color-scheme</code> + nút bấm thủ công)</strong> đồng bộ cho cả văn bản, 4 sơ đồ SVG và 3 khung mô phỏng Canvas.</li>
+<li>Hệ thống thẻ <code>&lt;details class=&quot;basis&quot;&gt;</code> thu gọn/mở rộng phần <strong>Căn cứ thực nghiệm &amp; Đối trọng (<code>[Nguồn]</code>, <code>[Mở rộng]</code>, <code>[Phản biện]</code>)</strong> để người đọc vừa đọc mượt mạch chính vừa tra cứu được ngay DOI, cỡ mẫu và tranh luận học thuật.</li>
+<li>Chèn sẵn favicon chuẩn hệ sinh thái qua script <code>html-favicon/scripts/apply.js</code>.</li>
+</ul>
+<hr>
+<h2>II. CẤU TRÚC 6 PHẦN CỦA BÀI TOÀN CẢNH</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Phần</th><th>Tiêu đề phần (H2) &amp; Mạch lập luận chính</th><th>Nguồn học thuật &amp; Thực nghiệm cốt lõi</th><th>Đồ họa SVG (<code>diagram</code>) &amp; Mô phỏng tương tác (<code>Canvas/JS</code>)</th></tr></thead>
+<tbody>
+<tr><td><strong>Mở đầu</strong></td><td><strong>Sapo &amp; Bản đồ 3 Tầng</strong>: Trả lời trực diện câu hỏi &quot;Chương 10 của Buzsáki có phải là trải nghiệm cá nhân không?&quot; bằng cách tách bạch 3 tầng: (1) <em>Hiện tượng học ngôi thứ nhất</em> (thời gian được sống), (2) <em>Vi mạch thần kinh</em> (bộ sinh chuỗi và nhịp cơ thể – não bộ), và (3) <em>Khung khái niệm văn hóa – vật lý</em> (thước đo, đồng hồ, trục thời gian tuyến tính).</td><td>Buzsáki (2019, Ch. 10; 2025/2026 <em>Nat. Rev. Neurosci.</em>); Rovelli (2026); Al-Khalili (2026); Callender (2017).</td><td>• Bảng điều hướng nhanh 3 tầng + Thẻ tóm tắt 5 phát hiện cốt lõi.</td></tr>
+<tr><td><strong>Phần 1</strong></td><td>*<em>Phá vỡ cái bẫy &quot;Từ ngoài vào trong&quot; (</em>Outside-In<em>): Vì sao không gian và thời gian trừu tượng là công cụ văn hóa hơn là giác quan sinh học?</em>*&lt;br/&gt;• Di sản của Newton, Kant và danh mục William James (1890) trong khoa học thần kinh.&lt;br/&gt;• Bằng chứng nhân học – ngôn ngữ: bộ tộc Amondawa (Amazon), người Kuuk Thaayorre (Úc), người Wintu (California) và người Aymara (Andes).&lt;br/&gt;• Bộ não có cảm biến tốc độ và hướng đầu, nhưng không có thụ thể cho &quot;không gian&quot; hay &quot;thời gian&quot;.</td><td>James (1890); Sinha et al. (2011); Boroditsky &amp; Levinson (2003); Buzsáki &amp; Llinás (2017 <em>Science</em>); Rovelli (2026, <em>Lessons 2 &amp; 3</em>).</td><td>• <strong>SVG 1 (<code>fig1_outside_in_vs_inside_out_khong_thoi_gian.svg</code>)</strong>: <em>Khung &quot;Từ ngoài vào trong&quot; áp đặt hộp không-thời gian Newton lên não bộ, trong khi kiến trúc &quot;Từ trong ra ngoài&quot; suy diễn từ hành động, vận tốc và quan hệ kề cận.</em></td></tr>
+<tr><td><strong>Phần 2</strong></td><td><strong>Giải phẫu trải nghiệm cá nhân: Bốn cơ chế thần kinh làm co giãn, bóp méo và đảo ngược không – thời gian chủ quan</strong>&lt;br/&gt;• Cảm nhận khoảnh khắc (<em>feeling</em>) đi ngược chiều với nhớ lại khoảnh khắc (<em>remembering</em>).&lt;br/&gt;• Dopamine, cảm xúc sợ hãi và hiệu ứng kích thích lạ (<em>oddball</em> · Tse 2004; Honma 2016).&lt;br/&gt;• Bù trừ độ trễ (ngón chân chạm mũi), đảo ngược nhân quả khi đạp phanh gặp nai qua đường (<em>corollary discharge</em> · 500 ms Libet; Eagleman &amp; Sejnowski 2000) và nén không-thời gian khi đảo mắt (<em>saccades</em> · Morrone 2005).&lt;br/&gt;• Thí nghiệm phòng kiến trúc thu nhỏ (<code>1/6</code>, <code>1/12</code>, <code>1/24</code> · DeLong 1981): <em>&quot;Trải nghiệm thời gian chính là trải nghiệm không gian&quot;</em> ($E = 1/x$).</td><td>DeLong (1981 <em>Science</em>); Eagleman &amp; Sejnowski (2000); Morrone et al. (2005 <em>Nat. Neurosci.</em>); Honma et al. (2016); Al-Khalili (2026, Ch. 3 <em>Temporal Binding</em>).</td><td>• <strong>SVG 2 (<code>fig2_co_che_co_gian_khong_thoi_gian_chu_quan.svg</code>)</strong>: <em>Bốn cơ chế thần kinh làm co giãn và đảo chiều thời gian chủ quan.</em>&lt;br/&gt;• <strong>MÔ PHỎNG TƯƠNG TÁC 1 (<code>Lab Co Giãn Không-Thời Gian Chủ Quan</code>)</strong> <em>(xem Mục III.1)</em>.</td></tr>
+<tr><td><strong>Phần 3</strong></td><td>*<em>Bảng đồng hồ chiếc xe Lotus Elise &amp; Cuộc đối đầu &quot;Tế bào Vị trí&quot; (</em>Place Cells<em>) vs. &quot;Tế bào Thời gian&quot; (</em>Time Cells<em>)</em><em>&lt;br/&gt;• Vỏ não đỉnh sau (</em>egocentric<em> &amp; hội chứng bỏ quên nửa không gian tại Quảng trường Duomo Milan · Bisiach &amp; Luzzatti 1978) vs. Hồi hải mã (</em>allocentric<em>).&lt;br/&gt;• Phương trình khóa chặt Quãng đường – Thời lượng qua Vận tốc ($d = v \cdot t$) và ẩn dụ 1,5 triệu nhịp pít-tông xe Lotus Elise.&lt;br/&gt;• Hồi hải mã là </em><em>Bộ sinh chuỗi thứ tự (</em>Sequence Generator<em>)<strong> và </strong>Thủ thư giữ mục lục</em><em>: Thí nghiệm 11 sự kiện đi dạo khuôn viên đại học (Dede et al. 2016) và sự thống nhất giữa Hồi tưởng quá khứ (</em>Replay<em>) với Dự phóng tương lai (</em>Preplay*).</td><td>O'Keefe &amp; Nadel (1978); Pastalkova et al. (2008 <em>Science</em>); Eichenbaum (2014); Kraus et al. (2015); Dede et al. (2016); Buzsáki &amp; Tingley (2018 <em>TiCS</em>).</td><td>• <strong>MÔ PHỎNG TƯƠNG TÁC 2 (<code>Bảng điều khiển Lotus Elise &amp; Bộ sinh chuỗi Hồi hải mã CA1</code>)</strong> <em>(xem Mục III.2)</em>.&lt;br/&gt;• <strong>MÔ PHỎNG TƯƠNG TÁC 3 (<code>Thủ thư Hồi hải mã &amp; Thí nghiệm 11 Sự kiện Dede et al. 2016</code>)</strong> <em>(xem Mục III.3)</em>.</td></tr>
+<tr><td><strong>Phần 4</strong></td><td><strong>Cuộc tranh luận thực nghiệm 2018–2026: Điều gì xảy ra khi cơ thể hoàn toàn bất động ($v = 0$)?</strong>&lt;br/&gt;• <strong>Đòn phản công của phe Time Cells</strong>: Ghi điện cực nội sọ ở người nằm yên trong khoảng chờ trống 10 giây (Umbach et al. 2020 <em>PNAS</em>; Reddy et al. 2021 <em>J. Neurosci.</em>), mạch con MEC khi đứng yên (Heys &amp; Dombeck 2018), và <strong>Phép biến đổi Laplace về thời gian</strong> từ tế bào suy giảm hàm mũ ở vỏ não nội khứu bên (LEC) sang hồi hải mã nén theo hàm logarit $\log t$ (Tsao &amp; Moser 2018 <em>Nature</em>; Cao &amp; Howard 2022 <em>eLife</em>).&lt;br/&gt;• <strong>Đòn đáp trả của phe Sequence Generator &amp; Mô hình hợp nhất</strong>: Quỹ đạo nội sinh chạy ngay cả khi $v = 0$ (<em>mental travel</em> · Zutshi &amp; Buzsáki 2025 <em>Nature</em>), phân phối mạng <strong>log-normal</strong> sinh ra quy luật Weber-Fechner, cùng hai mô hình toán học thống nhất là <strong>Successor Representation</strong> (Stachenfeld, Botvinick &amp; Gershman 2017) và <strong>Tolman-Eichenbaum Machine</strong> (Whittington, Burgess &amp; Behrens 2020 <em>Cell</em>).</td><td>Umbach et al. (2020 <em>PNAS</em>); Reddy et al. (2021); Tsao et al. (2018 <em>Nature</em>); Cao &amp; Howard (2022 <em>eLife</em>); Stachenfeld et al. (2017); Whittington et al. (2020 <em>Cell</em>); Huszár et al. (2022); Buzsáki (2025/2026).</td><td>• <strong>SVG 3 (<code>fig3_tranh_luan_time_cells_vs_sequence_generator.svg</code>)</strong>: <em>Đối đầu thực nghiệm 2018–2026 giữa Biến đổi Laplace thời gian (LEC $\to$ CA1) và Bộ sinh chuỗi quan hệ tiền cấu hình (Sequence Generator / TEM).</em></td></tr>
+<tr><td><strong>Phần 5</strong></td><td>*<em>Bốn giới hạn triết học &amp; sinh lý học của thuyết </em>Inside-Out<em> cần được hiệu chỉnh (2019–2026)<strong>&lt;br/&gt;1. </strong>Không thể thủ tiêu Cấp độ 1 của David Marr và khái niệm Biểu trưng</em><em> (Poeppel &amp; Adolfi 2020 </em>eNeuro<em>; Barack &amp; Krakauer 2021 </em>Nat. Rev. Neurosci.<em>; Rosa Cao 2022; Chirimuuta 2024).&lt;br/&gt;2. </em><em>Tư duy TRONG thời gian (</em>Temporal Updating<em>) ở động vật vs. Tư duy VỀ thời gian (</em>Temporal Reasoning<em>) ở người</em><em> (Dennett &amp; Kinsbourne 1992; Hoerl &amp; McCormack 2019 </em>BBS<em>).&lt;br/&gt;3. </em><em>Tính dẻo synap một lần thử (</em>BTSP<em>) bác bỏ &quot;Từ điển tiền cấu hình&quot; đóng cứng</em><em> (Bittner &amp; Magee 2017 </em>Science<em>; Silva &amp; Foster 2015 </em>Nat. Neurosci.<em>; Gómez-Marín 2021 </em>Current Biology<em>).&lt;br/&gt;4. <strong>Cơ sở nhiệt động lực học của dấu vết ký ức và sự mở rộng sang AI / LLMs</strong> (Rovelli 2026 </em>Lesson 4<em>; Pezzulo, Parr, Cisek, Clark &amp; Friston 2024 </em>TiCS<em>; McCoy &amp; Griffiths 2025 </em>Nat. Commun.*; Mollo &amp; Millière 2026).</td><td>Poeppel &amp; Adolfi (2020); Barack &amp; Krakauer (2021); Hoerl &amp; McCormack (2019 <em>BBS</em>); Bittner &amp; Magee (2017 <em>Science</em>); Pezzulo et al. (2024 <em>TiCS</em>); McCoy &amp; Griffiths (2025).</td><td>• <strong>SVG 4 (<code>fig4_ma_tran_4_truc_phan_bien_2019_2026.svg</code>)</strong>: <em>Bốn mũi phản biện lớn giúp hoàn thiện lý thuyết không – thời gian trong não bộ.</em></td></tr>
+<tr><td><strong>Phần 6</strong></td><td><strong>Tổng hợp &amp; Hàm ý thực hành cho người làm việc trí óc</strong>:&lt;br/&gt;• Vì sao làm việc tĩnh tại trước màn hình phẳng làm nghèo nàn hóa cả &quot;bản đồ chuỗi không gian&quot; lẫn cảm nhận thời gian chủ quan.&lt;br/&gt;• Cách bảo vệ nhịp <em>SPW-Rs</em> (củng cố chuỗi thứ tự ký ức và điều hòa đường huyết · Tingley &amp; Buzsáki 2021) và nhịp điệu Cơ thể – Não bộ (Buzsáki 2025/2026).</td><td>Tingley &amp; Buzsáki (2021 <em>Nature</em>); Buzsáki (2025/2026 <em>Nat. Rev. Neurosci.</em>).</td><td>• Bảng đối chiếu tổng kết &amp; Danh mục tài liệu tham khảo có liên kết DOI đầy đủ.</td></tr>
+</tbody></table></div>
+<hr>
+<h2>III. THIẾT KẾ CHI TIẾT 3 MÔ PHỎNG TƯƠNG TÁC (INTERACTIVE SIMULATIONS) TRONG BÀI HTML</h2>
+<p>Để người đọc trực tiếp &quot;chạm tay&quot; vào các cơ chế thần kinh thay vì chỉ đọc chữ tĩnh, trang HTML sẽ tích hợp <strong>3 mô phỏng tương tác viết bằng HTML5 Canvas + Vanilla JavaScript</strong> (nhẹ, chạy mượt 60fps ngay khi mở file cục bộ mà không cần cài đặt server):</p>
+<h3>1. Mô phỏng 1: Phòng thí nghiệm &quot;Bóp méo Không – Thời gian Chủ quan&quot; (<em>Subjective Space-Time Warping Lab</em>)</h3>
+<ul>
+<li><strong>Chế độ 1A: Thí nghiệm Mô hình Kiến trúc Thu nhỏ (DeLong, 1981)</strong>:</li>
+<li>Thanh chọn tỷ lệ không gian: <code>1:1 (Phòng thật)</code>, <code>1:6</code>, <code>1:12</code>, <code>1:24</code>.</li>
+<li>Hiển thị trực quan hai mặt đồng hồ chạy song song: <strong>Đồng hồ Vật lý (Clock Time)</strong> và <strong>Đồng hồ Trải nghiệm Chủ quan ($E = t / x$)</strong> cùng hình ảnh phòng thu nhỏ và tần số bước chuyển sự kiện. Người đọc thấy ngay vì sao ở tỷ lệ <code>1:12</code>, chỉ sau <strong>5 phút đồng hồ vật lý</strong>, não bộ đã trải nghiệm đủ <strong>30 phút chủ quan</strong>.</li>
+<li>*<em>Chế độ 1B: Đảo ngược Nhân quả &amp; Phóng điện hệ quả (</em>Corollary Discharge &amp; Postdiction<em>)</em>*:</li>
+<li>Nút bấm chạy thử nghiệm <strong>&quot;Phản xạ đạp phanh khi gặp nai (500 ms)&quot;</strong> và <strong>&quot;Thích nghi độ trễ nhấn phím – màn hình (Eagleman 2005)&quot;</strong>.</li>
+<li>Đường thời gian động hiển thị xung điện đi từ Võng mạc $\to$ Thân não $\to$ Cơ chân đạp phanh ở mốc <code>150 ms</code>, bản sao <em>Corollary Discharge</em> bắn lên Vỏ não, và Ý thức xuất hiện ở mốc <code>500 ms</code> nhưng tự điền nhãn thời gian lùi về trước mốc đạp phanh.</li>
+</ul>
+<h3>2. Mô phỏng 2: Bảng điều khiển &quot;Chiếc xe Lotus Elise &amp; Bộ sinh chuỗi Hồi hải mã CA1&quot; ($d = v \cdot t$ &amp; <em>Laplace Transform</em>)</h3>
+<ul>
+<li><strong>Các điều khiển tương tác</strong>:</li>
+<li>Thanh trượt <strong>Vận tốc di chuyển ($v$)</strong>: từ <code>0 cm/s</code> (Đứng yên suy tưởng / Chờ đợi bất động như trong thí nghiệm của Reddy 2021 &amp; Umbach 2020) đến <code>50 cm/s</code> (Chạy nhanh).</li>
+<li>Nút chuyển 3 chế độ thí nghiệm:</li>
+</ul>
+<ol>
+<li><code>Chạy trên hành lang thực (Free Navigation)</code> $\to$ Quãng đường $d$ tăng, thời gian $t$ tăng.</li>
+<li><code>Chạy trên máy chạy bộ tại chỗ (Treadmill · Eichenbaum)</code> $\to$ Vị trí trong phòng cố định, nhưng bánh xe quay với vận tốc $v$.</li>
+<li><code>Bất động chờ đợi 10 giây (Immobile Gap · Reddy 2021 / Howard 2022)</code> $\to$ $v = 0$, hiển thị đầu vào suy giảm hàm mũ $e^{-st}$ từ vỏ não nội khứu bên (LEC) chuyển thành chuỗi <em>time cells</em> nén theo hàm logarit $\log t$.</li>
+</ol>
+<ul>
+<li>Công tắc <strong>&quot;Lăng kính của Người làm thí nghiệm&quot;</strong>: Chuyển đổi tức thời trục hoành của cùng một biểu đồ bắn xung (<em>raster plot</em>) giữa <strong>Trục Quãng đường (cm, hiển thị thành Place Cells)</strong>, <strong>Trục Thời gian (giây, hiển thị thành Time Cells)</strong> và <strong>Trục Pha Sóng Theta (Chuỗi thứ tự nội sinh, Sequence Generator)</strong>.</li>
+</ul>
+<h3>3. Mô phỏng 3: &quot;Thủ thư Hồi hải mã &amp; Thư viện Tân vỏ não&quot; (<em>Dede et al., 2016 Campus Walk</em>)</h3>
+<ul>
+<li>Mô phỏng trực quan 11 sự kiện trong chuyến đi dạo khuôn viên Đại học California (Vứt cốc $\to$ Khóa xe đạp $\to$ Mua chuối $\to$ Nhặt đồng xu $\to$ Uống nước...).</li>
+<li>Người đọc có thể chuyển đổi giữa 3 trạng thái:</li>
+</ul>
+<ol>
+<li><strong>Não khỏe mạnh (Hồi hải mã nguyên vẹn)</strong>: Sóng Theta đóng gói 7 sự kiện/chu kỳ và gợn sóng <em>SPW-Rs</em> phát lại (<em>replay</em>) nối đúng chuỗi con trỏ vào các ô nội dung ở Tân vỏ não ($r = 0,92$).</li>
+<li><strong>Tổn thương Hồi hải mã (Mất bộ sinh chuỗi · Dede et al., 2016)</strong>: Các ô nội dung <em>&quot;Cái gì&quot;</em> và chi tiết không gian ở Tân vỏ não vẫn sáng đầy đủ, ước lượng tổng thời lượng vẫn đúng, nhưng các đường nối thứ tự bị đứt và xáo trộn ngẫu nhiên ($r \approx 0,04$).</li>
+<li><strong>Học một lần thử qua BTSP (Bittner &amp; Magee, 2017)</strong>: Nút kích hoạt <strong>&quot;Xung cao nguyên Canxi nhánh gai (Plateau Potential)&quot;</strong> cho thấy cách một sự kiện bất ngờ tạo ngay trường liên kết mới trên chuỗi chỉ sau 1 lượt chạy.</li>
+</ol>
+<hr>
+<h2>IV. QUY TRÌNH TRIỂN KHAI &amp; NGHIỆM THU (4 BƯỚC)</h2>
+<ol>
+<li><strong>Bước 1: Thiết kế &amp; Kiểm định 4 Sơ đồ SVG (<code>diagram</code> skill)</strong>:</li>
+</ol>
+<ul>
+<li>Viết script tạo 4 tệp SVG tại <code>5. The Problem of Time &amp; The Problem of Now/images/</code> tuân thủ 7 luật Addy Osmani (tiêu đề câu khẳng định, biến CSS Sáng/Tối <code>@media (prefers-color-scheme: dark)</code>, nét liền/nét đứt có quy ước, câu kết ở đáy hình, <code>role=&quot;img&quot; aria-label=&quot;...&quot;</code>).</li>
+<li>Chạy <code>export.py</code> và kiểm tra va chạm hình học đảm bảo 0 lỗi đè chữ, 0 lỗi tràn lề.</li>
+</ul>
+<ol>
+<li><strong>Bước 2: Xây dựng Trang HTML Toàn cảnh &amp; 3 Mô phỏng Tương tác (<code>tdx-writing</code> + <code>generative_ui</code>)</strong>:</li>
+</ol>
+<ul>
+<li>Soạn thảo toàn bộ nội dung 6 phần kèm hệ thống <code>&lt;details class=&quot;basis&quot;&gt;</code> trích dẫn đầy đủ các nghiên cứu 2019–2026 và lập trình 3 mô phỏng Canvas/JS tương tác trực tiếp.</li>
+</ul>
+<ol>
+<li><strong>Bước 3: Gắn Favicon Chuẩn (<code>html-favicon</code> skill)</strong>:</li>
+</ol>
+<ul>
+<li>Chạy <code>node &quot;C:\Users\minhp\.gemini\config\skills\html-favicon\scripts\apply.js&quot;</code> trên tệp <code>Toan_Canh_Trai_Nghiem_Khong_Thoi_Gian_Trong_Nao_Bo.html</code> và xác nhận <code>DA-CHEN</code>.</li>
+</ul>
+<ol>
+<li><strong>Bước 4: Kiểm chứng Chất lượng Cuối (<code>tdx-writing</code> &amp; <code>llm-voice-vi.md</code>)</strong>:</li>
+</ol>
+<ul>
+<li>Chạy script kiểm tra tự động: <code>em-dash = 0</code>, <code>không phải X, mà là Y = 0</code>, <code>chứ không chỉ = 0</code>, kiểm tra hoạt động của cả 3 mô phỏng JS và cập nhật liên kết vào <a href="index_md.html"><code>index.md</code></a>.</li>
+</ul>
+
+  </article>
+</div>
+</body>
+</html>
