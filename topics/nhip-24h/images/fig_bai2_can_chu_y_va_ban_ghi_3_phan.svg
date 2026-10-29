@@ -52,7 +52,7 @@
     }
   }
   .bg { fill: var(--bg); }
-  text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  text { font-family: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif; }
   .ttl { font-size: 23px; font-weight: 700; fill: var(--ink); }
   .sub1 { font-size: 14.5px; font-weight: 600; fill: var(--accentText); }
   .src { font-size: 12.5px; font-weight: 500; fill: var(--sub); }

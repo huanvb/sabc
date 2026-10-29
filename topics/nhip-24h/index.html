@@ -6,6 +6,9 @@
   <title>Bình Thản Với Dàn Nhạc · Poster & Cẩm Nang Thực Hành 24 Giờ Thời AI</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cstyle%3E.r%7Bstroke:%2300ADEF%7D.c%7Bfill:%23FFB703%7D@media (prefers-color-scheme:light)%7B.r%7Bstroke:%230066B3%7D.c%7Bfill:%23F59E0B%7D%7D%3C/style%3E%3Cpath class='r' d='M12.5 3.5L2.5 16l10 12.5M19.5 3.5L29.5 16l-10 12.5' fill='none' stroke-width='4.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpolygon class='c' points='16,9.5 22.5,16 16,22.5 9.5,16'/%3E%3C/svg%3E">
   <meta name="description" content="Poster thực hành 4 trụ cột, 8 nút chuyển tiếp 24 giờ, 3 mô phỏng thần kinh học tương tác, 4 mẫu câu bỏ túi và bảng tự đo lường 14 ngày cho người điều phối 3–12 tác nhân AI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
   <style>
     :root {
       --paper: #f7f4ee;
@@ -38,9 +41,9 @@
 
       --shadow: 0 2px 10px rgba(28, 28, 30, 0.05);
       --radius: 12px;
-      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-      --serif: Georgia, "Cambria", "Times New Roman", serif;
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      --sans: "Be Vietnam Pro", "Segoe UI", "Inter", system-ui, -apple-system, sans-serif;
+      --serif: "Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
+      --mono: "JetBrains Mono", "Cascadia Mono", Consolas, ui-monospace, monospace;
     }
 
     html[data-theme="dark"] {
@@ -86,6 +89,7 @@
     }
     a { color: var(--co-ink); text-decoration: none; }
     a:hover { text-decoration: underline; }
+    code { font-family: var(--mono); font-size: 0.9em; background: var(--paper-elev); padding: 1px 5px; border-radius: 4px; }
 
     /* Sticky Top Bar giống trang sabc */
     .bar {
@@ -295,9 +299,9 @@
       flex-wrap: wrap;
     }
     .node-num {
-      font-family: var(--mono);
+      font-family: var(--sans);
       font-size: 11px;
-      font-weight: 800;
+      font-weight: 700;
       padding: 1px 6px;
       border-radius: 4px;
     }
@@ -307,8 +311,9 @@
     .col.begin .node-num { background: var(--begin-soft); color: var(--begin-ink); }
 
     .time-pill {
-      font-family: var(--mono);
-      font-size: 11px;
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 11.5px;
       color: var(--muted);
     }
     .item-title {
@@ -339,8 +344,8 @@
     /* Nhãn phân tầng chứng cứ Nguồn / Mở rộng / Giả thuyết */
     .ep-tag {
       display: inline-block;
-      font-family: var(--mono);
-      font-size: 10.5px;
+      font-family: var(--sans);
+      font-size: 11px;
       font-weight: 700;
       padding: 1px 6px;
       border-radius: 4px;
@@ -410,8 +415,8 @@
       letter-spacing: -0.01em;
     }
     .lead-text {
-      font-family: var(--serif);
-      font-size: 1.02rem;
+      font-family: var(--sans);
+      font-size: 14.5px;
       color: var(--ink);
       margin-bottom: 14px;
       line-height: 1.65;
@@ -442,8 +447,8 @@
       flex-wrap: wrap;
     }
     .sim-disclaimer {
-      font-family: var(--mono);
-      font-size: 11px;
+      font-family: var(--sans);
+      font-size: 11.5px;
       padding: 2px 8px;
       border-radius: 99px;
       background: var(--ref-soft);
@@ -518,13 +523,14 @@
       justify-content: space-between;
     }
     details.basis summary::after {
-      content: "＋ Mở cơ chế & phạm vi thực nghiệm";
-      font-size: 11.5px;
-      font-family: var(--mono);
+      content: "+ Mở cơ chế & phạm vi thực nghiệm";
+      font-size: 12px;
+      font-family: var(--sans);
+      font-weight: 600;
       color: var(--muted);
     }
     details.basis[open] summary::after {
-      content: "－ Thu gọn";
+      content: "− Thu gọn";
     }
     .basis-body {
       margin-top: 10px;
@@ -652,7 +658,7 @@
       padding: 10px 12px;
     }
     .stat-card .stat-label { font-size: 11.5px; color: var(--muted); font-weight: 600; }
-    .stat-card .stat-val { font-size: 1.25rem; font-weight: 800; font-family: var(--mono); margin-top: 2px; }
+    .stat-card .stat-val { font-size: 1.25rem; font-weight: 700; font-family: var(--sans); margin-top: 2px; }
     .stat-card .stat-delta { font-size: 12px; margin-top: 2px; font-weight: 600; }
 
     .table-scroll {
@@ -680,8 +686,8 @@
     table.tracker-table tr.week-avg {
       background: var(--ref-soft);
       color: var(--ref-ink);
-      font-weight: 800;
-      font-family: var(--mono);
+      font-weight: 700;
+      font-family: var(--sans);
     }
     table.tracker-table input[type="number"], table.tracker-table input[type="text"] {
       width: 68px;
@@ -691,8 +697,9 @@
       background: var(--paper);
       color: var(--ink);
       text-align: center;
-      font-family: var(--mono);
-      font-size: 12px;
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 12.5px;
     }
 
     /* Lightbox Modal */
@@ -942,7 +949,7 @@
                 </div>
                 <span class="item-title">Bữa Trưa Tỉnh Thức &amp; Chợp Mắt 10 Phút</span>
                 <ul class="item-actions-list">
-                  <li>Rời hẳn bàn làm việc; ăn vừa đủ no (~80% <em>Hara Hachi Bu</em>) và备 sẵn bữa phụ nhẹ lúc 15:30 để tránh duyệt mã lúc đói.</li>
+                  <li>Rời hẳn bàn làm việc; ăn vừa đủ no (~80% <em>Hara Hachi Bu</em>) và chuẩn bị sẵn bữa phụ nhẹ lúc 15:30 để tránh duyệt mã lúc đói.</li>
                   <li>Đi bộ ngoài trời 10 phút hoặc đi bộ uống cà phê cùng đồng nghiệp (<em>Coffee Walks</em> · Fowler 2026) để giải tỏa tải kiểm chứng và giữ bản sắc nghề nghiệp.</li>
                   <li>Nếu đêm trước thiếu ngủ (và không mắc mất ngủ mạn tính): chợp mắt <strong>~10 phút ngủ thực</strong> (đặt báo thức 15–20 phút).</li>
                 </ul>
@@ -1389,8 +1396,8 @@
       <div class="lightbox-bar">
         <strong id="lightbox-caption" style="font-size:13.5px;">Chi tiết sơ đồ</strong>
         <div style="display:flex; gap:6px;">
-          <button type="button" class="btn" id="lb-zoom-in">＋ Phóng to</button>
-          <button type="button" class="btn" id="lb-zoom-out">－ Thu nhỏ</button>
+          <button type="button" class="btn" id="lb-zoom-in">+ Phóng to</button>
+          <button type="button" class="btn" id="lb-zoom-out">− Thu nhỏ</button>
           <button type="button" class="btn" id="lb-zoom-reset">100%</button>
           <button type="button" class="btn primary" id="lb-close">Đóng (Esc)</button>
         </div>
@@ -1515,6 +1522,28 @@
       }
     }
 
+    const F_SANS = '"Be Vietnam Pro", "Segoe UI", system-ui, sans-serif';
+    const F_MONO = '"JetBrains Mono", "Cascadia Mono", Consolas, monospace';
+
+    function fitText(ctx, text, x, y, maxW, basePx, weight, fam) {
+      let px = basePx || 12;
+      const w = weight || '600';
+      const f = fam || F_SANS;
+      ctx.font = w + ' ' + px + 'px ' + f;
+      while (ctx.measureText(text).width > maxW && px > 9.5) {
+        px -= 0.5;
+        ctx.font = w + ' ' + px + 'px ' + f;
+      }
+      let out = text;
+      if (ctx.measureText(out).width > maxW) {
+        while (out.length > 4 && ctx.measureText(out + '…').width > maxW) {
+          out = out.slice(0, -1);
+        }
+        out += '…';
+      }
+      ctx.fillText(out, x, y);
+    }
+
     function drawSim1(now) {
       if (!canvas1) return;
       const dpr = window.devicePixelRatio || 1;
@@ -1540,6 +1569,12 @@
       const begin = cssVar('--begin', '#2e9e6b');
       const ref = cssVar('--ref', '#5b4b8a');
 
+      // Màu nền đậm cho thanh có chữ trắng để luôn đạt chuẩn tương phản WCAG AA >= 4.5:1 cả ở Light & Dark
+      const coBar = '#1d499e';
+      const stopBar = '#9b2335';
+      const beginBar = '#16633f';
+      const askBar = '#845007';
+
       ctx.fillStyle = bg;
       ctx.fillRect(0, 0, W, H);
 
@@ -1550,28 +1585,27 @@
       const cenClean = Math.max(12, 100 - residue);
       const t = (now || 0) * 0.002;
 
-      // Vẽ thanh 1: Băng thông dlPFC và thanh 2: Nhận thức tình huống In-the-Loop (Endsley 1995; Vella 2026)
-      const barX = 24;
+      const barX = 20;
       const barY = 22;
-      const barW = W - 48;
+      const barW = W - 40;
       const barH = 20;
 
-      ctx.font = 'bold 11.5px sans-serif';
       ctx.fillStyle = ink;
-      ctx.fillText('1. Băng thông Bộ nhớ làm việc (CEN · dlPFC) vs. Cặn chú ý (Leroy, 2009):', barX, barY - 5);
+      ctx.textAlign = 'left';
+      fitText(ctx, '1. Băng thông Bộ nhớ làm việc (CEN · dlPFC) vs. Cặn chú ý (Leroy, 2009):', barX, barY - 5, barW, 12, '600', F_SANS);
 
       ctx.fillStyle = line;
       ctx.fillRect(barX, barY, barW, barH);
 
       const cleanW = (cenClean / 100) * barW;
-      ctx.fillStyle = co;
+      ctx.fillStyle = coBar;
       ctx.fillRect(barX, barY, cleanW, barH);
 
-      ctx.fillStyle = stop;
+      ctx.fillStyle = stopBar;
       ctx.fillRect(barX + cleanW, barY, barW - cleanW, barH);
 
       ctx.fillStyle = '#ffffff';
-      ctx.font = 'bold 11px monospace';
+      ctx.font = '600 11px ' + F_SANS;
       if (cleanW > 135) {
         ctx.fillText('CEN khả dụng: ' + Math.round(cenClean) + '%', barX + 8, barY + 14);
       }
@@ -1583,35 +1617,35 @@
       const saY = 62;
       const inLoopSA = Math.round(sim1Packed ? Math.max(72, 96 - (branches - 2) * 2.2) : Math.max(18, 82 - (branches - 2) * 6.5));
       const outLoop = 100 - inLoopSA;
-      ctx.font = 'bold 11.5px sans-serif';
       ctx.fillStyle = ink;
-      ctx.fillText('2. Độ nắm bắt mạch mã trong Middle Loop (In-the-Loop Situation Awareness · Endsley 1995; Vella 2026):', barX, saY - 5);
+      fitText(ctx, '2. Độ nắm bắt mạch mã trong Middle Loop (In-the-Loop SA · Endsley 1995; Vella 2026):', barX, saY - 5, barW, 12, '600', F_SANS);
 
       const saW = (inLoopSA / 100) * barW;
-      ctx.fillStyle = begin;
+      ctx.fillStyle = beginBar;
       ctx.fillRect(barX, saY, saW, barH);
-      ctx.fillStyle = ask;
+      ctx.fillStyle = askBar;
       ctx.fillRect(barX + saW, saY, barW - saW, barH);
 
       ctx.fillStyle = '#ffffff';
-      ctx.font = 'bold 11px monospace';
-      if (saW > 150) {
+      ctx.font = '600 11px ' + F_SANS;
+      if (saW > 145) {
         ctx.fillText('In-the-Loop SA: ' + inLoopSA + '%', barX + 8, saY + 14);
       }
-      if (barW - saW > 155) {
+      if (barW - saW > 150) {
         ctx.fillText('Out-of-the-Loop: ' + outLoop + '%', barX + saW + 8, saY + 14);
       }
 
       // Vẽ 4 nút mạng thần kinh bên dưới
-      const cy = 172;
+      const cy = 170;
+      const compact = W < 580;
+      const nodeR = compact ? 24 : 31;
       const nodes = [
-        { label: 'CEN (dlPFC/PPC)', sub: 'Điều hành Cấp độ 1', x: W * 0.16, y: cy, color: co, r: 34 },
-        { label: 'SN (Thùy đảo/dACC)', sub: 'Cầu dao Nhận biết', x: W * 0.40, y: cy, color: ask, r: 32 },
-        { label: 'DMN (mPFC/PCC)', sub: 'Ủ ý tưởng / Tự sự', x: W * 0.64, y: cy, color: begin, r: 32 },
-        { label: sim1Packed ? 'Hồi hải mã (SPW-Rs)' : 'Hạch hạnh nhân', sub: sim1Packed ? 'Phát lại ngoại tuyến' : 'Báo động căng thẳng', x: W * 0.86, y: cy, color: sim1Packed ? ref : stop, r: 32 }
+        { label: compact ? 'CEN (dlPFC)' : 'CEN (dlPFC/PPC)', sub: 'Điều hành Cấp 1', x: W * 0.15, y: cy, color: co, r: nodeR },
+        { label: compact ? 'SN (Thùy đảo)' : 'SN (Thùy đảo/dACC)', sub: 'Cầu dao Nhận biết', x: W * 0.39, y: cy, color: ask, r: nodeR },
+        { label: compact ? 'DMN (mPFC)' : 'DMN (mPFC/PCC)', sub: 'Ủ ý tưởng / Tự sự', x: W * 0.63, y: cy, color: begin, r: nodeR },
+        { label: sim1Packed ? (compact ? 'SPW-Rs' : 'Hồi hải mã (SPW-Rs)') : 'Hạch hạnh nhân', sub: sim1Packed ? 'Phát lại ngoại tuyến' : 'Báo động căng thẳng', x: W * 0.86, y: cy, color: sim1Packed ? ref : stop, r: nodeR }
       ];
 
-      // Đường nối giữa các mạng
       ctx.lineWidth = 2.5;
       for (let i = 0; i < nodes.length - 1; i++) {
         ctx.strokeStyle = line;
@@ -1630,8 +1664,9 @@
         }
       }
 
+      const maxLabelW = W * 0.22;
       nodes.forEach(function(n, idx) {
-        const pulseR = reducedMotion ? 0 : Math.sin(t * 2.2 + idx) * 3;
+        const pulseR = reducedMotion ? 0 : Math.sin(t * 2.2 + idx) * 2.5;
         ctx.beginPath();
         ctx.arc(n.x, n.y, n.r + pulseR, 0, Math.PI * 2);
         ctx.fillStyle = n.color;
@@ -1642,35 +1677,33 @@
         ctx.beginPath();
         ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
         ctx.strokeStyle = n.color;
-        ctx.lineWidth = 3;
+        ctx.lineWidth = 2.8;
         ctx.stroke();
 
         ctx.fillStyle = ink;
-        ctx.font = 'bold 12px sans-serif';
         ctx.textAlign = 'center';
-        ctx.fillText(n.label, n.x, n.y + n.r + 20);
-        ctx.fillStyle = muted;
-        ctx.font = '11px sans-serif';
-        ctx.fillText(n.sub, n.x, n.y + n.r + 36);
+        fitText(ctx, n.label, n.x, n.y + n.r + 18, maxLabelW, 12, '600', F_SANS);
+        if (!compact) {
+          ctx.fillStyle = muted;
+          fitText(ctx, n.sub, n.x, n.y + n.r + 34, maxLabelW, 11, '400', F_SANS);
+        }
 
-        // Vẽ sóng bên trong vòng tròn thứ 4 (SPW-Rs vs Amygdala)
         if (idx === 3) {
           ctx.beginPath();
           ctx.strokeStyle = n.color;
           ctx.lineWidth = 2;
-          for (let dx = -20; dx <= 20; dx += 2) {
+          for (let dx = -18; dx <= 18; dx += 2) {
             const freq = sim1Packed ? 0.55 : 0.85;
-            const amp = sim1Packed ? 10 * Math.exp(-(dx * dx) / 140) : 12;
+            const amp = sim1Packed ? 9 * Math.exp(-(dx * dx) / 120) : 11;
             const sy = n.y + Math.sin(dx * freq + t * 5) * amp;
-            if (dx === -20) ctx.moveTo(n.x + dx, sy);
+            if (dx === -18) ctx.moveTo(n.x + dx, sy);
             else ctx.lineTo(n.x + dx, sy);
           }
           ctx.stroke();
         } else {
-          ctx.fillStyle = n.color;
-          ctx.font = 'bold 12px monospace';
+          ctx.fillStyle = ink;
           const metric = idx === 0 ? Math.round(cenClean) + '%' : (idx === 1 ? (sim1Packed ? 'Ổn định' : 'Quá tải') : (sim1Packed ? 'Sáng tạo' : 'Nhai lại'));
-          ctx.fillText(metric, n.x, n.y + 4);
+          fitText(ctx, metric, n.x, n.y + 4, n.r * 1.7, 11.5, '600', F_SANS);
         }
       });
 
@@ -1738,7 +1771,6 @@
       const line = cssVar('--line', '#e2ddd3');
       const stop = cssVar('--stop', '#d1495b');
       const begin = cssVar('--begin', '#2e9e6b');
-      const ask = cssVar('--ask', '#d9902b');
 
       ctx.fillStyle = bg;
       ctx.fillRect(0, 0, W, H);
@@ -1747,7 +1779,6 @@
       const hungerLabel = hunger < 35 ? 'Thấp (Đủ năng lượng · ' + hunger + '%)' : (hunger < 70 ? 'Trung bình (Bắt đầu đói · ' + hunger + '%)' : 'Cao (Hangry / Mỏi mệt · ' + hunger + '%)');
       sim2HungerVal.textContent = hungerLabel;
 
-      // Mức độ căng thẳng khởi đầu ở Lượt 1 phụ thuộc vào quy gán sai nội cảm (Hangry)
       const baseIntensity = 20 + (hunger / 100) * 18;
       const turns = 5;
       const titSeries = [];
@@ -1758,20 +1789,45 @@
       for (let i = 0; i < turns; i++) {
         titSeries.push(Math.min(100, curTit));
         pgSeries.push(Math.max(8, curPG));
-        // Shergill et al. 2003: cảm nhận lực tự tạo giảm 35-40% -> đáp trả tăng ~38% mỗi lượt
         curTit = curTit * 1.38;
-        // Perspective-Getting + nhãn [blocking]/[nit] giúp hạ nhiệt ~28% mỗi lượt
         curPG = curPG * 0.72;
       }
 
-      const padL = 54, padR = 30, padT = 32, padB = 42;
+      const stackLegend = W < 760;
+      const padL = 48, padR = 24, padT = stackLegend ? 52 : 38, padB = 36;
       const plotW = W - padL - padR;
       const plotH = H - padT - padB;
+
+      // Vẽ chú giải bằng ô vuông fillRect (không dùng ký tự ■ U+25A0) và chống đè chữ
+      ctx.textAlign = 'left';
+      if (stackLegend) {
+        ctx.fillStyle = stop;
+        ctx.fillRect(padL, 8, 10, 10);
+        ctx.fillStyle = ink;
+        fitText(ctx, 'Đáp trả tự nhiên (+38%/lượt · Shergill 2003 [Giả thuyết])', padL + 15, 17, plotW - 15, 11.5, '600', F_SANS);
+
+        ctx.fillStyle = begin;
+        ctx.fillRect(padL, 25, 10, 10);
+        ctx.fillStyle = ink;
+        fitText(ctx, 'Hỏi góc nhìn (Perspective-Getting) + Nhãn [blocking]/[nit]', padL + 15, 34, plotW - 15, 11.5, '600', F_SANS);
+      } else {
+        const halfW = plotW * 0.5 - 10;
+        ctx.fillStyle = stop;
+        ctx.fillRect(padL, 10, 10, 10);
+        ctx.fillStyle = ink;
+        fitText(ctx, 'Đáp trả tự nhiên (+38%/lượt · Shergill 2003 [Giả thuyết])', padL + 15, 19, halfW - 15, 12, '600', F_SANS);
+
+        const leg2X = padL + plotW * 0.52;
+        ctx.fillStyle = begin;
+        ctx.fillRect(leg2X, 10, 10, 10);
+        ctx.fillStyle = ink;
+        fitText(ctx, 'Hỏi góc nhìn (Perspective-Getting) + Nhãn [blocking]/[nit]', leg2X + 15, 19, plotW * 0.48 - 15, 12, '600', F_SANS);
+      }
 
       // Lưới ngang
       ctx.strokeStyle = line;
       ctx.lineWidth = 1;
-      ctx.font = '11px monospace';
+      ctx.font = '500 11px ' + F_MONO;
       ctx.fillStyle = muted;
       [0, 25, 50, 75, 100].forEach(function(val) {
         const y = padT + plotH - (val / 100) * plotH;
@@ -1779,7 +1835,8 @@
         ctx.moveTo(padL, y);
         ctx.lineTo(padL + plotW, y);
         ctx.stroke();
-        ctx.fillText(val + '%', 12, y + 4);
+        ctx.textAlign = 'right';
+        ctx.fillText(val + '%', padL - 8, y + 4);
       });
 
       const groupW = plotW / turns;
@@ -1787,13 +1844,11 @@
         const gx = padL + i * groupW + groupW * 0.22;
         const bw = Math.min(34, groupW * 0.26);
 
-        // Cột Đáp trả tự nhiên (~38%/lượt)
         const hTit = (titSeries[i] / 100) * plotH;
         ctx.fillStyle = stop;
         ctx.globalAlpha = sim2UsePG ? 0.35 : 0.92;
         ctx.fillRect(gx, padT + plotH - hTit, bw, hTit);
 
-        // Cột Perspective-Getting + Nhãn PR
         const hPG = (pgSeries[i] / 100) * plotH;
         ctx.fillStyle = begin;
         ctx.globalAlpha = sim2UsePG ? 0.92 : 0.35;
@@ -1801,25 +1856,17 @@
 
         ctx.globalAlpha = 1;
         ctx.fillStyle = ink;
-        ctx.font = 'bold 11.5px sans-serif';
+        ctx.font = '600 11.5px ' + F_SANS;
         ctx.textAlign = 'center';
         ctx.fillText('Lượt ' + (i + 1), gx + bw + 3, padT + plotH + 20);
 
         const activeVal = Math.round(sim2UsePG ? pgSeries[i] : titSeries[i]);
         const activeX = sim2UsePG ? (gx + bw + 6 + bw / 2) : (gx + bw / 2);
-        const activeY = padT + plotH - (sim2UsePG ? hPG : hTit) - 6;
-        ctx.font = 'bold 11px monospace';
-        ctx.fillStyle = sim2UsePG ? begin : stop;
+        const activeY = Math.max(padT + 11, padT + plotH - (sim2UsePG ? hPG : hTit) - 5);
+        ctx.font = '600 11px ' + F_MONO;
+        ctx.fillStyle = ink;
         ctx.fillText(activeVal + '%', activeX, activeY);
       }
-
-      // Chú giải trên biểu đồ
-      ctx.textAlign = 'left';
-      ctx.font = 'bold 12px sans-serif';
-      ctx.fillStyle = stop;
-      ctx.fillText('■ Đáp trả theo cảm giác tự thân (+38%/lượt · Shergill 2003 [Giả thuyết])', padL, 18);
-      ctx.fillStyle = begin;
-      ctx.fillText('■ Hỏi góc nhìn (Perspective-Getting) + Nhãn [blocking]/[nit]', padL + Math.min(410, plotW * 0.52), 18);
 
       ctx.restore();
 
@@ -1877,7 +1924,6 @@
       const ink = cssVar('--ink', '#1c1c1e');
       const muted = cssVar('--muted', '#5a5a60');
       const line = cssVar('--line', '#e2ddd3');
-      const co = cssVar('--co', '#3b6fd8');
       const stop = cssVar('--stop', '#d1495b');
       const ask = cssVar('--ask', '#d9902b');
       const begin = cssVar('--begin', '#2e9e6b');
@@ -1890,15 +1936,40 @@
       sim3CaffHourVal.textContent = (caffHour < 10 ? '0' : '') + caffHour + ':00';
       sim3HalfLifeVal.textContent = halfLife.toFixed(1) + ' giờ';
 
-      const padL = 52, padR = 24, padT = 32, padB = 38;
+      const stackLegend = W < 740;
+      const padL = 44, padR = 24, padT = stackLegend ? 50 : 36, padB = 36;
       const plotW = W - padL - padR;
       const plotH = H - padT - padB;
 
-      // Trục giờ từ 06:00 sáng đến 24:00 (18 tiếng)
+      // Vẽ chú giải bằng ô vuông fillRect
+      ctx.textAlign = 'left';
+      if (stackLegend) {
+        ctx.fillStyle = ask;
+        ctx.fillRect(padL, 8, 10, 10);
+        ctx.fillStyle = ink;
+        fitText(ctx, 'Nồng độ Caffeine tồn dư ước tính (t½ = ' + halfLife.toFixed(1) + 'h)', padL + 15, 17, plotW - 15, 11.5, '600', F_SANS);
+
+        ctx.fillStyle = begin;
+        ctx.fillRect(padL, 25, 10, 10);
+        ctx.fillStyle = ink;
+        fitText(ctx, 'Độ vững phanh mPFC–Amygdala & Tỉnh táo (Định tính)', padL + 15, 34, plotW - 15, 11.5, '600', F_SANS);
+      } else {
+        ctx.fillStyle = ask;
+        ctx.fillRect(padL, 10, 10, 10);
+        ctx.fillStyle = ink;
+        fitText(ctx, 'Nồng độ Caffeine tồn dư ước tính (t½ = ' + halfLife.toFixed(1) + 'h)', padL + 15, 19, plotW * 0.46, 12, '600', F_SANS);
+
+        const leg2X = padL + plotW * 0.49;
+        ctx.fillStyle = begin;
+        ctx.fillRect(leg2X, 10, 10, 10);
+        ctx.fillStyle = ink;
+        fitText(ctx, 'Độ vững phanh mPFC–Amygdala & Tỉnh táo (Định tính)', leg2X + 15, 19, plotW * 0.51 - 15, 12, '600', F_SANS);
+      }
+
       const startH = 6, endH = 24;
       ctx.strokeStyle = line;
       ctx.lineWidth = 1;
-      ctx.font = '11px monospace';
+      ctx.font = '500 11px ' + F_MONO;
       ctx.fillStyle = muted;
 
       for (let h = startH; h <= endH; h += 2) {
@@ -1911,10 +1982,8 @@
         ctx.fillText((h < 10 ? '0' : '') + h + ':00', x, padT + plotH + 18);
       }
 
-      // Vẽ đường cong Caffeine tồn dư (%) và Độ vững phanh tiền trán mPFC-Amygdala định tính
       ctx.lineWidth = 2.6;
 
-      // 1) Đường Caffeine tồn dư (Màu vàng cam --ask)
       ctx.beginPath();
       ctx.strokeStyle = ask;
       for (let h = startH; h <= endH; h += 0.25) {
@@ -1933,21 +2002,17 @@
       }
       ctx.stroke();
 
-      // 2) Đường Độ vững phanh điều hòa mPFC -> Amygdala & Tỉnh táo định tính (Màu xanh lá --begin hoặc đỏ --stop)
       ctx.beginPath();
       ctx.strokeStyle = begin;
       for (let h = startH; h <= endH; h += 0.25) {
         const x = padL + ((h - startH) / (endH - startH)) * plotW;
         let brake = 88 - (h - 6) * 3.1;
-        // Post-lunch dip lúc 13:00-15:00
         if (h >= 12.5 && h <= 15.5) {
           brake -= 12 * Math.sin(((h - 12.5) / 3) * Math.PI);
         }
-        // Chợp mắt 10 phút lúc 13:00 giúp phục hồi ~155 phút (Brooks & Lack 2006)
         if (sim3Nap && h >= 13.2 && h <= 16.5) {
           brake += 14 * Math.sin(((h - 13.2) / 3.3) * Math.PI);
         }
-        // Nghi thức đóng ca 18:00 giúp phục hồi tách rời tâm lý buổi tối
         if (sim3Detach && h >= 18) {
           brake += 12;
         } else if (!sim3Detach && h >= 18) {
@@ -1960,7 +2025,6 @@
       }
       ctx.stroke();
 
-      // Vạch mốc 22:30 (Giờ lên giường chuẩn bị ngủ)
       const bedX = padL + ((22.5 - startH) / (endH - startH)) * plotW;
       ctx.strokeStyle = stop;
       ctx.setLineDash([4, 4]);
@@ -1970,16 +2034,8 @@
       ctx.stroke();
       ctx.setLineDash([]);
 
-      ctx.textAlign = 'left';
-      ctx.font = 'bold 12px sans-serif';
-      ctx.fillStyle = ask;
-      ctx.fillText('■ Nồng độ Caffeine tồn dư ước tính (t½ = ' + halfLife.toFixed(1) + 'h)', padL, 18);
-      ctx.fillStyle = begin;
-      ctx.fillText('■ Độ vững phanh mPFC–Amygdala & Tỉnh táo (Định tính)', padL + Math.min(360, plotW * 0.48), 18);
-
       ctx.restore();
 
-      // Tính nồng độ caffeine còn lại lúc 22:30
       let caffAtBed = 55 * Math.pow(0.5, (22.5 - 7.5) / halfLife);
       if (22.5 >= caffHour) {
         caffAtBed += 75 * Math.pow(0.5, (22.5 - caffHour) / halfLife);
@@ -2351,6 +2407,25 @@
     drawSim2();
     drawSim3();
     renderTrackerTable();
+    function redrawAllCanvases() {
+      drawSim1(performance.now());
+      drawSim2();
+      drawSim3();
+    }
+    if (document.fonts && document.fonts.load) {
+      const vnSample = 'Băng thông cặn chú ý ổn định Ừ Ệ ươ';
+      Promise.all([
+        document.fonts.load('400 12px "Be Vietnam Pro"', vnSample),
+        document.fonts.load('600 12px "Be Vietnam Pro"', vnSample),
+        document.fonts.load('500 11px "JetBrains Mono"', vnSample),
+        document.fonts.load('600 11px "JetBrains Mono"', vnSample)
+      ]).catch(function() {}).then(function() {
+        return document.fonts.ready;
+      }).then(redrawAllCanvases);
+      if (document.fonts.addEventListener) {
+        document.fonts.addEventListener('loadingdone', redrawAllCanvases);
+      }
+    }
   })();
   </script>
 </body>
