@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="vi">
+<html lang="vi" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -11,23 +11,23 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap">
 <style>
 :root {
-  --paper: #f5f7f6;
+  --paper: #f7f4ee;
   --sheet: #ffffff;
-  --sheet-alt: #f0f4f2;
-  --ink: #182220;
-  --muted: #52605c;
-  --rule: #d5deda;
-  --accent: #1d5c73;
-  --accent-soft: #e1eef2;
-  --ok: #1e6f50;
-  --ok-soft: #e2f3ec;
-  --warn: #94620a;
-  --warn-soft: #f9eed8;
-  --bad: #9e2a2b;
-  --bad-soft: #f9e5e5;
-  --info: #28558a;
-  --info-soft: #e3ecf7;
-  --code-bg: #ecf1ef;
+  --sheet-alt: #efeae0;
+  --ink: #1c1c1e;
+  --muted: #5a5a60;
+  --rule: #e2ddd3;
+  --accent: #3b6fd8;
+  --accent-soft: #e7eefc;
+  --ok: #2e9e6b;
+  --ok-soft: #e4f5ec;
+  --warn: #875100;
+  --warn-soft: #fdf2e1;
+  --bad: #9e2a3b;
+  --bad-soft: #fbe9ec;
+  --info: #5b4b8a;
+  --info-soft: #eeeaf6;
+  --code-bg: #efeae0;
   --font-display: "Source Serif 4", "Noto Serif", Georgia, serif;
   --font-body: "Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
@@ -566,17 +566,17 @@ th {
 </head>
 <body>
 
-<div id="sabc-portal-bar" style="position:sticky;top:0;z-index:9999;background:rgba(28,28,30,0.94);backdrop-filter:blur(8px);color:#f7f4ee;padding:7px 20px;font-family:'Be Vietnam Pro','Segoe UI',system-ui,sans-serif;font-size:12.5px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid rgba(255,255,255,0.12)">
+<div id="sabc-portal-bar" style="position:sticky;top:0;z-index:9999;background:color-mix(in srgb, var(--paper, #f7f4ee) 92%, transparent);backdrop-filter:blur(8px);color:var(--ink, #1c1c1e);padding:8px 20px;font-family:'Be Vietnam Pro','Segoe UI',system-ui,sans-serif;font-size:13px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--rule, #e2ddd3)">
   <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-    <a href="../../#/" style="color:#fff;text-decoration:none;font-weight:800;letter-spacing:-0.2px"><span style="color:#ff6b7b">Stop.</span> <span style="color:#f5b041">Ask.</span> <span style="color:#58d68d">Begin.</span></a>
+    <a href="../../#/" style="color:var(--ink, #1c1c1e);text-decoration:none;font-weight:800;letter-spacing:-0.2px"><span style="color:#d1495b">Stop.</span> <span style="color:#d9902b">Ask.</span> <span style="color:#2e9e6b">Begin.</span></a>
     <span style="opacity:0.45">›</span>
-    <a href="../../#/" style="color:#d7d2e9;text-decoration:none;font-weight:600">← Về Dashboard</a>
+    <a href="../../#/" style="color:var(--accent, #3b6fd8);text-decoration:none;font-weight:600">← Về Dashboard</a>
   </div>
-  <div style="display:flex;align-items:center;gap:14px;font-size:12px">
-    <a href="../../#/index" style="color:#c2c2c7;text-decoration:none">Tra cứu</a>
-    <a href="../../#/ref/hbr" style="color:#c2c2c7;text-decoration:none">HBR</a>
-    <a href="../khong-thoi-gian/index.html" style="color:#fff;font-weight:700;text-decoration:none">Không-Thời gian</a>
-    <a href="../nhip-24h/index.html" style="color:#c2c2c7;text-decoration:none">Nhịp 24h</a>
+  <div style="display:flex;align-items:center;gap:14px;font-size:12.5px">
+    <a href="../../#/index" style="color:var(--muted, #5a5a60);text-decoration:none;font-weight:500">Tra cứu</a>
+    <a href="../../#/ref/hbr" style="color:var(--muted, #5a5a60);text-decoration:none;font-weight:500">HBR</a>
+    <a href="../khong-thoi-gian/index.html" style="color:var(--ink, #1c1c1e);font-weight:700;text-decoration:none;background:var(--accent-soft, #e7eefc);padding:3px 9px;border-radius:6px">Không-Thời gian</a>
+    <a href="../nhip-24h/index.html" style="color:var(--muted, #5a5a60);text-decoration:none;font-weight:500">Nhịp 24h</a>
   </div>
 </div>
 
@@ -1154,19 +1154,19 @@ th {
     var dark = isDark();
     return {
       dark: dark,
-      bg: dark ? "#17201e" : "#ffffff",
-      bgAlt: dark ? "#1e2926" : "#f0f4f2",
-      ink: dark ? "#e5ecea" : "#182220",
-      muted: dark ? "#96a7a2" : "#52605c",
-      rule: dark ? "#2a3834" : "#d5deda",
-      accent: dark ? "#67bfd8" : "#1d5c73",
-      ok: dark ? "#5cd6a5" : "#1e6f50",
-      warn: dark ? "#f0b44c" : "#94620a",
-      bad: dark ? "#f2797a" : "#9e2a2b",
-      info: dark ? "#7ab3ef" : "#28558a",
+      bg: dark ? "#181a20" : "#ffffff",
+      bgAlt: dark ? "#1b1d22" : "#efeae0",
+      ink: dark ? "#ececf0" : "#1c1c1e",
+      muted: dark ? "#a0a4b0" : "#5a5a60",
+      rule: dark ? "#2a2d35" : "#e2ddd3",
+      accent: dark ? "#689bf6" : "#3b6fd8",
+      ok: dark ? "#52c993" : "#2e9e6b",
+      warn: dark ? "#f0b156" : "#d9902b",
+      bad: dark ? "#ef6f80" : "#d1495b",
+      info: dark ? "#9d8cd4" : "#5b4b8a",
       cells: dark
-        ? ["#7ab3ef", "#67bfd8", "#5cd6a5", "#8ce09a", "#f0b44c", "#f59356", "#f2797a"]
-        : ["#28558a", "#1d5c73", "#1e6f50", "#3b875e", "#94620a", "#c86d1f", "#9e2a2b"]
+        ? ["#689bf6", "#5bc0be", "#52c993", "#8ce09a", "#f0b156", "#f59356", "#ef6f80"]
+        : ["#3b6fd8", "#1d5c73", "#2e9e6b", "#3b875e", "#d9902b", "#c86d1f", "#d1495b"]
     };
   }
   btnTheme.addEventListener("click", function () {

@@ -1406,13 +1406,13 @@
 
     const reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // 1. GIAO DIỆN SÁNG / TỐI & MỞ/ĐÓNG DETAILS
+    // 1. GIAO DIỆN SÁNG / TỐI (Mặc định Light đồng bộ với sabc) & MỞ/ĐÓNG DETAILS
     const rootEl = document.documentElement;
-    const savedTheme = localStorage.getItem('binh_than_theme');
+    const savedTheme = localStorage.getItem('sabc_theme');
     if (savedTheme === 'dark' || savedTheme === 'light') {
       rootEl.setAttribute('data-theme', savedTheme);
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      rootEl.setAttribute('data-theme', 'dark');
+    } else {
+      rootEl.setAttribute('data-theme', 'light');
     }
 
     function cssVar(name, fallback) {
@@ -1425,7 +1425,7 @@
       btnTheme.addEventListener('click', function() {
         const next = rootEl.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
         rootEl.setAttribute('data-theme', next);
-        try { localStorage.setItem('binh_than_theme', next); } catch (e) {}
+        try { localStorage.setItem('sabc_theme', next); } catch (e) {}
         drawSim1(performance.now());
         drawSim2();
         drawSim3();
