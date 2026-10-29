@@ -142,30 +142,36 @@
 
     /* Container chính */
     .page-wrap {
-      max-width: 1380px;
+      max-width: 1520px;
       margin: 0 auto;
-      padding: 14px 18px 64px;
+      padding: 14px 22px 64px;
     }
 
     /* Phần 1: POSTER THỰC HÀNH 4 CỘT (Phong cách sabc) */
     .poster-header {
       display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 16px;
+      flex-direction: column;
+      gap: 6px;
       margin-bottom: 12px;
+    }
+    .poster-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
       flex-wrap: wrap;
     }
-    .poster-title-group h1 {
+    .poster-top-row h1 {
       font-size: clamp(1.35rem, 2.2vw, 1.85rem);
       line-height: 1.2;
       letter-spacing: -0.02em;
-      margin-bottom: 4px;
+      margin: 0;
     }
-    .poster-title-group p {
+    .poster-sub {
       font-size: 13.5px;
       color: var(--muted);
-      max-width: 78ch;
+      max-width: none;
+      margin: 0;
     }
     .mode-switcher {
       display: flex;
@@ -340,6 +346,10 @@
       border-top: 1px dashed var(--line);
       font-size: 11.5px;
     }
+    .item-footer a {
+      white-space: nowrap;
+      font-weight: 600;
+    }
 
     /* Nhãn phân tầng chứng cứ Nguồn / Mở rộng / Giả thuyết */
     .ep-tag {
@@ -384,11 +394,11 @@
       font-size: 12.5px;
       box-shadow: var(--shadow);
     }
-    .strip-card strong {
+    .strip-card > strong:first-child {
       display: block;
       font-size: 13px;
       color: var(--ref-ink);
-      margin-bottom: 2px;
+      margin-bottom: 4px;
     }
 
     /* Bố cục phần chuyên sâu bên dưới Poster */
@@ -625,11 +635,12 @@
     }
     .tpl-head {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: space-between;
       gap: 10px;
     }
-    .tpl-head h3 { font-size: 14px; line-height: 1.35; }
+    .tpl-head h3 { font-size: 13.8px; line-height: 1.35; }
+    .copy-btn { flex-shrink: 0; white-space: nowrap; }
     pre.tpl-code {
       flex: 1;
       background: var(--card);
@@ -682,6 +693,7 @@
       font-weight: 700;
       position: sticky;
       top: 0;
+      white-space: nowrap;
     }
     table.tracker-table tr.week-avg {
       background: var(--ref-soft);
@@ -792,7 +804,7 @@
       <span class="dot ask"></span>
       <span class="dot begin"></span>
       <strong>BÌNH THẢN VỚI DÀN NHẠC</strong>
-      <span class="sub">Poster &amp; Cẩm Nang Thực Hành 24 Giờ Thời AI (3–12 tác nhân)</span>
+      <span class="sub">Cẩm Nang 24 Giờ Thời AI (3–12 tác nhân)</span>
     </div>
     <nav class="bar-actions" aria-label="Điều hướng nhanh và công cụ">
       <a class="btn" href="../../#/" style="font-weight:800;">← Stop. Ask. Begin.</a>
@@ -812,23 +824,23 @@
     <!-- PHẦN 1: POSTER THỰC HÀNH 4 CỘT (BỐ CỤC & BẢNG MÀU SABC) -->
     <section id="poster-24h" aria-labelledby="poster-heading">
       <div class="poster-header">
-        <div class="poster-title-group">
+        <div class="poster-top-row">
           <h1 id="poster-heading">Poster Thực Hành 24 Giờ: 4 Trụ Cột · 8 Nút Chuyển Tiếp</h1>
-          <p>
-            Cài các thao tác bảo vệ ba mạng não (<strong>CEN · SN · DMN</strong>) và giữ vững <strong>Nhận thức tình huống (In-the-Loop Situation Awareness · Endsley 1995)</strong> ngay trong <strong>Vòng lặp ở giữa (The Middle Loop: Directing · Evaluating · Correcting · Vella 2026)</strong> qua tám khe chuyển tiếp sẵn có (~15–25 phút/ngày).
-          </p>
+          <div class="mode-switcher no-print" role="group" aria-label="Chọn chế độ vận hành trong ngày">
+            <button type="button" class="btn active-mode" data-mode="standard">Bản Chuẩn 8 Nút</button>
+            <button type="button" class="btn" data-mode="minimal">Ngày Họp Dày (Tối thiểu 3 Nút · ~10p)</button>
+            <button type="button" class="btn" data-mode="oncall">Trực Sự Cố (On-Call / Sev1)</button>
+          </div>
         </div>
-        <div class="mode-switcher no-print" role="group" aria-label="Chọn chế độ vận hành trong ngày">
-          <button type="button" class="btn active-mode" data-mode="standard">Bản Chuẩn 8 Nút</button>
-          <button type="button" class="btn" data-mode="minimal">Ngày Họp Dày (Tối thiểu 3 Nút · ~10p)</button>
-          <button type="button" class="btn" data-mode="oncall">Trực Sự Cố (On-Call / Sev1)</button>
-        </div>
+        <p class="poster-sub">
+          Cài các thao tác bảo vệ ba mạng não (<strong>CEN · SN · DMN</strong>) và giữ vững <strong>Nhận thức tình huống (Endsley 1995)</strong> ngay trong <strong>Vòng lặp ở giữa (The Middle Loop · Vella 2026)</strong> qua 8 khe chuyển tiếp sẵn có (~15–25 phút/ngày).
+        </p>
       </div>
 
       <!-- Thanh trạng thái chế độ vận hành -->
       <div id="mode-banner" class="mode-banner" role="status" aria-live="polite">
         <div>
-          <strong>Chế độ đang chọn · Bản Chuẩn 8 Nút:</strong> Thực hiện trọn vẹn 8 nút chuyển tiếp chia đều vào 4 cột hành động từ lúc thức giấc (06:30) đến khi đi ngủ (23:00).
+          <strong>Chế độ đang chọn · Bản Chuẩn 8 Nút:</strong> Trọn vẹn 8 nút qua 4 trụ cột (<em>Directing · Evaluating · Correcting · Recovery</em>) từ 06:30 đến 23:00.
         </div>
         <div style="display:flex; gap:6px; flex-wrap:wrap;">
           <span class="ep-tag ep-src">[Nguồn] Thực nghiệm gốc</span>
@@ -844,7 +856,7 @@
           <div class="col-head">
             <span class="badge">TRỤ CỘT 1 · DIRECTING (MIDDLE LOOP)</span>
             <h2>Mở Ngày &amp; Chuẩn Nguồn</h2>
-            <p>Chỉ đạo (Directing) &amp; thiết lập Nhận thức tình huống (Endsley 1995)</p>
+            <p>Chỉ đạo (Directing) &amp; giữ Nhận thức tình huống</p>
           </div>
           <div class="col-body">
             <ol class="items">
@@ -860,7 +872,7 @@
                   <li>Dừng cữ cà phê cuối <strong>trước 14:00</strong> (cách giờ ngủ 8–10 tiếng).</li>
                 </ul>
                 <div class="item-footer">
-                  <span><span class="ep-tag ep-src">Nguồn</span> Drake 2013 · <span class="ep-tag ep-ext">Mở rộng</span> Wittbrodt 2018</span>
+                  <span><span class="ep-tag ep-src">Nguồn</span> Drake 13 · <span class="ep-tag ep-ext">Mở rộng</span> Wittbrodt 18</span>
                   <a href="#sec-circadian">Xem cơ chế ↓</a>
                 </div>
               </li>
@@ -877,7 +889,7 @@
                   <li>Chỉ mở tối đa <strong>2–3 tác nhân</strong> độc lập; giao kiểm tra cú pháp/test cho máy (<em>Machine-check</em>).</li>
                 </ul>
                 <div class="item-footer">
-                  <span><span class="ep-tag ep-src">Nguồn</span> Endsley 1995 · <span class="ep-tag ep-ext">Mở rộng</span> Vella 2026; Ruby 2026</span>
+                  <span><span class="ep-tag ep-src">Nguồn</span> Endsley 95 · <span class="ep-tag ep-ext">Mở rộng</span> Vella 26</span>
                   <a href="#sec-networks">Mô phỏng 1 ↓</a>
                 </div>
               </li>
@@ -891,7 +903,7 @@
           <div class="col-head">
             <span class="badge">TRỤ CỘT 2 · CORRECTING &amp; IN-THE-LOOP</span>
             <h2>Chuyển Nhánh &amp; Chờ Kiểm Thử</h2>
-            <p>Khép cặn chú ý Leroy &amp; hóa giải Nghịch lý tự động hóa Bainbridge (1983)</p>
+            <p>Khép cặn chú ý Leroy &amp; xử lý khi AI trượt test</p>
           </div>
           <div class="col-body">
             <ol class="items">
@@ -907,7 +919,7 @@
                   <li>Thở <strong>1–2 nhịp thở dài theo chu kỳ</strong> (hít kép qua mũi, thở dài qua miệng) rồi mới đổi cửa sổ.</li>
                 </ul>
                 <div class="item-footer">
-                  <span><span class="ep-tag ep-src">Nguồn</span> Leroy 2009; Lieberman 2007 · <span class="ep-tag ep-ext">Mở rộng</span> Balban 2023</span>
+                  <span><span class="ep-tag ep-src">Nguồn</span> Leroy 09 · <span class="ep-tag ep-ext">Mở rộng</span> Balban 23</span>
                   <a href="#sec-networks">Mô phỏng 1 ↓</a>
                 </div>
               </li>
@@ -924,7 +936,7 @@
                   <li><strong>Khi trực sự cố Sev1:</strong> Thu hồi quyền ghi trực tiếp của AI vào prod; ưu tiên <code>rollback</code> cầm máu.</li>
                 </ul>
                 <div class="item-footer">
-                  <span><span class="ep-tag ep-src">Nguồn</span> Bainbridge 1983; Dewar 2012 · <span class="ep-tag ep-ext">Mở rộng</span> Vella 2026</span>
+                  <span><span class="ep-tag ep-src">Nguồn</span> Bainbridge 83 · <span class="ep-tag ep-ext">Mở rộng</span> Vella 26</span>
                   <a href="#mau-cau">Mẫu câu 3 ↓</a>
                 </div>
               </li>
@@ -938,7 +950,7 @@
           <div class="col-head">
             <span class="badge">TRỤ CỘT 3 · EVALUATING &amp; COFFEE WALKS</span>
             <h2>Thân Thể &amp; Đối Thoại</h2>
-            <p>Kiểm chứng (Evaluating) tỉnh táo &amp; hóa giải Nghịch lý Năng suất – Trải nghiệm</p>
+            <p>Kiểm chứng (Evaluating) tỉnh táo &amp; đối thoại</p>
           </div>
           <div class="col-body">
             <ol class="items">
@@ -954,7 +966,7 @@
                   <li>Nếu đêm trước thiếu ngủ (và không mắc mất ngủ mạn tính): chợp mắt <strong>~10 phút ngủ thực</strong> (đặt báo thức 15–20 phút).</li>
                 </ul>
                 <div class="item-footer">
-                  <span><span class="ep-tag ep-src">Nguồn</span> Swami 2022; Brooks 2006 · <span class="ep-tag ep-ext">Mở rộng</span> Vella; Fowler 2026</span>
+                  <span><span class="ep-tag ep-src">Nguồn</span> Brooks 06 · <span class="ep-tag ep-ext">Mở rộng</span> Fowler 26</span>
                   <a href="#sec-escalation">Mô phỏng 2 ↓</a>
                 </div>
               </li>
@@ -971,7 +983,7 @@
                   <li>Nói thẳng điểm mình hoặc tác nhân chưa kiểm chứng kịp (<em>Revealing</em>).</li>
                 </ul>
                 <div class="item-footer">
-                  <span><span class="ep-tag ep-src">Nguồn</span> Eyal 2018; Slepian 2017 · <span class="ep-tag ep-hyp">Giả thuyết</span> Shergill 2003</span>
+                  <span><span class="ep-tag ep-src">Nguồn</span> Eyal 18 · <span class="ep-tag ep-hyp">Giả thuyết</span> Shergill 03</span>
                   <a href="#sec-escalation">Mô phỏng 2 ↓</a>
                 </div>
               </li>
@@ -985,7 +997,7 @@
           <div class="col-head">
             <span class="badge">TRỤ CỘT 4 · DETACHING &amp; VERTIGO GUARD</span>
             <h2>Đóng Ca &amp; Giấc Ngủ</h2>
-            <p>Thoát cơn choáng đường cong dựng đứng (Vertigo) &amp; bảo vệ phanh tiền trán</p>
+            <p>Tách rời tâm lý &amp; bảo vệ phanh tiền trán</p>
           </div>
           <div class="col-body">
             <ol class="items">
@@ -1001,7 +1013,7 @@
                   <li>Vận động nhịp điệu 20–30 phút hoặc đi bộ qua không gian xanh để tách rời tâm lý khỏi công việc.</li>
                 </ul>
                 <div class="item-footer">
-                  <span><span class="ep-tag ep-src">Nguồn</span> Sonnentag 2015 · <span class="ep-tag ep-ext">Mở rộng</span> Karpathy / Fowler 2026</span>
+                  <span><span class="ep-tag ep-src">Nguồn</span> Sonnentag 15 · <span class="ep-tag ep-ext">Mở rộng</span> Fowler 26</span>
                   <a href="#sec-circadian">Mô phỏng 3 ↓</a>
                 </div>
               </li>
@@ -1018,7 +1030,7 @@
                   <li><strong>Quá 22:00:</strong> Tạm dừng tranh luận căng thẳng, ghi lịch hẹn sáng mai bàn tiếp và ngủ đủ 7–8 giờ.</li>
                 </ul>
                 <div class="item-footer">
-                  <span><span class="ep-tag ep-src">Nguồn</span> Lim &amp; Dinges 2010; Yoo 2007 · <span class="ep-tag ep-ext">Mở rộng</span> Schonbrun 2026</span>
+                  <span><span class="ep-tag ep-src">Nguồn</span> Lim 10; Yoo 07 · <span class="ep-tag ep-ext">Mở rộng</span> Schonbrun 26</span>
                   <a href="#sec-circadian">Mô phỏng 3 ↓</a>
                 </div>
               </li>
@@ -1031,15 +1043,15 @@
       <!-- Dải nền 3 Mạng Não & Chu trình 4 pha dưới chân Poster -->
       <div class="poster-strip">
         <div class="strip-card">
-          <strong>1. CEN (dlPFC &amp; PPC) × Vòng Lặp Ở Giữa (The Middle Loop · Vella, 2026)</strong>
-          Khi AI làm thay việc gõ mã (<em>Inner Loop</em>), kỹ sư chuyển sang <strong>Lao động kỹ thuật giám sát (Supervisory Engineering)</strong> gồm <em>Chỉ đạo · Kiểm chứng · Sửa sai</em>. Đọc duyệt mã máy sinh ra cả ngày rút cạn băng thông <code>dlPFC</code> và cắt vụn dòng chảy dù tốc độ đầu ra tăng (<em>Nghịch lý Năng suất – Trải nghiệm</em>).
+          <strong>1. CEN (dlPFC &amp; PPC) × Vòng Lặp Ở Giữa (Middle Loop)</strong>
+          Khi AI làm thay việc gõ mã (<em>Inner Loop</em>), kỹ sư chuyển sang <strong>Lao động kỹ thuật giám sát (Supervisory Engineering · Vella 2026)</strong> gồm <em>Chỉ đạo · Kiểm chứng · Sửa sai</em>. Đọc duyệt mã máy sinh ra cả ngày rút cạn băng thông <code>dlPFC</code> và cắt vụn dòng chảy dù tốc độ đầu ra tăng (<em>Nghịch lý Năng suất – Trải nghiệm</em>).
         </div>
         <div class="strip-card">
-          <strong>2. SN (Thùy Đảo &amp; dACC) × Rơi Khỏi Vòng Lặp &amp; Nghịch Lý Bainbridge (1983, 1995)</strong>
+          <strong>2. SN (Thùy Đảo &amp; dACC) × Nghịch Lý Tự Động Hóa</strong>
           Giao khoán cho AI khiến kỹ sư mất dần <strong>Nhận thức tình huống (Out-of-the-Loop · Endsley 1995)</strong>; đến khi AI trượt kiểm thử liên tiếp, kỹ sư lại bị đẩy vào ca khó nhất lúc mô hình tâm trí đã nguội (<strong>Nghịch lý tự động hóa · Bainbridge 1983</strong>), gây báo động gắt trên mạng <code>SN</code> và hạch hạnh nhân.
         </div>
         <div class="strip-card">
-          <strong>3. DMN &amp; Hồi Hải Mã × Tái Tạo Mô Hình Tâm Trí &amp; Bản Sắc (Fowler, 2026)</strong>
+          <strong>3. DMN &amp; Hồi Hải Mã × Tái Tạo Mô Hình Tâm Trí</strong>
           Những khoảng nghỉ trắng ngoại tuyến (<em>SPW-Rs</em> · Buzsáki 2019) và các cuộc đi bộ trò chuyện thật cùng đồng nghiệp (<em>Coffee Walks</em> tại Foocamp · Fowler 2026) giúp ghép nối các mảnh mã rời rạc thành mô hình tâm trí vững chắc và giải tỏa <em>cơn choáng khi đường cong năng lực dựng đứng (Vertigo)</em>.
         </div>
       </div>
@@ -1049,7 +1061,7 @@
     <section id="mo-phong" class="section-block" aria-labelledby="sim-section-heading">
       <div class="section-head">
         <h2 id="sim-section-heading">I. Giải Phẫu Cơ Chế &amp; 3 Mô Phỏng Hoạt Động Thời Gian Thực</h2>
-        <span class="sub">Tương tác trực tiếp trên thanh trượt để quan sát động học của 3 mạng não, vòng xoáy đáp trả và nhịp sinh học 24 giờ</span>
+        <span class="sub">Tương tác trên thanh trượt để quan sát 3 mạng não, vòng xoáy đáp trả và nhịp sinh học 24 giờ</span>
       </div>
 
       <!-- MỤC 1 + MÔ PHỎNG 1 -->
@@ -1120,9 +1132,9 @@
             </div>
             <div class="ctrl-group">
               <label>Chiến lược giao tiếp tại Nút 6:</label>
-              <div style="display:flex; gap:6px; margin-top:2px;">
-                <button type="button" class="btn active-mode" id="sim2-mode-pg">Hỏi góc nhìn (Perspective-Getting) + Nhãn [blocking]/[nit]</button>
-                <button type="button" class="btn" id="sim2-mode-tit">Đáp trả theo cảm giác tự thân (~38%/lượt)</button>
+              <div style="display:flex; gap:6px; margin-top:2px; flex-wrap:wrap;">
+                <button type="button" class="btn active-mode" id="sim2-mode-pg">Hỏi góc nhìn + Nhãn [blocking]/[nit]</button>
+                <button type="button" class="btn" id="sim2-mode-tit">Đáp trả cảm tính (~38%/lượt)</button>
               </div>
             </div>
           </div>
@@ -1203,32 +1215,32 @@
       <div class="svg-grid">
         <figure class="diagram" tabindex="0" role="button" data-full="images/fig2_vong_tuan_hoan_24h_nguoi_nhac_truong.svg" data-caption="Hình A: Vòng tuần hoàn 24 giờ của người nhạc trưởng thời AI theo 8 nút chuyển tiếp.">
           <img src="images/fig2_vong_tuan_hoan_24h_nguoi_nhac_truong.svg" alt="Sơ đồ vòng tuần hoàn 24 giờ của người nhạc trưởng thời AI" loading="lazy">
-          <figcaption><strong>Hình A (Tổng quan 24h):</strong> Tám nút chuyển tiếp cài vào nhịp sinh học từ 06:30 đến 23:00.</figcaption>
+          <figcaption><strong>Hình A (Tổng quan 24h):</strong> 8 nút chuyển tiếp từ 06:30 đến 23:00.</figcaption>
         </figure>
 
         <figure class="diagram" tabindex="0" role="button" data-full="images/fig1_ba_mang_nao_va_chu_trinh_4_pha.svg" data-caption="Hình B: Mô hình Ba mạng não (CEN - SN - DMN) và Chu trình 4 pha thiền định của Hasenkamp et al. (2012).">
           <img src="images/fig1_ba_mang_nao_va_chu_trinh_4_pha.svg" alt="Sơ đồ ba mạng não CEN SN DMN và chu trình 4 pha thiền định" loading="lazy">
-          <figcaption><strong>Hình B (Ba mạng não):</strong> Cầu dao SN chuyển mạch giữa DMN và CEN qua 4 pha nhận thức.</figcaption>
+          <figcaption><strong>Hình B (Ba mạng não):</strong> Cầu dao SN chuyển mạch DMN – CEN qua 4 pha.</figcaption>
         </figure>
 
         <figure class="diagram" tabindex="0" role="button" data-full="images/fig_playbook_14_ngay_tu_do_luong.svg" data-caption="Hình C: Giao thức tự quan sát cá nhân 14 ngày (Tuần 1 đo đường cơ sở vs. Tuần 2 bật các chốt chặn chuyển tiếp).">
           <img src="images/fig_playbook_14_ngay_tu_do_luong.svg" alt="Sơ đồ giao thức 14 ngày tự quan sát cá nhân" loading="lazy">
-          <figcaption><strong>Hình C (Giao thức 14 ngày):</strong> Nhật ký tự quan sát cá nhân (<em>n = 1</em>) qua 2 tuần đối chiếu.</figcaption>
+          <figcaption><strong>Hình C (Giao thức 14 ngày):</strong> Nhật ký tự quan sát (<em>n = 1</em>) 2 tuần.</figcaption>
         </figure>
 
         <figure class="diagram" tabindex="0" role="button" data-full="images/fig_bai1_nguon_chan_ly_va_nut_co_chai.svg" data-caption="Hình Bài 1: Nguồn Chân Lý (The Oracle) Cấp độ 1 và nút cổ chai bộ nhớ làm việc khi điều phối dàn tác nhân AI.">
           <img src="images/fig_bai1_nguon_chan_ly_va_nut_co_chai.svg" alt="Sơ đồ Bài 1 Nguồn Chân Lý và nút cổ chai bộ nhớ làm việc" loading="lazy">
-          <figcaption><strong>Hình Bài 1:</strong> Giữ Cấp độ 1 (Đúng · Nhỏ · Xong) cho người và giao kiểm tra cơ học cho máy.</figcaption>
+          <figcaption><strong>Hình Bài 1:</strong> Giữ Cấp độ 1 (Đúng · Nhỏ · Xong) &amp; giao kiểm tra cơ học.</figcaption>
         </figure>
 
         <figure class="diagram" tabindex="0" role="button" data-full="images/fig_bai2_can_chu_y_va_ban_ghi_3_phan.svg" data-caption="Hình Bài 2: Cơ chế cặn chú ý (Attention Residue) và Bản ghi trạng thái 3 phần + 1 dòng cảm xúc.">
           <img src="images/fig_bai2_can_chu_y_va_ban_ghi_3_phan.svg" alt="Sơ đồ Bài 2 Cặn chú ý và Bản ghi 3 phần" loading="lazy">
-          <figcaption><strong>Hình Bài 2:</strong> Khép lại mục tiêu đang treo bằng Bản ghi 3 phần trước khi chuyển nhánh.</figcaption>
+          <figcaption><strong>Hình Bài 2:</strong> Khép cặn chú ý bằng Bản ghi 3 phần trước khi đổi nhánh.</figcaption>
         </figure>
 
         <figure class="diagram" tabindex="0" role="button" data-full="images/fig_bai3_goi_ten_cam_xuc_va_ngay_su_co.svg" data-caption="Hình Bài 3: Gọi tên cảm xúc (rvlPFC -> Amygdala), Tự nói ngôi thứ ba và Buông dây (ACT).">
           <img src="images/fig_bai3_goi_ten_cam_xuc_va_ngay_su_co.svg" alt="Sơ đồ Bài 3 Gọi tên cảm xúc và ngắt vòng xoáy" loading="lazy">
-          <figcaption><strong>Hình Bài 3:</strong> Kích hoạt rvlPFC làm dịu hạch hạnh nhân khi tác nhân lặp lỗi.</figcaption>
+          <figcaption><strong>Hình Bài 3:</strong> Kích hoạt rvlPFC làm dịu hạch hạnh nhân khi AI lặp lỗi.</figcaption>
         </figure>
       </div>
 
@@ -1237,19 +1249,19 @@
         <div class="svg-grid four-cols" style="margin-top:12px;">
           <figure class="diagram" tabindex="0" role="button" data-full="images/fig_bai4_an_uong_van_dong_va_noi_than.svg" data-caption="Hình Bài 4: Tâm trí hiện thân, Quy gán sai nội cảm (Hangry) và Khoảng nghỉ ngoại tuyến SPW-Rs.">
             <img src="images/fig_bai4_an_uong_van_dong_va_noi_than.svg" alt="Sơ đồ Bài 4 Ăn uống vận động và nội thân" loading="lazy">
-            <figcaption><strong>Hình Bài 4:</strong> Thùy đảo trước, hiệu ứng Hangry và đi bộ tái tạo tư duy phân kỳ.</figcaption>
+            <figcaption><strong>Hình Bài 4:</strong> Thùy đảo, hiệu ứng Hangry &amp; đi bộ phân kỳ.</figcaption>
           </figure>
           <figure class="diagram" tabindex="0" role="button" data-full="images/fig_bai5_thien_nhien_con_nguoi_va_buong_vang.svg" data-caption="Hình Bài 5: Bước ra khỏi buồng vang AI, Lắng nghe chất lượng cao và Cảm thức mình có giá trị (Mattering).">
             <img src="images/fig_bai5_thien_nhien_con_nguoi_va_buong_vang.svg" alt="Sơ đồ Bài 5 Thiên nhiên con người và Mattering" loading="lazy">
-            <figcaption><strong>Hình Bài 5:</strong> Thoát buồng vang tự hồi quy nhờ thiên nhiên và đối thoại con người.</figcaption>
+            <figcaption><strong>Hình Bài 5:</strong> Thoát buồng vang nhờ thiên nhiên &amp; đối thoại.</figcaption>
           </figure>
           <figure class="diagram" tabindex="0" role="button" data-full="images/fig_bai6_dong_ngay_giac_ngu_va_diem_dung.svg" data-caption="Hình Bài 6: Nghi thức đóng ca chiều, Tách rời tâm lý và Bảo vệ phanh tiền trán mPFC-Amygdala.">
             <img src="images/fig_bai6_dong_ngay_giac_ngu_va_diem_dung.svg" alt="Sơ đồ Bài 6 Đóng ngày giấc ngủ và điểm dừng" loading="lazy">
-            <figcaption><strong>Hình Bài 6:</strong> Nghi thức đóng ca chiều và kiến trúc giấc ngủ Non-REM / REM.</figcaption>
+            <figcaption><strong>Hình Bài 6:</strong> Đóng ca chiều &amp; giấc ngủ Non-REM / REM.</figcaption>
           </figure>
           <figure class="diagram" tabindex="0" role="button" data-full="images/fig3_thien_nao_du_bao_va_gioi_han_thuc_nghiem.svg" data-caption="Hình D: Thiền định dưới góc nhìn Bộ não dự báo (Predictive Processing) và Ranh giới an toàn lâm sàng.">
             <img src="images/fig3_thien_nao_du_bao_va_gioi_han_thuc_nghiem.svg" alt="Sơ đồ Thiền não dự báo và giới hạn an toàn" loading="lazy">
-            <figcaption><strong>Hình D:</strong> Hạ trọng số độ chính xác của tiên nghiệm cứng nhắc và giới hạn an toàn.</figcaption>
+            <figcaption><strong>Hình D:</strong> Hạ trọng số tiên nghiệm &amp; giới hạn an toàn.</figcaption>
           </figure>
         </div>
       </details>
@@ -1259,7 +1271,7 @@
     <section id="mau-cau" class="section-block" aria-labelledby="tpl-heading">
       <div class="section-head">
         <h2 id="tpl-heading">III. Bốn Mẫu Câu Bỏ Túi (Copy 1 Chạm &amp; Điền Biến Nhanh)</h2>
-        <span class="sub">Đồng bộ nguyên văn với Bài 6 · Điền ô bên dưới để tự động cập nhật nội dung mẫu câu trước khi sao chép</span>
+        <span class="sub">Đồng bộ nguyên văn với Bài 6 · Điền biến bên dưới để tự động cập nhật trước khi sao chép</span>
       </div>
 
       <div class="tpl-vars no-print">
@@ -1284,7 +1296,7 @@
       <div class="tpl-grid">
         <article class="tpl-card">
           <div class="tpl-head">
-            <h3>Mẫu 1: Khung Nguồn Chân Lý &amp; Tiêu chí “Đúng · Nhỏ · Xong” (Đầu tệp <code>AGENTS.md</code> · Nút 2)</h3>
+            <h3>Mẫu 1: Khung Nguồn Chân Lý &amp; “Đúng · Nhỏ · Xong” (<code>AGENTS.md</code> · Nút 2)</h3>
             <button type="button" class="btn copy-btn" data-target="tpl-1">Sao chép</button>
           </div>
           <pre id="tpl-1" class="tpl-code"></pre>
@@ -1292,7 +1304,7 @@
 
         <article class="tpl-card">
           <div class="tpl-head">
-            <h3>Mẫu 2: Lệnh đóng gói “Bản ghi trạng thái 3 phần” + 1 dòng cảm xúc (Nút 3 &amp; Nút 7)</h3>
+            <h3>Mẫu 2: Lệnh đóng gói “Bản ghi 3 phần” + 1 dòng cảm xúc (Nút 3 &amp; 7)</h3>
             <button type="button" class="btn copy-btn" data-target="tpl-2">Sao chép</button>
           </div>
           <pre id="tpl-2" class="tpl-code"></pre>
@@ -1300,7 +1312,7 @@
 
         <article class="tpl-card">
           <div class="tpl-head">
-            <h3>Mẫu 3: Quy trình 4 bước khi AI trượt kiểm thử liên tiếp hoặc có sự cố Sev1 (Nút 4 &amp; On-Call)</h3>
+            <h3>Mẫu 3: Quy trình 4 bước khi AI trượt test hoặc sự cố Sev1 (Nút 4)</h3>
             <button type="button" class="btn copy-btn" data-target="tpl-3">Sao chép</button>
           </div>
           <pre id="tpl-3" class="tpl-code"></pre>
@@ -1308,7 +1320,7 @@
 
         <article class="tpl-card">
           <div class="tpl-head">
-            <h3>Mẫu 4: Câu hỏi Perspective-Getting, Nhãn PR &amp; Thông điệp đóng ca chiều (Nút 6, 7 &amp; 8)</h3>
+            <h3>Mẫu 4: Câu hỏi Perspective-Getting, Nhãn PR &amp; Đóng ca (Nút 6, 7, 8)</h3>
             <button type="button" class="btn copy-btn" data-target="tpl-4">Sao chép</button>
           </div>
           <pre id="tpl-4" class="tpl-code"></pre>
@@ -1319,18 +1331,16 @@
     <!-- PHẦN 5: BẢNG TỰ ĐO LƯỜNG 14 NGÀY TƯƠNG TÁC (LƯU LOCALSTORAGE CỤC BỘ) -->
     <section id="bang-14-ngay" class="section-block" aria-labelledby="tracker-heading">
       <div class="section-head">
-        <div>
-          <h2 id="tracker-heading">IV. Nhật Ký Tự Quan Sát 14 Ngày (Tự Tính Trung Bình Tuần 1 vs. Tuần 2)</h2>
-          <p class="sub" style="margin-top:4px;">
-            <strong>Quyền riêng tư &amp; Phạm vi phương pháp (<em>n = 1</em>):</strong> Mọi số liệu chỉ lưu cục bộ trong <code>localStorage</code> trên trình duyệt của bạn, không gửi đi bất kỳ máy chủ nào. Đây là nhật ký tự theo dõi cá nhân không làm mù để nhận diện thói quen phù hợp, không phải phép thử lâm sàng hay chẩn đoán y khoa.
-          </p>
-        </div>
+        <h2 id="tracker-heading">IV. Nhật Ký Tự Quan Sát 14 Ngày (Tự Tính Trung Bình Tuần 1 vs. Tuần 2)</h2>
         <div class="no-print" style="display:flex; gap:6px; flex-wrap:wrap;">
           <button type="button" class="btn" id="btn-sample-data">Nạp dữ liệu mẫu</button>
           <button type="button" class="btn" id="btn-export-csv">Xuất CSV</button>
           <button type="button" class="btn" id="btn-clear-data">Xóa dữ liệu</button>
         </div>
       </div>
+      <p class="lead-text" style="font-size:13.5px; color:var(--muted); margin-bottom:14px;">
+        <strong>Quyền riêng tư &amp; Phạm vi phương pháp (<em>n = 1</em>):</strong> Mọi số liệu chỉ lưu cục bộ trong <code>localStorage</code> trên trình duyệt của bạn, không gửi đi bất kỳ máy chủ nào. Đây là nhật ký tự theo dõi cá nhân không làm mù để nhận diện thói quen phù hợp, không phải phép thử lâm sàng hay chẩn đoán y khoa.
+      </p>
 
       <div class="tracker-summary" id="tracker-summary-cards" aria-live="polite">
         <!-- Tự động điền qua JS -->
@@ -1341,15 +1351,15 @@
           <thead>
             <tr>
               <th>Ngày</th>
-              <th>Pha thực hành</th>
-              <th>Số nhánh AI</th>
-              <th>Nhảy nhánh k.đóng gói</th>
-              <th>Giờ họp &amp; Sự cố (h)</th>
-              <th>Giờ cữ cà phê cuối</th>
-              <th>Thời lượng ngủ (h)</th>
-              <th>Số nút đã bật (0–8)</th>
-              <th>Độ tỉnh táo (1–5)</th>
-              <th>Độ bình thản (1–5)</th>
+              <th>Giai đoạn</th>
+              <th>Nhánh AI</th>
+              <th>Đổi nhánh thô</th>
+              <th>Họp &amp; Sự cố (h)</th>
+              <th>Cà phê cuối</th>
+              <th>Giờ ngủ (h)</th>
+              <th>Nút bật (0–8)</th>
+              <th>Tỉnh táo (1–5)</th>
+              <th>Bình thản (1–5)</th>
             </tr>
           </thead>
           <tbody id="tracker-tbody">
@@ -1484,7 +1494,7 @@
         modeBanner.classList.add('oncall-active');
         modeBanner.innerHTML = '<div><strong>Chế độ Trực Sự Cố (On-Call / Sev1–Sev2):</strong> (1) Kênh cảnh báo chính thức (PagerDuty/Opsgenie) được phép xuyên qua Nút 01 &amp; Nút 08; (2) Thu hồi ngay quyền ghi hoặc triển khai trực tiếp (<code>write/deploy</code>) của mọi tác nhân AI vào môi trường thật; (3) Ưu tiên hoàn nguyên (<code>rollback</code>) cầm máu trước khi tìm nguyên nhân gốc; (4) Giao ca và nghỉ bù bắt buộc vào sáng hôm sau.</div>';
       } else {
-        modeBanner.innerHTML = '<div><strong>Chế độ đang chọn · Bản Chuẩn 8 Nút:</strong> Thực hiện trọn vẹn 8 nút chuyển tiếp chia đều vào 4 cột hành động từ lúc thức giấc (06:30) đến khi đi ngủ (23:00).</div><div style="display:flex; gap:6px; flex-wrap:wrap;"><span class="ep-tag ep-src">[Nguồn] Thực nghiệm gốc</span><span class="ep-tag ep-ext">[Mở rộng] Ngoại suy sang AI</span><span class="ep-tag ep-hyp">[Giả thuyết] Tương tự nhận thức</span></div>';
+        modeBanner.innerHTML = '<div><strong>Chế độ đang chọn · Bản Chuẩn 8 Nút:</strong> Trọn vẹn 8 nút qua 4 trụ cột (<em>Directing · Evaluating · Correcting · Recovery</em>) từ 06:30 đến 23:00.</div><div style="display:flex; gap:6px; flex-wrap:wrap;"><span class="ep-tag ep-src">[Nguồn] Thực nghiệm gốc</span><span class="ep-tag ep-ext">[Mở rộng] Ngoại suy sang AI</span><span class="ep-tag ep-hyp">[Giả thuyết] Tương tự nhận thức</span></div>';
       }
     }
 
