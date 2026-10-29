@@ -1,0 +1,127 @@
+<svg viewBox="0 0 1380 826" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sơ đồ hai khung: Khung trái giải thích cơ chế thiền FA và OM điều chỉnh trọng số độ chính xác của não dự báo (Clark 2023, Laukkonen &amp; Slagter 2021) và phân biệt Altered States với Altered Traits (Goleman &amp; Davidson 2017). Khung phải đối chiếu bằng chứng thực nghiệm: cỡ hiệu ứng d=0,30-0,38 (Goyal 2014, Galante 2021), bác bỏ làm dày vỏ não sau 8 tuần (Kral et al. 2022 N=218), và lưu ý tác dụng phụ 6-14% (Britton 2021)."><style>
+  svg {
+    --bg: #ffffff;
+    --ink: #2b2f36;
+    --sub: #6b7280;
+    --flow: #8a94a3;
+    --grid: rgba(138,148,163,0.24);
+    --row: rgba(107,114,128,0.06);
+    --card: #f8fafc;
+    --ok: #2f9e5f;
+    --okText: #248a4e;
+    --okSoft: rgba(47,158,95,0.08);
+    --warn: #b98a2e;
+    --warnText: #8f6a22;
+    --warnSoft: rgba(185,138,46,0.10);
+    --bad: #c0554d;
+    --badText: #b0463e;
+    --badSoft: rgba(192,85,77,0.08);
+    --accent: #e07828;
+    --accentText: #b45f1e;
+    --accentSoft: rgba(224,120,40,0.08);
+    --info: #3f7fb8;
+    --infoText: #356a9c;
+    --infoSoft: rgba(63,127,184,0.08);
+    --onwarn: #2b2f36;
+  }
+  @media (prefers-color-scheme: dark) {
+    svg {
+      --bg: #1b1e23;
+      --ink: #e8ebef;
+      --sub: #9aa0a8;
+      --flow: #7d8794;
+      --grid: rgba(125,135,148,0.25);
+      --row: rgba(154,160,168,0.08);
+      --card: #22262d;
+      --ok: #3fb473;
+      --okText: #5cc98a;
+      --okSoft: rgba(63,180,115,0.14);
+      --warn: #d3ab52;
+      --warnText: #d3ab52;
+      --warnSoft: rgba(211,171,82,0.14);
+      --bad: #cf6a60;
+      --badText: #cf6a60;
+      --badSoft: rgba(207,106,96,0.15);
+      --accent: #e0925a;
+      --accentText: #e0925a;
+      --accentSoft: rgba(224,146,90,0.14);
+      --info: #6aa0d0;
+      --infoText: #6aa0d0;
+      --infoSoft: rgba(106,160,208,0.14);
+      --onwarn: #1b1e23;
+    }
+  }
+  .bg { fill: var(--bg); }
+  text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .ttl { font-size: 23px; font-weight: 700; fill: var(--ink); }
+  .sub1 { font-size: 14.5px; font-weight: 600; fill: var(--accentText); }
+  .src { font-size: 12.5px; font-weight: 500; fill: var(--sub); }
+  .cap { font-size: 14px; font-weight: 600; font-style: italic; fill: var(--sub); }
+  .sec { font-size: 15.5px; font-weight: 700; fill: var(--ink); }
+  .tag { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--sub); }
+  .tag-ok { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--okText); }
+  .tag-warn { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--warnText); }
+  .tag-bad { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--badText); }
+  .tag-accent { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--accentText); }
+  .tag-info { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--infoText); }
+  .bh { font-size: 14.5px; font-weight: 700; fill: var(--ink); }
+  .bh-ok { font-size: 14.5px; font-weight: 700; fill: var(--okText); }
+  .bh-warn { font-size: 14.5px; font-weight: 700; fill: var(--warnText); }
+  .bh-bad { font-size: 14.5px; font-weight: 700; fill: var(--badText); }
+  .bh-accent { font-size: 14.5px; font-weight: 700; fill: var(--accentText); }
+  .bh-info { font-size: 14.5px; font-weight: 700; fill: var(--infoText); }
+  .body { font-size: 12.5px; font-weight: 500; fill: var(--ink); }
+  .sub { font-size: 12px; font-weight: 500; fill: var(--sub); }
+  .motto { font-size: 12px; font-style: italic; font-weight: 600; fill: var(--sub); }
+  .b-neutral { fill: var(--row); stroke: var(--flow); stroke-width: 1.8; }
+  .b-panel { fill: none; stroke: var(--flow); stroke-width: 1.6; }
+  .b-ok { fill: var(--okSoft); stroke: var(--ok); stroke-width: 1.9; }
+  .b-warn { fill: var(--warnSoft); stroke: var(--warn); stroke-width: 1.9; }
+  .b-bad { fill: var(--badSoft); stroke: var(--bad); stroke-width: 1.9; }
+  .b-accent { fill: var(--accentSoft); stroke: var(--accent); stroke-width: 1.9; }
+  .b-info { fill: var(--infoSoft); stroke: var(--info); stroke-width: 1.9; }
+  .b-ok-dash { fill: var(--okSoft); stroke: var(--ok); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-warn-dash { fill: var(--warnSoft); stroke: var(--warn); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-bad-dash { fill: var(--badSoft); stroke: var(--bad); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-accent-dash { fill: var(--accentSoft); stroke: var(--accent); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-info-dash { fill: var(--infoSoft); stroke: var(--info); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .flow-line { stroke: var(--flow); stroke-width: 2; fill: none; }
+  .flow-dash { stroke: var(--flow); stroke-width: 2; stroke-dasharray: 6 5; fill: none; }
+  .ok-line { stroke: var(--ok); stroke-width: 2.2; fill: none; }
+  .warn-line { stroke: var(--warn); stroke-width: 2.2; fill: none; }
+  .warn-dash { stroke: var(--warn); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .bad-line { stroke: var(--bad); stroke-width: 2.2; fill: none; }
+  .bad-dash { stroke: var(--bad); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .accent-line { stroke: var(--accent); stroke-width: 2.2; fill: none; }
+  .accent-dash { stroke: var(--accent); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .info-line { stroke: var(--info); stroke-width: 2.2; fill: none; }
+  .div-line { stroke: var(--grid); stroke-width: 1.2; }
+  .badge-warn { fill: var(--warn); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-bad { fill: var(--bad); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-ok { fill: var(--ok); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-info { fill: var(--info); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-accent { fill: var(--accent); stroke: var(--bg); stroke-width: 1.8; }
+  .bang { font-size: 13px; font-weight: 800; fill: var(--onwarn); }
+  .bang-light { font-size: 12px; font-weight: 800; fill: var(--bg); }
+</style>
+  <defs>
+    <marker id="arr-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--flow)"/>
+    </marker>
+    <marker id="arr-ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--ok)"/>
+    </marker>
+    <marker id="arr-warn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--warn)"/>
+    </marker>
+    <marker id="arr-bad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--bad)"/>
+    </marker>
+    <marker id="arr-accent" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--accent)"/>
+    </marker>
+    <marker id="arr-info" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--info)"/>
+    </marker>
+  </defs>
+<rect class="bg" x="0" y="0" width="1380" height="826" rx="14"/><text x="36.0" y="38.0" class="ttl">Thiền điều chỉnh trọng số độ chính xác của não dự báo, nhưng tám tuần tập chỉ đổi kết nối chức năng chứ</text><text x="36.0" y="68.0" class="ttl">chưa làm dày vỏ não</text><text x="36.0" y="102.0" class="sub1">Cơ chế điều chỉnh trọng số dự báo (Precision Weighting), phân biệt Trạng thái vs. Phẩm chất (States vs. Traits) và kiểm chứng thực nghiệm</text><text x="36.0" y="126.0" class="src">Nguồn đối chiếu: Andy Clark (2023) · Laukkonen &amp; Slagter (2021) · Goleman &amp; Davidson (2017) · Kral et al. (2022, N=218) · Goyal et al. (2014) · Galante et al. (2021) · Britton et al. (2021)</text><rect x="36.0" y="157.0" width="644.0" height="572.0" rx="12" class="b-panel"/><text x="52.0" y="179.0" class="tag">KHUNG TRÁI · CƠ CHẾ NÃO DỰ BÁO (PREDICTIVE PROCESSING)</text><text x="52.0" y="198.0" class="sec">1. Thiền FA/OM điều chỉnh trọng số độ chính xác thế nào?</text><line x1="52.0" y1="207.0" x2="664.0" y2="207.0" class="div-line"/><rect x="52.0" y="217.0" width="612.0" height="143.0" rx="12" class="b-bad-dash"/><text x="68.0" y="242.0" class="tag-bad">KHI CĂNG THẲNG &amp; TÁC NHÂN LỆCH NGẦM · CLARK 2023</text><text x="68.0" y="263.0" class="bh-bad">1. Quá trọng số cho dự báo đe dọa tầng cao</text><text x="68.0" y="287.0" class="body">• Bộ não dự báo gán trọng số độ chính xác (precision weighting) quá lớn cho giả thuyết</text><text x="68.0" y="304.0" class="body">lo âu và coi nhịp tim nhanh, cơ căng như bằng chứng xác nhận mối nguy.</text><text x="68.0" y="326.0" class="body">• Hệ quả: Bị cuốn vào vỏ não đai sau (PCC · Brewer 2011), bám chặt giả thuyết debug đầu</text><text x="68.0" y="343.0" class="body">tiên và bỏ sót dữ kiện trái chiều.</text><rect x="52.0" y="372.0" width="612.0" height="160.0" rx="12" class="b-info"/><text x="68.0" y="397.0" class="tag-info">THIỀN CHÚ TÂM (FA) &amp; QUAN SÁT MỞ (OM) · LAUKKONEN &amp; SLAGTER 2021</text><text x="68.0" y="418.0" class="bh-info">2. Điều chỉnh lại trọng số độ chính xác trên cây phân cấp dự báo</text><text x="68.0" y="442.0" class="body">• Chú tâm có tiêu điểm (Focused Attention — FA): Chủ động nâng trọng số cho tín hiệu</text><text x="68.0" y="459.0" class="body">cảm giác đơn giản ngay hiện tại (hơi thở), rút bớt băng thông khỏi vòng lặp suy diễn</text><text x="68.0" y="476.0" class="body">tầng cao.</text><text x="68.0" y="498.0" class="body">• Quan sát mở (Open Monitoring — OM): Giảm trọng số bắt buộc phản ứng cho các suy</text><text x="68.0" y="515.0" class="body">nghĩ/cơn bực vừa khởi lên, nhìn chúng như sự kiện thoáng qua trên bình diện tâm trí.</text><rect x="52.0" y="544.0" width="612.0" height="162.0" rx="12" class="b-accent"/><text x="68.0" y="569.0" class="tag-accent">GOLEMAN &amp; DAVIDSON (2017, ALTERED TRAITS)</text><text x="68.0" y="590.0" class="bh-accent">3. Phân biệt Trạng thái tạm thời (Altered States) vs. Phẩm chất bền vững</text><text x="68.0" y="609.0" class="bh-accent">(Altered Traits)</text><text x="68.0" y="633.0" class="body">• Trạng thái tạm thời (States): Cảm giác tĩnh lặng trong và ngay sau buổi tập, dễ tan</text><text x="68.0" y="650.0" class="body">biến khi mở lại hàng chục cửa sổ tác nhân.</text><text x="68.0" y="672.0" class="body">• Phẩm chất bền vững (Traits): Sự thay đổi đường cơ sở thần kinh (như giảm phản ứng</text><text x="68.0" y="689.0" class="body">hạch hạnh nhân, tăng kết nối điều hòa PCC–dlPFC) đòi hỏi hàng nghìn giờ tích lũy.</text><rect x="700.0" y="157.0" width="644.0" height="572.0" rx="12" class="b-panel"/><text x="716.0" y="179.0" class="tag">KHUNG PHẢI · BẢNG KIỂM CHỨNG THỰC NGHIỆM NGHIÊM NGẶT</text><text x="716.0" y="198.0" class="sec">2. Phân tách bằng chứng thực nghiệm và lời đồn phóng đại</text><line x1="716.0" y1="207.0" x2="1328.0" y2="207.0" class="div-line"/><rect x="716.0" y="217.0" width="612.0" height="160.0" rx="12" class="b-ok"/><text x="732.0" y="242.0" class="tag-ok">CÓ CƠ SỞ THỰC NGHIỆM VỮNG CHẮC · ĐÁNG GIỮ LẠI</text><text x="732.0" y="263.0" class="bh-ok">1. Cỡ hiệu ứng nhỏ–vừa (d ≈ 0,30–0,38) &amp; Đổi kết nối chức năng</text><text x="732.0" y="287.0" class="body">• Phân tích gộp Goyal et al. (2014, JAMA Intern Med, 47 RCT, N = 3.515) và Galante et</text><text x="732.0" y="304.0" class="body">al. (2021, PLOS Med, 136 RCT, N = 11.605): giảm lo âu, trầm cảm và căng thẳng ở mức nhỏ</text><text x="732.0" y="321.0" class="body">đến vừa (d ≈ 0,30–0,38 sau 8 tuần).</text><text x="732.0" y="343.0" class="body">• Tăng kết nối chức năng linh hoạt giữa nút mạng mặc định (PCC) với vùng giám sát dACC</text><text x="732.0" y="360.0" class="body">và dlPFC (Brewer et al. 2011), giúp nhận diện sớm khi tâm đi lạc.</text><rect x="716.0" y="389.0" width="612.0" height="160.0" rx="12" class="b-warn"/><text x="732.0" y="414.0" class="tag-warn">BỊ BÁC BỎ KHI TÁI LẬP LỚN · KRAL ET AL. 2022 (SCIENCE ADVANCES)</text><text x="732.0" y="435.0" class="bh-warn">2. Tám tuần MBSR KHÔNG làm dày chất xám vỏ não (N = 218)</text><text x="732.0" y="459.0" class="body">• Nghiên cứu kinh điển Hölzel et al. (2011, n = 16) từng tuyên bố 8 tuần MBSR làm tăng</text><text x="732.0" y="476.0" class="body">mật độ chất xám đồi hải mã.</text><text x="732.0" y="498.0" class="body">• Khi Kral, Davidson và cộng sự (2022) gộp 2 thử nghiệm ngẫu nhiên có đối chứng lớn (N</text><text x="732.0" y="515.0" class="body">= 218, đối chứng tích cực Hep-MBSR), không tìm thấy bất kỳ thay đổi cấu trúc giải phẫu</text><text x="732.0" y="532.0" class="body">hay độ dày vỏ não nào sau 8 tuần.</text><rect x="716.0" y="561.0" width="612.0" height="160.0" rx="12" class="b-bad-dash"/><text x="732.0" y="586.0" class="tag-bad">GIỚI HẠN &amp; TÁC DỤNG PHỤ CẦN BIẾT · BRITTON 2021 &amp; PURSER 2019</text><text x="732.0" y="607.0" class="bh-bad">3. Tác dụng phụ (6–14%) &amp; Không sửa thay lịch làm việc quá tải</text><text x="732.0" y="631.0" class="body">• Britton et al. (2021, N = 96): khoảng 6–14% người học gặp tác dụng phụ kéo dài (tăng</text><text x="732.0" y="648.0" class="body">lo âu, phẳng cảm xúc, tái hiện sang chấn); khi đó nên chuyển sang đi bộ hoặc vận động</text><text x="732.0" y="665.0" class="body">nhẹ.</text><text x="732.0" y="687.0" class="body">• Không vượt trội hơn tập thể dục hay CBT khi so đối đầu tích cực, và không dùng làm</text><text x="732.0" y="704.0" class="body">'McMindfulness' (Purser 2019) để đổ lỗi cá nhân cho hệ thống làm việc quá tải.</text><line x1="682.0" y1="443.0" x2="696.0" y2="443.0" class="info-line" marker-end="url(#arr-info)"/><text x="36.0" y="761.0" class="src">Quy ước: Xanh dương = cơ chế FA/OM; Cam = phân biệt States vs. Traits; Xanh lá = bằng chứng vững (Goyal/Galante); Vàng = kết quả tái lập âm tính (Kral 2022); Đỏ đứt = tác dụng phụ (Britton 2021).</text><line x1="36.0" y1="771.0" x2="1344.0" y2="771.0" class="div-line"/><text x="690.0" y="793.0" class="cap" text-anchor="middle">Kết luận: Tập thiền để rèn kỹ năng nhận ra độ lệch chú ý và hạ trọng số các suy diễn lo âu, không kỳ vọng phép màu thay đổi giải phẫu não sau 8 tuần.</text></svg>

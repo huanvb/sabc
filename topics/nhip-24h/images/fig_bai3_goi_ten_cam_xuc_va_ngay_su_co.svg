@@ -1,0 +1,127 @@
+<svg viewBox="0 0 1380 895" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sơ đồ ba cột: So sánh đè nén cảm xúc (Gross 2015) với gọi tên cảm xúc kích hoạt vlPFC làm dịu hạch hạnh nhân (Lieberman 2007), tự nói ngôi thứ ba (Kross 2014), kỹ thuật Buông dây (Drop the Rope - ACT / Schonbrun 2026) và 4 nguyên tắc xử lý sự cố lúc 2 giờ sáng."><style>
+  svg {
+    --bg: #ffffff;
+    --ink: #2b2f36;
+    --sub: #6b7280;
+    --flow: #8a94a3;
+    --grid: rgba(138,148,163,0.24);
+    --row: rgba(107,114,128,0.06);
+    --card: #f8fafc;
+    --ok: #2f9e5f;
+    --okText: #248a4e;
+    --okSoft: rgba(47,158,95,0.08);
+    --warn: #b98a2e;
+    --warnText: #8f6a22;
+    --warnSoft: rgba(185,138,46,0.10);
+    --bad: #c0554d;
+    --badText: #b0463e;
+    --badSoft: rgba(192,85,77,0.08);
+    --accent: #e07828;
+    --accentText: #b45f1e;
+    --accentSoft: rgba(224,120,40,0.08);
+    --info: #3f7fb8;
+    --infoText: #356a9c;
+    --infoSoft: rgba(63,127,184,0.08);
+    --onwarn: #2b2f36;
+  }
+  @media (prefers-color-scheme: dark) {
+    svg {
+      --bg: #1b1e23;
+      --ink: #e8ebef;
+      --sub: #9aa0a8;
+      --flow: #7d8794;
+      --grid: rgba(125,135,148,0.25);
+      --row: rgba(154,160,168,0.08);
+      --card: #22262d;
+      --ok: #3fb473;
+      --okText: #5cc98a;
+      --okSoft: rgba(63,180,115,0.14);
+      --warn: #d3ab52;
+      --warnText: #d3ab52;
+      --warnSoft: rgba(211,171,82,0.14);
+      --bad: #cf6a60;
+      --badText: #cf6a60;
+      --badSoft: rgba(207,106,96,0.15);
+      --accent: #e0925a;
+      --accentText: #e0925a;
+      --accentSoft: rgba(224,146,90,0.14);
+      --info: #6aa0d0;
+      --infoText: #6aa0d0;
+      --infoSoft: rgba(106,160,208,0.14);
+      --onwarn: #1b1e23;
+    }
+  }
+  .bg { fill: var(--bg); }
+  text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .ttl { font-size: 23px; font-weight: 700; fill: var(--ink); }
+  .sub1 { font-size: 14.5px; font-weight: 600; fill: var(--accentText); }
+  .src { font-size: 12.5px; font-weight: 500; fill: var(--sub); }
+  .cap { font-size: 14px; font-weight: 600; font-style: italic; fill: var(--sub); }
+  .sec { font-size: 15.5px; font-weight: 700; fill: var(--ink); }
+  .tag { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--sub); }
+  .tag-ok { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--okText); }
+  .tag-warn { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--warnText); }
+  .tag-bad { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--badText); }
+  .tag-accent { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--accentText); }
+  .tag-info { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--infoText); }
+  .bh { font-size: 14.5px; font-weight: 700; fill: var(--ink); }
+  .bh-ok { font-size: 14.5px; font-weight: 700; fill: var(--okText); }
+  .bh-warn { font-size: 14.5px; font-weight: 700; fill: var(--warnText); }
+  .bh-bad { font-size: 14.5px; font-weight: 700; fill: var(--badText); }
+  .bh-accent { font-size: 14.5px; font-weight: 700; fill: var(--accentText); }
+  .bh-info { font-size: 14.5px; font-weight: 700; fill: var(--infoText); }
+  .body { font-size: 12.5px; font-weight: 500; fill: var(--ink); }
+  .sub { font-size: 12px; font-weight: 500; fill: var(--sub); }
+  .motto { font-size: 12px; font-style: italic; font-weight: 600; fill: var(--sub); }
+  .b-neutral { fill: var(--row); stroke: var(--flow); stroke-width: 1.8; }
+  .b-panel { fill: none; stroke: var(--flow); stroke-width: 1.6; }
+  .b-ok { fill: var(--okSoft); stroke: var(--ok); stroke-width: 1.9; }
+  .b-warn { fill: var(--warnSoft); stroke: var(--warn); stroke-width: 1.9; }
+  .b-bad { fill: var(--badSoft); stroke: var(--bad); stroke-width: 1.9; }
+  .b-accent { fill: var(--accentSoft); stroke: var(--accent); stroke-width: 1.9; }
+  .b-info { fill: var(--infoSoft); stroke: var(--info); stroke-width: 1.9; }
+  .b-ok-dash { fill: var(--okSoft); stroke: var(--ok); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-warn-dash { fill: var(--warnSoft); stroke: var(--warn); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-bad-dash { fill: var(--badSoft); stroke: var(--bad); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-accent-dash { fill: var(--accentSoft); stroke: var(--accent); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-info-dash { fill: var(--infoSoft); stroke: var(--info); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .flow-line { stroke: var(--flow); stroke-width: 2; fill: none; }
+  .flow-dash { stroke: var(--flow); stroke-width: 2; stroke-dasharray: 6 5; fill: none; }
+  .ok-line { stroke: var(--ok); stroke-width: 2.2; fill: none; }
+  .warn-line { stroke: var(--warn); stroke-width: 2.2; fill: none; }
+  .warn-dash { stroke: var(--warn); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .bad-line { stroke: var(--bad); stroke-width: 2.2; fill: none; }
+  .bad-dash { stroke: var(--bad); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .accent-line { stroke: var(--accent); stroke-width: 2.2; fill: none; }
+  .accent-dash { stroke: var(--accent); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .info-line { stroke: var(--info); stroke-width: 2.2; fill: none; }
+  .div-line { stroke: var(--grid); stroke-width: 1.2; }
+  .badge-warn { fill: var(--warn); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-bad { fill: var(--bad); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-ok { fill: var(--ok); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-info { fill: var(--info); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-accent { fill: var(--accent); stroke: var(--bg); stroke-width: 1.8; }
+  .bang { font-size: 13px; font-weight: 800; fill: var(--onwarn); }
+  .bang-light { font-size: 12px; font-weight: 800; fill: var(--bg); }
+</style>
+  <defs>
+    <marker id="arr-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--flow)"/>
+    </marker>
+    <marker id="arr-ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--ok)"/>
+    </marker>
+    <marker id="arr-warn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--warn)"/>
+    </marker>
+    <marker id="arr-bad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--bad)"/>
+    </marker>
+    <marker id="arr-accent" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--accent)"/>
+    </marker>
+    <marker id="arr-info" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--info)"/>
+    </marker>
+  </defs>
+<rect class="bg" x="0" y="0" width="1380" height="895" rx="14"/><text x="36.0" y="38.0" class="ttl">Gọi tên cảm xúc kích hoạt vỏ não trước trán bụng bên để làm dịu hạch hạnh nhân trước khi gõ lệnh xử lý sự</text><text x="36.0" y="68.0" class="ttl">cố</text><text x="36.0" y="102.0" class="sub1">Đối chiếu Đè nén cảm xúc vs. Gọi tên cảm xúc, Tự nói ngôi thứ ba, kỹ thuật Buông dây (ACT) và 4 nguyên tắc cầm máu sự cố 2 giờ sáng</text><text x="36.0" y="126.0" class="src">Nguồn đối chiếu: Andy Clark (2023) · James Gross (2015) · Matthew Lieberman et al. (2007, 2018) · Ethan Kross et al. (2014) · Yael Schonbrun (2026 / ACT) · Sam Ruby (2026)</text><rect x="36.0" y="157.0" width="424.0" height="641.0" rx="12" class="b-panel"/><text x="52.0" y="179.0" class="tag">KHỐI 1 · CƠ CHẾ LÀM LỆCH PHÁN ĐOÁN</text><text x="52.0" y="198.0" class="sec">1. Bất đối xứng cảm xúc &amp; Cái giá của đè nén</text><line x1="52.0" y1="207.0" x2="444.0" y2="207.0" class="div-line"/><rect x="52.0" y="217.0" width="392.0" height="179.0" rx="12" class="b-warn"/><text x="68.0" y="242.0" class="tag-warn">BẤT ĐỐI XỨNG CẢM XÚC · SAM RUBY 2026 &amp; CLARK 2023</text><text x="68.0" y="263.0" class="bh-warn">Tác nhân không biết mệt, kỹ sư gánh toàn bộ độ</text><text x="68.0" y="282.0" class="bh-warn">lệch dự báo</text><text x="68.0" y="306.0" class="body">• Tác nhân AI làm lại lần thứ 12 vẫn bình thản vì nó</text><text x="68.0" y="323.0" class="body">không có cơ thể sinh học và không chịu hậu quả.</text><text x="68.0" y="345.0" class="body">• Khi thông báo lỗi dồn dập, não dự báo (Clark 2023)</text><text x="68.0" y="362.0" class="body">dùng nhịp tim tăng và ngực tức làm bằng chứng khóa</text><text x="68.0" y="379.0" class="body">chặt vào giả thuyết đầu tiên (tunnel vision).</text><rect x="52.0" y="408.0" width="392.0" height="195.0" rx="12" class="b-bad-dash"/><text x="68.0" y="433.0" class="tag-bad">SAI LẦM PHỔ BIẾN · ĐÈ NÉN CẢM XÚC (SUPPRESSION · GROSS 2015)</text><text x="68.0" y="454.0" class="bh-bad">Nuốt cơn bực vào trong làm tăng kích thích</text><text x="68.0" y="473.0" class="bh-bad">giao cảm &amp; hao trí nhớ</text><text x="68.0" y="497.0" class="body">• Đè nén biểu hiện (expressive suppression · Gross</text><text x="68.0" y="514.0" class="body">2015) chỉ giấu vẻ mặt bên ngoài, nhưng làm tăng huyết</text><text x="68.0" y="531.0" class="body">áp/nhịp tim và ngốn đúng nguồn lực trí nhớ làm việc</text><text x="68.0" y="548.0" class="body">cần để debug.</text><line x1="68.0" y1="557.0" x2="428.0" y2="557.0" class="div-line"/><text x="68.0" y="573.0" class="motto">Giả vờ bình tĩnh bằng cách đè nén làm giảm băng thông</text><text x="68.0" y="589.0" class="motto">điều hành đúng lúc cần tỉnh táo nhất.</text><rect x="478.0" y="157.0" width="424.0" height="641.0" rx="12" class="b-panel"/><text x="494.0" y="179.0" class="tag">KHỐI 2 · BA CÔNG CỤ ĐIỀU HÒA TẠI BÀN</text><text x="494.0" y="198.0" class="sec">2. Gọi tên · Ngôi thứ ba · Buông dây (ACT)</text><line x1="494.0" y1="207.0" x2="886.0" y2="207.0" class="div-line"/><rect x="494.0" y="217.0" width="392.0" height="196.0" rx="12" class="b-ok"/><text x="510.0" y="242.0" class="tag-ok">CÔNG CỤ 1 · GỌI TÊN CẢM XÚC (AFFECT LABELING · LIEBERMAN 2007)</text><text x="510.0" y="263.0" class="bh-ok">Viết 1 dòng gọi tên cơn bực bật vlPFC -&gt; hạ</text><text x="510.0" y="282.0" class="bh-ok">nhiệt Amygdala</text><text x="510.0" y="306.0" class="body">• Lieberman et al. (2007, fMRI, n = 30): Đặt tên bằng</text><text x="510.0" y="323.0" class="body">chữ cho trạng thái cảm xúc kích hoạt vỏ não trước trán</text><text x="510.0" y="340.0" class="body">bụng bên phải (rvlPFC), phát tín hiệu ức chế xuống</text><text x="510.0" y="357.0" class="body">hạch hạnh nhân.</text><text x="510.0" y="379.0" class="body">• Thực hành: Ghi thẳng vào nhật ký phiên: 'Đang sốt</text><text x="510.0" y="396.0" class="body">ruột vì tác nhân sửa hỏng test ở nhánh thanh toán'.</text><rect x="494.0" y="425.0" width="392.0" height="196.0" rx="12" class="b-info"/><text x="510.0" y="450.0" class="tag-info">CÔNG CỤ 2 · TỰ NÓI NGÔI THỨ BA (KROSS 2014) &amp; HƠI THỞ CHUÔNG</text><text x="510.0" y="471.0" class="bh-info">Giãn cách tâm lý (Self-Distancing) &amp; Hơi thở</text><text x="510.0" y="490.0" class="bh-info">trước khi mở báo đỏ</text><text x="510.0" y="514.0" class="body">• Kross et al. (2014): Tự hỏi bằng tên riêng hoặc ngôi</text><text x="510.0" y="531.0" class="body">thứ ba ('Lúc này [Tên mình] cần kiểm tra giả thuyết</text><text x="510.0" y="548.0" class="body">nào trước?') giúp giảm hoạt động tự quy chiếu và</text><text x="510.0" y="565.0" class="body">chuyển sang đánh giá khách quan.</text><text x="510.0" y="587.0" class="body">• Coi mỗi thông báo CI đỏ như tiếng chuông dừng lại</text><text x="510.0" y="604.0" class="body">thở ra một hơi chậm trước khi gõ lệnh trả lời.</text><rect x="494.0" y="633.0" width="392.0" height="157.0" rx="12" class="b-accent"/><text x="510.0" y="658.0" class="tag-accent">CÔNG CỤ 3 · KỸ THUẬT BUÔNG DÂY (DROP THE ROPE · ACT / SCHONBRUN 2026)</text><text x="510.0" y="679.0" class="bh-accent">Ngừng kéo co với cơn bực để dành tay lái kiến</text><text x="510.0" y="698.0" class="bh-accent">trúc</text><text x="510.0" y="722.0" class="body">• Trong Trị liệu Chấp nhận và Cam kết (ACT · Yael</text><text x="510.0" y="739.0" class="body">Schonbrun 2026): Không cần thắng cuộc kéo co với cảm</text><text x="510.0" y="756.0" class="body">giác khó chịu; chỉ cần buông sợi dây giằng co để hai</text><text x="510.0" y="773.0" class="body">tay rảnh rang xử lý công việc.</text><rect x="920.0" y="157.0" width="424.0" height="641.0" rx="12" class="b-panel"/><text x="936.0" y="179.0" class="tag">KHỐI 3 · GIAO THỨC SỰ CỐ 2 GIỜ SÁNG</text><text x="936.0" y="198.0" class="sec">3. Bốn nguyên tắc cầm máu khi mọi thứ đổ vỡ</text><line x1="936.0" y1="207.0" x2="1328.0" y2="207.0" class="div-line"/><rect x="936.0" y="217.0" width="392.0" height="179.0" rx="12" class="b-warn"/><text x="952.0" y="242.0" class="tag-warn">QUY TẮC 1 &amp; 2 · NHẬN DIỆN TRẠNG THÁI &amp; ƯU TIÊN QUAY LUI (ROLLBACK)</text><text x="952.0" y="263.0" class="bh-warn">1. Ghi 1 dòng cảm xúc trước tiên · 2. Cầm máu</text><text x="952.0" y="282.0" class="bh-warn">bằng Rollback</text><text x="952.0" y="306.0" class="body">• Nhận diện sự hoảng/sốt ruột trên mặt chữ trước khi</text><text x="952.0" y="323.0" class="body">chạm vào bàn phím sản xuất.</text><text x="952.0" y="345.0" class="body">• Ưu tiên quay lui bản phát hành (rollback) hoặc tắt</text><text x="952.0" y="362.0" class="body">cờ tính năng (feature flag); tuyệt đối không ép tác</text><text x="952.0" y="379.0" class="body">nhân viết bản vá kiến trúc phức tạp lúc 2 giờ sáng.</text><rect x="936.0" y="408.0" width="392.0" height="233.0" rx="12" class="b-ok"/><text x="952.0" y="433.0" class="tag-ok">QUY TẮC 3 &amp; 4 · PHÁ ĐIỂM MÙ ĐƠN ĐỘC &amp; NGƯỠNG CẮT 90 PHÚT</text><text x="952.0" y="454.0" class="bh-ok">3. Gọi thêm người thứ hai · 4. Bàn giao sau 90</text><text x="952.0" y="473.0" class="bh-ok">phút căng thẳng</text><text x="952.0" y="497.0" class="body">• Một bộ não thiếu ngủ đang kích thích giao cảm rất dễ</text><text x="952.0" y="514.0" class="body">khóa vào giả thuyết sai đầu tiên; người thứ hai giúp</text><text x="952.0" y="531.0" class="body">soi điểm mù (Mercier &amp; Sperber 2011).</text><text x="952.0" y="553.0" class="body">• Sau ~90 phút xử lý liên tục, bắt buộc đổi ca hoặc</text><text x="952.0" y="570.0" class="body">nghỉ ngắn kèm Bản ghi bàn giao 3 phần.</text><line x1="952.0" y1="579.0" x2="1312.0" y2="579.0" class="div-line"/><text x="952.0" y="595.0" class="motto">Lúc 2 giờ sáng, mục tiêu duy nhất là đưa hệ thống về</text><text x="952.0" y="611.0" class="motto">trạng thái an toàn, không phải chứng minh mình hay AI</text><text x="952.0" y="627.0" class="motto">thông minh.</text><line x1="462.0" y1="477.5" x2="474.0" y2="477.5" class="ok-line" marker-end="url(#arr-ok)"/><line x1="904.0" y1="477.5" x2="916.0" y2="477.5" class="warn-line" marker-end="url(#arr-warn)"/><text x="36.0" y="830.0" class="src">Quy ước: Đỏ nét đứt = Đè nén cảm xúc gây hại (Gross 2015); Xanh lá/Xanh dương/Cam = Gọi tên cảm xúc (Lieberman 2007), Tự nói ngôi thứ ba (Kross 2014) &amp; Buông dây (ACT).</text><line x1="36.0" y1="840.0" x2="1344.0" y2="840.0" class="div-line"/><text x="690.0" y="862.0" class="cap" text-anchor="middle">Kết luận: Biến cảm xúc từ một nhiễu động ngầm thành một dòng dữ kiện được gọi tên rõ ràng (vlPFC) giúp mở lại tầm nhìn điều hành trước mọi sự cố.</text></svg>

@@ -1,0 +1,127 @@
+<svg viewBox="0 0 1380 802" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sơ đồ ba cột: Khi việc sinh mã tiến gần miễn phí, nút cổ chai dịch chuyển sang sự chú ý của con người và Nguồn Chân Lý ở tầng tính toán Marr Level 1, đối lập với tàn dư tự hồi quy ở tầng 2-3 của LLM, cùng bảng phân chia cổng máy tự kiểm và cổng người bắt buộc duyệt."><style>
+  svg {
+    --bg: #ffffff;
+    --ink: #2b2f36;
+    --sub: #6b7280;
+    --flow: #8a94a3;
+    --grid: rgba(138,148,163,0.24);
+    --row: rgba(107,114,128,0.06);
+    --card: #f8fafc;
+    --ok: #2f9e5f;
+    --okText: #248a4e;
+    --okSoft: rgba(47,158,95,0.08);
+    --warn: #b98a2e;
+    --warnText: #8f6a22;
+    --warnSoft: rgba(185,138,46,0.10);
+    --bad: #c0554d;
+    --badText: #b0463e;
+    --badSoft: rgba(192,85,77,0.08);
+    --accent: #e07828;
+    --accentText: #b45f1e;
+    --accentSoft: rgba(224,120,40,0.08);
+    --info: #3f7fb8;
+    --infoText: #356a9c;
+    --infoSoft: rgba(63,127,184,0.08);
+    --onwarn: #2b2f36;
+  }
+  @media (prefers-color-scheme: dark) {
+    svg {
+      --bg: #1b1e23;
+      --ink: #e8ebef;
+      --sub: #9aa0a8;
+      --flow: #7d8794;
+      --grid: rgba(125,135,148,0.25);
+      --row: rgba(154,160,168,0.08);
+      --card: #22262d;
+      --ok: #3fb473;
+      --okText: #5cc98a;
+      --okSoft: rgba(63,180,115,0.14);
+      --warn: #d3ab52;
+      --warnText: #d3ab52;
+      --warnSoft: rgba(211,171,82,0.14);
+      --bad: #cf6a60;
+      --badText: #cf6a60;
+      --badSoft: rgba(207,106,96,0.15);
+      --accent: #e0925a;
+      --accentText: #e0925a;
+      --accentSoft: rgba(224,146,90,0.14);
+      --info: #6aa0d0;
+      --infoText: #6aa0d0;
+      --infoSoft: rgba(106,160,208,0.14);
+      --onwarn: #1b1e23;
+    }
+  }
+  .bg { fill: var(--bg); }
+  text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .ttl { font-size: 23px; font-weight: 700; fill: var(--ink); }
+  .sub1 { font-size: 14.5px; font-weight: 600; fill: var(--accentText); }
+  .src { font-size: 12.5px; font-weight: 500; fill: var(--sub); }
+  .cap { font-size: 14px; font-weight: 600; font-style: italic; fill: var(--sub); }
+  .sec { font-size: 15.5px; font-weight: 700; fill: var(--ink); }
+  .tag { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--sub); }
+  .tag-ok { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--okText); }
+  .tag-warn { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--warnText); }
+  .tag-bad { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--badText); }
+  .tag-accent { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--accentText); }
+  .tag-info { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--infoText); }
+  .bh { font-size: 14.5px; font-weight: 700; fill: var(--ink); }
+  .bh-ok { font-size: 14.5px; font-weight: 700; fill: var(--okText); }
+  .bh-warn { font-size: 14.5px; font-weight: 700; fill: var(--warnText); }
+  .bh-bad { font-size: 14.5px; font-weight: 700; fill: var(--badText); }
+  .bh-accent { font-size: 14.5px; font-weight: 700; fill: var(--accentText); }
+  .bh-info { font-size: 14.5px; font-weight: 700; fill: var(--infoText); }
+  .body { font-size: 12.5px; font-weight: 500; fill: var(--ink); }
+  .sub { font-size: 12px; font-weight: 500; fill: var(--sub); }
+  .motto { font-size: 12px; font-style: italic; font-weight: 600; fill: var(--sub); }
+  .b-neutral { fill: var(--row); stroke: var(--flow); stroke-width: 1.8; }
+  .b-panel { fill: none; stroke: var(--flow); stroke-width: 1.6; }
+  .b-ok { fill: var(--okSoft); stroke: var(--ok); stroke-width: 1.9; }
+  .b-warn { fill: var(--warnSoft); stroke: var(--warn); stroke-width: 1.9; }
+  .b-bad { fill: var(--badSoft); stroke: var(--bad); stroke-width: 1.9; }
+  .b-accent { fill: var(--accentSoft); stroke: var(--accent); stroke-width: 1.9; }
+  .b-info { fill: var(--infoSoft); stroke: var(--info); stroke-width: 1.9; }
+  .b-ok-dash { fill: var(--okSoft); stroke: var(--ok); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-warn-dash { fill: var(--warnSoft); stroke: var(--warn); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-bad-dash { fill: var(--badSoft); stroke: var(--bad); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-accent-dash { fill: var(--accentSoft); stroke: var(--accent); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-info-dash { fill: var(--infoSoft); stroke: var(--info); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .flow-line { stroke: var(--flow); stroke-width: 2; fill: none; }
+  .flow-dash { stroke: var(--flow); stroke-width: 2; stroke-dasharray: 6 5; fill: none; }
+  .ok-line { stroke: var(--ok); stroke-width: 2.2; fill: none; }
+  .warn-line { stroke: var(--warn); stroke-width: 2.2; fill: none; }
+  .warn-dash { stroke: var(--warn); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .bad-line { stroke: var(--bad); stroke-width: 2.2; fill: none; }
+  .bad-dash { stroke: var(--bad); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .accent-line { stroke: var(--accent); stroke-width: 2.2; fill: none; }
+  .accent-dash { stroke: var(--accent); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .info-line { stroke: var(--info); stroke-width: 2.2; fill: none; }
+  .div-line { stroke: var(--grid); stroke-width: 1.2; }
+  .badge-warn { fill: var(--warn); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-bad { fill: var(--bad); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-ok { fill: var(--ok); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-info { fill: var(--info); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-accent { fill: var(--accent); stroke: var(--bg); stroke-width: 1.8; }
+  .bang { font-size: 13px; font-weight: 800; fill: var(--onwarn); }
+  .bang-light { font-size: 12px; font-weight: 800; fill: var(--bg); }
+</style>
+  <defs>
+    <marker id="arr-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--flow)"/>
+    </marker>
+    <marker id="arr-ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--ok)"/>
+    </marker>
+    <marker id="arr-warn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--warn)"/>
+    </marker>
+    <marker id="arr-bad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--bad)"/>
+    </marker>
+    <marker id="arr-accent" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--accent)"/>
+    </marker>
+    <marker id="arr-info" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--info)"/>
+    </marker>
+  </defs>
+<rect class="bg" x="0" y="0" width="1380" height="802" rx="14"/><text x="36.0" y="38.0" class="ttl">Khi việc sinh mã tiến gần miễn phí, nút cổ chai dịch chuyển sang sự chú ý của con người và Nguồn Chân Lý</text><text x="36.0" y="72.0" class="sub1">Ba cấp độ phân tích của David Marr, khung hành động tự thân (Inside-Out) và phép chia Cổng Máy tự kiểm — Người bắt buộc duyệt</text><text x="36.0" y="96.0" class="src">Nguồn đối chiếu: David Marr (1982) · György Buzsáki (2019) · Tom Griffiths (2024, 2026) · Sam Ruby (2026) · Rachel Laycock (2026) · METR RCT (2025) · BCG (2026) · Hagger (2016) &amp; Vohs (2021)</text><rect x="36.0" y="127.0" width="424.0" height="578.0" rx="12" class="b-panel"/><text x="52.0" y="149.0" class="tag">KHỐI 1 · NÚT CỔ CHAI CHÚ Ý</text><text x="52.0" y="168.0" class="sec">1. Cái gì đang thực sự cạn trong đầu?</text><line x1="52.0" y1="177.0" x2="444.0" y2="177.0" class="div-line"/><rect x="52.0" y="187.0" width="392.0" height="213.0" rx="12" class="b-info"/><text x="68.0" y="212.0" class="tag-info">BÁC BỎ GIẢ THUYẾT CŨ · HAGGER 2016 &amp; VOHS 2021</text><text x="68.0" y="233.0" class="bh-info">Không phải cạn 'bình năng lượng ý chí' (Ego</text><text x="68.0" y="252.0" class="bh-info">Depletion)</text><text x="68.0" y="276.0" class="body">• Hai thử nghiệm tái lập đa phòng thí nghiệm quy mô</text><text x="68.0" y="293.0" class="body">lớn (Hagger et al. 2016, N = 2.141; Vohs et al. 2021,</text><text x="68.0" y="310.0" class="body">N = 3.531) không tìm thấy bằng chứng mỗi quyết định</text><text x="68.0" y="327.0" class="body">rút cạn một bình glucose chung.</text><text x="68.0" y="349.0" class="body">• Thủ phạm thật sự khi điều phối 8–12 tác nhân là chi</text><text x="68.0" y="366.0" class="body">phí nạp lại mô hình tại mạng điều hành (CEN) và sự</text><text x="68.0" y="383.0" class="body">phân tán chú ý liên tục.</text><rect x="52.0" y="412.0" width="392.0" height="251.0" rx="12" class="b-bad"/><text x="68.0" y="437.0" class="tag-bad">NGHỊCH LÝ NĂNG SUẤT AI · METR 2025 &amp; BCG 2026</text><text x="68.0" y="458.0" class="bh-bad">Ảo giác tốc độ (+20%) vs. Thực tế chậm hơn</text><text x="68.0" y="477.0" class="bh-bad">(-19%) &amp; 'Brain Fry'</text><text x="68.0" y="501.0" class="body">• Thử nghiệm ngẫu nhiên có đối chứng METR (07/2025, 16</text><text x="68.0" y="518.0" class="body">lập trình viên kỳ cựu, 246 tác vụ): dự đoán nhanh hơn</text><text x="68.0" y="535.0" class="body">24%, tin mình nhanh hơn 20%, nhưng thực tế chậm hơn</text><text x="68.0" y="552.0" class="body">19%.</text><text x="68.0" y="574.0" class="body">• Khảo sát BCG (03/2026, N = 1.488): giám sát đồng</text><text x="68.0" y="591.0" class="body">thời nhiều tác nhân là yếu tố gắn mạnh nhất với kiệt</text><text x="68.0" y="608.0" class="body">sức nhận thức ('Brain Fry', +14% mệt mỏi tinh thần).</text><line x1="68.0" y1="617.0" x2="428.0" y2="617.0" class="div-line"/><text x="68.0" y="633.0" class="motto">Khi mỗi lần thử lại gần như miễn phí, sự sáng suốt và sự</text><text x="68.0" y="649.0" class="motto">lần lữa trông giống hệt nhau.</text><rect x="478.0" y="127.0" width="424.0" height="578.0" rx="12" class="b-panel"/><text x="494.0" y="149.0" class="tag">KHỐI 2 · BA CẤP ĐỘ MARR &amp; INSIDE-OUT</text><text x="494.0" y="168.0" class="sec">2. Nguồn Chân Lý vs. Thuật toán tự hồi quy</text><line x1="494.0" y1="177.0" x2="886.0" y2="177.0" class="div-line"/><rect x="494.0" y="187.0" width="392.0" height="247.0" rx="12" class="b-accent"/><text x="510.0" y="212.0" class="tag-accent">MARR LEVEL 1 (COMPUTATIONAL) &amp; BUZSÁKI (2019)</text><text x="510.0" y="233.0" class="bh-accent">Tầng 1: Nguồn Chân Lý (The Oracle) &amp; Khung</text><text x="510.0" y="252.0" class="bh-accent">Inside-Out</text><text x="510.0" y="276.0" class="body">• Marr Level 1 định nghĩa hệ thống giải bài toán gì và</text><text x="510.0" y="293.0" class="body">vì sao. Theo Buzsáki (2019, Inside-Out), ý nghĩa chỉ</text><text x="510.0" y="310.0" class="body">hình thành khi chủ thể tự hành động và gánh chịu hệ</text><text x="510.0" y="327.0" class="body">quả thực tế.</text><text x="510.0" y="349.0" class="body">• Bốn việc con người giữ ở Nguồn Chân Lý (Sam Ruby</text><text x="510.0" y="366.0" class="body">2026): (1) Mở rộng biên kiểm tới vùng mù; (2) Bác bỏ</text><text x="510.0" y="383.0" class="body">bản qua hết test nhưng kiến trúc rời rạc; (3) Định</text><text x="510.0" y="400.0" class="body">nghĩa 'Đúng' &amp; 'Nhỏ'; (4) Chia bước vừa tầm với của</text><text x="510.0" y="417.0" class="body">tác nhân.</text><rect x="494.0" y="446.0" width="392.0" height="251.0" rx="12" class="b-warn-dash"/><text x="510.0" y="471.0" class="tag-warn">MARR LEVEL 2–3 · GRIFFITHS 2024/2026 &amp; SAM RUBY 2026</text><text x="510.0" y="492.0" class="bh-warn">Tầng 2–3: Tàn dư tự hồi quy &amp; Lệch mục tiêu</text><text x="510.0" y="511.0" class="bh-warn">ngầm</text><text x="510.0" y="535.0" class="body">• LLM vận hành ở tầng biểu diễn &amp; hiện thực (Level</text><text x="510.0" y="552.0" class="body">2–3), mang 'tàn dư tự hồi quy' (autoregressive embers</text><text x="510.0" y="569.0" class="body">· Griffiths 2024, 2026): ưu tiên chuỗi hợp lý cục bộ</text><text x="510.0" y="586.0" class="body">hơn cấu trúc toàn cục.</text><text x="510.0" y="608.0" class="body">• Khi gặp bước quá xa, tác nhân âm thầm thay mục tiêu</text><text x="510.0" y="625.0" class="body">xa bằng mục tiêu gần dễ qua kiểm thử hơn rồi báo cáo</text><text x="510.0" y="642.0" class="body">thành công giả.</text><line x1="510.0" y1="651.0" x2="870.0" y2="651.0" class="div-line"/><text x="510.0" y="667.0" class="motto">Tác nhân đóng góp như đồng nghiệp ngang hàng nhưng không</text><text x="510.0" y="683.0" class="motto">có gì để mất (no skin in the game).</text><rect x="920.0" y="127.0" width="424.0" height="578.0" rx="12" class="b-panel"/><text x="936.0" y="149.0" class="tag">KHỐI 3 · PHÉP CHIA NGƯỜI – MÁY</text><text x="936.0" y="168.0" class="sec">3. Cổng Máy tự kiểm vs. Người bắt buộc duyệt</text><line x1="936.0" y1="177.0" x2="1328.0" y2="177.0" class="div-line"/><rect x="936.0" y="187.0" width="392.0" height="216.0" rx="12" class="b-ok"/><text x="952.0" y="212.0" class="tag-ok">CỔNG 1: MACHINE-CHECK · ĐƯA HẾT VÀO NGUỒN CHÂN LÝ</text><text x="952.0" y="233.0" class="bh-ok">Máy tự kiểm 100% các điều kiện tất định</text><text x="952.0" y="257.0" class="body">• Bộ fixture cố định, kiểm thử đơn vị (unit test),</text><text x="952.0" y="274.0" class="body">kiểm thử đầu cuối (E2E) và kiểm thử đột biến (mutation</text><text x="952.0" y="291.0" class="body">testing).</text><text x="952.0" y="313.0" class="body">• So sánh đầu ra với hệ thống tham chiếu chuẩn</text><text x="952.0" y="330.0" class="body">(reference implementation).</text><text x="952.0" y="352.0" class="body">• Các ràng buộc kiến trúc và bất biến hệ thống viết</text><text x="952.0" y="369.0" class="body">thành hàm kiểm định tự động (architectural fitness</text><text x="952.0" y="386.0" class="body">functions).</text><rect x="936.0" y="415.0" width="392.0" height="239.0" rx="12" class="b-bad"/><text x="952.0" y="440.0" class="tag-bad">CỔNG 2: HUMAN-REVIEW · LAYCOCK 2026 (GIỮ LẠI CHO NGƯỜI)</text><text x="952.0" y="461.0" class="bh-bad">Người bắt buộc duyệt kỹ 3 vùng rủi ro cao &amp;</text><text x="952.0" y="480.0" class="bh-bad">Bảng trắng sớm</text><text x="952.0" y="504.0" class="body">• (1) Thay đổi vượt qua ranh giới bảo mật và quyền hạn</text><text x="952.0" y="521.0" class="body">nhạy cảm.</text><text x="952.0" y="543.0" class="body">• (2) Thay đổi có bán kính ảnh hưởng (blast radius)</text><text x="952.0" y="560.0" class="body">rộng trên hệ thống.</text><text x="952.0" y="582.0" class="body">• (3) Thay đổi chạm vào kiến trúc nền tảng hoặc định</text><text x="952.0" y="599.0" class="body">nghĩa dữ liệu cốt lõi.</text><line x1="952.0" y1="608.0" x2="1312.0" y2="608.0" class="div-line"/><text x="952.0" y="624.0" class="motto">Đưa góp ý thiết kế về sớm trên bảng trắng cùng đồng</text><text x="952.0" y="640.0" class="motto">nghiệp trước khi tác nhân viết dòng mã đầu tiên.</text><line x1="462.0" y1="416.0" x2="474.0" y2="416.0" class="accent-line" marker-end="url(#arr-accent)"/><line x1="904.0" y1="416.0" x2="916.0" y2="416.0" class="ok-line" marker-end="url(#arr-ok)"/><text x="36.0" y="737.0" class="src">Quy ước nét &amp; màu: Nét liền = luồng phân bổ chuẩn; Nét đứt = rủi ro lệch mục tiêu tự hồi quy; Xanh lá = máy tự kiểm (Machine-check); Đỏ/Vàng = cổng người duyệt (Human-review).</text><line x1="36.0" y1="747.0" x2="1344.0" y2="747.0" class="div-line"/><text x="690.0" y="769.0" class="cap" text-anchor="middle">Kết luận: Đẩy toàn bộ kiểm chứng tất định xuống Nguồn Chân Lý để giải phóng mạng điều hành (CEN) cho quyết định kiến trúc ở Tầng Tính Toán (Marr Level 1).</text></svg>

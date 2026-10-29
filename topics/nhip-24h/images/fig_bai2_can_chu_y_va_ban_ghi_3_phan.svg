@@ -1,0 +1,127 @@
+<svg viewBox="0 0 1380 792" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sơ đồ ba cột: Khối 1 giải thích chi phí chuyển đổi (Monsell 2003) và cặn chú ý (Leroy 2009, 2018; Masicampo &amp; Baumeister 2011). Khối 2 trình bày cấu trúc Bản ghi 3 phần (Đã chốt, Đang mở, Bước tiếp theo) cộng 1 dòng cảm xúc và 3 giới hạn khi giao cho LLM. Khối 3 trình bày 3 tầng nghi thức chuyển tiếp 30 giây, 3 phút (giữ khoảng trống cho SPW-Rs của Buzsáki 2019) và 10 phút đóng ngày."><style>
+  svg {
+    --bg: #ffffff;
+    --ink: #2b2f36;
+    --sub: #6b7280;
+    --flow: #8a94a3;
+    --grid: rgba(138,148,163,0.24);
+    --row: rgba(107,114,128,0.06);
+    --card: #f8fafc;
+    --ok: #2f9e5f;
+    --okText: #248a4e;
+    --okSoft: rgba(47,158,95,0.08);
+    --warn: #b98a2e;
+    --warnText: #8f6a22;
+    --warnSoft: rgba(185,138,46,0.10);
+    --bad: #c0554d;
+    --badText: #b0463e;
+    --badSoft: rgba(192,85,77,0.08);
+    --accent: #e07828;
+    --accentText: #b45f1e;
+    --accentSoft: rgba(224,120,40,0.08);
+    --info: #3f7fb8;
+    --infoText: #356a9c;
+    --infoSoft: rgba(63,127,184,0.08);
+    --onwarn: #2b2f36;
+  }
+  @media (prefers-color-scheme: dark) {
+    svg {
+      --bg: #1b1e23;
+      --ink: #e8ebef;
+      --sub: #9aa0a8;
+      --flow: #7d8794;
+      --grid: rgba(125,135,148,0.25);
+      --row: rgba(154,160,168,0.08);
+      --card: #22262d;
+      --ok: #3fb473;
+      --okText: #5cc98a;
+      --okSoft: rgba(63,180,115,0.14);
+      --warn: #d3ab52;
+      --warnText: #d3ab52;
+      --warnSoft: rgba(211,171,82,0.14);
+      --bad: #cf6a60;
+      --badText: #cf6a60;
+      --badSoft: rgba(207,106,96,0.15);
+      --accent: #e0925a;
+      --accentText: #e0925a;
+      --accentSoft: rgba(224,146,90,0.14);
+      --info: #6aa0d0;
+      --infoText: #6aa0d0;
+      --infoSoft: rgba(106,160,208,0.14);
+      --onwarn: #1b1e23;
+    }
+  }
+  .bg { fill: var(--bg); }
+  text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .ttl { font-size: 23px; font-weight: 700; fill: var(--ink); }
+  .sub1 { font-size: 14.5px; font-weight: 600; fill: var(--accentText); }
+  .src { font-size: 12.5px; font-weight: 500; fill: var(--sub); }
+  .cap { font-size: 14px; font-weight: 600; font-style: italic; fill: var(--sub); }
+  .sec { font-size: 15.5px; font-weight: 700; fill: var(--ink); }
+  .tag { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--sub); }
+  .tag-ok { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--okText); }
+  .tag-warn { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--warnText); }
+  .tag-bad { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--badText); }
+  .tag-accent { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--accentText); }
+  .tag-info { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--infoText); }
+  .bh { font-size: 14.5px; font-weight: 700; fill: var(--ink); }
+  .bh-ok { font-size: 14.5px; font-weight: 700; fill: var(--okText); }
+  .bh-warn { font-size: 14.5px; font-weight: 700; fill: var(--warnText); }
+  .bh-bad { font-size: 14.5px; font-weight: 700; fill: var(--badText); }
+  .bh-accent { font-size: 14.5px; font-weight: 700; fill: var(--accentText); }
+  .bh-info { font-size: 14.5px; font-weight: 700; fill: var(--infoText); }
+  .body { font-size: 12.5px; font-weight: 500; fill: var(--ink); }
+  .sub { font-size: 12px; font-weight: 500; fill: var(--sub); }
+  .motto { font-size: 12px; font-style: italic; font-weight: 600; fill: var(--sub); }
+  .b-neutral { fill: var(--row); stroke: var(--flow); stroke-width: 1.8; }
+  .b-panel { fill: none; stroke: var(--flow); stroke-width: 1.6; }
+  .b-ok { fill: var(--okSoft); stroke: var(--ok); stroke-width: 1.9; }
+  .b-warn { fill: var(--warnSoft); stroke: var(--warn); stroke-width: 1.9; }
+  .b-bad { fill: var(--badSoft); stroke: var(--bad); stroke-width: 1.9; }
+  .b-accent { fill: var(--accentSoft); stroke: var(--accent); stroke-width: 1.9; }
+  .b-info { fill: var(--infoSoft); stroke: var(--info); stroke-width: 1.9; }
+  .b-ok-dash { fill: var(--okSoft); stroke: var(--ok); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-warn-dash { fill: var(--warnSoft); stroke: var(--warn); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-bad-dash { fill: var(--badSoft); stroke: var(--bad); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-accent-dash { fill: var(--accentSoft); stroke: var(--accent); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-info-dash { fill: var(--infoSoft); stroke: var(--info); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .flow-line { stroke: var(--flow); stroke-width: 2; fill: none; }
+  .flow-dash { stroke: var(--flow); stroke-width: 2; stroke-dasharray: 6 5; fill: none; }
+  .ok-line { stroke: var(--ok); stroke-width: 2.2; fill: none; }
+  .warn-line { stroke: var(--warn); stroke-width: 2.2; fill: none; }
+  .warn-dash { stroke: var(--warn); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .bad-line { stroke: var(--bad); stroke-width: 2.2; fill: none; }
+  .bad-dash { stroke: var(--bad); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .accent-line { stroke: var(--accent); stroke-width: 2.2; fill: none; }
+  .accent-dash { stroke: var(--accent); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .info-line { stroke: var(--info); stroke-width: 2.2; fill: none; }
+  .div-line { stroke: var(--grid); stroke-width: 1.2; }
+  .badge-warn { fill: var(--warn); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-bad { fill: var(--bad); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-ok { fill: var(--ok); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-info { fill: var(--info); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-accent { fill: var(--accent); stroke: var(--bg); stroke-width: 1.8; }
+  .bang { font-size: 13px; font-weight: 800; fill: var(--onwarn); }
+  .bang-light { font-size: 12px; font-weight: 800; fill: var(--bg); }
+</style>
+  <defs>
+    <marker id="arr-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--flow)"/>
+    </marker>
+    <marker id="arr-ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--ok)"/>
+    </marker>
+    <marker id="arr-warn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--warn)"/>
+    </marker>
+    <marker id="arr-bad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--bad)"/>
+    </marker>
+    <marker id="arr-accent" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--accent)"/>
+    </marker>
+    <marker id="arr-info" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--info)"/>
+    </marker>
+  </defs>
+<rect class="bg" x="0" y="0" width="1380" height="792" rx="14"/><text x="36.0" y="38.0" class="ttl">Giao bản ghi trạng thái ba phần cho LLM trước khi rời nhánh giúp khóa mục tiêu dang dở và cắt giảm cặn chú</text><text x="36.0" y="68.0" class="ttl">ý</text><text x="36.0" y="102.0" class="sub1">Chi phí chuyển đổi tác vụ, cơ chế cặn chú ý (Attention Residue), cấu trúc Bản ghi 3 phần + 1 dòng cảm xúc và 3 tầng nghi thức</text><text x="36.0" y="126.0" class="src">Nguồn đối chiếu: Gloria Mark (2023) · Monsell (2003) · Sophie Leroy (2009, 2018) · Masicampo &amp; Baumeister (2011) · Lieberman (2007) · Buzsáki (2019 SPW-Rs)</text><rect x="36.0" y="157.0" width="424.0" height="538.0" rx="12" class="b-panel"/><text x="52.0" y="179.0" class="tag">KHỐI 1 · CƠ CHẾ GÂY RÒ RỈ BĂNG THÔNG</text><text x="52.0" y="198.0" class="sec">1. Hai khoản thuế nhận thức khi nhảy nhánh</text><line x1="52.0" y1="207.0" x2="444.0" y2="207.0" class="div-line"/><rect x="52.0" y="217.0" width="392.0" height="196.0" rx="12" class="b-warn"/><text x="68.0" y="242.0" class="tag-warn">KHOẢN 1: CHI PHÍ CHUYỂN ĐỔI · MONSELL 2003 &amp; MARK 2023</text><text x="68.0" y="263.0" class="bh-warn">Nhịp chuyển màn hình ~47 giây &amp; Chi phí nạp</text><text x="68.0" y="282.0" class="bh-warn">lại quy tắc</text><text x="68.0" y="306.0" class="body">• Thời gian dừng trung bình trên một màn hình chỉ còn</text><text x="68.0" y="323.0" class="body">~47 giây (Gloria Mark 2023, giảm từ 2,5 phút năm</text><text x="68.0" y="340.0" class="body">2004).</text><text x="68.0" y="362.0" class="body">• Mỗi lần đổi nhánh, mạng điều hành (CEN) tốn thời</text><text x="68.0" y="379.0" class="body">gian cấu hình lại bộ quy tắc (task-set reconfiguration</text><text x="68.0" y="396.0" class="body">· Monsell 2003).</text><rect x="52.0" y="425.0" width="392.0" height="213.0" rx="12" class="b-bad-dash"/><text x="68.0" y="450.0" class="tag-bad">KHOẢN 2: CẶN CHÚ Ý · LEROY 2009, 2018 &amp; MASICAMPO 2011</text><text x="68.0" y="471.0" class="bh-bad">Mục tiêu dang dở tiếp tục chiếm băng thông</text><text x="68.0" y="490.0" class="bh-bad">ngầm</text><text x="68.0" y="514.0" class="body">• Khi rời một nhánh mà tác nhân vẫn đang chạy dở, hoạt</text><text x="68.0" y="531.0" class="body">hóa nhận thức của việc cũ không tắt ngay mà rò rỉ sang</text><text x="68.0" y="548.0" class="body">việc mới (Attention Residue · Leroy 2009, 2018).</text><text x="68.0" y="570.0" class="body">• Masicampo &amp; Baumeister (2011): Hệ thần kinh không</text><text x="68.0" y="587.0" class="body">đòi việc phải xong ngay, nhưng đòi một kế hoạch cụ thể</text><text x="68.0" y="604.0" class="body">về chỗ dừng và bước tiếp theo để ngừng phát tín hiệu</text><text x="68.0" y="621.0" class="body">nhắc nhở.</text><rect x="478.0" y="157.0" width="424.0" height="538.0" rx="12" class="b-panel"/><text x="494.0" y="179.0" class="tag">KHỐI 2 · CÔNG CỤ KHÓA MỤC TIÊU DANG DỞ</text><text x="494.0" y="198.0" class="sec">2. Bản ghi 3 phần + 1 dòng cảm xúc</text><line x1="494.0" y1="207.0" x2="886.0" y2="207.0" class="div-line"/><rect x="494.0" y="217.0" width="392.0" height="257.0" rx="12" class="b-accent"/><text x="510.0" y="242.0" class="tag-accent">CẤU TRÚC BẢN GHI ỦY THÁC CHO LLM · 3 PHẦN + 1 DÒNG</text><text x="510.0" y="263.0" class="bh-accent">Bản ghi trạng thái khóa mục tiêu dang dở trong</text><text x="510.0" y="282.0" class="bh-accent">60 giây</text><text x="510.0" y="306.0" class="body">• 1. ĐÃ CHỐT (kèm nguồn kiểm chứng): Commit hash, bài</text><text x="510.0" y="323.0" class="body">test đã xanh, quyết định kiến trúc đã khóa.</text><text x="510.0" y="345.0" class="body">• 2. ĐANG MỞ (chưa giải quyết): Giả thuyết đang thử,</text><text x="510.0" y="362.0" class="body">lỗi còn treo, góc biên chưa phủ test.</text><text x="510.0" y="384.0" class="body">• 3. BƯỚC TIẾP THEO (ngay khi quay lại): Đúng 1 hành</text><text x="510.0" y="401.0" class="body">động cụ thể để bắt đầu lại không cần suy nghĩ.</text><text x="510.0" y="423.0" class="body">• +1 DÒNG CẢM XÚC (tự viết): Ví dụ 'Đang sốt ruột vì</text><text x="510.0" y="440.0" class="body">CI đỏ 3 lần ở module auth' (bật vlPFC · Lieberman</text><text x="510.0" y="457.0" class="body">2007).</text><rect x="494.0" y="486.0" width="392.0" height="201.0" rx="12" class="b-warn-dash"/><text x="510.0" y="511.0" class="tag-warn">BA GIỚI HẠN BẮT BUỘC NHỚ KHI ỦY THÁC CHO MÁY</text><text x="510.0" y="532.0" class="bh-warn">Bản ghi giảm chi phí nhớ lại, không thay thế</text><text x="510.0" y="551.0" class="bh-warn">tư duy</text><text x="510.0" y="575.0" class="body">• (1) Giảm cặn chú ý nhưng không xóa được chi phí nạp</text><text x="510.0" y="592.0" class="body">lại quy tắc của việc mới.</text><text x="510.0" y="614.0" class="body">• (2) Với lỗi kiến trúc sâu, vẫn cần thời gian dựng</text><text x="510.0" y="631.0" class="body">lại mô hình trong đầu.</text><text x="510.0" y="653.0" class="body">• (3) LLM có thể bịa hoặc tóm tắt sót → Khi quay lại</text><text x="510.0" y="670.0" class="body">phải đối chiếu mục 'Đã chốt + Nguồn' trước tiên.</text><rect x="920.0" y="157.0" width="424.0" height="538.0" rx="12" class="b-panel"/><text x="936.0" y="179.0" class="tag">KHỐI 3 · BA TẦNG NGHI THỨC CHUYỂN TIẾP</text><text x="936.0" y="198.0" class="sec">3. Nhịp 30 giây · 3 phút · 10 phút đóng ngày</text><line x1="936.0" y1="207.0" x2="1328.0" y2="207.0" class="div-line"/><rect x="936.0" y="217.0" width="392.0" height="121.0" rx="12" class="b-info"/><text x="952.0" y="242.0" class="tag-info">TẦNG 1 (30 GIÂY) · MỖI LẦN CHUYỂN CỬA SỐ TÁC NHÂN</text><text x="952.0" y="263.0" class="bh-info">Chốt 1 dòng trạng thái + 1 hơi thở ra chậm</text><text x="952.0" y="287.0" class="body">• Giao tác nhân cập nhật dòng 'Đang dừng ở đâu / Bước</text><text x="952.0" y="304.0" class="body">kế tiếp' + thở dài ra chậm (physiological sigh ·</text><text x="952.0" y="321.0" class="body">Balban et al. 2023) trước khi mở tab khác.</text><rect x="936.0" y="350.0" width="392.0" height="157.0" rx="12" class="b-ok"/><text x="952.0" y="375.0" class="tag-ok">TẦNG 2 (3 PHÚT) · CUỐI MỖI PHIÊN LÀM VIỆC &amp; NGHỈ TRẮNG</text><text x="952.0" y="396.0" class="bh-ok">Đóng phiên + Khoảng nghỉ trắng cho gợn sóng</text><text x="952.0" y="415.0" class="bh-ok">SPW-Rs</text><text x="952.0" y="439.0" class="body">• Chốt Bản ghi 3 phần cho các nhánh đang mở, đứng dậy</text><text x="952.0" y="456.0" class="body">đi lại nhẹ nhàng và giữ vài phút không nạp thêm</text><text x="952.0" y="473.0" class="body">chữ/điện thoại để đồi hải mã phát sóng SPW-Rs (Buzsáki</text><text x="952.0" y="490.0" class="body">2019) củng cố cấu trúc bài toán.</text><rect x="936.0" y="519.0" width="392.0" height="140.0" rx="12" class="b-ok"/><text x="952.0" y="544.0" class="tag-ok">TẦNG 3 (10 PHÚT) · ĐÓNG NGÀY &amp; TRƯỚC KHI NGỒI THIỀN</text><text x="952.0" y="565.0" class="bh-ok">Làm vơi chén nước để cắt nhiên liệu Pha 1</text><text x="952.0" y="584.0" class="bh-ok">(Hasenkamp 2012)</text><text x="952.0" y="608.0" class="body">• Gom toàn bộ nhánh dở và bước đầu tiên của sáng mai</text><text x="952.0" y="625.0" class="body">vào một chỗ rồi đóng máy; giúp ca thiền chiều và giấc</text><text x="952.0" y="642.0" class="body">ngủ đêm không bị kéo giật bởi việc chưa xong.</text><line x1="462.0" y1="426.0" x2="474.0" y2="426.0" class="accent-line" marker-end="url(#arr-accent)"/><line x1="904.0" y1="426.0" x2="916.0" y2="426.0" class="ok-line" marker-end="url(#arr-ok)"/><text x="36.0" y="727.0" class="src">Quy ước: Đỏ nét đứt = cặn chú ý rò rỉ (Leroy 2009); Cam = cấu trúc Bản ghi 3 phần; Xanh lá = nghi thức chuyển tiếp &amp; khoảng trống cho SPW-Rs (Buzsáki 2019).</text><line x1="36.0" y1="737.0" x2="1344.0" y2="737.0" class="div-line"/><text x="690.0" y="759.0" class="cap" text-anchor="middle">Kết luận: Đừng bắt trí nhớ làm việc giữ hộ chục nhánh tác nhân đang chạy — hãy biến mỗi điểm dừng thành một kế hoạch quay lại rõ ràng trên mặt chữ.</text></svg>

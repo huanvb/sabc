@@ -1,0 +1,127 @@
+<svg viewBox="0 0 1380 837" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sơ đồ hai khung: Khung trái trình bày bằng chứng đi bộ tự nhiên 60-90 phút làm giảm hoạt động vùng nghiền ngẫm sgPFC (Bratman 2015) và Amygdala (Sudimac 2022). Khung phải trình bày lý trí đối thoại (Mercier &amp; Sperber 2011: Wason 10-15% lên 70-80%), hỏi trực tiếp vượt trội tự đoán (Perspective-Getting &gt; Perspective-Taking, Eyal &amp; Epley 2018), cơ chế leo thang lực trả đũa (Shergill 2003), lắng nghe chất lượng cao (Itzchakov 2024) và Revealing/Vibe/Mattering (2026)."><style>
+  svg {
+    --bg: #ffffff;
+    --ink: #2b2f36;
+    --sub: #6b7280;
+    --flow: #8a94a3;
+    --grid: rgba(138,148,163,0.24);
+    --row: rgba(107,114,128,0.06);
+    --card: #f8fafc;
+    --ok: #2f9e5f;
+    --okText: #248a4e;
+    --okSoft: rgba(47,158,95,0.08);
+    --warn: #b98a2e;
+    --warnText: #8f6a22;
+    --warnSoft: rgba(185,138,46,0.10);
+    --bad: #c0554d;
+    --badText: #b0463e;
+    --badSoft: rgba(192,85,77,0.08);
+    --accent: #e07828;
+    --accentText: #b45f1e;
+    --accentSoft: rgba(224,120,40,0.08);
+    --info: #3f7fb8;
+    --infoText: #356a9c;
+    --infoSoft: rgba(63,127,184,0.08);
+    --onwarn: #2b2f36;
+  }
+  @media (prefers-color-scheme: dark) {
+    svg {
+      --bg: #1b1e23;
+      --ink: #e8ebef;
+      --sub: #9aa0a8;
+      --flow: #7d8794;
+      --grid: rgba(125,135,148,0.25);
+      --row: rgba(154,160,168,0.08);
+      --card: #22262d;
+      --ok: #3fb473;
+      --okText: #5cc98a;
+      --okSoft: rgba(63,180,115,0.14);
+      --warn: #d3ab52;
+      --warnText: #d3ab52;
+      --warnSoft: rgba(211,171,82,0.14);
+      --bad: #cf6a60;
+      --badText: #cf6a60;
+      --badSoft: rgba(207,106,96,0.15);
+      --accent: #e0925a;
+      --accentText: #e0925a;
+      --accentSoft: rgba(224,146,90,0.14);
+      --info: #6aa0d0;
+      --infoText: #6aa0d0;
+      --infoSoft: rgba(106,160,208,0.14);
+      --onwarn: #1b1e23;
+    }
+  }
+  .bg { fill: var(--bg); }
+  text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .ttl { font-size: 23px; font-weight: 700; fill: var(--ink); }
+  .sub1 { font-size: 14.5px; font-weight: 600; fill: var(--accentText); }
+  .src { font-size: 12.5px; font-weight: 500; fill: var(--sub); }
+  .cap { font-size: 14px; font-weight: 600; font-style: italic; fill: var(--sub); }
+  .sec { font-size: 15.5px; font-weight: 700; fill: var(--ink); }
+  .tag { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--sub); }
+  .tag-ok { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--okText); }
+  .tag-warn { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--warnText); }
+  .tag-bad { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--badText); }
+  .tag-accent { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--accentText); }
+  .tag-info { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--infoText); }
+  .bh { font-size: 14.5px; font-weight: 700; fill: var(--ink); }
+  .bh-ok { font-size: 14.5px; font-weight: 700; fill: var(--okText); }
+  .bh-warn { font-size: 14.5px; font-weight: 700; fill: var(--warnText); }
+  .bh-bad { font-size: 14.5px; font-weight: 700; fill: var(--badText); }
+  .bh-accent { font-size: 14.5px; font-weight: 700; fill: var(--accentText); }
+  .bh-info { font-size: 14.5px; font-weight: 700; fill: var(--infoText); }
+  .body { font-size: 12.5px; font-weight: 500; fill: var(--ink); }
+  .sub { font-size: 12px; font-weight: 500; fill: var(--sub); }
+  .motto { font-size: 12px; font-style: italic; font-weight: 600; fill: var(--sub); }
+  .b-neutral { fill: var(--row); stroke: var(--flow); stroke-width: 1.8; }
+  .b-panel { fill: none; stroke: var(--flow); stroke-width: 1.6; }
+  .b-ok { fill: var(--okSoft); stroke: var(--ok); stroke-width: 1.9; }
+  .b-warn { fill: var(--warnSoft); stroke: var(--warn); stroke-width: 1.9; }
+  .b-bad { fill: var(--badSoft); stroke: var(--bad); stroke-width: 1.9; }
+  .b-accent { fill: var(--accentSoft); stroke: var(--accent); stroke-width: 1.9; }
+  .b-info { fill: var(--infoSoft); stroke: var(--info); stroke-width: 1.9; }
+  .b-ok-dash { fill: var(--okSoft); stroke: var(--ok); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-warn-dash { fill: var(--warnSoft); stroke: var(--warn); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-bad-dash { fill: var(--badSoft); stroke: var(--bad); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-accent-dash { fill: var(--accentSoft); stroke: var(--accent); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-info-dash { fill: var(--infoSoft); stroke: var(--info); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .flow-line { stroke: var(--flow); stroke-width: 2; fill: none; }
+  .flow-dash { stroke: var(--flow); stroke-width: 2; stroke-dasharray: 6 5; fill: none; }
+  .ok-line { stroke: var(--ok); stroke-width: 2.2; fill: none; }
+  .warn-line { stroke: var(--warn); stroke-width: 2.2; fill: none; }
+  .warn-dash { stroke: var(--warn); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .bad-line { stroke: var(--bad); stroke-width: 2.2; fill: none; }
+  .bad-dash { stroke: var(--bad); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .accent-line { stroke: var(--accent); stroke-width: 2.2; fill: none; }
+  .accent-dash { stroke: var(--accent); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .info-line { stroke: var(--info); stroke-width: 2.2; fill: none; }
+  .div-line { stroke: var(--grid); stroke-width: 1.2; }
+  .badge-warn { fill: var(--warn); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-bad { fill: var(--bad); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-ok { fill: var(--ok); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-info { fill: var(--info); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-accent { fill: var(--accent); stroke: var(--bg); stroke-width: 1.8; }
+  .bang { font-size: 13px; font-weight: 800; fill: var(--onwarn); }
+  .bang-light { font-size: 12px; font-weight: 800; fill: var(--bg); }
+</style>
+  <defs>
+    <marker id="arr-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--flow)"/>
+    </marker>
+    <marker id="arr-ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--ok)"/>
+    </marker>
+    <marker id="arr-warn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--warn)"/>
+    </marker>
+    <marker id="arr-bad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--bad)"/>
+    </marker>
+    <marker id="arr-accent" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--accent)"/>
+    </marker>
+    <marker id="arr-info" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--info)"/>
+    </marker>
+  </defs>
+<rect class="bg" x="0" y="0" width="1380" height="837" rx="14"/><text x="36.0" y="38.0" class="ttl">Đi bộ trong tự nhiên làm dịu vùng vỏ não nghiền ngẫm, còn hỏi trực tiếp và lắng nghe giúp vượt qua ảo tưởng</text><text x="36.0" y="68.0" class="ttl">đọc vị</text><text x="36.0" y="102.0" class="sub1">Tiếp xúc thiên nhiên (60–90 phút) hạ nhiệt sgPFC/Amygdala và các cơ chế đối thoại với người thật để thoát khỏi buồng vang của máy</text><text x="36.0" y="126.0" class="src">Nguồn đối chiếu: Bratman et al. (2015) · Sudimac et al. (2022) · Mercier &amp; Sperber (2011) · Eyal &amp; Epley (2018) · Shergill et al. (2003) · Itzchakov &amp; Kluger (2024) · John, Grant &amp; Miles (2026)</text><rect x="36.0" y="157.0" width="541.0" height="564.0" rx="12" class="b-panel"/><text x="52.0" y="179.0" class="tag">KHUNG TRÁI · THIÊN NHIÊN HẠ NHIỆT NGHIỀN NGẪM</text><text x="52.0" y="198.0" class="sec">1. Bước ra dưới tán cây (60–90 phút)</text><line x1="52.0" y1="207.0" x2="561.0" y2="207.0" class="div-line"/><rect x="52.0" y="217.0" width="509.0" height="213.0" rx="12" class="b-ok"/><text x="68.0" y="242.0" class="tag-ok">LÀM DỊU VÙNG NGHIỀN NGẪM · BRATMAN 2015 &amp; SUDIMAC 2022</text><text x="68.0" y="263.0" class="bh-ok">1. Đi bộ 60–90 phút nơi có cây xanh giảm hoạt động sgPFC &amp;</text><text x="68.0" y="282.0" class="bh-ok">Amygdala</text><text x="68.0" y="306.0" class="body">• Bratman et al. (2015, PNAS, n = 38): Đi bộ 90 phút trong khung cảnh</text><text x="68.0" y="323.0" class="body">tự nhiên làm giảm rõ lưu lượng máu tại vỏ não trước trán dưới gối</text><text x="68.0" y="340.0" class="body">(sgPFC — vùng gắn chặt với tự trách và nghiền ngẫm), trong khi đi bộ</text><text x="68.0" y="357.0" class="body">bên đường đông xe không có hiệu ứng này.</text><text x="68.0" y="379.0" class="body">• Sudimac et al. (2022, Molecular Psychiatry, n = 63): 60 phút đi bộ</text><text x="68.0" y="396.0" class="body">trong rừng làm giảm hoạt động hạch hạnh nhân (Amygdala) khi xử lý căng</text><text x="68.0" y="413.0" class="body">thẳng.</text><rect x="52.0" y="442.0" width="509.0" height="138.0" rx="12" class="b-info"/><text x="68.0" y="467.0" class="tag-info">PHỤC HỒI NHẬN THỨC · STEVENSON ET AL. 2018 (42 NGHIÊN CỨU)</text><text x="68.0" y="488.0" class="bh-info">2. Giải phóng chú ý có định hướng &amp; Phục hồi trí nhớ làm việc</text><text x="68.0" y="512.0" class="body">• Phân tích gộp 42 nghiên cứu (Stevenson et al. 2018): Khung cảnh tự</text><text x="68.0" y="529.0" class="body">nhiên kích hoạt 'sự cuốn hút nhẹ nhàng' (soft fascination), cho phép</text><text x="68.0" y="546.0" class="body">mạng CEN nghỉ ngơi và cải thiện trí nhớ làm việc cùng độ linh hoạt nhận</text><text x="68.0" y="563.0" class="body">thức.</text><rect x="52.0" y="592.0" width="509.0" height="121.0" rx="12" class="b-warn-dash"/><text x="68.0" y="617.0" class="tag-warn">LƯU Ý TRUNG THỰC VỀ LIỀU LƯỢNG THỰC NGHIỆM</text><text x="68.0" y="638.0" class="bh-warn">3. Ngưỡng 60–90 phút thực tế vs. Lời đồn 'nhìn cây vài phút'</text><text x="68.0" y="662.0" class="body">• Các kết quả fMRI của Bratman (2015) và Sudimac (2022) đo sau 60–90</text><text x="68.0" y="679.0" class="body">phút đi bộ thực sự ngoài tự nhiên, không phải nhìn ảnh cây trên màn</text><text x="68.0" y="696.0" class="body">hình 2 phút.</text><rect x="597.0" y="157.0" width="747.0" height="564.0" rx="12" class="b-panel"/><text x="613.0" y="179.0" class="tag">KHUNG PHẢI · ĐỐI THOẠI VỚI NGƯỜI THẬT ĐỂ PHÁ BUỒNG VANG</text><text x="613.0" y="198.0" class="sec">2. Lý trí đối thoại, Hỏi trực tiếp &amp; Lắng nghe chất lượng cao</text><line x1="613.0" y1="207.0" x2="1328.0" y2="207.0" class="div-line"/><rect x="613.0" y="217.0" width="715.0" height="121.0" rx="12" class="b-info"/><text x="629.0" y="242.0" class="tag-info">LÝ TRÍ ĐỐI THOẠI · MERCIER &amp; SPERBER (2011) &amp; YANG ET AL. (2022)</text><text x="629.0" y="263.0" class="bh-info">1. Bài toán Wason: Làm một mình đúng 10–15%, đối thoại nhóm đạt 70–80%</text><text x="629.0" y="287.0" class="body">• Lý trí con người tiến hóa để tranh luận và kiểm chứng chéo trong nhóm nhỏ, nên rất giỏi tìm lỗi của</text><text x="629.0" y="304.0" class="body">người khác nhưng mù với thiên kiến xác nhận của chính mình (Mercier &amp; Sperber 2011). Làm việc cô lập</text><text x="629.0" y="321.0" class="body">làm giảm ~25% kết nối liên nhóm (Yang et al. 2022, N = 61.182).</text><rect x="613.0" y="350.0" width="715.0" height="177.0" rx="12" class="b-accent"/><text x="629.0" y="375.0" class="tag-accent">HỎI TRỰC TIẾP &gt; TỰ ĐOÁN · EYAL &amp; EPLEY (2018) &amp; SHERGILL (2003)</text><text x="629.0" y="396.0" class="bh-accent">2. Perspective-Getting &gt; Perspective-Taking &amp; Tránh leo thang lực trả đũa</text><text x="629.0" y="420.0" class="body">• Eyal, Steffel &amp; Epley (2018, JPSP, 25 thí nghiệm): Tự ngồi đoán ý người khác (perspective-taking)</text><text x="629.0" y="437.0" class="body">không làm tăng độ chính xác; chỉ có hỏi trực tiếp và lắng nghe câu trả lời (perspective-getting) mới</text><text x="629.0" y="454.0" class="body">phá được ảo tưởng đọc vị.</text><text x="629.0" y="476.0" class="body">• Shergill et al. (2003, Science): Do cơ chế làm mờ cảm giác tự tạo (sensory attenuation), con người</text><text x="629.0" y="493.0" class="body">luôn cảm nhận lực của mình nhẹ hơn lực từ người khác ~35–40%, khiến lời đáp trả trên PR/chat tự động</text><text x="629.0" y="510.0" class="body">leo thang nếu không chuyển sang nói chuyện trực tiếp.</text><rect x="613.0" y="539.0" width="715.0" height="160.0" rx="12" class="b-ok"/><text x="629.0" y="564.0" class="tag-ok">LẮNG NGHE CHẤT LƯỢNG CAO · ITZCHAKOV &amp; KLUGER (2024) · JOHN, GRANT &amp; MILES (2026)</text><text x="629.0" y="585.0" class="bh-ok">3. Mở lời chỗ chưa biết (Revealing), Đồng điệu (Vibe) &amp; Giá trị tự thân (Mattering)</text><text x="629.0" y="609.0" class="body">• Lắng nghe trọn vẹn không phán xét (Itzchakov &amp; Kluger 2024) tạo an toàn tâm lý làm giảm thái độ phòng</text><text x="629.0" y="626.0" class="body">thủ cực đoan và giúp người nói tự nhận ra mâu thuẫn trong lập luận.</text><text x="629.0" y="648.0" class="body">• Dám bộc lộ chỗ mình chưa hiểu (Revealing · Leslie John 2026) kết hợp chú ý đồng điệu (Vibe · Adam</text><text x="629.0" y="665.0" class="body">Grant 2026) và cảm thức mỗi người có giá trị thật (Mattering · Miles 2026) tại buổi vẽ bảng trắng chung</text><text x="629.0" y="682.0" class="body">trước khi giao việc cho tác nhân.</text><line x1="579.0" y1="439.0" x2="593.0" y2="439.0" class="ok-line" marker-end="url(#arr-ok)"/><text x="36.0" y="753.0" class="src">Quy ước: Xanh lá = tác động hạ nhiệt sgPFC/Amygdala &amp; lắng nghe; Cam = Hỏi trực tiếp (Eyal &amp; Epley 2018) &amp; giảm leo thang trả đũa (Shergill 2003); Vàng đứt = lưu ý liều lượng 60–90 phút.</text><line x1="36.0" y1="763.0" x2="1344.0" y2="763.0" class="div-line"/><text x="690.0" y="785.0" class="cap" text-anchor="middle">Kết luận: LLM luôn chiều theo khung câu hỏi của người dùng; chỉ có thiên nhiên rộng mở và sự phản biện trực tiếp, ấm áp từ đồng nghiệp thật mới giữ cho tư duy không tự khép</text><text x="690.0" y="804.0" class="cap" text-anchor="middle">kín.</text></svg>

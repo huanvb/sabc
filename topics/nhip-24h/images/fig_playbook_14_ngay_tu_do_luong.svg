@@ -1,0 +1,127 @@
+<svg viewBox="0 0 1380 770" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sơ đồ thử nghiệm tự đo lường 14 ngày gồm 3 cột: Tuần 1 (Ngày 1-7) đo đường cơ sở không can thiệp; Tuần 2 (Ngày 8-14) áp dụng 3 chốt chặn gồm Bản ghi 3 phần, dời giờ ngừng caffeine kèm ngủ trưa 10 phút, và chốt giờ đóng máy tối; Cột 3 liệt kê 5 chỉ số chấm trong 60 giây mỗi tối để tìm ra ngưỡng số tác nhân và giờ ngừng caffeine của riêng mình."><style>
+  svg {
+    --bg: #ffffff;
+    --ink: #2b2f36;
+    --sub: #6b7280;
+    --flow: #8a94a3;
+    --grid: rgba(138,148,163,0.24);
+    --row: rgba(107,114,128,0.06);
+    --card: #f8fafc;
+    --ok: #2f9e5f;
+    --okText: #248a4e;
+    --okSoft: rgba(47,158,95,0.08);
+    --warn: #b98a2e;
+    --warnText: #8f6a22;
+    --warnSoft: rgba(185,138,46,0.10);
+    --bad: #c0554d;
+    --badText: #b0463e;
+    --badSoft: rgba(192,85,77,0.08);
+    --accent: #e07828;
+    --accentText: #b45f1e;
+    --accentSoft: rgba(224,120,40,0.08);
+    --info: #3f7fb8;
+    --infoText: #356a9c;
+    --infoSoft: rgba(63,127,184,0.08);
+    --onwarn: #2b2f36;
+  }
+  @media (prefers-color-scheme: dark) {
+    svg {
+      --bg: #1b1e23;
+      --ink: #e8ebef;
+      --sub: #9aa0a8;
+      --flow: #7d8794;
+      --grid: rgba(125,135,148,0.25);
+      --row: rgba(154,160,168,0.08);
+      --card: #22262d;
+      --ok: #3fb473;
+      --okText: #5cc98a;
+      --okSoft: rgba(63,180,115,0.14);
+      --warn: #d3ab52;
+      --warnText: #d3ab52;
+      --warnSoft: rgba(211,171,82,0.14);
+      --bad: #cf6a60;
+      --badText: #cf6a60;
+      --badSoft: rgba(207,106,96,0.15);
+      --accent: #e0925a;
+      --accentText: #e0925a;
+      --accentSoft: rgba(224,146,90,0.14);
+      --info: #6aa0d0;
+      --infoText: #6aa0d0;
+      --infoSoft: rgba(106,160,208,0.14);
+      --onwarn: #1b1e23;
+    }
+  }
+  .bg { fill: var(--bg); }
+  text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .ttl { font-size: 23px; font-weight: 700; fill: var(--ink); }
+  .sub1 { font-size: 14.5px; font-weight: 600; fill: var(--accentText); }
+  .src { font-size: 12.5px; font-weight: 500; fill: var(--sub); }
+  .cap { font-size: 14px; font-weight: 600; font-style: italic; fill: var(--sub); }
+  .sec { font-size: 15.5px; font-weight: 700; fill: var(--ink); }
+  .tag { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--sub); }
+  .tag-ok { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--okText); }
+  .tag-warn { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--warnText); }
+  .tag-bad { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--badText); }
+  .tag-accent { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--accentText); }
+  .tag-info { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--infoText); }
+  .bh { font-size: 14.5px; font-weight: 700; fill: var(--ink); }
+  .bh-ok { font-size: 14.5px; font-weight: 700; fill: var(--okText); }
+  .bh-warn { font-size: 14.5px; font-weight: 700; fill: var(--warnText); }
+  .bh-bad { font-size: 14.5px; font-weight: 700; fill: var(--badText); }
+  .bh-accent { font-size: 14.5px; font-weight: 700; fill: var(--accentText); }
+  .bh-info { font-size: 14.5px; font-weight: 700; fill: var(--infoText); }
+  .body { font-size: 12.5px; font-weight: 500; fill: var(--ink); }
+  .sub { font-size: 12px; font-weight: 500; fill: var(--sub); }
+  .motto { font-size: 12px; font-style: italic; font-weight: 600; fill: var(--sub); }
+  .b-neutral { fill: var(--row); stroke: var(--flow); stroke-width: 1.8; }
+  .b-panel { fill: none; stroke: var(--flow); stroke-width: 1.6; }
+  .b-ok { fill: var(--okSoft); stroke: var(--ok); stroke-width: 1.9; }
+  .b-warn { fill: var(--warnSoft); stroke: var(--warn); stroke-width: 1.9; }
+  .b-bad { fill: var(--badSoft); stroke: var(--bad); stroke-width: 1.9; }
+  .b-accent { fill: var(--accentSoft); stroke: var(--accent); stroke-width: 1.9; }
+  .b-info { fill: var(--infoSoft); stroke: var(--info); stroke-width: 1.9; }
+  .b-ok-dash { fill: var(--okSoft); stroke: var(--ok); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-warn-dash { fill: var(--warnSoft); stroke: var(--warn); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-bad-dash { fill: var(--badSoft); stroke: var(--bad); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-accent-dash { fill: var(--accentSoft); stroke: var(--accent); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-info-dash { fill: var(--infoSoft); stroke: var(--info); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .flow-line { stroke: var(--flow); stroke-width: 2; fill: none; }
+  .flow-dash { stroke: var(--flow); stroke-width: 2; stroke-dasharray: 6 5; fill: none; }
+  .ok-line { stroke: var(--ok); stroke-width: 2.2; fill: none; }
+  .warn-line { stroke: var(--warn); stroke-width: 2.2; fill: none; }
+  .warn-dash { stroke: var(--warn); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .bad-line { stroke: var(--bad); stroke-width: 2.2; fill: none; }
+  .bad-dash { stroke: var(--bad); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .accent-line { stroke: var(--accent); stroke-width: 2.2; fill: none; }
+  .accent-dash { stroke: var(--accent); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .info-line { stroke: var(--info); stroke-width: 2.2; fill: none; }
+  .div-line { stroke: var(--grid); stroke-width: 1.2; }
+  .badge-warn { fill: var(--warn); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-bad { fill: var(--bad); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-ok { fill: var(--ok); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-info { fill: var(--info); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-accent { fill: var(--accent); stroke: var(--bg); stroke-width: 1.8; }
+  .bang { font-size: 13px; font-weight: 800; fill: var(--onwarn); }
+  .bang-light { font-size: 12px; font-weight: 800; fill: var(--bg); }
+</style>
+  <defs>
+    <marker id="arr-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--flow)"/>
+    </marker>
+    <marker id="arr-ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--ok)"/>
+    </marker>
+    <marker id="arr-warn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--warn)"/>
+    </marker>
+    <marker id="arr-bad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--bad)"/>
+    </marker>
+    <marker id="arr-accent" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--accent)"/>
+    </marker>
+    <marker id="arr-info" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--info)"/>
+    </marker>
+  </defs>
+<rect class="bg" x="0" y="0" width="1380" height="770" rx="14"/><text x="36.0" y="38.0" class="ttl">Thử nghiệm tự đo lường 14 ngày giúp mỗi người tìm ra ngưỡng số tác nhân và giờ ngừng caffeine của riêng</text><text x="36.0" y="68.0" class="ttl">mình</text><text x="36.0" y="102.0" class="sub1">Thiết kế tự đối chứng cá nhân (N-of-1 Self-Experimentation): Tuần 1 Đo đường cơ sở (Baseline) vs. Tuần 2 Áp dụng 3 chốt chặn cốt lõi</text><text x="36.0" y="126.0" class="src">Nguồn đối chiếu: Thiết kế N-of-1 thực nghiệm · Sophie Leroy (2009) · Drake et al. (2013) · Brooks &amp; Lack (2006) · Wendsche &amp; Lohmann-Haislah (2017) · Cal Newport (2024)</text><rect x="36.0" y="157.0" width="424.0" height="516.0" rx="12" class="b-panel"/><text x="52.0" y="179.0" class="tag">GIAI ĐOẠN 1 · TUẦN 1 (NGÀY 1–7)</text><text x="52.0" y="198.0" class="sec">1. Đo nền (Baseline) không can thiệp</text><line x1="52.0" y1="207.0" x2="444.0" y2="207.0" class="div-line"/><rect x="52.0" y="217.0" width="392.0" height="213.0" rx="12" class="b-info"/><text x="68.0" y="242.0" class="tag-info">NGÀY 1 – NGÀY 7 · ĐO ĐƯỜNG CƠ SỞ (BASELINE)</text><text x="68.0" y="263.0" class="bh-info">Giữ nguyên thói quen hiện tại &amp; Ghi nhận thực</text><text x="68.0" y="282.0" class="bh-info">tế không phán xét</text><text x="68.0" y="306.0" class="body">• Không vội thay đổi lịch sinh hoạt ngay ngày đầu; giữ</text><text x="68.0" y="323.0" class="body">nguyên cách bạn đang mở cửa sổ tác nhân, uống cà phê</text><text x="68.0" y="340.0" class="body">và xem điện thoại buổi tối.</text><text x="68.0" y="362.0" class="body">• Mục đích: Xác lập đường cơ sở cá nhân (personal</text><text x="68.0" y="379.0" class="body">baseline) để thấy rõ mối liên hệ thật giữa số nhánh AI</text><text x="68.0" y="396.0" class="body">mở song song, giờ uống cốc cà phê cuối và chất lượng</text><text x="68.0" y="413.0" class="body">giấc ngủ/độ sáng suốt ngày hôm sau.</text><rect x="52.0" y="442.0" width="392.0" height="157.0" rx="12" class="b-warn-dash"/><text x="68.0" y="467.0" class="tag-warn">ĐIỂM MÙ THƯỜNG PHÁT HIỆN Ở TUẦN 1</text><text x="68.0" y="488.0" class="bh-warn">Khoảng cách giữa cảm giác chủ quan và con số</text><text x="68.0" y="507.0" class="bh-warn">thực</text><text x="68.0" y="531.0" class="body">• Giống như hiệu ứng trong nghiên cứu METR (2025), hầu</text><text x="68.0" y="548.0" class="body">hết kỹ sư bất ngờ khi thấy số lần mình mở xem log sau</text><text x="68.0" y="565.0" class="body">22:00 hoặc sự sụt giảm độ tập trung vào buổi chiều sau</text><text x="68.0" y="582.0" class="body">khi chạy &gt; 5 tác nhân cùng lúc.</text><rect x="478.0" y="157.0" width="424.0" height="516.0" rx="12" class="b-panel"/><text x="494.0" y="179.0" class="tag">GIAI ĐOẠN 2 · TUẦN 2 (NGÀY 8–14)</text><text x="494.0" y="198.0" class="sec">2. Bật 3 chốt chặn bảo vệ 3 mạng não</text><line x1="494.0" y1="207.0" x2="886.0" y2="207.0" class="div-line"/><rect x="494.0" y="217.0" width="392.0" height="140.0" rx="12" class="b-accent"/><text x="510.0" y="242.0" class="tag-accent">CHỐT CHẶN 1 · TRONG GIỜ LÀM VIỆC</text><text x="510.0" y="263.0" class="bh-accent">1. Bản ghi trạng thái 3 phần + 1 dòng cảm xúc</text><text x="510.0" y="282.0" class="bh-accent">khi chuyển nhánh</text><text x="510.0" y="306.0" class="body">• Không rời một nhánh tác nhân đang mở mà chưa giao</text><text x="510.0" y="323.0" class="body">LLM chốt 3 mục (Đã chốt · Đang mở · Bước tiếp theo)</text><text x="510.0" y="340.0" class="body">kèm 1 dòng tự gọi tên cảm xúc nếu đang căng thẳng.</text><rect x="494.0" y="369.0" width="392.0" height="140.0" rx="12" class="b-ok"/><text x="510.0" y="394.0" class="tag-ok">CHỐT CHẶN 2 · GIỮA NGÀY (12:00 – 14:00)</text><text x="510.0" y="415.0" class="bh-ok">2. Dời giờ ngừng caffeine (≥ 8h trước ngủ) &amp;</text><text x="510.0" y="434.0" class="bh-ok">Chợp mắt 10 phút</text><text x="510.0" y="458.0" class="body">• Chốt cốc cà phê/trà cuối cùng trước 14:00 (Drake</text><text x="510.0" y="475.0" class="body">2013) và thử nghiệm chợp mắt đúng 10 phút hoặc đi bộ</text><text x="510.0" y="492.0" class="body">10 phút sau bữa trưa 8 phần no (Brooks 2006).</text><rect x="494.0" y="521.0" width="392.0" height="140.0" rx="12" class="b-ok"/><text x="510.0" y="546.0" class="tag-ok">CHỐT CHẶN 3 · CUỐI NGÀY &amp; BUỔI TỐI</text><text x="510.0" y="567.0" class="bh-ok">3. Nghi thức Đóng ngày 10 phút &amp; Giờ giới</text><text x="510.0" y="586.0" class="bh-ok">nghiêm màn hình tác nhân</text><text x="510.0" y="610.0" class="body">• Chốt giờ cố định đóng toàn bộ nhánh AI (ví dụ</text><text x="510.0" y="627.0" class="body">18:30); tuyệt đối không mở xem kết quả tác nhân chạy</text><text x="510.0" y="644.0" class="body">đêm sau 21:30 để bảo vệ giấc ngủ và sóng SPW-Rs.</text><rect x="920.0" y="157.0" width="424.0" height="516.0" rx="12" class="b-panel"/><text x="936.0" y="179.0" class="tag">CÔNG CỤ ĐO · 60 GIÂY MỖI TỐI</text><text x="936.0" y="198.0" class="sec">3. Năm chỉ số &amp; Kết xuất ngưỡng cá nhân</text><line x1="936.0" y1="207.0" x2="1328.0" y2="207.0" class="div-line"/><rect x="936.0" y="217.0" width="392.0" height="260.0" rx="12" class="b-info"/><text x="952.0" y="242.0" class="tag-info">BẢNG CHẤM 5 CHỈ SỐ MỖI TỐI · CHỈ MẤT 60 GIÂY TRƯỚC KHI NGỦ</text><text x="952.0" y="263.0" class="bh-info">Năm con số theo dõi suốt 14 ngày</text><text x="952.0" y="287.0" class="body">• (1) Số tác nhân / nhánh tối đa mở song song cùng lúc</text><text x="952.0" y="304.0" class="body">trong ngày (con số thực tế).</text><text x="952.0" y="326.0" class="body">• (2) Giờ uống cốc caffeine cuối cùng &amp; Giờ đóng máy</text><text x="952.0" y="343.0" class="body">thực sự buổi tối.</text><text x="952.0" y="365.0" class="body">• (3) Độ rò rỉ suy nghĩ công việc vào buổi tối (thang</text><text x="952.0" y="382.0" class="body">1–5: từ 1 = hoàn toàn tách rời đến 5 = nghĩ liên tục).</text><text x="952.0" y="404.0" class="body">• (4) Chất lượng giấc ngủ đêm trước &amp; Độ tỉnh táo</text><text x="952.0" y="421.0" class="body">phiên sáng (thang 1–5).</text><text x="952.0" y="443.0" class="body">• (5) Số lần giữ được nhịp Bản ghi 3 phần / Khoảng</text><text x="952.0" y="460.0" class="body">nghỉ trắng 3 phút giữa các phiên.</text><rect x="936.0" y="489.0" width="392.0" height="176.0" rx="12" class="b-accent"/><text x="952.0" y="514.0" class="tag-accent">NGÀY 14 · ĐỐI CHIẾU TUẦN 2 VS. TUẦN 1 &amp; VIẾT CHỮ 'ĐỦ'</text><text x="952.0" y="535.0" class="bh-accent">Rút ra quy tắc vận hành mang tên chính mình</text><text x="952.0" y="559.0" class="body">• So sánh trung bình Tuần 2 với Tuần 1 để chốt hai</text><text x="952.0" y="576.0" class="body">ngưỡng cá nhân: (a) Ngưỡng số tác nhân song song tối</text><text x="952.0" y="593.0" class="body">ưu mà không gây 'Brain Fry', và (b) Giờ cắt caffeine /</text><text x="952.0" y="610.0" class="body">đóng máy giúp ngủ sâu nhất.</text><line x1="952.0" y1="619.0" x2="1312.0" y2="619.0" class="div-line"/><text x="952.0" y="635.0" class="motto">Không áp công thức cứng nhắc của người khác — cơ thể và</text><text x="952.0" y="651.0" class="motto">nhật ký 14 ngày của bạn là Nguồn Chân Lý cuối cùng.</text><line x1="462.0" y1="415.0" x2="474.0" y2="415.0" class="accent-line" marker-end="url(#arr-accent)"/><line x1="904.0" y1="415.0" x2="916.0" y2="415.0" class="ok-line" marker-end="url(#arr-ok)"/><text x="36.0" y="705.0" class="src">Quy ước: Xanh dương = đo lường khách quan (Baseline &amp; 5 chỉ số); Cam/Xanh lá = 3 can thiệp thực nghiệm ở Tuần 2 và quy tắc cá nhân hóa ngày thứ 14.</text><line x1="36.0" y1="715.0" x2="1344.0" y2="715.0" class="div-line"/><text x="690.0" y="737.0" class="cap" text-anchor="middle">Kết luận: Mười bốn ngày tự đo lường biến các nguyên lý thần kinh học thành định mức vận hành vừa vặn với cơ địa và hoàn cảnh thực của mỗi kỹ sư.</text></svg>

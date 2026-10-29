@@ -1,0 +1,127 @@
+<svg viewBox="0 0 1380 791" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sơ đồ vòng tuần hoàn 24 giờ gồm 8 nút chuyển tiếp của người điều phối AI: (1) Đón sáng và bù nước, (2) Mở phiên với Nguồn Chân Lý, (3) Chuyển nhánh bằng Bản ghi 3 phần, (4) Nghỉ trắng SPW-Rs và gọi tên cảm xúc, (5) Ăn 8 phần no và chợp mắt 10 phút, (6) Bảng trắng cùng đồng nghiệp và hỏi trực tiếp, (7) Nghi thức đóng ngày và thiền FA/OM, (8) Giấc ngủ đêm không mở máy."><style>
+  svg {
+    --bg: #ffffff;
+    --ink: #2b2f36;
+    --sub: #6b7280;
+    --flow: #8a94a3;
+    --grid: rgba(138,148,163,0.24);
+    --row: rgba(107,114,128,0.06);
+    --card: #f8fafc;
+    --ok: #2f9e5f;
+    --okText: #248a4e;
+    --okSoft: rgba(47,158,95,0.08);
+    --warn: #b98a2e;
+    --warnText: #8f6a22;
+    --warnSoft: rgba(185,138,46,0.10);
+    --bad: #c0554d;
+    --badText: #b0463e;
+    --badSoft: rgba(192,85,77,0.08);
+    --accent: #e07828;
+    --accentText: #b45f1e;
+    --accentSoft: rgba(224,120,40,0.08);
+    --info: #3f7fb8;
+    --infoText: #356a9c;
+    --infoSoft: rgba(63,127,184,0.08);
+    --onwarn: #2b2f36;
+  }
+  @media (prefers-color-scheme: dark) {
+    svg {
+      --bg: #1b1e23;
+      --ink: #e8ebef;
+      --sub: #9aa0a8;
+      --flow: #7d8794;
+      --grid: rgba(125,135,148,0.25);
+      --row: rgba(154,160,168,0.08);
+      --card: #22262d;
+      --ok: #3fb473;
+      --okText: #5cc98a;
+      --okSoft: rgba(63,180,115,0.14);
+      --warn: #d3ab52;
+      --warnText: #d3ab52;
+      --warnSoft: rgba(211,171,82,0.14);
+      --bad: #cf6a60;
+      --badText: #cf6a60;
+      --badSoft: rgba(207,106,96,0.15);
+      --accent: #e0925a;
+      --accentText: #e0925a;
+      --accentSoft: rgba(224,146,90,0.14);
+      --info: #6aa0d0;
+      --infoText: #6aa0d0;
+      --infoSoft: rgba(106,160,208,0.14);
+      --onwarn: #1b1e23;
+    }
+  }
+  .bg { fill: var(--bg); }
+  text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .ttl { font-size: 23px; font-weight: 700; fill: var(--ink); }
+  .sub1 { font-size: 14.5px; font-weight: 600; fill: var(--accentText); }
+  .src { font-size: 12.5px; font-weight: 500; fill: var(--sub); }
+  .cap { font-size: 14px; font-weight: 600; font-style: italic; fill: var(--sub); }
+  .sec { font-size: 15.5px; font-weight: 700; fill: var(--ink); }
+  .tag { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--sub); }
+  .tag-ok { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--okText); }
+  .tag-warn { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--warnText); }
+  .tag-bad { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--badText); }
+  .tag-accent { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--accentText); }
+  .tag-info { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--infoText); }
+  .bh { font-size: 14.5px; font-weight: 700; fill: var(--ink); }
+  .bh-ok { font-size: 14.5px; font-weight: 700; fill: var(--okText); }
+  .bh-warn { font-size: 14.5px; font-weight: 700; fill: var(--warnText); }
+  .bh-bad { font-size: 14.5px; font-weight: 700; fill: var(--badText); }
+  .bh-accent { font-size: 14.5px; font-weight: 700; fill: var(--accentText); }
+  .bh-info { font-size: 14.5px; font-weight: 700; fill: var(--infoText); }
+  .body { font-size: 12.5px; font-weight: 500; fill: var(--ink); }
+  .sub { font-size: 12px; font-weight: 500; fill: var(--sub); }
+  .motto { font-size: 12px; font-style: italic; font-weight: 600; fill: var(--sub); }
+  .b-neutral { fill: var(--row); stroke: var(--flow); stroke-width: 1.8; }
+  .b-panel { fill: none; stroke: var(--flow); stroke-width: 1.6; }
+  .b-ok { fill: var(--okSoft); stroke: var(--ok); stroke-width: 1.9; }
+  .b-warn { fill: var(--warnSoft); stroke: var(--warn); stroke-width: 1.9; }
+  .b-bad { fill: var(--badSoft); stroke: var(--bad); stroke-width: 1.9; }
+  .b-accent { fill: var(--accentSoft); stroke: var(--accent); stroke-width: 1.9; }
+  .b-info { fill: var(--infoSoft); stroke: var(--info); stroke-width: 1.9; }
+  .b-ok-dash { fill: var(--okSoft); stroke: var(--ok); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-warn-dash { fill: var(--warnSoft); stroke: var(--warn); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-bad-dash { fill: var(--badSoft); stroke: var(--bad); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-accent-dash { fill: var(--accentSoft); stroke: var(--accent); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-info-dash { fill: var(--infoSoft); stroke: var(--info); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .flow-line { stroke: var(--flow); stroke-width: 2; fill: none; }
+  .flow-dash { stroke: var(--flow); stroke-width: 2; stroke-dasharray: 6 5; fill: none; }
+  .ok-line { stroke: var(--ok); stroke-width: 2.2; fill: none; }
+  .warn-line { stroke: var(--warn); stroke-width: 2.2; fill: none; }
+  .warn-dash { stroke: var(--warn); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .bad-line { stroke: var(--bad); stroke-width: 2.2; fill: none; }
+  .bad-dash { stroke: var(--bad); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .accent-line { stroke: var(--accent); stroke-width: 2.2; fill: none; }
+  .accent-dash { stroke: var(--accent); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .info-line { stroke: var(--info); stroke-width: 2.2; fill: none; }
+  .div-line { stroke: var(--grid); stroke-width: 1.2; }
+  .badge-warn { fill: var(--warn); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-bad { fill: var(--bad); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-ok { fill: var(--ok); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-info { fill: var(--info); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-accent { fill: var(--accent); stroke: var(--bg); stroke-width: 1.8; }
+  .bang { font-size: 13px; font-weight: 800; fill: var(--onwarn); }
+  .bang-light { font-size: 12px; font-weight: 800; fill: var(--bg); }
+</style>
+  <defs>
+    <marker id="arr-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--flow)"/>
+    </marker>
+    <marker id="arr-ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--ok)"/>
+    </marker>
+    <marker id="arr-warn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--warn)"/>
+    </marker>
+    <marker id="arr-bad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--bad)"/>
+    </marker>
+    <marker id="arr-accent" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--accent)"/>
+    </marker>
+    <marker id="arr-info" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--info)"/>
+    </marker>
+  </defs>
+<rect class="bg" x="0" y="0" width="1380" height="791" rx="14"/><text x="36.0" y="38.0" class="ttl">Tám nút chuyển tiếp trong 24 giờ giúp điều phối nhiều tác nhân AI mà không làm cạn băng thông ba mạng não</text><text x="36.0" y="72.0" class="sub1">Bản đồ nối kết từ cơ chế thần kinh (CEN · SN · DMN · SPW-Rs) sang 8 điểm chạm thực hành từ 06:30 sáng tới giấc ngủ đêm</text><text x="36.0" y="96.0" class="src">Nguồn đối chiếu: Wittbrodt (2018) · Marr (1982) · Leroy (2009) · Buzsáki (2019) · Lieberman (2007) · Brooks (2006) · Eyal &amp; Epley (2018) · Bratman (2015) · Lim &amp; Dinges (2010)</text><rect x="36.0" y="127.0" width="1308.0" height="58.0" rx="12" class="b-accent"/><text x="690.0" y="151.0" class="bh-accent" text-anchor="middle">TRỤC ĐIỀU HÒA TRUNG TÂM: BỘ NÃO DỰ BÁO (CLARK 2023) &amp; BA MẠNG LƯỚI (CEN · SN · DMN) + GỢN SÓNG ĐỒI HẢI MÃ (SPW-Rs · BUZSÁKI 2019)</text><text x="690.0" y="171.0" class="body" text-anchor="middle">Mỗi nút chuyển tiếp dưới đây bảo vệ ít nhất một trong ba kênh: (1) Băng thông điều hành CEN, (2) Tín hiệu nội thân về Thùy đảo (SN), hoặc (3) Độ lắng của DMN &amp; Phanh mPFC–Amygdala.</text><rect x="36.0" y="203.0" width="315.0" height="218.0" rx="12" class="b-info"/><text x="52.0" y="228.0" class="tag-info">NÚT 1 · 06:30–08:00 · MỞ NGÀY</text><text x="52.0" y="249.0" class="bh-info">1. Đón sáng tự nhiên &amp; Bù nước</text><text x="52.0" y="273.0" class="body">• Uống 1 cốc nước đầy ngay khi dậy để</text><text x="52.0" y="290.0" class="body">tránh ngưỡng mất nước ≥ 2% làm suy giảm</text><text x="52.0" y="307.0" class="body">CEN (Wittbrodt 2018).</text><text x="52.0" y="329.0" class="body">• Đón ánh sáng tự nhiên 10–15 phút để neo</text><text x="52.0" y="346.0" class="body">nhịp sinh học và khởi động cơ thể nhẹ</text><text x="52.0" y="363.0" class="body">nhàng.</text><line x1="52.0" y1="389.0" x2="335.0" y2="389.0" class="div-line"/><text x="52.0" y="405.0" class="motto">Đích: Ổn định kênh nội thân (SN) &amp; CEN.</text><line x1="353.0" y1="312.0" x2="363.0" y2="312.0" class="flow-line" marker-end="url(#arr-flow)"/><rect x="367.0" y="203.0" width="315.0" height="218.0" rx="12" class="b-accent"/><text x="383.0" y="228.0" class="tag-accent">NÚT 2 · 08:30–09:00 · ĐẦU PHIÊN</text><text x="383.0" y="249.0" class="bh-accent">2. Mở phiên với Nguồn Chân Lý</text><text x="383.0" y="273.0" class="body">• Đọc lại Nguồn Chân Lý (Marr Level 1) và</text><text x="383.0" y="290.0" class="body">mục 'Đã chốt + Nguồn' từ Bản ghi hôm qua</text><text x="383.0" y="307.0" class="body">trước khi mở cửa sổ chat AI.</text><text x="383.0" y="329.0" class="body">• Viết 1 dòng định nghĩa 'Hoàn thành' cho</text><text x="383.0" y="346.0" class="body">phiên sáng để tránh lệch mục tiêu (Sam</text><text x="383.0" y="363.0" class="body">Ruby 2026).</text><line x1="383.0" y1="389.0" x2="666.0" y2="389.0" class="div-line"/><text x="383.0" y="405.0" class="motto">Đích: Neo mục tiêu Tầng Tính Toán cho CEN.</text><line x1="684.0" y1="312.0" x2="694.0" y2="312.0" class="flow-line" marker-end="url(#arr-flow)"/><rect x="698.0" y="203.0" width="315.0" height="218.0" rx="12" class="b-warn"/><text x="714.0" y="228.0" class="tag-warn">NÚT 3 · TRONG PHIÊN · MỖI LẦN ĐỔI NHÁNH</text><text x="714.0" y="249.0" class="bh-warn">3. Chuyển nhánh bằng Bản ghi 3 phần</text><text x="714.0" y="273.0" class="body">• Nghi thức 30 giây: Giao LLM ghi (1) Đã</text><text x="714.0" y="290.0" class="body">chốt, (2) Đang mở, (3) Bước tiếp theo + 1</text><text x="714.0" y="307.0" class="body">hơi thở ra chậm (Balban 2023).</text><text x="714.0" y="329.0" class="body">• Khóa mục tiêu dang dở để cắt rò rỉ cặn</text><text x="714.0" y="346.0" class="body">chú ý sang nhánh kế tiếp (Leroy 2009;</text><text x="714.0" y="363.0" class="body">Masicampo 2011).</text><line x1="714.0" y1="389.0" x2="997.0" y2="389.0" class="div-line"/><text x="714.0" y="405.0" class="motto">Đích: Cắt cặn chú ý giữa các tác nhân.</text><line x1="1015.0" y1="312.0" x2="1025.0" y2="312.0" class="flow-line" marker-end="url(#arr-flow)"/><rect x="1029.0" y="203.0" width="315.0" height="218.0" rx="12" class="b-ok"/><text x="1045.0" y="228.0" class="tag-ok">NÚT 4 · CUỐI MỖI PHIÊN · KHE NGHỈ 3 PHÚT</text><text x="1045.0" y="249.0" class="bh-ok">4. Nghỉ trắng SPW-Rs &amp; Gọi tên cảm</text><text x="1045.0" y="268.0" class="bh-ok">xúc</text><text x="1045.0" y="292.0" class="body">• Viết 1 dòng gọi tên cảm xúc nếu đang sốt</text><text x="1045.0" y="309.0" class="body">ruột (bật vlPFC dịu Amygdala · Lieberman</text><text x="1045.0" y="326.0" class="body">2007) và buông dây kéo co (ACT).</text><text x="1045.0" y="348.0" class="body">• Đứng dậy đi lại 3 phút không nhìn điện</text><text x="1045.0" y="365.0" class="body">thoại để đồi hải mã phát sóng SPW-Rs</text><text x="1045.0" y="382.0" class="body">(Buzsáki 2019).</text><line x1="1045.0" y1="391.0" x2="1328.0" y2="391.0" class="div-line"/><text x="1045.0" y="407.0" class="motto">Đích: Cho phép DMN phát lại &amp; củng cố ngầm.</text><path d="M 1186.5 423.0 V 432.0 H 193.5 V 439.0" class="accent-dash" marker-end="url(#arr-accent)"/><rect x="36.0" y="443.0" width="315.0" height="251.0" rx="12" class="b-ok"/><text x="52.0" y="468.0" class="tag-ok">NÚT 5 · 12:00–13:30 · GIỮA NGÀY</text><text x="52.0" y="489.0" class="bh-ok">5. Ăn 8 phần no &amp; Chợp mắt 10 phút</text><text x="52.0" y="513.0" class="body">• Ăn đúng bữa để tránh quy gán sai cơn đói</text><text x="52.0" y="530.0" class="body">thành sự cáu kỉnh ('Hangry' · MacCormack</text><text x="52.0" y="547.0" class="body">2019; Swami 2022) và dừng ở 8 phần no.</text><text x="52.0" y="569.0" class="body">• Đi bộ nhẹ 10 phút + Chợp mắt đúng 10</text><text x="52.0" y="586.0" class="body">phút (tỉnh táo 155 phút · Brooks 2006);</text><text x="52.0" y="603.0" class="body">chốt cốc cà phê cuối ngày.</text><line x1="52.0" y1="646.0" x2="335.0" y2="646.0" class="div-line"/><text x="52.0" y="662.0" class="motto">Đích: Giữ yên Thùy đảo &amp; phục hồi nhịp</text><text x="52.0" y="678.0" class="motto">chiều.</text><line x1="353.0" y1="568.5" x2="363.0" y2="568.5" class="flow-line" marker-end="url(#arr-flow)"/><rect x="367.0" y="443.0" width="315.0" height="251.0" rx="12" class="b-info"/><text x="383.0" y="468.0" class="tag-info">NÚT 6 · 14:00–17:00 · PHIÊN CHIỀU</text><text x="383.0" y="489.0" class="bh-info">6. Bảng trắng cùng người thật &amp; Hỏi</text><text x="383.0" y="508.0" class="bh-info">trực tiếp</text><text x="383.0" y="532.0" class="body">• Đứng vẽ bảng trắng 15 phút cùng đồng</text><text x="383.0" y="549.0" class="body">nghiệp trước khi giao tác nhân viết mã</text><text x="383.0" y="566.0" class="body">(Laycock 2026; Mercier &amp; Sperber 2011).</text><text x="383.0" y="588.0" class="body">• Hỏi trực tiếp thay vì tự đoán (Eyal &amp;</text><text x="383.0" y="605.0" class="body">Epley 2018), dám nói chỗ chưa biết</text><text x="383.0" y="622.0" class="body">(Revealing · John 2026) và lắng nghe sâu</text><text x="383.0" y="639.0" class="body">(Itzchakov 2024).</text><line x1="383.0" y1="648.0" x2="666.0" y2="648.0" class="div-line"/><text x="383.0" y="664.0" class="motto">Đích: Phá buồng vang &amp; tránh leo thang trả</text><text x="383.0" y="680.0" class="motto">đũa.</text><line x1="684.0" y1="568.5" x2="694.0" y2="568.5" class="flow-line" marker-end="url(#arr-flow)"/><rect x="698.0" y="443.0" width="315.0" height="251.0" rx="12" class="b-accent"/><text x="714.0" y="468.0" class="tag-accent">NÚT 7 · 17:30–19:00 · CHUYỂN PHA TỐI</text><text x="714.0" y="489.0" class="bh-accent">7. Nghi thức Đóng ngày &amp; Thiền FA/OM</text><text x="714.0" y="513.0" class="body">• Nghi thức 10 phút gom hết các nhánh dở</text><text x="714.0" y="530.0" class="body">vào một chỗ rồi đóng máy để 'làm vơi chén</text><text x="714.0" y="547.0" class="body">nước' trước giờ nghỉ.</text><text x="714.0" y="569.0" class="body">• Ngồi thiền FA/OM 10–15 phút rèn nhận</text><text x="714.0" y="586.0" class="body">biết ngoại vi (Culadasa 2017) hoặc đi bộ</text><text x="714.0" y="603.0" class="body">cây xanh hạ nhiệt sgPFC (Bratman 2015).</text><line x1="714.0" y1="646.0" x2="997.0" y2="646.0" class="div-line"/><text x="714.0" y="662.0" class="motto">Đích: Tách rời tâm lý (Wendsche 2017) &amp; hạ</text><text x="714.0" y="678.0" class="motto">sgPFC.</text><line x1="1015.0" y1="568.5" x2="1025.0" y2="568.5" class="flow-line" marker-end="url(#arr-flow)"/><rect x="1029.0" y="443.0" width="315.0" height="251.0" rx="12" class="b-ok"/><text x="1045.0" y="468.0" class="tag-ok">NÚT 8 · 22:00–06:30 · GIẤC NGỦ ĐÊM</text><text x="1045.0" y="489.0" class="bh-ok">8. Giấc ngủ đêm không mở xem tác</text><text x="1045.0" y="508.0" class="bh-ok">nhân</text><text x="1045.0" y="532.0" class="body">• Không mở điện thoại xem kết quả tác nhân</text><text x="1045.0" y="549.0" class="body">chạy đêm sau giờ chốt; hoãn tranh luận</text><text x="1045.0" y="566.0" class="body">căng thẳng sang sáng mai (Schonbrun 2026).</text><text x="1045.0" y="588.0" class="body">• Ngủ đủ 7–8 giờ bảo vệ Chú ý liên tục</text><text x="1045.0" y="605.0" class="body">(Lim &amp; Dinges 2010), phanh mPFC–Amygdala</text><text x="1045.0" y="622.0" class="body">(Yoo 2007) và sóng SPW-Rs.</text><line x1="1045.0" y1="646.0" x2="1328.0" y2="646.0" class="div-line"/><text x="1045.0" y="662.0" class="motto">Đích: Tái tạo trọn vẹn CEN, SN &amp; DMN cho</text><text x="1045.0" y="678.0" class="motto">ngày mới.</text><text x="36.0" y="726.0" class="src">Quy ước: Nét liền = dòng chảy 8 nút trong ngày; Nét đứt cam = nhịp chuyển giao giữa phiên sáng và phiên chiều; Màu sắc phân loại theo chức năng bảo vệ mạng não.</text><line x1="36.0" y1="736.0" x2="1344.0" y2="736.0" class="div-line"/><text x="690.0" y="758.0" class="cap" text-anchor="middle">Kết luận: Không cần thêm giờ rảnh ngoài ngày làm việc — tám nút chuyển tiếp nằm ngay tại các khe nối tự nhiên của một ngày điều phối AI.</text></svg>

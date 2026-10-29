@@ -203,9 +203,9 @@
   function allItems() { return allTopics().flatMap(t => t.items); }
 
   function tabs(on) {
-    const T = [["map", "Mục lục"], ["terms", "Thuật ngữ A-Z"], ["books", "Sách"], ["hbr", "HBR đối chiếu"], ["debates", "Tranh luận"], ["topics", "Chuyên đề"]];
+    const T = [["map", "Mục lục"], ["terms", "Thuật ngữ A-Z"], ["books", "Sách"], ["hbr", "HBR đối chiếu"], ["debates", "Tranh luận"]];
     return '<div class="tabs">' + T.map(([k, n]) => {
-      const to = k === "hbr" ? "#/ref/hbr" : k === "debates" ? "#/ref/debates" : k === "topics" ? "topics/khong-thoi-gian/index.html" : "#/index/" + k;
+      const to = k === "hbr" ? "#/ref/hbr" : k === "debates" ? "#/ref/debates" : "#/index/" + k;
       return '<a class="' + (on === k ? "on" : "") + '" href="' + to + '">' + n + "</a>";
     }).join("") + "</div>";
   }

@@ -1,0 +1,127 @@
+<svg viewBox="0 0 1380 803" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sơ đồ ba cột: Khối 1 trình bày đường dẫn nội thân qua Thùy đảo trước (Craig 2009, Clark 2023, Solms 2021) và quy gán sai nội cảm khi đói (Hangry - MacCormack &amp; Lindquist 2019; Swami 2022 giải thích 37% cáu kỉnh). Khối 2 trình bày bằng chứng giữ nước (Wittbrodt 2018 mất nước &gt;=2%), ăn Hara Hachi Bu và lọc bỏ lời đồn thiếu bằng chứng. Khối 3 trình bày vận động lồng ghép vào khe chuyển phiên (Chang 2012, WHO 2020, McGonigal 2026)."><style>
+  svg {
+    --bg: #ffffff;
+    --ink: #2b2f36;
+    --sub: #6b7280;
+    --flow: #8a94a3;
+    --grid: rgba(138,148,163,0.24);
+    --row: rgba(107,114,128,0.06);
+    --card: #f8fafc;
+    --ok: #2f9e5f;
+    --okText: #248a4e;
+    --okSoft: rgba(47,158,95,0.08);
+    --warn: #b98a2e;
+    --warnText: #8f6a22;
+    --warnSoft: rgba(185,138,46,0.10);
+    --bad: #c0554d;
+    --badText: #b0463e;
+    --badSoft: rgba(192,85,77,0.08);
+    --accent: #e07828;
+    --accentText: #b45f1e;
+    --accentSoft: rgba(224,120,40,0.08);
+    --info: #3f7fb8;
+    --infoText: #356a9c;
+    --infoSoft: rgba(63,127,184,0.08);
+    --onwarn: #2b2f36;
+  }
+  @media (prefers-color-scheme: dark) {
+    svg {
+      --bg: #1b1e23;
+      --ink: #e8ebef;
+      --sub: #9aa0a8;
+      --flow: #7d8794;
+      --grid: rgba(125,135,148,0.25);
+      --row: rgba(154,160,168,0.08);
+      --card: #22262d;
+      --ok: #3fb473;
+      --okText: #5cc98a;
+      --okSoft: rgba(63,180,115,0.14);
+      --warn: #d3ab52;
+      --warnText: #d3ab52;
+      --warnSoft: rgba(211,171,82,0.14);
+      --bad: #cf6a60;
+      --badText: #cf6a60;
+      --badSoft: rgba(207,106,96,0.15);
+      --accent: #e0925a;
+      --accentText: #e0925a;
+      --accentSoft: rgba(224,146,90,0.14);
+      --info: #6aa0d0;
+      --infoText: #6aa0d0;
+      --infoSoft: rgba(106,160,208,0.14);
+      --onwarn: #1b1e23;
+    }
+  }
+  .bg { fill: var(--bg); }
+  text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .ttl { font-size: 23px; font-weight: 700; fill: var(--ink); }
+  .sub1 { font-size: 14.5px; font-weight: 600; fill: var(--accentText); }
+  .src { font-size: 12.5px; font-weight: 500; fill: var(--sub); }
+  .cap { font-size: 14px; font-weight: 600; font-style: italic; fill: var(--sub); }
+  .sec { font-size: 15.5px; font-weight: 700; fill: var(--ink); }
+  .tag { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--sub); }
+  .tag-ok { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--okText); }
+  .tag-warn { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--warnText); }
+  .tag-bad { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--badText); }
+  .tag-accent { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--accentText); }
+  .tag-info { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--infoText); }
+  .bh { font-size: 14.5px; font-weight: 700; fill: var(--ink); }
+  .bh-ok { font-size: 14.5px; font-weight: 700; fill: var(--okText); }
+  .bh-warn { font-size: 14.5px; font-weight: 700; fill: var(--warnText); }
+  .bh-bad { font-size: 14.5px; font-weight: 700; fill: var(--badText); }
+  .bh-accent { font-size: 14.5px; font-weight: 700; fill: var(--accentText); }
+  .bh-info { font-size: 14.5px; font-weight: 700; fill: var(--infoText); }
+  .body { font-size: 12.5px; font-weight: 500; fill: var(--ink); }
+  .sub { font-size: 12px; font-weight: 500; fill: var(--sub); }
+  .motto { font-size: 12px; font-style: italic; font-weight: 600; fill: var(--sub); }
+  .b-neutral { fill: var(--row); stroke: var(--flow); stroke-width: 1.8; }
+  .b-panel { fill: none; stroke: var(--flow); stroke-width: 1.6; }
+  .b-ok { fill: var(--okSoft); stroke: var(--ok); stroke-width: 1.9; }
+  .b-warn { fill: var(--warnSoft); stroke: var(--warn); stroke-width: 1.9; }
+  .b-bad { fill: var(--badSoft); stroke: var(--bad); stroke-width: 1.9; }
+  .b-accent { fill: var(--accentSoft); stroke: var(--accent); stroke-width: 1.9; }
+  .b-info { fill: var(--infoSoft); stroke: var(--info); stroke-width: 1.9; }
+  .b-ok-dash { fill: var(--okSoft); stroke: var(--ok); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-warn-dash { fill: var(--warnSoft); stroke: var(--warn); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-bad-dash { fill: var(--badSoft); stroke: var(--bad); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-accent-dash { fill: var(--accentSoft); stroke: var(--accent); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-info-dash { fill: var(--infoSoft); stroke: var(--info); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .flow-line { stroke: var(--flow); stroke-width: 2; fill: none; }
+  .flow-dash { stroke: var(--flow); stroke-width: 2; stroke-dasharray: 6 5; fill: none; }
+  .ok-line { stroke: var(--ok); stroke-width: 2.2; fill: none; }
+  .warn-line { stroke: var(--warn); stroke-width: 2.2; fill: none; }
+  .warn-dash { stroke: var(--warn); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .bad-line { stroke: var(--bad); stroke-width: 2.2; fill: none; }
+  .bad-dash { stroke: var(--bad); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .accent-line { stroke: var(--accent); stroke-width: 2.2; fill: none; }
+  .accent-dash { stroke: var(--accent); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .info-line { stroke: var(--info); stroke-width: 2.2; fill: none; }
+  .div-line { stroke: var(--grid); stroke-width: 1.2; }
+  .badge-warn { fill: var(--warn); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-bad { fill: var(--bad); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-ok { fill: var(--ok); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-info { fill: var(--info); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-accent { fill: var(--accent); stroke: var(--bg); stroke-width: 1.8; }
+  .bang { font-size: 13px; font-weight: 800; fill: var(--onwarn); }
+  .bang-light { font-size: 12px; font-weight: 800; fill: var(--bg); }
+</style>
+  <defs>
+    <marker id="arr-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--flow)"/>
+    </marker>
+    <marker id="arr-ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--ok)"/>
+    </marker>
+    <marker id="arr-warn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--warn)"/>
+    </marker>
+    <marker id="arr-bad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--bad)"/>
+    </marker>
+    <marker id="arr-accent" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--accent)"/>
+    </marker>
+    <marker id="arr-info" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--info)"/>
+    </marker>
+  </defs>
+<rect class="bg" x="0" y="0" width="1380" height="803" rx="14"/><text x="36.0" y="38.0" class="ttl">Mất nước từ 2% làm giảm chức năng điều hành và cơn đói gây quy gán sai thành sự bực bội với người đối diện</text><text x="36.0" y="72.0" class="sub1">Đường dẫn nội thân (Interoception) về Thùy đảo trước, cơ chế 'Hangry' (quy gán sai nội cảm), giữ nước, cách ăn và vận động lồng ghép</text><text x="36.0" y="96.0" class="src">Nguồn đối chiếu: A. D. Craig (2009) · Andy Clark (2023) · Mark Solms (2021) · MacCormack &amp; Lindquist (2019) · Viren Swami et al. (2022) · Wittbrodt (2018) · Chang (2012) · WHO (2020) · Kelly</text><text x="36.0" y="113.0" class="src">McGonigal (2026)</text><rect x="36.0" y="144.0" width="424.0" height="562.0" rx="12" class="b-panel"/><text x="52.0" y="166.0" class="tag">KHỐI 1 · NỘI THÂN &amp; QUY GÁN SAI ('HANGRY')</text><text x="52.0" y="185.0" class="sec">1. Khi cơ thể thiếu nước và đói đánh lừa phán đoán</text><line x1="52.0" y1="194.0" x2="444.0" y2="194.0" class="div-line"/><rect x="52.0" y="204.0" width="392.0" height="213.0" rx="12" class="b-info"/><text x="68.0" y="229.0" class="tag-info">ĐƯỜNG DẪN NỘI THÂN · CRAIG 2009, CLARK 2023 &amp; SOLMS 2021</text><text x="68.0" y="250.0" class="bh-info">Thùy đảo trước đọc tín hiệu sinh lý làm nền</text><text x="68.0" y="269.0" class="bh-info">cho mọi phán đoán</text><text x="68.0" y="293.0" class="body">• Não chỉ chiếm ~2% trọng lượng cơ thể nhưng tiêu thụ</text><text x="68.0" y="310.0" class="body">~20% năng lượng lúc nghỉ (Raichle 2002).</text><text x="68.0" y="332.0" class="body">• Thùy đảo trước (Anterior Insula — nút của mạng SN ·</text><text x="68.0" y="349.0" class="body">Craig 2009) liên tục tích hợp tín hiệu nội thân (áp</text><text x="68.0" y="366.0" class="body">suất thẩm thấu, ghrelin, nhịp tim, trương lực cơ) từ</text><text x="68.0" y="383.0" class="body">thân não (Solms 2021) để cấu thành trạng thái cảm nhận</text><text x="68.0" y="400.0" class="body">nền.</text><rect x="52.0" y="429.0" width="392.0" height="230.0" rx="12" class="b-bad-dash"/><text x="68.0" y="454.0" class="tag-bad">QUY GÁN SAI NỘI CẢM KHI ĐÓI ('HANGRY') · MACCORMACK 2019 &amp; SWAMI 2022</text><text x="68.0" y="475.0" class="bh-bad">Cơn đói giải thích tới 37% biến thiên cáu kỉnh</text><text x="68.0" y="494.0" class="bh-bad">trong ngày</text><text x="68.0" y="518.0" class="body">• MacCormack &amp; Lindquist (2019, Emotion): Khi đói và</text><text x="68.0" y="535.0" class="body">gặp kích thích mập mờ/khó chịu mà không gọi tên cảm</text><text x="68.0" y="552.0" class="body">giác sinh lý, não quy gán sai (affective</text><text x="68.0" y="569.0" class="body">misattribution) cảm giác cồn cào thành sự thù địch với</text><text x="68.0" y="586.0" class="body">người hoặc tác nhân trước mặt.</text><text x="68.0" y="608.0" class="body">• Viren Swami et al. (2022, PLOS ONE, lấy mẫu trải</text><text x="68.0" y="625.0" class="body">nghiệm thực tế): Mức độ đói giải thích 37% biến thiên</text><text x="68.0" y="642.0" class="body">của sự cáu kỉnh và 34% sự tức giận.</text><rect x="478.0" y="144.0" width="424.0" height="562.0" rx="12" class="b-panel"/><text x="494.0" y="166.0" class="tag">KHỐI 2 · NƯỚC, CÁCH ĂN &amp; LỌC BỎ LỜI ĐỒN</text><text x="494.0" y="185.0" class="sec">2. Giữ kênh nội thân yên tĩnh bằng thói quen giản dị</text><line x1="494.0" y1="194.0" x2="886.0" y2="194.0" class="div-line"/><rect x="494.0" y="204.0" width="392.0" height="286.0" rx="12" class="b-ok"/><text x="510.0" y="229.0" class="tag-ok">GIỮ NƯỚC &amp; CÁCH ĂN · WITTBRODT 2018, OKINAWA &amp; NEWMAN 2024</text><text x="510.0" y="250.0" class="bh-ok">Bù nước trước khi khát &amp; Ăn 8 phần no (Hara</text><text x="510.0" y="269.0" class="bh-ok">Hachi Bu)</text><text x="510.0" y="293.0" class="body">• Phân tích gộp Wittbrodt &amp; Millard-Stafford (2018, 33</text><text x="510.0" y="310.0" class="body">nghiên cứu): Mất nước từ ≥ 2% khối lượng cơ thể làm</text><text x="510.0" y="327.0" class="body">suy giảm có ý nghĩa thống kê sự chú ý, chức năng điều</text><text x="510.0" y="344.0" class="body">hành (CEN) và phối hợp vận động.</text><text x="510.0" y="366.0" class="body">• Hara Hachi Bu: Ăn chậm cùng người thật (rời màn</text><text x="510.0" y="383.0" class="body">hình) và dừng ở ~8 phần no để tránh cộng hưởng với</text><text x="510.0" y="400.0" class="body">nhịp trùng sinh học đầu giờ chiều.</text><text x="510.0" y="422.0" class="body">• Lưu ý trung thực: Giữ thói quen ăn vừa phải vì lợi</text><text x="510.0" y="439.0" class="body">ích nội thân tức thời, không dựa vào hồ sơ siêu thọ</text><text x="510.0" y="456.0" class="body">Blue Zones vốn đang bị chất vấn sai số hành chính</text><text x="510.0" y="473.0" class="body">(Saul Newman 2024).</text><rect x="494.0" y="502.0" width="392.0" height="196.0" rx="12" class="b-warn-dash"/><text x="510.0" y="527.0" class="tag-warn">BỎ CÁC GIAO THỨC CẦU KỲ THIẾU BẰNG CHỨNG LÂM SÀNG</text><text x="510.0" y="548.0" class="bh-warn">Ba lời đồn sinh học phổ biến không cần tự ép</text><text x="510.0" y="567.0" class="bh-warn">mình</text><text x="510.0" y="591.0" class="body">• (1) 'Hoãn cà phê 90–120 phút sau khi thức dậy': Chưa</text><text x="510.0" y="608.0" class="body">có thử nghiệm lâm sàng ngẫu nhiên (RCT) nào trên người</text><text x="510.0" y="625.0" class="body">kiểm chứng.</text><text x="510.0" y="647.0" class="body">• (2) 'Uống Tyrosine để tăng tập trung văn phòng': Chỉ</text><text x="510.0" y="664.0" class="body">có hiệu quả khi chịu stress sinh lý khắc nghiệt như</text><text x="510.0" y="681.0" class="body">thức trắng hoặc nhiễm lạnh (Jongkees 2015).</text><rect x="920.0" y="144.0" width="424.0" height="562.0" rx="12" class="b-panel"/><text x="936.0" y="166.0" class="tag">KHỐI 3 · VẬN ĐỘNG LỒNG VÀO NHỊP ĐIỀU PHỐI</text><text x="936.0" y="185.0" class="sec">3. Giải phóng cơ thể ở mỗi điểm dừng phiên</text><line x1="936.0" y1="194.0" x2="1328.0" y2="194.0" class="div-line"/><rect x="936.0" y="204.0" width="392.0" height="213.0" rx="12" class="b-ok"/><text x="952.0" y="229.0" class="tag-ok">VẬN ĐỘNG TỨC THỜI &amp; DÀI HẠN · CHANG 2012 &amp; WHO 2020</text><text x="952.0" y="250.0" class="bh-ok">Lồng vận động vào khe chuyển phiên để mở khóa</text><text x="952.0" y="269.0" class="bh-ok">mạng CEN</text><text x="952.0" y="293.0" class="body">• Tác dụng tức thời (Chang et al. 2012, phân tích gộp</text><text x="952.0" y="310.0" class="body">79 nghiên cứu): Một đợt vận động nhẹ–vừa (10–20 phút</text><text x="952.0" y="327.0" class="body">đi bộ) cải thiện ngay chức năng điều hành và tốc độ xử</text><text x="952.0" y="344.0" class="body">lý thông tin sau đó.</text><text x="952.0" y="366.0" class="body">• Bảo vệ dài hạn (WHO · Bull et al. 2020): 150–300</text><text x="952.0" y="383.0" class="body">phút vận động cường độ vừa mỗi tuần bảo vệ mạch máu</text><text x="952.0" y="400.0" class="body">não và giảm rủi ro suy giảm nhận thức.</text><rect x="936.0" y="429.0" width="392.0" height="196.0" rx="12" class="b-accent"/><text x="952.0" y="454.0" class="tag-accent">CẢM THỨC NỘI Cơ (PROPRIOCEPTION) · KELLY MCGONIGAL 2026</text><text x="952.0" y="475.0" class="bh-accent">Giải phóng cơ thể khỏi trạng thái 'ngồi đóng</text><text x="952.0" y="494.0" class="bh-accent">băng' trước màn hình</text><text x="952.0" y="518.0" class="body">• Khi ngồi bất động hàng giờ canh tác nhân, tín hiệu</text><text x="952.0" y="535.0" class="body">cảm nhận cơ khớp (proprioception) nghèo nàn làm não</text><text x="952.0" y="552.0" class="body">duy trì trạng thái cảnh giác căng cứng.</text><text x="952.0" y="574.0" class="body">• Đứng dậy vươn vai ở nghi thức cuối mỗi phiên (Tầng</text><text x="952.0" y="591.0" class="body">2) và đi bộ 10 phút sau bữa trưa giúp đổi ngay dòng</text><text x="952.0" y="608.0" class="body">tín hiệu nội thân gửi về Thùy đảo (McGonigal 2026).</text><line x1="462.0" y1="425.0" x2="474.0" y2="425.0" class="ok-line" marker-end="url(#arr-ok)"/><line x1="904.0" y1="425.0" x2="916.0" y2="425.0" class="accent-line" marker-end="url(#arr-accent)"/><text x="36.0" y="738.0" class="src">Quy ước: Xanh dương = đường dẫn nội thân (Craig 2009); Đỏ nét đứt = quy gán sai khi đói (MacCormack 2019, Swami 2022); Xanh lá = thực hành có bằng chứng; Vàng đứt = lời đồn thiếu RCT.</text><line x1="36.0" y1="748.0" x2="1344.0" y2="748.0" class="div-line"/><text x="690.0" y="770.0" class="cap" text-anchor="middle">Kết luận: Trước khi trách đồng nghiệp hay tác nhân AI làm mình bực, hãy kiểm tra xem Thùy đảo trước có đang báo động vì thiếu nước, đói hay ngồi bất động quá lâu không.</text></svg>

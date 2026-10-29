@@ -1,0 +1,127 @@
+<svg viewBox="0 0 1380 874" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sơ đồ ba cột: Khối 1 trình bày nghịch lý phục hồi (Sonnentag &amp; Fritz 2015; Wendsche 2017 N&gt;38.000) và 3 cơ chế giấc ngủ bảo vệ chú ý liên tục (d=-0,76 Lim &amp; Dinges 2010), phanh mPFC-Amygdala (Yoo 2007, Jalal 2026) và gợn sóng SPW-Rs (Buzsáki 2019). Khối 2 trình bày 4 thói quen ngủ và nguyên tắc đi ngủ trước khi tranh luận khuya (Schonbrun 2026). Khối 3 trình bày ngưỡng Đủ (Newport 2024, Laycock 2026) và giá trị tự thân (Thích Nhất Hạnh 1975)."><style>
+  svg {
+    --bg: #ffffff;
+    --ink: #2b2f36;
+    --sub: #6b7280;
+    --flow: #8a94a3;
+    --grid: rgba(138,148,163,0.24);
+    --row: rgba(107,114,128,0.06);
+    --card: #f8fafc;
+    --ok: #2f9e5f;
+    --okText: #248a4e;
+    --okSoft: rgba(47,158,95,0.08);
+    --warn: #b98a2e;
+    --warnText: #8f6a22;
+    --warnSoft: rgba(185,138,46,0.10);
+    --bad: #c0554d;
+    --badText: #b0463e;
+    --badSoft: rgba(192,85,77,0.08);
+    --accent: #e07828;
+    --accentText: #b45f1e;
+    --accentSoft: rgba(224,120,40,0.08);
+    --info: #3f7fb8;
+    --infoText: #356a9c;
+    --infoSoft: rgba(63,127,184,0.08);
+    --onwarn: #2b2f36;
+  }
+  @media (prefers-color-scheme: dark) {
+    svg {
+      --bg: #1b1e23;
+      --ink: #e8ebef;
+      --sub: #9aa0a8;
+      --flow: #7d8794;
+      --grid: rgba(125,135,148,0.25);
+      --row: rgba(154,160,168,0.08);
+      --card: #22262d;
+      --ok: #3fb473;
+      --okText: #5cc98a;
+      --okSoft: rgba(63,180,115,0.14);
+      --warn: #d3ab52;
+      --warnText: #d3ab52;
+      --warnSoft: rgba(211,171,82,0.14);
+      --bad: #cf6a60;
+      --badText: #cf6a60;
+      --badSoft: rgba(207,106,96,0.15);
+      --accent: #e0925a;
+      --accentText: #e0925a;
+      --accentSoft: rgba(224,146,90,0.14);
+      --info: #6aa0d0;
+      --infoText: #6aa0d0;
+      --infoSoft: rgba(106,160,208,0.14);
+      --onwarn: #1b1e23;
+    }
+  }
+  .bg { fill: var(--bg); }
+  text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .ttl { font-size: 23px; font-weight: 700; fill: var(--ink); }
+  .sub1 { font-size: 14.5px; font-weight: 600; fill: var(--accentText); }
+  .src { font-size: 12.5px; font-weight: 500; fill: var(--sub); }
+  .cap { font-size: 14px; font-weight: 600; font-style: italic; fill: var(--sub); }
+  .sec { font-size: 15.5px; font-weight: 700; fill: var(--ink); }
+  .tag { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--sub); }
+  .tag-ok { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--okText); }
+  .tag-warn { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--warnText); }
+  .tag-bad { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--badText); }
+  .tag-accent { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--accentText); }
+  .tag-info { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; fill: var(--infoText); }
+  .bh { font-size: 14.5px; font-weight: 700; fill: var(--ink); }
+  .bh-ok { font-size: 14.5px; font-weight: 700; fill: var(--okText); }
+  .bh-warn { font-size: 14.5px; font-weight: 700; fill: var(--warnText); }
+  .bh-bad { font-size: 14.5px; font-weight: 700; fill: var(--badText); }
+  .bh-accent { font-size: 14.5px; font-weight: 700; fill: var(--accentText); }
+  .bh-info { font-size: 14.5px; font-weight: 700; fill: var(--infoText); }
+  .body { font-size: 12.5px; font-weight: 500; fill: var(--ink); }
+  .sub { font-size: 12px; font-weight: 500; fill: var(--sub); }
+  .motto { font-size: 12px; font-style: italic; font-weight: 600; fill: var(--sub); }
+  .b-neutral { fill: var(--row); stroke: var(--flow); stroke-width: 1.8; }
+  .b-panel { fill: none; stroke: var(--flow); stroke-width: 1.6; }
+  .b-ok { fill: var(--okSoft); stroke: var(--ok); stroke-width: 1.9; }
+  .b-warn { fill: var(--warnSoft); stroke: var(--warn); stroke-width: 1.9; }
+  .b-bad { fill: var(--badSoft); stroke: var(--bad); stroke-width: 1.9; }
+  .b-accent { fill: var(--accentSoft); stroke: var(--accent); stroke-width: 1.9; }
+  .b-info { fill: var(--infoSoft); stroke: var(--info); stroke-width: 1.9; }
+  .b-ok-dash { fill: var(--okSoft); stroke: var(--ok); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-warn-dash { fill: var(--warnSoft); stroke: var(--warn); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-bad-dash { fill: var(--badSoft); stroke: var(--bad); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-accent-dash { fill: var(--accentSoft); stroke: var(--accent); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .b-info-dash { fill: var(--infoSoft); stroke: var(--info); stroke-width: 1.9; stroke-dasharray: 6 5; }
+  .flow-line { stroke: var(--flow); stroke-width: 2; fill: none; }
+  .flow-dash { stroke: var(--flow); stroke-width: 2; stroke-dasharray: 6 5; fill: none; }
+  .ok-line { stroke: var(--ok); stroke-width: 2.2; fill: none; }
+  .warn-line { stroke: var(--warn); stroke-width: 2.2; fill: none; }
+  .warn-dash { stroke: var(--warn); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .bad-line { stroke: var(--bad); stroke-width: 2.2; fill: none; }
+  .bad-dash { stroke: var(--bad); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .accent-line { stroke: var(--accent); stroke-width: 2.2; fill: none; }
+  .accent-dash { stroke: var(--accent); stroke-width: 2.2; stroke-dasharray: 6 5; fill: none; }
+  .info-line { stroke: var(--info); stroke-width: 2.2; fill: none; }
+  .div-line { stroke: var(--grid); stroke-width: 1.2; }
+  .badge-warn { fill: var(--warn); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-bad { fill: var(--bad); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-ok { fill: var(--ok); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-info { fill: var(--info); stroke: var(--bg); stroke-width: 1.8; }
+  .badge-accent { fill: var(--accent); stroke: var(--bg); stroke-width: 1.8; }
+  .bang { font-size: 13px; font-weight: 800; fill: var(--onwarn); }
+  .bang-light { font-size: 12px; font-weight: 800; fill: var(--bg); }
+</style>
+  <defs>
+    <marker id="arr-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--flow)"/>
+    </marker>
+    <marker id="arr-ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--ok)"/>
+    </marker>
+    <marker id="arr-warn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--warn)"/>
+    </marker>
+    <marker id="arr-bad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--bad)"/>
+    </marker>
+    <marker id="arr-accent" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--accent)"/>
+    </marker>
+    <marker id="arr-info" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--info)"/>
+    </marker>
+  </defs>
+<rect class="bg" x="0" y="0" width="1380" height="874" rx="14"/><text x="36.0" y="38.0" class="ttl">Tách rời tâm lý buổi tối và ngủ đủ giấc bảo vệ sự chú ý liên tục cùng phanh điều hòa cảm xúc tiền trán</text><text x="36.0" y="72.0" class="sub1">Nghịch lý phục hồi khi tác nhân chạy đêm, cơ chế giấc ngủ bảo vệ chú ý / phanh mPFC–Amygdala / gợn sóng SPW-Rs và ngưỡng tự dừng ('Đủ')</text><text x="36.0" y="96.0" class="src">Nguồn đối chiếu: Sonnentag &amp; Fritz (2015) · Wendsche &amp; Lohmann-Haislah (2017, N&gt;38.000) · Lim &amp; Dinges (2010) · Yoo et al. (2007) · Jalal (2026) · Buzsáki (2019) · Schonbrun (2026) · Newport (2024)</text><text x="36.0" y="113.0" class="src">· Thích Nhất Hạnh (1975)</text><rect x="36.0" y="144.0" width="424.0" height="633.0" rx="12" class="b-panel"/><text x="52.0" y="166.0" class="tag">KHỐI 1 · NGHỊCH LÝ PHỤC HỒI &amp; CƠ CHẾ GIẤC NGỦ</text><text x="52.0" y="185.0" class="sec">1. Vì sao thiếu ngủ đánh sập người điều phối AI?</text><line x1="52.0" y1="194.0" x2="444.0" y2="194.0" class="div-line"/><rect x="52.0" y="204.0" width="392.0" height="230.0" rx="12" class="b-bad-dash"/><text x="68.0" y="229.0" class="tag-bad">NGHỊCH LÝ PHỤC HỒI · SONNENTAG &amp; FRITZ 2015; WENDSCHE 2017</text><text x="68.0" y="250.0" class="bh-bad">Khi tác nhân chạy xuyên đêm xóa mất ranh giới</text><text x="68.0" y="269.0" class="bh-bad">tan làm</text><text x="68.0" y="293.0" class="body">• Phân tích gộp Wendsche &amp; Lohmann-Haislah (2017, 91</text><text x="68.0" y="310.0" class="body">mẫu, N = 38.124): Tách rời tâm lý khỏi công việc</text><text x="68.0" y="327.0" class="body">(psychological detachment) ngoài giờ làm là yếu tố dự</text><text x="68.0" y="344.0" class="body">báo mạnh cho sự phục hồi và sức khỏe.</text><text x="68.0" y="366.0" class="body">• Nghịch lý phục hồi (Sonnentag &amp; Fritz 2015): Càng</text><text x="68.0" y="383.0" class="body">chịu áp lực cao và còn nhánh AI chạy ngầm, hệ thần</text><text x="68.0" y="400.0" class="body">kinh càng khó ngắt kết nối đúng vào lúc cần phục hồi</text><text x="68.0" y="417.0" class="body">nhất.</text><rect x="52.0" y="446.0" width="392.0" height="323.0" rx="12" class="b-info"/><text x="68.0" y="471.0" class="tag-info">BA TRỤ CỘT CỦA GIẤC NGỦ · LIM &amp; DINGES 2010, YOO 2007 &amp; BUZSÁKI 2019</text><text x="68.0" y="492.0" class="bh-info">Bảo vệ Chú ý liên tục (d = -0,76), Phanh mPFC</text><text x="68.0" y="511.0" class="bh-info">&amp; Gợn sóng SPW-Rs</text><text x="68.0" y="535.0" class="body">• (1) Chú ý liên tục (Lim &amp; Dinges 2010, 70 nghiên</text><text x="68.0" y="552.0" class="body">cứu): Thiếu ngủ đánh sập mạnh nhất sự chú ý duy trì (d</text><text x="68.0" y="569.0" class="body">= -0,76) — đúng năng lực cốt lõi để rà lỗi tác nhân.</text><text x="68.0" y="591.0" class="body">• (2) Phanh tiền trán (Yoo et al. 2007; Baland Jalal</text><text x="68.0" y="608.0" class="body">2026): Thiếu ngủ làm đứt kết nối ức chế từ vỏ não</text><text x="68.0" y="625.0" class="body">trước trán giữa (mPFC) xuống hạch hạnh nhân (+60% phản</text><text x="68.0" y="642.0" class="body">ứng cảm xúc tiêu cực).</text><text x="68.0" y="664.0" class="body">• (3) Củng cố ký ức (Buzsáki 2019): Giấc ngủ NREM phát</text><text x="68.0" y="681.0" class="body">gợn sóng sắc nét (SPW-Rs) chuyển tiếp tri thức từ đồi</text><text x="68.0" y="698.0" class="body">hải mã sang vỏ não mới.</text><line x1="68.0" y1="707.0" x2="428.0" y2="707.0" class="div-line"/><text x="68.0" y="723.0" class="motto">Lưu ý trung thực: Không dựa vào giả thuyết 'rửa chất</text><text x="68.0" y="739.0" class="motto">thải glymphatic' đang tranh cãi (Miao 2024 vs. Xie</text><text x="68.0" y="755.0" class="motto">2013); 3 cơ chế trên đã quá đủ.</text><rect x="478.0" y="144.0" width="424.0" height="633.0" rx="12" class="b-panel"/><text x="494.0" y="166.0" class="tag">KHỐI 2 · BỐN THÓI QUEN NGỦ &amp; HOÃN TRANH LUẬN ĐÊM</text><text x="494.0" y="185.0" class="sec">2. Bảo vệ giấc ngủ sâu &amp; Phanh cảm xúc tiền trán</text><line x1="494.0" y1="194.0" x2="886.0" y2="194.0" class="div-line"/><rect x="494.0" y="204.0" width="392.0" height="308.0" rx="12" class="b-ok"/><text x="510.0" y="229.0" class="tag-ok">BỐN THÓI QUEN NGỦ CÓ BẰNG CHỨNG · DRAKE 2013, BROOKS 2006 &amp; CHANG 2015</text><text x="510.0" y="250.0" class="bh-ok">Ngừng caffeine sớm · Chợp mắt 10 phút · Đóng</text><text x="510.0" y="269.0" class="bh-ok">máy trước giờ ngủ</text><text x="510.0" y="293.0" class="body">• (1) Caffeine (Drake et al. 2013): 400mg caffeine</text><text x="510.0" y="310.0" class="body">uống trước khi ngủ 6 tiếng vẫn làm mất &gt; 1 giờ ngủ</text><text x="510.0" y="327.0" class="body">sâu.</text><text x="510.0" y="349.0" class="body">• (2) Ngủ trưa 10 phút (Brooks &amp; Lack 2006): Phục hồi</text><text x="510.0" y="366.0" class="body">sự tỉnh táo suốt ~155 phút mà không gây quán tính ngái</text><text x="510.0" y="383.0" class="body">ngủ (sleep inertia).</text><text x="510.0" y="405.0" class="body">• (3) Kích thích nhận thức tối (Chang et al. 2015):</text><text x="510.0" y="422.0" class="body">Đọc log/PR của AI lúc 23h kích thích giao cảm mạnh hơn</text><text x="510.0" y="439.0" class="body">nhiều so với tác động ánh sáng xanh đơn thuần (~10</text><text x="510.0" y="456.0" class="body">phút lệch nhịp).</text><text x="510.0" y="478.0" class="body">• (4) Mất ngủ mạn tính: Ưu tiên trị liệu nhận thức</text><text x="510.0" y="495.0" class="body">hành vi CBT-I (Qaseem et al. 2016).</text><rect x="494.0" y="524.0" width="392.0" height="174.0" rx="12" class="b-accent"/><text x="510.0" y="549.0" class="tag-accent">ĐI NGỦ TRƯỚC KHI TRANH LUẬN KHUYA · SCHONBRUN 2026 ('GO TO BED ANGRY')</text><text x="510.0" y="570.0" class="bh-accent">Hoãn tranh luận căng thẳng sang sáng hôm sau</text><text x="510.0" y="589.0" class="bh-accent">khi mPFC đã có phanh</text><text x="510.0" y="613.0" class="body">• Yael Schonbrun (2026): Cố giải quyết xung đột (với</text><text x="510.0" y="630.0" class="body">đồng nghiệp hoặc người thân) lúc nửa đêm khi phanh</text><text x="510.0" y="647.0" class="body">mPFC–Amygdala đã rã rời chỉ làm tăng lời nói sát</text><text x="510.0" y="664.0" class="body">thương. Hãy ghi lại vấn đề, đi ngủ trước và đối thoại</text><text x="510.0" y="681.0" class="body">vào sáng mai.</text><rect x="920.0" y="144.0" width="424.0" height="633.0" rx="12" class="b-panel"/><text x="936.0" y="166.0" class="tag">KHỐI 3 · NGƯỠNG 'ĐỦ' &amp; ĐỜI SỐNG TỰ THÂN</text><text x="936.0" y="185.0" class="sec">3. Điểm dừng chủ động trước cỗ máy vô tận</text><line x1="936.0" y1="194.0" x2="1328.0" y2="194.0" class="div-line"/><rect x="936.0" y="204.0" width="392.0" height="213.0" rx="12" class="b-ok"/><text x="952.0" y="229.0" class="tag-ok">NGƯỠNG 'ĐỦ' TỰ ĐẶT · CAL NEWPORT (2024) &amp; RACHEL LAYCOCK (2026)</text><text x="952.0" y="250.0" class="bh-ok">Thiết kế lại giới hạn công việc khi máy không</text><text x="952.0" y="269.0" class="bh-ok">bao giờ tự dừng</text><text x="952.0" y="293.0" class="body">• Khi hàng đợi tác nhân có thể sinh việc vô tận, con</text><text x="952.0" y="310.0" class="body">người phải tự viết ra hai con số giới hạn: (1) Tối đa</text><text x="952.0" y="327.0" class="body">bao nhiêu tác nhân chạy song song trong một phiên, và</text><text x="952.0" y="344.0" class="body">(2) Đúng mấy giờ tối thì đóng nghi thức Tầng 3.</text><text x="952.0" y="366.0" class="body">• Cal Newport (Slow Productivity, 2024): Làm ít việc</text><text x="952.0" y="383.0" class="body">hơn tại một thời điểm, theo nhịp sinh học tự nhiên,</text><text x="952.0" y="400.0" class="body">đặt chất lượng kiến trúc lên trên số lượng PR.</text><rect x="936.0" y="429.0" width="392.0" height="213.0" rx="12" class="b-warn"/><text x="952.0" y="454.0" class="tag-warn">NHẬN DIỆN KIỆT SỨC NGHỀ NGHIỆP (WHO ICD-11 · QD85) &amp; GIÁ TRỊ TỰ THÂN</text><text x="952.0" y="475.0" class="bh-warn">Rửa bát để rửa bát (Thích Nhất Hạnh 1975) &amp;</text><text x="952.0" y="494.0" class="bh-warn">Ranh giới của tự chăm sóc</text><text x="952.0" y="518.0" class="body">• Nếu mất ngủ và hoài nghi kéo dài nhiều tuần (Burnout</text><text x="952.0" y="535.0" class="body">ICD-11 QD85), cần điều chỉnh khối lượng việc cùng tổ</text><text x="952.0" y="552.0" class="body">chức và gặp chuyên gia, không tự trách mình thiếu</text><text x="952.0" y="569.0" class="body">chánh niệm.</text><text x="952.0" y="591.0" class="body">• Một hơi thở, một buổi đi bộ hay bữa tối bên gia đình</text><text x="952.0" y="608.0" class="body">có giá trị tự thân của một đời sống con người, không</text><text x="952.0" y="625.0" class="body">phải nhiên liệu để ngày mai ép thêm dòng mã.</text><line x1="462.0" y1="460.5" x2="474.0" y2="460.5" class="info-line" marker-end="url(#arr-info)"/><line x1="904.0" y1="460.5" x2="916.0" y2="460.5" class="ok-line" marker-end="url(#arr-ok)"/><text x="36.0" y="809.0" class="src">Quy ước: Đỏ nét đứt = nghịch lý không tách được việc (Sonnentag 2015); Xanh dương = 3 cơ chế giấc ngủ (Lim &amp; Dinges 2010, Yoo 2007, Buzsáki 2019); Cam = Go to Bed Angry (Schonbrun 2026).</text><line x1="36.0" y1="819.0" x2="1344.0" y2="819.0" class="div-line"/><text x="690.0" y="841.0" class="cap" text-anchor="middle">Kết luận: Phẩm chất cao nhất của người nhạc trưởng thời AI không chỉ là điều phối giỏi khi mở máy, mà là biết đóng máy đúng giờ để sống trọn vẹn đời sống con người.</text></svg>
