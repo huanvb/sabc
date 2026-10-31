@@ -147,7 +147,72 @@
       padding: 14px 22px 64px;
     }
 
-    /* Phần 1: POSTER THỰC HÀNH 4 CỘT (Phong cách sabc) */
+    /* Phần 1: POSTER THỰC HÀNH 4 CỘT (Phong cách sabc) & THANH CHUYỂN ĐỔI ĐỐI TƯỢNG */
+    [hidden] { display: none !important; }
+    .audience-bar {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 14px;
+      padding: 6px;
+      background: var(--paper-elev);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+    .audience-btn {
+      appearance: none;
+      border: 2px solid transparent;
+      background: var(--card);
+      color: var(--ink);
+      border-radius: 9px;
+      padding: 10px 14px;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      transition: all 0.15s ease;
+      font-family: var(--sans);
+    }
+    .audience-btn:hover {
+      border-color: var(--co);
+    }
+    .audience-btn .aud-title {
+      font-size: 14px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .audience-btn .aud-badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 99px;
+      background: var(--paper-elev);
+      color: var(--muted);
+    }
+    .audience-btn .aud-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+    .audience-btn.active-audience {
+      border-color: var(--co);
+      background: var(--co-soft);
+    }
+    .audience-btn.active-audience .aud-title {
+      color: var(--co-ink);
+    }
+    .audience-btn.active-audience .aud-badge {
+      background: var(--co);
+      color: #ffffff;
+    }
+    @media (max-width: 680px) {
+      .audience-bar { grid-template-columns: 1fr; }
+    }
     .poster-header {
       display: flex;
       flex-direction: column;
@@ -804,18 +869,18 @@
       <span class="dot ask"></span>
       <span class="dot begin"></span>
       <strong>BÌNH THẢN VỚI DÀN NHẠC</strong>
-      <span class="sub">Cẩm Nang 24 Giờ Thời AI (3–12 tác nhân)</span>
+      <span class="sub" id="bar-subtitle">Cẩm Nang 24 Giờ: Đời Sống &amp; Điều Phối AI</span>
     </div>
     <nav class="bar-actions" aria-label="Điều hướng nhanh và công cụ">
       <a class="btn" href="../../#/" style="font-weight:800;">← Stop. Ask. Begin.</a>
       <a class="btn" href="../khong-thoi-gian/index.html">Không-Thời gian</a>
-      <a class="btn" href="#poster-24h">Poster 8 Nút</a>
+      <a class="btn" href="#poster-24h" id="nav-poster-link">Poster 24 Giờ</a>
       <a class="btn" href="#mo-phong">3 Mô phỏng</a>
       <a class="btn" href="#so-do-svg">10 Sơ đồ SVG</a>
       <a class="btn" href="#mau-cau">4 Mẫu câu</a>
       <a class="btn" href="#bang-14-ngay">Bảng 14 ngày</a>
-      <button class="btn" id="btn-toggle-details" type="button">Mở tất cả cơ chế</button>
-      <button class="btn" id="btn-theme" type="button" aria-label="Đổi giao diện Sáng hoặc Tối">◐ Giao diện</button>
+      <button class="btn" id="btn-toggle-details" type="button" aria-expanded="false">Mở tất cả cơ chế</button>
+      <button class="btn" id="btn-theme" type="button" aria-label="Đổi giao diện Sáng hoặc Tối" aria-pressed="false">◐ Giao diện</button>
       <button class="btn primary" type="button" onclick="window.print()">In Poster</button>
     </nav>
   </header>
@@ -823,34 +888,269 @@
   <main class="page-wrap">
     <!-- PHẦN 1: POSTER THỰC HÀNH 4 CỘT (BỐ CỤC & BẢNG MÀU SABC) -->
     <section id="poster-24h" aria-labelledby="poster-heading">
+      <!-- Thanh chuyển đổi 2 phiên bản độc giả: Phổ thông vs. Kỹ sư điều phối AI -->
+      <div class="audience-bar no-print" role="group" aria-label="Chọn phiên bản thực hành theo đối tượng">
+        <button type="button" class="audience-btn active-audience" id="aud-btn-general" data-audience="general" aria-pressed="true">
+          <span class="aud-title">
+            <span>👥 Bản Đời Sống &amp; Công Việc (Mọi người)</span>
+            <span class="aud-badge">Bản Phổ Thông</span>
+          </span>
+          <span class="aud-desc">Cho người đi làm &amp; gia đình · 3 Chốt chặn cốt lõi · 6 Nhịp đời thường · Thỏa thuận chung &amp; bảo vệ “Ca hai” (18:00–21:00)</span>
+        </button>
+        <button type="button" class="audience-btn" id="aud-btn-ai" data-audience="ai" aria-pressed="false">
+          <span class="aud-title">
+            <span>🎛️ Bản Kỹ Sư Điều Phối AI (3–12 tác nhân)</span>
+            <span class="aud-badge">Bản Kỹ Thuật</span>
+          </span>
+          <span class="aud-desc">Cho kỹ sư phần mềm &amp; người điều phối AI · 4 Trụ cột · 8 Nút chuyển tiếp · Middle Loop, AGENTS.md &amp; Trực sự cố On-Call</span>
+        </button>
+      </div>
+
       <div class="poster-header">
         <div class="poster-top-row">
-          <h1 id="poster-heading">Poster Thực Hành 24 Giờ: 4 Trụ Cột · 8 Nút Chuyển Tiếp</h1>
-          <div class="mode-switcher no-print" role="group" aria-label="Chọn chế độ vận hành trong ngày">
-            <button type="button" class="btn active-mode" data-mode="standard">Bản Chuẩn 8 Nút</button>
-            <button type="button" class="btn" data-mode="minimal">Ngày Họp Dày (Tối thiểu 3 Nút · ~10p)</button>
-            <button type="button" class="btn" data-mode="oncall">Trực Sự Cố (On-Call / Sev1)</button>
+          <h1 id="poster-heading">Poster Thực Hành 24 Giờ: 3 Chốt Chặn · 6 Nhịp Đời Thường</h1>
+          <!-- Bộ chọn chế độ cho Bản Đời Sống & Công Việc -->
+          <div class="mode-switcher no-print" id="gmode-switcher" role="group" aria-label="Chọn chế độ vận hành đời sống và công việc">
+            <button type="button" class="btn active-mode" data-gmode="full" aria-pressed="true">Bản Đầy Đủ 6 Nhịp</button>
+            <button type="button" class="btn" data-gmode="minimal3" aria-pressed="false">Ngày Bận Rộn (Tối giản 3 Chốt Chặn)</button>
+            <button type="button" class="btn" data-gmode="secondshift" aria-pressed="false">Buổi Tối &amp; “Ca Hai” Gia Đình (18:00–23:00)</button>
+          </div>
+          <!-- Bộ chọn chế độ cho Bản Kỹ Sư Điều Phối AI -->
+          <div class="mode-switcher no-print" id="aimode-switcher" role="group" aria-label="Chọn chế độ vận hành kỹ sư AI" hidden>
+            <button type="button" class="btn active-mode" data-mode="standard" aria-pressed="true">Bản Chuẩn 8 Nút</button>
+            <button type="button" class="btn" data-mode="minimal" aria-pressed="false">Ngày Họp Dày (Tối thiểu 3 Nút · ~10p)</button>
+            <button type="button" class="btn" data-mode="oncall" aria-pressed="false">Trực Sự Cố (On-Call / Sev1)</button>
           </div>
         </div>
-        <p class="poster-sub">
-          Cài các thao tác bảo vệ ba mạng não (<strong>CEN · SN · DMN</strong>) và giữ vững <strong>Nhận thức tình huống (Endsley 1995)</strong> ngay trong <strong>Vòng lặp ở giữa (The Middle Loop · Vella 2026)</strong> qua 8 khe chuyển tiếp sẵn có (~15–25 phút/ngày). <em>(Bản dành cho người đi làm ngoài ngành phần mềm &amp; gia đình: Cẩm nang 24 Giờ Trong Đời Sống và Công Việc).</em>
+        <p class="poster-sub" id="poster-sub-text">
+          Bảo vệ ba mạng não (<strong>Tập trung CEN · Canh gác cơ thể SN · Mơ màng DMN</strong>) trước 3 áp lực đời thực: <strong>sự cắt ngang từ người thật</strong>, <strong>quãng đường đi làm (commute)</strong> và <strong>“ca hai” gia đình (18:00–21:00)</strong>. <em>(Bản văn bản đầy đủ: Cẩm nang 24 Giờ Trong Đời Sống và Công Việc).</em>
         </p>
       </div>
 
       <!-- Thanh trạng thái chế độ vận hành -->
       <div id="mode-banner" class="mode-banner" role="status" aria-live="polite">
         <div>
-          <strong>Chế độ đang chọn · Bản Chuẩn 8 Nút:</strong> Trọn vẹn 8 nút qua 4 trụ cột (<em>Directing · Evaluating · Correcting · Recovery</em>) từ 06:30 đến 23:00.
+          <strong>Chế độ đang chọn · Bản Đầy Đủ 6 Nhịp Đời Thường:</strong> Trọn vẹn 6 nhịp chuyển tiếp từ lúc thức giấc (06:00), vào việc chính, xử lý cắt ngang, nghỉ trưa, phối hợp chiều đến đường về, “ca hai” gia đình và giấc ngủ (23:00).
         </div>
         <div style="display:flex; gap:6px; flex-wrap:wrap;">
           <span class="ep-tag ep-src">[Nguồn] Thực nghiệm gốc</span>
-          <span class="ep-tag ep-ext">[Mở rộng] Ngoại suy sang AI</span>
+          <span class="ep-tag ep-ext">[Mở rộng] Ứng dụng đời sống</span>
           <span class="ep-tag ep-hyp">[Giả thuyết] Tương tự nhận thức</span>
         </div>
       </div>
 
-      <!-- Lưới 4 cột Poster chuẩn sabc -->
-      <div class="poster-grid">
+      <!-- =====================================================================
+           LƯỚI 4 CỘT POSTER A: BẢN ĐỜI SỐNG & CÔNG VIỆC (PHỔ THÔNG)
+           ===================================================================== -->
+      <div class="poster-grid" id="poster-grid-general">
+        <!-- CỘT 1: MỞ NGÀY & VÀO VIỆC CHÍNH (--co) -->
+        <article class="col co">
+          <div class="col-head">
+            <span class="badge">TRỤ CỘT 1 · MỞ NGÀY &amp; VIỆC TRỌNG TÂM</span>
+            <h2>Mở Ngày &amp; Vào Việc Chính</h2>
+            <p>Đón sáng tự nhiên &amp; chốt Đúng · Nhỏ · Xong</p>
+          </div>
+          <div class="col-body">
+            <ol class="items" role="list">
+              <li class="item-card" data-gnode="1" data-gminimal="true">
+                <div class="item-top">
+                  <span class="node-num">NHỊP 01 · CHỐT 1</span>
+                  <span class="time-pill">06:00 – 07:30</span>
+                </div>
+                <span class="item-title">Thức Giấc, Bù Nước &amp; Đón Ánh Sáng Tự Nhiên</span>
+                <ul class="item-actions-list">
+                  <li>Uống 1 cốc nước lọc đầy sau đêm ngủ; mở rèm hoặc bước ra ban công/sân nhà đón ánh sáng tự nhiên và vận động nhẹ.</li>
+                  <li>Giữ khoảng thời gian đầu ngày cho bản thân và bữa sáng gia đình <strong>trước khi mở Zalo, email hay mạng xã hội</strong> (trừ cuộc gọi khẩn cấp).</li>
+                  <li><em>Về cà phê/trà:</em> Uống buổi sáng theo thói quen tự nhiên của cơ thể (không cần nhịn 90 phút sau khi dậy); nguyên tắc quan trọng là <strong>ngừng cữ cà phê/trà đậm cuối ít nhất 6 tiếng trước giờ ngủ</strong> (hoặc 8–10 tiếng nếu nhạy cảm caffeine).</li>
+                </ul>
+                <div class="item-footer">
+                  <span><span class="ep-tag ep-src">Nguồn</span> Drake 13 · <span class="ep-tag ep-ext">Mở rộng</span> Wittbrodt 18; Huberman 26</span>
+                  <a href="#sec-circadian">Mô phỏng 3 ↓</a>
+                </div>
+              </li>
+
+              <li class="item-card" data-gnode="2" data-gminimal="true">
+                <div class="item-top">
+                  <span class="node-num">NHỊP 02 · CHỐT 1</span>
+                  <span class="time-pill">08:00 – 09:00</span>
+                </div>
+                <span class="item-title">Vào Việc Chính: Ba Dòng “Đúng · Nhỏ · Xong”</span>
+                <ul class="item-actions-list">
+                  <li>Chọn <strong>1 việc quan trọng nhất</strong> trong buổi sáng và viết rõ 3 tiêu chí ra sổ tay trước khi bị cuốn vào hộp thư và nhóm chat:</li>
+                  <li><strong>Đúng:</strong> Việc này giải quyết vấn đề gì, cho ai? · <strong>Nhỏ:</strong> Phần cốt lõi vừa sức làm dứt điểm sáng nay là gì? · <strong>Xong:</strong> Dấu hiệu cụ thể nào cho biết đã hoàn thành?</li>
+                  <li>Dành khối thời gian đầu giờ sáng (khi chưa bị luồng tin nhắn cắt ngang) để giải quyết việc này trước các tin nhắn vụn vặt.</li>
+                </ul>
+                <div class="item-footer">
+                  <span><span class="ep-tag ep-src">Nguồn</span> Masicampo 11 · <span class="ep-tag ep-ext">Mở rộng</span> Lieder &amp; Griffiths 20</span>
+                  <a href="#mau-cau">Mẫu câu 1 ↓</a>
+                </div>
+              </li>
+            </ol>
+            <p class="motto">“Mở ngày và viết 3 dòng Đúng · Nhỏ · Xong cho việc quan trọng nhất trước khi mở tin nhắn.”</p>
+          </div>
+        </article>
+
+        <!-- CỘT 2: KHI BỊ CẮT NGANG & NGHỈ TRẮNG GIỮA GIỜ (--stop) -->
+        <article class="col stop">
+          <div class="col-head">
+            <span class="badge">TRỤ CỘT 2 · CHỐNG CẶN CHÚ Ý GIỮA GIỜ</span>
+            <h2>Khi Bị Cắt Ngang &amp; Nghỉ Trắng</h2>
+            <p>Tờ giấy nhớ 3 dòng &amp; khe nghỉ không màn hình</p>
+          </div>
+          <div class="col-body">
+            <ol class="items" role="list">
+              <li class="item-card" data-gnode="3a" data-gminimal="true">
+                <div class="item-top">
+                  <span class="node-num">NHỊP 03A · CHỐT 2</span>
+                  <span class="time-pill">Khi bị gọi ngang · 20–30 giây</span>
+                </div>
+                <span class="item-title">Tờ Giấy Nhớ 3 Dòng Khi Bị Cắt Ngang</span>
+                <ul class="item-actions-list">
+                  <li>Khi đang làm Việc A mà bị sếp, khách hàng hoặc đồng nghiệp gọi sang Việc B, ghi nhanh ra giấy nhớ: <strong>(1) Đang dừng ở đâu · (2) Còn chờ gì · (3) Bước đầu tiên khi quay lại</strong> (nếu bị gọi gấp chưa kịp ghi trước thì ghi ngay sau khi trao đổi xong).</li>
+                  <li>Nếu thấy bực bội hoặc sốt ruột vì bị ngắt quãng: viết hoặc nói thầm <strong>1 câu gọi tên cảm xúc</strong> (<em>“Mình đang thấy căng vì...”</em>).</li>
+                  <li>Thở <strong>1–2 nhịp thở dài theo chu kỳ</strong> (hít sâu qua mũi, hít bồi thêm 1 nhịp ngắn, thở ra dài qua miệng) để tháo cặn chú ý.</li>
+                </ul>
+                <div class="item-footer">
+                  <span><span class="ep-tag ep-src">Nguồn</span> Leroy 09; Lieberman 07 · <span class="ep-tag ep-ext">Mở rộng</span> Balban 23</span>
+                  <a href="#sec-networks">Mô phỏng 1 ↓</a>
+                </div>
+              </li>
+
+              <li class="item-card" data-gnode="3b">
+                <div class="item-top">
+                  <span class="node-num">NHỊP 03B</span>
+                  <span class="time-pill">Giữa 2 cuộc họp / 2 việc lớn · 3–5p</span>
+                </div>
+                <span class="item-title">Khoảng Nghỉ Trắng Không Màn Hình</span>
+                <ul class="item-actions-list">
+                  <li>Giữa hai cuộc họp căng thẳng hoặc hai đầu việc lớn: rời màn hình, đứng dậy rót nước, vươn vai hoặc nhìn ra khoảng cây xanh ngoài cửa sổ.</li>
+                  <li><strong>Không mở mạng xã hội hay đọc tin tức giật gân</strong> trong khe nghỉ ngắn này để não bộ có khoảng lặng củng cố nội dung vừa tiếp nhận.</li>
+                  <li>Thỏa thuận cùng nhóm gom câu hỏi không khẩn cấp theo khung giờ (Mark et al., 2008) để giảm cắt ngang vụn vặt.</li>
+                </ul>
+                <div class="item-footer">
+                  <span><span class="ep-tag ep-src">Nguồn</span> Dewar 12; Mark 08 · <span class="ep-tag ep-ext">Mở rộng</span> Buzsáki 19</span>
+                  <a href="#sec-networks">Mô phỏng 1 ↓</a>
+                </div>
+              </li>
+            </ol>
+            <p class="motto">“Đỗ việc cũ lên Tờ giấy nhớ 3 dòng và thở ra một hơi dài trước khi xoay sang việc đột xuất.”</p>
+          </div>
+        </article>
+
+        <!-- CỘT 3: BỮA TRƯA, ĐI BỘ & PHỐI HỢP CHIỀU (--ask) -->
+        <article class="col ask">
+          <div class="col-head">
+            <span class="badge">TRỤ CỘT 3 · NỘI THÂN &amp; THẤU HIỂU</span>
+            <h2>Bữa Trưa, Đi Bộ &amp; Phối Hợp Chiều</h2>
+            <p>Đi bộ sau ăn, nghỉ trưa ngắn &amp; hỏi góc nhìn</p>
+          </div>
+          <div class="col-body">
+            <ol class="items" role="list">
+              <li class="item-card" data-gnode="4">
+                <div class="item-top">
+                  <span class="node-num">NHỊP 04</span>
+                  <span class="time-pill">12:00 – 13:30</span>
+                </div>
+                <span class="item-title">Bữa Trưa Chung, Đi Bộ Sau Ăn &amp; Nghỉ Trưa</span>
+                <ul class="item-actions-list">
+                  <li>Rời bàn làm việc, cất điện thoại và dùng bữa trưa cùng đồng nghiệp hoặc người thân; ăn chậm và dừng ở mức vừa đủ no (~8 phần no · <em>hara hachi bu</em>).</li>
+                  <li>Đi bộ thư thả ngoài trời <strong>5–10 phút ngay sau bữa ăn</strong> để giảm đỉnh đường huyết sau ăn và tiếp xúc ánh sáng tự nhiên ban ngày.</li>
+                  <li><strong>Nghỉ trưa trước 13:30 (10–15 phút):</strong> Chợp mắt <strong>~10 phút ngủ thực</strong> (đặt báo thức 15–20 phút); nếu khó ngủ trưa, nằm nhắm mắt thư giãn quét cơ thể (<em>body scan / yoga nidra</em>, hay <em>NSDR</em>) 10–15 phút. <em>(Người đang theo <code>CBT-I</code> không ngủ trưa).</em></li>
+                </ul>
+                <div class="item-footer">
+                  <span><span class="ep-tag ep-src">Nguồn</span> Ybarra 08; Engeroff 23; Brooks 06 · <span class="ep-tag ep-ext">Mở rộng</span> Ghai 26</span>
+                  <a href="#sec-circadian">Mô phỏng 3 ↓</a>
+                </div>
+              </li>
+
+              <li class="item-card" data-gnode="5">
+                <div class="item-top">
+                  <span class="node-num">NHỊP 05</span>
+                  <span class="time-pill">15:00 – 17:00</span>
+                </div>
+                <span class="item-title">Phối Hợp Buổi Chiều &amp; Phòng Tránh “Hangry”</span>
+                <ul class="item-actions-list">
+                  <li><strong>Tránh bàn việc nhạy cảm khi bụng đói:</strong> Chuẩn bị bữa phụ nhẹ lúc 15:30–16:00 (hạt, sữa chua, trái cây); nếu thấy đói và mệt cuối chiều, chủ động hoãn các cuộc góp ý gay gắt sang sáng mai.</li>
+                  <li><strong>Hỏi trực tiếp góc nhìn (<em>Perspective-Getting</em>):</strong> Hỏi mở: <em>“Khó khăn hoặc ràng buộc lớn nhất khiến bạn chọn phương án này là gì?”</em> thay vì tự suy diễn.</li>
+                  <li><strong>Nói thẳng điểm chưa chắc chắn (<em>Revealing</em>):</strong> Chủ động nêu rõ phần thông tin mình chưa nắm chắc để cùng kiểm tra.</li>
+                </ul>
+                <div class="item-footer">
+                  <span><span class="ep-tag ep-src">Nguồn</span> MacCormack 19; Swami 22; Eyal 18 · <span class="ep-tag ep-ext">Mở rộng</span> Slepian 17</span>
+                  <a href="#sec-escalation">Mô phỏng 2 ↓</a>
+                </div>
+              </li>
+            </ol>
+            <p class="motto">“Không bàn việc nhạy cảm lúc bụng đói; hỏi trực tiếp khó khăn của người đối diện thay vì tự đoán ý.”</p>
+          </div>
+        </article>
+
+        <!-- CỘT 4: ĐƯỜNG VỀ, "CA HAI" GIA ĐÌNH & GIẤC NGỦ (--begin) -->
+        <article class="col begin">
+          <div class="col-head">
+            <span class="badge">TRỤ CỘT 4 · ĐƯỜNG VỀ &amp; “CA HAI” GIA ĐÌNH</span>
+            <h2>Đường Về, “Ca Hai” &amp; Giấc Ngủ</h2>
+            <p>Đóng sổ cuối giờ, vùng đệm đường về &amp; điểm dừng 22:00</p>
+          </div>
+          <div class="col-body">
+            <ol class="items" role="list">
+              <li class="item-card" data-gnode="6a" data-gminimal="true" data-gsecond="true">
+                <div class="item-top">
+                  <span class="node-num">NHỊP 06A · CHỐT 3</span>
+                  <span class="time-pill">17:30 – 21:00</span>
+                </div>
+                <span class="item-title">Đóng Sổ Cuối Giờ, Đường Về &amp; “Ca Hai” Gia Đình</span>
+                <ul class="item-actions-list">
+                  <li><strong>Đóng sổ trước khi rời ghế (5 phút):</strong> Ghi tóm tắt các việc còn dở và 3 gạch đầu dòng ưu tiên cho sáng mai vào sổ tay làm việc, rồi gấp sổ lại.</li>
+                  <li><strong>Vùng đệm trên đường về (<em>Commute</em>) &amp; Thiên nhiên đô thị:</strong> Dùng quãng đường về hoặc 15–20 phút đi bộ qua hàng cây/công viên gần nhà để thở chậm và tháo vai công sở trước khi bước qua cửa nhà.</li>
+                  <li><strong>Bảo vệ “Ca hai” gia đình (<code>18:00–21:00</code>):</strong> Ăn nhẹ lót dạ nếu quá đói trước khi vào bếp/dạy con học; không mang giọng chỉ đạo hay kiểm điểm ở cơ quan về nói chuyện với người thân và con cái.</li>
+                </ul>
+                <div class="item-footer">
+                  <span><span class="ep-tag ep-src">Nguồn</span> Sonnentag 15; Bratman 15; Sudimac 22</span>
+                  <a href="#mau-cau">Mẫu câu 4 ↓</a>
+                </div>
+              </li>
+
+              <li class="item-card" data-gnode="6b" data-gminimal="true" data-gsecond="true">
+                <div class="item-top">
+                  <span class="node-num">NHỊP 06B · CHỐT 3</span>
+                  <span class="time-pill">21:00 – 23:00</span>
+                </div>
+                <span class="item-title">Tắm Ấm, Giảm Sáng Đèn &amp; Tạm Dừng Sau 22:00</span>
+                <ul class="item-actions-list">
+                  <li>Tắm nước ấm trước giờ ngủ 1–2 giờ (kích hoạt giãn mạch ngoại vi giúp thoát nhiệt lõi); giảm độ sáng đèn phòng trong giờ cuối trước ngủ; để điện thoại ngoài giường ngủ.</li>
+                  <li><strong>Quy ước tạm dừng lúc <code>22:00</code> kèm lịch hẹn:</strong> Mọi chuyện tiền bạc, nội ngoại hay bất đồng lớn phát sinh sau 22:00 đều được ghi nhận và hẹn giờ bàn lại vào tối hôm sau (trước 21:00) hoặc cuối tuần khi cả hai đã ngủ đủ 7–8 tiếng.</li>
+                </ul>
+                <div class="item-footer">
+                  <span><span class="ep-tag ep-src">Nguồn</span> Haghayegh 19; Gooley 11; Yoo 07 · <span class="ep-tag ep-ext">Mở rộng</span> Schonbrun 26</span>
+                  <a href="#sec-circadian">Mô phỏng 3 ↓</a>
+                </div>
+              </li>
+            </ol>
+            <p class="motto">“Gấp sổ lại trước khi rời ghế; dùng đường về làm vùng đệm và tạm dừng tranh luận sau 22:00 kèm lịch hẹn.”</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- Dải nền 3 Thỏa Thuận Chung & Ba Mạng Não cho Bản Đời Sống & Công Việc -->
+      <div class="poster-strip" id="poster-strip-general">
+        <div class="strip-card">
+          <strong>1. Ba Mạng Não Chung &amp; Chống Bẫy “Tự Chữa Lành Cá Nhân”</strong>
+          Mọi người đều vận hành trên 3 mạng não hữu hạn: <strong>Tập trung (CEN)</strong>, <strong>Mơ màng (DMN)</strong> và <strong>Canh gác cơ thể (SN)</strong> (Menon 2011; Hasenkamp 2012). Theo WHO (<code>ICD-11 QD85</code>) và Ronald Purser (<em>McMindfulness</em>, 2019), khi quy trình tổ chức quá tải hoặc việc nhà mất cân đối, các chốt chặn cá nhân phải đi kèm <strong>thỏa thuận chung</strong> ở đội ngũ và gia đình.
+        </div>
+        <div class="strip-card">
+          <strong>2. Ba Thỏa Thuận Chung Tại Nơi Làm Việc (Đội Ngũ / Phòng Ban)</strong>
+          (1) <strong>Phân tách kênh khẩn cấp và kênh chờ được:</strong> Tin nhắn Zalo/Slack/Email là kênh không đồng bộ (trả lời sau 1–2h vào khe chuyển việc), chỉ gọi điện khi khẩn cấp; (2) <strong>Gom câu hỏi theo khung giờ</strong> (Mark 2008; Leroy 2009) để bảo vệ Nhịp 02; (3) <strong>Cắt bớt họp báo cáo hình thức</strong> (<em>Meeting Audit</em>), chuyển cập nhật một chiều sang văn bản.
+        </div>
+        <div class="strip-card">
+          <strong>3. Ba Thỏa Thuận Chung Trong Gia Đình (Bảo Vệ “Ca Hai” 18:00–21:00)</strong>
+          (1) <strong>Chia sẻ “ca hai” &amp; lót dạ lúc 18:00:</strong> Phân chia rõ ai nấu ăn, dọn dẹp, kèm con học và ăn nhẹ ngay khi về tới nhà để tránh <em>hangry</em>; (2) <strong>Không dạy/trách phạt nặng lời với con khi bố mẹ đang đói mệt:</strong> Nhờ người lớn khác đỡ lời hoặc cùng nghỉ 5–10p; (3) <strong>Tạm dừng lúc 22:00 kèm lịch hẹn cụ thể</strong> vào tối mai hoặc cuối tuần.
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           LƯỚI 4 CỘT POSTER B: BẢN KỸ SƯ ĐIỀU PHỐI AI (3–12 TÁC NHÂN)
+           ===================================================================== -->
+      <div class="poster-grid" id="poster-grid-ai" hidden>
         <!-- CỘT 1: MỞ NGÀY & CHUẨN NGUỒN (--co) -->
         <article class="col co">
           <div class="col-head">
@@ -859,7 +1159,7 @@
             <p>Chỉ đạo (Directing) &amp; giữ Nhận thức tình huống</p>
           </div>
           <div class="col-body">
-            <ol class="items">
+            <ol class="items" role="list">
               <li class="item-card" data-node="1">
                 <div class="item-top">
                   <span class="node-num">NÚT 01</span>
@@ -906,7 +1206,7 @@
             <p>Khép cặn chú ý Leroy &amp; xử lý khi AI trượt test</p>
           </div>
           <div class="col-body">
-            <ol class="items">
+            <ol class="items" role="list">
               <li class="item-card" data-node="3" data-minimal="true" data-oncall="true">
                 <div class="item-top">
                   <span class="node-num">NÚT 03</span>
@@ -953,7 +1253,7 @@
             <p>Kiểm chứng (Evaluating) tỉnh táo &amp; đối thoại</p>
           </div>
           <div class="col-body">
-            <ol class="items">
+            <ol class="items" role="list">
               <li class="item-card" data-node="5">
                 <div class="item-top">
                   <span class="node-num">NÚT 05</span>
@@ -1000,7 +1300,7 @@
             <p>Tách rời tâm lý &amp; bảo vệ phanh tiền trán</p>
           </div>
           <div class="col-body">
-            <ol class="items">
+            <ol class="items" role="list">
               <li class="item-card" data-node="7" data-minimal="true" data-oncall="true">
                 <div class="item-top">
                   <span class="node-num">NÚT 07</span>
@@ -1040,8 +1340,8 @@
         </article>
       </div>
 
-      <!-- Dải nền 3 Mạng Não & Chu trình 4 pha dưới chân Poster -->
-      <div class="poster-strip">
+      <!-- Dải nền 3 Mạng Não & Chu trình 4 pha dưới chân Poster (Bản Kỹ Sư AI) -->
+      <div class="poster-strip" id="poster-strip-ai" hidden>
         <div class="strip-card">
           <strong>1. CEN (dlPFC &amp; PPC) × Vòng Lặp Ở Giữa (Middle Loop)</strong>
           Khi AI làm thay việc gõ mã (<em>Inner Loop</em>), kỹ sư chuyển sang <strong>Lao động kỹ thuật giám sát (Supervisory Engineering · Vella 2026)</strong> gồm <em>Chỉ đạo · Kiểm chứng · Sửa sai</em>. Đọc duyệt mã máy sinh ra cả ngày rút cạn băng thông <code>dlPFC</code> và cắt vụn dòng chảy dù tốc độ đầu ra tăng (<em>Nghịch lý Năng suất – Trải nghiệm</em>).
@@ -1086,8 +1386,8 @@
             <div class="ctrl-group">
               <label for="sim1-protocol">Quy trình chuyển nhánh (Nút 2, 3 &amp; 4):</label>
               <div style="display:flex; gap:6px; margin-top:2px;">
-                <button type="button" class="btn active-mode" id="sim1-mode-packed">Có Bản ghi 3 phần + Nghỉ trắng</button>
-                <button type="button" class="btn" id="sim1-mode-raw">Nhảy nhánh tự do (Không đóng gói)</button>
+                <button type="button" class="btn active-mode" id="sim1-mode-packed" aria-pressed="true">Có Bản ghi 3 phần + Nghỉ trắng</button>
+                <button type="button" class="btn" id="sim1-mode-raw" aria-pressed="false">Nhảy nhánh tự do (Không đóng gói)</button>
               </div>
             </div>
           </div>
@@ -1133,8 +1433,8 @@
             <div class="ctrl-group">
               <label>Chiến lược giao tiếp tại Nút 6:</label>
               <div style="display:flex; gap:6px; margin-top:2px; flex-wrap:wrap;">
-                <button type="button" class="btn active-mode" id="sim2-mode-pg">Hỏi góc nhìn + Nhãn [blocking]/[nit]</button>
-                <button type="button" class="btn" id="sim2-mode-tit">Đáp trả cảm tính (~38%/lượt)</button>
+                <button type="button" class="btn active-mode" id="sim2-mode-pg" aria-pressed="true">Hỏi góc nhìn + Nhãn [blocking]/[nit]</button>
+                <button type="button" class="btn" id="sim2-mode-tit" aria-pressed="false">Đáp trả cảm tính (~38%/lượt)</button>
               </div>
             </div>
           </div>
@@ -1182,8 +1482,8 @@
             <div class="ctrl-group">
               <label>Thực hành Nút 5 &amp; Nút 7:</label>
               <div style="display:flex; gap:6px; margin-top:2px; flex-wrap:wrap;">
-                <button type="button" class="btn active-mode" id="sim3-nap-btn">Chợp mắt 10p lúc 13:00: BẬT</button>
-                <button type="button" class="btn active-mode" id="sim3-detach-btn">Đóng ca 18:00: BẬT</button>
+                <button type="button" class="btn active-mode" id="sim3-nap-btn" aria-pressed="true">Chợp mắt 10p lúc 13:00: BẬT</button>
+                <button type="button" class="btn active-mode" id="sim3-detach-btn" aria-pressed="true">Đóng ca 18:00: BẬT</button>
               </div>
             </div>
           </div>
@@ -1267,28 +1567,28 @@
       </details>
     </section>
 
-    <!-- PHẦN 4: BỐN MẪU CÂU BỎ TÚI (ĐỒNG BỘ 100% VỚI BÀI 6 MD & ĐIỀN BIẾN NHANH) -->
+    <!-- PHẦN 4: BỐN MẪU CÂU BỎ TÚI (ĐỒNG BỘ 100% VỚI CẨM NANG ĐỜI SỐNG & BÀI 6 MD) -->
     <section id="mau-cau" class="section-block" aria-labelledby="tpl-heading">
       <div class="section-head">
-        <h2 id="tpl-heading">III. Bốn Mẫu Câu Bỏ Túi (Copy 1 Chạm &amp; Điền Biến Nhanh)</h2>
-        <span class="sub">Đồng bộ nguyên văn với Bài 6 · Điền biến bên dưới để tự động cập nhật trước khi sao chép</span>
+        <h2 id="tpl-heading">III. Bốn Mẫu Ghi Chép &amp; Câu Nói Bỏ Túi (Copy 1 Chạm &amp; Điền Biến Nhanh)</h2>
+        <span class="sub" id="tpl-sub">Đồng bộ nguyên văn với Cẩm nang 24 Giờ Đời sống &amp; Công việc · Điền biến bên dưới để tự động cập nhật</span>
       </div>
 
       <div class="tpl-vars no-print">
         <div>
-          <label for="var-branch">Tên nhánh / Tính năng ([Tên nhánh]):</label>
-          <input type="text" id="var-branch" value="feat/auth-session-guard">
+          <label for="var-branch" id="lbl-var-1">Việc trọng tâm hôm nay (Mẫu 1):</label>
+          <input type="text" id="var-branch" value="Hoàn thiện kế hoạch quý 3 cho nhóm">
         </div>
         <div>
-          <label for="var-name">Tên của bạn (Dùng cho ngôi thứ 3 ở Mẫu 3):</label>
-          <input type="text" id="var-name" value="Minh">
+          <label for="var-name" id="lbl-var-2">Chỗ đang dừng khi bị gọi ngang (Mẫu 2):</label>
+          <input type="text" id="var-name" value="Mục 2 - Bảng dự toán kinh phí">
         </div>
         <div>
-          <label for="var-emotion">Trạng thái cảm xúc hiện tại (Mẫu 2):</label>
-          <input type="text" id="var-emotion" value="hơi căng ở vai và sốt ruột">
+          <label for="var-emotion" id="lbl-var-3">Giờ hẹn bàn lại với người thân sau 22:00 (Mẫu 4):</label>
+          <input type="text" id="var-emotion" value="20:00 tối mai">
         </div>
         <div>
-          <label for="var-morning">Giờ phản hồi sáng mai (Mẫu 4):</label>
+          <label for="var-morning" id="lbl-var-4">Giờ phản hồi đồng nghiệp sáng mai (Mẫu 4):</label>
           <input type="text" id="var-morning" value="09:00">
         </div>
       </div>
@@ -1296,7 +1596,7 @@
       <div class="tpl-grid">
         <article class="tpl-card">
           <div class="tpl-head">
-            <h3>Mẫu 1: Khung Nguồn Chân Lý &amp; “Đúng · Nhỏ · Xong” (<code>AGENTS.md</code> · Nút 2)</h3>
+            <h3 id="tpl-title-1">Mẫu 1: Ba dòng “Đúng · Nhỏ · Xong” mở ngày (Viết vào đầu trang sổ tay mỗi sáng · Nhịp 2)</h3>
             <button type="button" class="btn copy-btn" data-target="tpl-1">Sao chép</button>
           </div>
           <pre id="tpl-1" class="tpl-code"></pre>
@@ -1304,7 +1604,7 @@
 
         <article class="tpl-card">
           <div class="tpl-head">
-            <h3>Mẫu 2: Lệnh đóng gói “Bản ghi 3 phần” + 1 dòng cảm xúc (Nút 3 &amp; 7)</h3>
+            <h3 id="tpl-title-2">Mẫu 2: Tờ giấy nhớ 3 dòng khi bị cắt ngang đột xuất (Ready-to-Resume Note · Nhịp 3A)</h3>
             <button type="button" class="btn copy-btn" data-target="tpl-2">Sao chép</button>
           </div>
           <pre id="tpl-2" class="tpl-code"></pre>
@@ -1312,7 +1612,7 @@
 
         <article class="tpl-card">
           <div class="tpl-head">
-            <h3>Mẫu 3: Quy trình 4 bước khi AI trượt test hoặc sự cố Sev1 (Nút 4)</h3>
+            <h3 id="tpl-title-3">Mẫu 3: Câu hỏi mở Perspective-Getting &amp; Nói thẳng điểm chưa chắc chắn (Nhịp 5)</h3>
             <button type="button" class="btn copy-btn" data-target="tpl-3">Sao chép</button>
           </div>
           <pre id="tpl-3" class="tpl-code"></pre>
@@ -1320,7 +1620,7 @@
 
         <article class="tpl-card">
           <div class="tpl-head">
-            <h3>Mẫu 4: Câu hỏi Perspective-Getting, Nhãn PR &amp; Đóng ca (Nút 6, 7, 8)</h3>
+            <h3 id="tpl-title-4">Mẫu 4: Lời nhắn đóng sổ cuối giờ &amp; Câu nói tạm dừng tranh luận sau 22:00 (Nhịp 6)</h3>
             <button type="button" class="btn copy-btn" data-target="tpl-4">Sao chép</button>
           </div>
           <pre id="tpl-4" class="tpl-code"></pre>
@@ -1349,17 +1649,16 @@
       <div class="table-scroll">
         <table class="tracker-table" aria-label="Bảng nhật ký tự quan sát 14 ngày">
           <thead>
-            <tr>
+            <tr id="tracker-thead-row">
               <th>Ngày</th>
               <th>Giai đoạn</th>
-              <th>Nhánh AI</th>
-              <th>Đổi nhánh thô</th>
-              <th>Họp &amp; Sự cố (h)</th>
-              <th>Cà phê cuối</th>
+              <th>Đúng·Nhỏ·Xong sáng</th>
+              <th>Giấy nhớ 3 dòng (lần)</th>
+              <th>Cà phê/trà cuối</th>
+              <th>Đóng sổ &amp; Ca hai</th>
               <th>Giờ ngủ (h)</th>
-              <th>Nút bật (0–8)</th>
-              <th>Tỉnh táo (1–5)</th>
-              <th>Bình thản (1–5)</th>
+              <th>Tỉnh táo chiều (1–5)</th>
+              <th>Bình thản tối (1–5)</th>
             </tr>
           </thead>
           <tbody id="tracker-tbody">
@@ -1440,9 +1739,11 @@
 
     const btnTheme = document.getElementById('btn-theme');
     if (btnTheme) {
+      btnTheme.setAttribute('aria-pressed', rootEl.getAttribute('data-theme') === 'dark' ? 'true' : 'false');
       btnTheme.addEventListener('click', function() {
         const next = rootEl.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
         rootEl.setAttribute('data-theme', next);
+        btnTheme.setAttribute('aria-pressed', next === 'dark' ? 'true' : 'false');
         try { localStorage.setItem('sabc_theme', next); } catch (e) {}
         drawSim1(performance.now());
         drawSim2();
@@ -1455,21 +1756,81 @@
     if (btnToggleDetails) {
       btnToggleDetails.addEventListener('click', function() {
         allOpen = !allOpen;
+        btnToggleDetails.setAttribute('aria-expanded', allOpen ? 'true' : 'false');
         document.querySelectorAll('details.basis').forEach(function(d) { d.open = allOpen; });
         btnToggleDetails.textContent = allOpen ? 'Thu gọn tất cả cơ chế' : 'Mở tất cả cơ chế';
       });
     }
 
-    // 2. BỘ CHUYỂN ĐỔI 3 CHẾ ĐỘ VẬN HÀNH TRÊN POSTER
-    const modeBtns = document.querySelectorAll('[data-mode]');
+    // 2. BỘ CHUYỂN ĐỔI 2 ĐỐI TƯỢNG (PHỔ THÔNG vs. KỸ SƯ AI) & CHẾ ĐỘ VẬN HÀNH TRÊN POSTER
+    const audBtnGeneral = document.getElementById('aud-btn-general');
+    const audBtnAi = document.getElementById('aud-btn-ai');
+    const gmodeSwitcher = document.getElementById('gmode-switcher');
+    const aimodeSwitcher = document.getElementById('aimode-switcher');
+    const posterGridGeneral = document.getElementById('poster-grid-general');
+    const posterGridAi = document.getElementById('poster-grid-ai');
+    const posterStripGeneral = document.getElementById('poster-strip-general');
+    const posterStripAi = document.getElementById('poster-strip-ai');
+    const posterHeading = document.getElementById('poster-heading');
+    const posterSubText = document.getElementById('poster-sub-text');
+    const barSubtitle = document.getElementById('bar-subtitle');
+    const navPosterLink = document.getElementById('nav-poster-link');
     const modeBanner = document.getElementById('mode-banner');
-    const itemCards = document.querySelectorAll('.poster-grid .item-card');
+
+    const modeBtns = document.querySelectorAll('[data-mode]');
+    const gmodeBtns = document.querySelectorAll('[data-gmode]');
+    const aiItemCards = document.querySelectorAll('#poster-grid-ai .item-card');
+    const genItemCards = document.querySelectorAll('#poster-grid-general .item-card');
+
+    let currentAudience = 'general';
+    let currentGeneralMode = 'full';
+    let currentAiMode = 'standard';
+
+    function setGeneralMode(gmode) {
+      currentGeneralMode = gmode;
+      gmodeBtns.forEach(function(b) {
+        const active = b.getAttribute('data-gmode') === gmode;
+        b.classList.toggle('active-mode', active);
+        b.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      genItemCards.forEach(function(card) {
+        card.classList.remove('dimmed', 'highlighted');
+        if (gmode === 'minimal3') {
+          if (card.getAttribute('data-gminimal') === 'true') {
+            card.classList.add('highlighted');
+          } else {
+            card.classList.add('dimmed');
+          }
+        } else if (gmode === 'secondshift') {
+          if (card.getAttribute('data-gsecond') === 'true') {
+            card.classList.add('highlighted');
+          } else {
+            card.classList.add('dimmed');
+          }
+        }
+      });
+
+      if (!modeBanner) return;
+      modeBanner.className = 'mode-banner';
+      if (gmode === 'minimal3') {
+        modeBanner.classList.add('minimal-active');
+        modeBanner.innerHTML = '<div><strong>Chế độ Ngày Bận Rộn (Tối Giản 3 Chốt Chặn Cốt Lõi):</strong> Không cần nhớ số phút cụ thể, chỉ giữ đúng 3 động tác được viền đậm: <strong>Chốt 1 (Buổi sáng)</strong> uống nước, đón sáng và viết 3 dòng <em>Đúng · Nhỏ · Xong</em> trước khi mở Zalo/email; <strong>Chốt 2 (Giữa giờ)</strong> ghi <em>Tờ giấy nhớ 3 dòng</em> + thở dài 1 nhịp khi bị gọi ngang; <strong>Chốt 3 (Chiều tối)</strong> đóng sổ trước khi rời ghế, dùng đường về làm vùng đệm và tạm dừng tranh luận sau 22:00 kèm lịch hẹn.</div>';
+      } else if (gmode === 'secondshift') {
+        modeBanner.classList.add('oncall-active');
+        modeBanner.innerHTML = '<div><strong>Chế độ Bảo Vệ “Ca Hai” Gia Đình (18:00–21:00) &amp; Giấc Ngủ Đêm:</strong> (1) Đóng sổ 5 phút trước khi rời cơ quan và dùng đường về tháo vai công sở; (2) Ăn nhẹ lót dạ lúc 18:00 và chia sẻ việc nhà để tránh cáu gắt do đói (<em>hangry</em>) khi kèm con học; (3) Tắm nước ấm 1–2h trước ngủ, giảm sáng đèn và <strong>tạm dừng mọi tranh luận sau 22:00</strong> kèm lịch hẹn cụ thể vào tối mai hoặc cuối tuần.</div>';
+      } else {
+        modeBanner.innerHTML = '<div><strong>Chế độ đang chọn · Bản Đầy Đủ 6 Nhịp Đời Thường:</strong> Trọn vẹn 6 nhịp chuyển tiếp từ lúc thức giấc (06:00), vào việc chính, xử lý cắt ngang, nghỉ trưa, phối hợp chiều đến đường về, “ca hai” gia đình và giấc ngủ (23:00).</div><div style="display:flex; gap:6px; flex-wrap:wrap;"><span class="ep-tag ep-src">[Nguồn] Thực nghiệm gốc</span><span class="ep-tag ep-ext">[Mở rộng] Ứng dụng đời sống</span><span class="ep-tag ep-hyp">[Giả thuyết] Tương tự nhận thức</span></div>';
+      }
+    }
 
     function setOperationMode(mode) {
+      currentAiMode = mode;
       modeBtns.forEach(function(b) {
-        b.classList.toggle('active-mode', b.getAttribute('data-mode') === mode);
+        const active = b.getAttribute('data-mode') === mode;
+        b.classList.toggle('active-mode', active);
+        b.setAttribute('aria-pressed', active ? 'true' : 'false');
       });
-      itemCards.forEach(function(card) {
+      aiItemCards.forEach(function(card) {
         card.classList.remove('dimmed', 'highlighted');
         if (mode === 'minimal') {
           if (card.getAttribute('data-minimal') === 'true') {
@@ -1498,6 +1859,12 @@
         modeBanner.innerHTML = '<div><strong>Chế độ đang chọn · Bản Chuẩn 8 Nút:</strong> Trọn vẹn 8 nút qua 4 trụ cột (<em>Directing · Evaluating · Correcting · Recovery</em>) từ 06:30 đến 23:00.</div><div style="display:flex; gap:6px; flex-wrap:wrap;"><span class="ep-tag ep-src">[Nguồn] Thực nghiệm gốc</span><span class="ep-tag ep-ext">[Mở rộng] Ngoại suy sang AI</span><span class="ep-tag ep-hyp">[Giả thuyết] Tương tự nhận thức</span></div>';
       }
     }
+
+    gmodeBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        setGeneralMode(btn.getAttribute('data-gmode'));
+      });
+    });
 
     modeBtns.forEach(function(btn) {
       btn.addEventListener('click', function() {
@@ -1740,14 +2107,18 @@
       sim1BtnPacked.addEventListener('click', function() {
         sim1Packed = true;
         sim1BtnPacked.classList.add('active-mode');
+        sim1BtnPacked.setAttribute('aria-pressed', 'true');
         sim1BtnRaw.classList.remove('active-mode');
+        sim1BtnRaw.setAttribute('aria-pressed', 'false');
         updateSim1Readout();
         drawSim1(performance.now());
       });
       sim1BtnRaw.addEventListener('click', function() {
         sim1Packed = false;
         sim1BtnRaw.classList.add('active-mode');
+        sim1BtnRaw.setAttribute('aria-pressed', 'true');
         sim1BtnPacked.classList.remove('active-mode');
+        sim1BtnPacked.setAttribute('aria-pressed', 'false');
         updateSim1Readout();
         drawSim1(performance.now());
       });
@@ -1893,13 +2264,17 @@
       sim2BtnPG.addEventListener('click', function() {
         sim2UsePG = true;
         sim2BtnPG.classList.add('active-mode');
+        sim2BtnPG.setAttribute('aria-pressed', 'true');
         sim2BtnTit.classList.remove('active-mode');
+        sim2BtnTit.setAttribute('aria-pressed', 'false');
         drawSim2();
       });
       sim2BtnTit.addEventListener('click', function() {
         sim2UsePG = false;
         sim2BtnTit.classList.add('active-mode');
+        sim2BtnTit.setAttribute('aria-pressed', 'true');
         sim2BtnPG.classList.remove('active-mode');
+        sim2BtnPG.setAttribute('aria-pressed', 'false');
         drawSim2();
       });
     }
@@ -2063,6 +2438,7 @@
       sim3NapBtn.addEventListener('click', function() {
         sim3Nap = !sim3Nap;
         sim3NapBtn.classList.toggle('active-mode', sim3Nap);
+        sim3NapBtn.setAttribute('aria-pressed', sim3Nap ? 'true' : 'false');
         sim3NapBtn.textContent = 'Chợp mắt 10p lúc 13:00: ' + (sim3Nap ? 'BẬT' : 'TẮT');
         drawSim3();
       });
@@ -2071,6 +2447,7 @@
       sim3DetachBtn.addEventListener('click', function() {
         sim3Detach = !sim3Detach;
         sim3DetachBtn.classList.toggle('active-mode', sim3Detach);
+        sim3DetachBtn.setAttribute('aria-pressed', sim3Detach ? 'true' : 'false');
         sim3DetachBtn.textContent = 'Đóng ca 18:00: ' + (sim3Detach ? 'BẬT' : 'TẮT');
         drawSim3();
       });
@@ -2153,19 +2530,116 @@
     if (lbZoomOut) lbZoomOut.addEventListener('click', function() { lbScale = Math.max(0.5, lbScale - 0.25); applyLbZoom(); });
     if (lbZoomReset) lbZoomReset.addEventListener('click', function() { lbScale = 1; applyLbZoom(); });
 
-    // 7. BỐN MẪU CÂU BỎ TÚI ĐỒNG BỘ 100% VỚI BÀI 6 MD + COPY FALLBACK
+    // 7. BỐN MẪU CÂU BỎ TÚI (ĐỒNG BỘ CẢ BẢN ĐỜI SỐNG & BẢN KỸ SƯ AI) + COPY FALLBACK
     const varBranch = document.getElementById('var-branch');
     const varName = document.getElementById('var-name');
     const varEmotion = document.getElementById('var-emotion');
     const varMorning = document.getElementById('var-morning');
+    const lblVar1 = document.getElementById('lbl-var-1');
+    const lblVar2 = document.getElementById('lbl-var-2');
+    const lblVar3 = document.getElementById('lbl-var-3');
+    const lblVar4 = document.getElementById('lbl-var-4');
+    const tplTitle1 = document.getElementById('tpl-title-1');
+    const tplTitle2 = document.getElementById('tpl-title-2');
+    const tplTitle3 = document.getElementById('tpl-title-3');
+    const tplTitle4 = document.getElementById('tpl-title-4');
+    const tplSub = document.getElementById('tpl-sub');
+
+    const tplInputState = {
+      general: {
+        v1: 'Hoàn thiện kế hoạch quý 3 cho nhóm',
+        v2: 'Mục 2 - Bảng dự toán kinh phí',
+        v3: '20:00 tối mai',
+        v4: '09:00'
+      },
+      ai: {
+        v1: 'feat/auth-session-guard',
+        v2: 'Minh',
+        v3: 'hơi căng ở vai và sốt ruột',
+        v4: '09:00'
+      }
+    };
+
+    function syncInputsForAudience(aud) {
+      const st = tplInputState[aud];
+      if (!st) return;
+      if (aud === 'general') {
+        if (lblVar1) lblVar1.textContent = 'Việc trọng tâm hôm nay (Mẫu 1):';
+        if (lblVar2) lblVar2.textContent = 'Chỗ đang dừng khi bị gọi ngang (Mẫu 2):';
+        if (lblVar3) lblVar3.textContent = 'Lịch hẹn bàn lại với người thân sau 22:00 (Mẫu 4):';
+        if (lblVar4) lblVar4.textContent = 'Giờ phản hồi đồng nghiệp sáng mai (Mẫu 4):';
+        if (tplSub) tplSub.textContent = 'Đồng bộ nguyên văn với Cẩm nang 24 Giờ Đời sống & Công việc · Điền biến bên dưới để tự động cập nhật';
+        if (tplTitle1) tplTitle1.innerHTML = 'Mẫu 1: Ba dòng “Đúng · Nhỏ · Xong” mở ngày (Viết vào đầu trang sổ tay mỗi sáng · Nhịp 2)';
+        if (tplTitle2) tplTitle2.innerHTML = 'Mẫu 2: Tờ giấy nhớ 3 dòng khi bị cắt ngang đột xuất (<em>Ready-to-Resume Note</em> · Nhịp 3A)';
+        if (tplTitle3) tplTitle3.innerHTML = 'Mẫu 3: Câu hỏi mở <em>Perspective-Getting</em> &amp; Nói thẳng điểm chưa chắc chắn (Nhịp 5)';
+        if (tplTitle4) tplTitle4.innerHTML = 'Mẫu 4: Lời nhắn đóng sổ cuối giờ &amp; Câu nói tạm dừng tranh luận sau 22:00 (Nhịp 6)';
+      } else {
+        if (lblVar1) lblVar1.textContent = 'Tên nhánh / Tính năng ([Tên nhánh]):';
+        if (lblVar2) lblVar2.textContent = 'Tên của bạn (Dùng cho ngôi thứ 3 ở Mẫu 3):';
+        if (lblVar3) lblVar3.textContent = 'Trạng thái cảm xúc hiện tại (Mẫu 2):';
+        if (lblVar4) lblVar4.textContent = 'Giờ phản hồi sáng mai (Mẫu 4):';
+        if (tplSub) tplSub.textContent = 'Đồng bộ nguyên văn với Bài 6 (Kỹ sư điều phối AI) · Điền biến bên dưới để tự động cập nhật';
+        if (tplTitle1) tplTitle1.innerHTML = 'Mẫu 1: Khung Nguồn Chân Lý &amp; “Đúng · Nhỏ · Xong” (<code>AGENTS.md</code> · Nút 2)';
+        if (tplTitle2) tplTitle2.innerHTML = 'Mẫu 2: Lệnh đóng gói “Bản ghi 3 phần” + 1 dòng cảm xúc (Nút 3 &amp; 7)';
+        if (tplTitle3) tplTitle3.innerHTML = 'Mẫu 3: Quy trình 4 bước khi AI trượt test hoặc sự cố Sev1 (Nút 4)';
+        if (tplTitle4) tplTitle4.innerHTML = 'Mẫu 4: Câu hỏi Perspective-Getting, Nhãn PR &amp; Đóng ca (Nút 6, 7, 8)';
+      }
+      if (varBranch) varBranch.value = st.v1;
+      if (varName) varName.value = st.v2;
+      if (varEmotion) varEmotion.value = st.v3;
+      if (varMorning) varMorning.value = st.v4;
+    }
 
     function renderTemplates() {
-      const branch = (varBranch && varBranch.value.trim()) || '[Tên nhánh / Tính năng]';
-      const name = (varName && varName.value.trim()) || '[Tên mình]';
-      const emotion = (varEmotion && varEmotion.value.trim()) || '[bình thản / hơi căng ở vai / sốt ruột]';
-      const morning = (varMorning && varMorning.value.trim()) || '[09:00]';
+      const v1 = (varBranch && varBranch.value.trim()) || '';
+      const v2 = (varName && varName.value.trim()) || '';
+      const v3 = (varEmotion && varEmotion.value.trim()) || '';
+      const v4 = (varMorning && varMorning.value.trim()) || '';
 
-      document.getElementById('tpl-1').textContent =
+      if (tplInputState[currentAudience]) {
+        tplInputState[currentAudience].v1 = v1;
+        tplInputState[currentAudience].v2 = v2;
+        tplInputState[currentAudience].v3 = v3;
+        tplInputState[currentAudience].v4 = v4;
+      }
+
+      if (currentAudience === 'general') {
+        const mainTask = v1 || '[Tên việc quan trọng nhất]';
+        const stopSpot = v2 || '[Trang số / Mục số / Ý đang viết dở...]';
+        const familyTime = v3 || '[20:00 tối mai / sáng thứ Bảy]';
+        const morningReply = v4 || '[09:00]';
+
+        document.getElementById('tpl-1').textContent =
+'VIỆC TRỌNG TÂM HÔM NAY CỦA MÌNH: ' + mainTask + '\n' +
+'1. ĐÚNG (Mục đích thực sự): Việc này cần giải quyết đúng vấn đề gì, cho ai? -> [...]\n' +
+'2. NHỎ (Phạm vi vừa sức hôm nay): Phần cốt lõi mình sẽ làm dứt điểm hôm nay là gì (và phần nào để sang ngày khác)? -> [...]\n' +
+'3. XONG (Dấu hiệu hoàn thành): Khi có kết quả cụ thể nào thì mình được phép khép việc này lại? -> [...]';
+
+        document.getElementById('tpl-2').textContent =
+'[TẠM DỪNG VIỆC A ĐỂ XỬ LÝ VIỆC ĐỘT XUẤT - Ghi trong 20 giây]\n' +
+'- Mình đang dừng ở đúng chỗ: ' + stopSpot + '\n' +
+'- Còn đang chờ thông tin / phản hồi từ: [...]\n' +
+'- Bước đầu tiên nhỏ nhất khi quay lại là: [...]\n' +
+'(Cảm xúc lúc này: Hơi sốt ruột vì bị ngắt ngang -> Thở ra một hơi thật dài rồi mới xoay sang việc mới).';
+
+        document.getElementById('tpl-3').textContent =
+'- Khi cần hiểu rõ vì sao đồng nghiệp / nhân viên / đối tác làm khác ý mình (Perspective-Getting):\n' +
+'  "Để mình hiểu sát thực tế bạn đang gặp hơn trước khi bàn phương án tiếp theo, đâu là khó khăn hoặc ràng buộc lớn nhất khiến bạn chọn cách xử lý hiện tại?"\n\n' +
+'- Khi muốn nói thẳng một điểm mình chưa chắc chắn (Revealing):\n' +
+'  "Ở phương án này có mục [X] mình đã kiểm tra kỹ, riêng mục [Y] mình chưa có đủ số liệu chắc chắn nên muốn nêu ra ngay để chúng ta cùng rà soát."';
+
+        document.getElementById('tpl-4').textContent =
+'- Lời nhắn cho đồng nghiệp/khách hàng khi hết giờ làm việc chiều:\n' +
+'  "Mình đã ghi nhận đầy đủ nội dung này vào sổ việc ưu tiên đầu giờ sáng mai. Để rà soát cẩn thận và trả lời chính xác nhất, mình xin phép phản hồi bạn vào lúc ' + morningReply + ' sáng mai nhé. (Nếu có việc khẩn cấp không thể chờ qua đêm, bạn vui lòng gọi điện trực tiếp giúp mình)."\n\n' +
+'- Câu nói với người bạn đời khi nổ ra tranh luận căng thẳng sau 22:00 đêm:\n' +
+'  "Chuyện này rất quan trọng với vợ chồng mình, nhưng bây giờ đã quá 10 giờ đêm và cả hai đều đã mệt sau một ngày dài. Mình tạm dừng tối nay để đi ngủ cho tỉnh táo, rồi đúng ' + familyTime + ' mình ngồi uống trà bàn tiếp cho thấu đáo nhé."';
+      } else {
+        const branch = v1 || '[Tên nhánh / Tính năng]';
+        const name = v2 || '[Tên mình]';
+        const emotion = v3 || '[bình thản / hơi căng ở vai / sốt ruột]';
+        const morning = v4 || '[09:00]';
+
+        document.getElementById('tpl-1').textContent =
 '## NGUỒN CHÂN LÝ (THE ORACLE) CHO NHÁNH VIỆC: ' + branch + '\n' +
 '1. ĐÚNG (Mục tiêu & Ràng buộc Cấp độ 1):\n' +
 '   - Bài toán thực sự cần giải quyết cho người dùng là: [...]\n' +
@@ -2178,7 +2652,7 @@
 '   - Máy tự kiểm (Machine-check bắt buộc xanh trước khi báo cáo): [Lệnh chạy test / linter / typecheck]\n' +
 '   - Người trực tiếp duyệt (Human-review): [Kiểm tra giả định nghiệp vụ / ranh giới bảo mật / trải nghiệm]';
 
-      document.getElementById('tpl-2').textContent =
+        document.getElementById('tpl-2').textContent =
 'Trước khi tạm dừng phiên làm việc tại nhánh này, hãy tóm tắt trạng thái hiện tại thành đúng 3 mục ngắn gọn (tối đa 6 dòng) để tôi lưu vào nhật ký chuyển nhánh:\n' +
 '1. ĐÃ CHỐT (kèm đường dẫn tệp và dòng mã làm bằng chứng để kiểm chứng nhanh):\n' +
 '2. ĐANG MỞ (các giả thuyết chưa kiểm chứng, rủi ro hoặc lỗi còn treo):\n' +
@@ -2188,7 +2662,7 @@
 '- Chốt chặn In-the-Loop (Endsley & Kiris, 1995; Vella, 2026): "Mình có tóm tắt được bằng 1 câu vì sao nhánh này chọn hướng giải quyết hiện tại mà không cần nhìn lại màn hình không?"\n' +
 '- Trạng thái cơ thể & cảm xúc hiện tại (Affect Labeling): "Ngay lúc này mình đang cảm thấy ' + emotion + ' vì [...]. Mình khép lại nhánh này tại đây và thở ra một nhịp dài trước khi chuyển sang việc tiếp theo."';
 
-      document.getElementById('tpl-3').textContent =
+        document.getElementById('tpl-3').textContent =
 '## QUY TRÌNH XỬ LÝ KHI TÁC NHÂN LẶP LỖI HOẶC CÓ SỰ CỐ (INCIDENT / CI RED)\n' +
 '1. KHÓA AN TOÀN & CẦM MÁU TRƯỚC (Chỉ áp dụng khi có sự cố sản xuất Sev1/Sev2):\n' +
 '   - Thu hồi ngay quyền ghi hoặc triển khai trực tiếp (write/deploy) của mọi tác nhân AI vào môi trường thật.\n' +
@@ -2202,7 +2676,7 @@
 '4. ĐIỂM DỪNG BẢO VỆ PHANH TIỀN TRÁN & GIAO CA:\n' +
 '   - Nếu đã quá 22:00 đêm và dịch vụ đã được cầm máu an toàn: ghi lại Bản ghi 3 phần, bàn giao cho ca trực kế tiếp (nếu có) và đi ngủ; dành việc tái cấu trúc (refactor) kiến trúc cho buổi sáng khi vỏ não trước trán (dlPFC & mPFC) đã hồi phục.';
 
-      document.getElementById('tpl-4').textContent =
+        document.getElementById('tpl-4').textContent =
 '- Câu hỏi mở khi duyệt mã / họp thiết kế (Perspective-Getting):\n' +
 '  "Cảm ơn bạn đã chuẩn bị nhánh mã này. Để mình hiểu đúng ngữ cảnh hơn trước khi góp ý chi tiết, đâu là ràng buộc kỹ thuật hoặc sản phẩm lớn nhất khiến bạn chọn cách tiếp cận hiện tại?"\n\n' +
 '- Quy ước hạ nhiệt trên bình luận Pull Request:\n' +
@@ -2210,12 +2684,12 @@
 '  + Nhận xét vào hành vi của mã nguồn ("Hàm X hiện chưa xử lý trường hợp rỗng..."), tuyệt đối không quy chụp năng lực cá nhân.\n\n' +
 '- Thông điệp đóng ca chiều và hẹn giờ giải quyết tranh luận muộn:\n' +
 '  "Mình đã hoàn tất nghi thức đóng ca hôm nay (Bản ghi 3 phần của các nhánh đã được cập nhật trong kho mã). Để giữ sự tỉnh táo tốt nhất cho quyết định kiến trúc này, mình xin phép tạm ngắt kết nối tối nay và sẽ phản hồi chi tiết vào lúc ' + morning + ' sáng mai. (Ngoại lệ: nếu phát sinh sự cố sản xuất khẩn cấp Sev1/Sev2, vui lòng gọi trực tiếp qua kênh On-Call chính thức)."';
+      }
     }
 
     [varBranch, varName, varEmotion, varMorning].forEach(function(inp) {
       if (inp) inp.addEventListener('input', renderTemplates);
     });
-    renderTemplates();
 
     function copyTextWithFallback(text, btn) {
       function showSuccess() {
@@ -2250,12 +2724,14 @@
       });
     });
 
-    // 8. BẢNG TỰ ĐO LƯỜNG 14 NGÀY TƯƠNG TÁC (LOCALSTORAGE + CSV)
-    const STORAGE_KEY = 'binh_than_14d_tracker_v2';
+    // 8. BẢNG TỰ ĐO LƯỜNG 14 NGÀY TƯƠNG TÁC (HỖ TRỢ CẢ 2 PHIÊN BẢN + LOCALSTORAGE + CSV)
+    const STORAGE_KEY_AI = 'binh_than_14d_tracker_v2';
+    const STORAGE_KEY_GEN = 'binh_than_14d_general_v1';
+    const theadRow = document.getElementById('tracker-thead-row');
     const tbody = document.getElementById('tracker-tbody');
     const summaryCards = document.getElementById('tracker-summary-cards');
 
-    function defaultRows() {
+    function defaultRowsAi() {
       const arr = [];
       for (let i = 1; i <= 14; i++) {
         arr.push({
@@ -2274,21 +2750,54 @@
       return arr;
     }
 
-    let trackerData = [];
+    function defaultRowsGeneral() {
+      const arr = [];
+      for (let i = 1; i <= 14; i++) {
+        arr.push({
+          day: 'N' + i,
+          week: i <= 7 ? 1 : 2,
+          morningGoal: i <= 7 ? 0 : 1,
+          resumeNotes: i <= 7 ? 1 : 5,
+          lastCaff: i <= 7 ? '16:30' : '13:30',
+          closeBook: i <= 7 ? 0 : 1,
+          sleepHours: i <= 7 ? 6.2 : 7.5,
+          alertness: i <= 7 ? 2.8 : 4.2,
+          calmness: i <= 7 ? 2.7 : 4.4
+        });
+      }
+      return arr;
+    }
+
+    let trackerDataAi = [];
+    let trackerDataGen = [];
     try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) trackerData = JSON.parse(raw);
+      const rawAi = localStorage.getItem(STORAGE_KEY_AI);
+      if (rawAi) trackerDataAi = JSON.parse(rawAi);
     } catch (e) {}
-    if (!Array.isArray(trackerData) || trackerData.length !== 14) {
-      trackerData = defaultRows();
+    if (!Array.isArray(trackerDataAi) || trackerDataAi.length !== 14) {
+      trackerDataAi = defaultRowsAi();
+    }
+
+    try {
+      const rawGen = localStorage.getItem(STORAGE_KEY_GEN);
+      if (rawGen) trackerDataGen = JSON.parse(rawGen);
+    } catch (e) {}
+    if (!Array.isArray(trackerDataGen) || trackerDataGen.length !== 14) {
+      trackerDataGen = defaultRowsGeneral();
     }
 
     function saveTrackerData() {
-      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(trackerData)); } catch (e) {}
+      try {
+        if (currentAudience === 'general') {
+          localStorage.setItem(STORAGE_KEY_GEN, JSON.stringify(trackerDataGen));
+        } else {
+          localStorage.setItem(STORAGE_KEY_AI, JSON.stringify(trackerDataAi));
+        }
+      } catch (e) {}
     }
 
-    function calcWeekAvg(weekNum) {
-      const rows = trackerData.filter(function(r) { return r.week === weekNum; });
+    function calcWeekAvgAi(weekNum) {
+      const rows = trackerDataAi.filter(function(r) { return r.week === weekNum; });
       const sum = function(key) {
         return rows.reduce(function(acc, r) { return acc + (parseFloat(r[key]) || 0); }, 0) / rows.length;
       };
@@ -2303,81 +2812,246 @@
       };
     }
 
+    function calcWeekAvgGen(weekNum) {
+      const rows = trackerDataGen.filter(function(r) { return r.week === weekNum; });
+      const sum = function(key) {
+        return rows.reduce(function(acc, r) { return acc + (parseFloat(r[key]) || 0); }, 0) / rows.length;
+      };
+      const count = function(key) {
+        return rows.reduce(function(acc, r) { return acc + ((parseInt(r[key], 10) || 0) > 0 ? 1 : 0); }, 0);
+      };
+      return {
+        morningGoalDays: count('morningGoal'),
+        resumeNotes: sum('resumeNotes').toFixed(1),
+        closeBookDays: count('closeBook'),
+        sleepHours: sum('sleepHours').toFixed(1),
+        alertness: sum('alertness').toFixed(2),
+        calmness: sum('calmness').toFixed(2)
+      };
+    }
+
     function updateSummaryUI() {
-      const w1 = calcWeekAvg(1);
-      const w2 = calcWeekAvg(2);
-      const dSwitch = (w2.unpackedSwitches - w1.unpackedSwitches).toFixed(1);
-      const dSleep = (w2.sleepHours - w1.sleepHours).toFixed(1);
-      const dAlert = (w2.alertness - w1.alertness).toFixed(2);
-      const dCalm = (w2.calmness - w1.calmness).toFixed(2);
+      if (currentAudience === 'general') {
+        const w1 = calcWeekAvgGen(1);
+        const w2 = calcWeekAvgGen(2);
+        const dNotes = (w2.resumeNotes - w1.resumeNotes).toFixed(1);
+        const dSleep = (w2.sleepHours - w1.sleepHours).toFixed(1);
+        const dAlert = (w2.alertness - w1.alertness).toFixed(2);
+        const dCalm = (w2.calmness - w1.calmness).toFixed(2);
 
-      if (summaryCards) {
-        summaryCards.innerHTML =
-          '<div class="stat-card"><div class="stat-label">Nhảy nhánh k.đóng gói (TB/ngày)</div><div class="stat-val">' + w1.unpackedSwitches + ' → ' + w2.unpackedSwitches + '</div><div class="stat-delta">' + (dSwitch <= 0 ? 'Giảm ' + Math.abs(dSwitch) + ' lần/ngày' : 'Tăng +' + dSwitch) + '</div></div>' +
-          '<div class="stat-card"><div class="stat-label">Thời lượng ngủ thực tế (TB/đêm)</div><div class="stat-val">' + w1.sleepHours + 'h → ' + w2.sleepHours + 'h</div><div class="stat-delta">' + (dSleep >= 0 ? 'Tăng +' + dSleep + ' giờ/đêm' : dSleep + ' giờ/đêm') + '</div></div>' +
-          '<div class="stat-card"><div class="stat-label">Độ tỉnh táo cuối ngày (1–5)</div><div class="stat-val">' + w1.alertness + ' → ' + w2.alertness + '</div><div class="stat-delta">Chênh lệch: ' + (dAlert >= 0 ? '+' + dAlert : dAlert) + ' điểm</div></div>' +
-          '<div class="stat-card"><div class="stat-label">Độ bình thản cuối ngày (1–5)</div><div class="stat-val">' + w1.calmness + ' → ' + w2.calmness + '</div><div class="stat-delta">Chênh lệch: ' + (dCalm >= 0 ? '+' + dCalm : dCalm) + ' điểm</div></div>';
-      }
+        if (summaryCards) {
+          summaryCards.innerHTML =
+            '<div class="stat-card"><div class="stat-label">Ghi Giấy nhớ 3 dòng khi bị gọi ngang</div><div class="stat-val">' + w1.resumeNotes + ' → ' + w2.resumeNotes + ' lần/ngày</div><div class="stat-delta">' + (dNotes >= 0 ? 'Tăng +' + dNotes + ' lần giữ mạch/ngày' : dNotes + ' lần/ngày') + '</div></div>' +
+            '<div class="stat-card"><div class="stat-label">Thời lượng ngủ thực tế (TB/đêm)</div><div class="stat-val">' + w1.sleepHours + 'h → ' + w2.sleepHours + 'h</div><div class="stat-delta">' + (dSleep >= 0 ? 'Tăng +' + dSleep + ' giờ/đêm' : dSleep + ' giờ/đêm') + '</div></div>' +
+            '<div class="stat-card"><div class="stat-label">Độ tỉnh táo cuối chiều (1–5)</div><div class="stat-val">' + w1.alertness + ' → ' + w2.alertness + '</div><div class="stat-delta">Chênh lệch: ' + (dAlert >= 0 ? '+' + dAlert : dAlert) + ' điểm</div></div>' +
+            '<div class="stat-card"><div class="stat-label">Độ bình thản với người thân tối (1–5)</div><div class="stat-val">' + w1.calmness + ' → ' + w2.calmness + '</div><div class="stat-delta">Chênh lệch: ' + (dCalm >= 0 ? '+' + dCalm : dCalm) + ' điểm</div></div>';
+        }
 
-      const avg1Row = document.getElementById('week-avg-1');
-      if (avg1Row) {
-        avg1Row.innerHTML = '<td colspan="2">Trung bình Tuần 1 (Đường cơ sở)</td><td>' + w1.branches + '</td><td>' + w1.unpackedSwitches + '</td><td>' + w1.meetingIncidentHours + 'h</td><td>·</td><td>' + w1.sleepHours + 'h</td><td>' + w1.nodesUsed + '/8</td><td>' + w1.alertness + '/5</td><td>' + w1.calmness + '/5</td>';
-      }
-      const avg2Row = document.getElementById('week-avg-2');
-      if (avg2Row) {
-        avg2Row.innerHTML = '<td colspan="2">Trung bình Tuần 2 (Bật chốt chặn)</td><td>' + w2.branches + '</td><td>' + w2.unpackedSwitches + '</td><td>' + w2.meetingIncidentHours + 'h</td><td>·</td><td>' + w2.sleepHours + 'h</td><td>' + w2.nodesUsed + '/8</td><td>' + w2.alertness + '/5</td><td>' + w2.calmness + '/5</td>';
+        const avg1Row = document.getElementById('week-avg-1');
+        if (avg1Row) {
+          avg1Row.innerHTML = '<td colspan="2">Trung bình Tuần 1 (Sinh hoạt cũ)</td><td>' + w1.morningGoalDays + '/7 ngày</td><td>' + w1.resumeNotes + ' lần</td><td>·</td><td>' + w1.closeBookDays + '/7 ngày</td><td>' + w1.sleepHours + 'h</td><td>' + w1.alertness + '/5</td><td>' + w1.calmness + '/5</td>';
+        }
+        const avg2Row = document.getElementById('week-avg-2');
+        if (avg2Row) {
+          avg2Row.innerHTML = '<td colspan="2">Trung bình Tuần 2 (Bật 3 chốt chặn)</td><td>' + w2.morningGoalDays + '/7 ngày</td><td>' + w2.resumeNotes + ' lần</td><td>·</td><td>' + w2.closeBookDays + '/7 ngày</td><td>' + w2.sleepHours + 'h</td><td>' + w2.alertness + '/5</td><td>' + w2.calmness + '/5</td>';
+        }
+      } else {
+        const w1 = calcWeekAvgAi(1);
+        const w2 = calcWeekAvgAi(2);
+        const dSwitch = (w2.unpackedSwitches - w1.unpackedSwitches).toFixed(1);
+        const dSleep = (w2.sleepHours - w1.sleepHours).toFixed(1);
+        const dAlert = (w2.alertness - w1.alertness).toFixed(2);
+        const dCalm = (w2.calmness - w1.calmness).toFixed(2);
+
+        if (summaryCards) {
+          summaryCards.innerHTML =
+            '<div class="stat-card"><div class="stat-label">Nhảy nhánh k.đóng gói (TB/ngày)</div><div class="stat-val">' + w1.unpackedSwitches + ' → ' + w2.unpackedSwitches + '</div><div class="stat-delta">' + (dSwitch <= 0 ? 'Giảm ' + Math.abs(dSwitch) + ' lần/ngày' : 'Tăng +' + dSwitch) + '</div></div>' +
+            '<div class="stat-card"><div class="stat-label">Thời lượng ngủ thực tế (TB/đêm)</div><div class="stat-val">' + w1.sleepHours + 'h → ' + w2.sleepHours + 'h</div><div class="stat-delta">' + (dSleep >= 0 ? 'Tăng +' + dSleep + ' giờ/đêm' : dSleep + ' giờ/đêm') + '</div></div>' +
+            '<div class="stat-card"><div class="stat-label">Độ tỉnh táo cuối ngày (1–5)</div><div class="stat-val">' + w1.alertness + ' → ' + w2.alertness + '</div><div class="stat-delta">Chênh lệch: ' + (dAlert >= 0 ? '+' + dAlert : dAlert) + ' điểm</div></div>' +
+            '<div class="stat-card"><div class="stat-label">Độ bình thản cuối ngày (1–5)</div><div class="stat-val">' + w1.calmness + ' → ' + w2.calmness + '</div><div class="stat-delta">Chênh lệch: ' + (dCalm >= 0 ? '+' + dCalm : dCalm) + ' điểm</div></div>';
+        }
+
+        const avg1Row = document.getElementById('week-avg-1');
+        if (avg1Row) {
+          avg1Row.innerHTML = '<td colspan="2">Trung bình Tuần 1 (Đường cơ sở)</td><td>' + w1.branches + '</td><td>' + w1.unpackedSwitches + '</td><td>' + w1.meetingIncidentHours + 'h</td><td>·</td><td>' + w1.sleepHours + 'h</td><td>' + w1.nodesUsed + '/8</td><td>' + w1.alertness + '/5</td><td>' + w1.calmness + '/5</td>';
+        }
+        const avg2Row = document.getElementById('week-avg-2');
+        if (avg2Row) {
+          avg2Row.innerHTML = '<td colspan="2">Trung bình Tuần 2 (Bật chốt chặn)</td><td>' + w2.branches + '</td><td>' + w2.unpackedSwitches + '</td><td>' + w2.meetingIncidentHours + 'h</td><td>·</td><td>' + w2.sleepHours + 'h</td><td>' + w2.nodesUsed + '/8</td><td>' + w2.alertness + '/5</td><td>' + w2.calmness + '/5</td>';
+        }
       }
     }
 
     function renderTrackerTable() {
-      if (!tbody) return;
+      if (!tbody || !theadRow) return;
       tbody.innerHTML = '';
-      trackerData.forEach(function(row, idx) {
-        const tr = document.createElement('tr');
-        tr.innerHTML =
-          '<td><strong>' + row.day + '</strong></td>' +
-          '<td><span class="ep-tag ' + (row.week === 1 ? 'ep-ext' : 'ep-src') + '">' + (row.week === 1 ? 'T1 · Cơ sở' : 'T2 · Can thiệp') + '</span></td>' +
-          '<td><input type="number" min="1" max="20" step="1" data-idx="' + idx + '" data-field="branches" value="' + row.branches + '" aria-label="Số nhánh AI ' + row.day + '"></td>' +
-          '<td><input type="number" min="0" max="60" step="1" data-idx="' + idx + '" data-field="unpackedSwitches" value="' + row.unpackedSwitches + '" aria-label="Nhảy nhánh không đóng gói ' + row.day + '"></td>' +
-          '<td><input type="number" min="0" max="16" step="0.5" data-idx="' + idx + '" data-field="meetingIncidentHours" value="' + row.meetingIncidentHours + '" aria-label="Giờ họp và sự cố ' + row.day + '"></td>' +
-          '<td><input type="text" data-idx="' + idx + '" data-field="lastCaff" value="' + row.lastCaff + '" aria-label="Giờ cữ cà phê cuối ' + row.day + '"></td>' +
-          '<td><input type="number" min="0" max="14" step="0.5" data-idx="' + idx + '" data-field="sleepHours" value="' + row.sleepHours + '" aria-label="Thời lượng ngủ ' + row.day + '"></td>' +
-          '<td><input type="number" min="0" max="8" step="1" data-idx="' + idx + '" data-field="nodesUsed" value="' + row.nodesUsed + '" aria-label="Số nút chuyển tiếp ' + row.day + '"></td>' +
-          '<td><input type="number" min="1" max="5" step="0.5" data-idx="' + idx + '" data-field="alertness" value="' + row.alertness + '" aria-label="Độ tỉnh táo ' + row.day + '"></td>' +
-          '<td><input type="number" min="1" max="5" step="0.5" data-idx="' + idx + '" data-field="calmness" value="' + row.calmness + '" aria-label="Độ bình thản ' + row.day + '"></td>';
-        tbody.appendChild(tr);
 
-        if (idx === 6) {
-          const avg1 = document.createElement('tr');
-          avg1.id = 'week-avg-1';
-          avg1.className = 'week-avg';
-          tbody.appendChild(avg1);
-        }
-        if (idx === 13) {
-          const avg2 = document.createElement('tr');
-          avg2.id = 'week-avg-2';
-          avg2.className = 'week-avg';
-          tbody.appendChild(avg2);
-        }
-      });
+      if (currentAudience === 'general') {
+        theadRow.innerHTML =
+          '<th>Ngày</th>' +
+          '<th>Giai đoạn</th>' +
+          '<th>Đúng·Nhỏ·Xong sáng (0/1)</th>' +
+          '<th>Giấy nhớ 3 dòng (lần)</th>' +
+          '<th>Cà phê/trà cuối</th>' +
+          '<th>Đóng sổ &amp; Ca hai (0/1)</th>' +
+          '<th>Giờ ngủ (h)</th>' +
+          '<th>Tỉnh táo chiều (1–5)</th>' +
+          '<th>Bình thản tối (1–5)</th>';
 
-      tbody.querySelectorAll('input').forEach(function(inp) {
-        inp.addEventListener('input', function() {
-          const i = parseInt(inp.getAttribute('data-idx'), 10);
-          const f = inp.getAttribute('data-field');
-          trackerData[i][f] = f === 'lastCaff' ? inp.value : (parseFloat(inp.value) || 0);
-          saveTrackerData();
-          updateSummaryUI();
+        trackerDataGen.forEach(function(row, idx) {
+          const tr = document.createElement('tr');
+          tr.innerHTML =
+            '<td><strong>' + row.day + '</strong></td>' +
+            '<td><span class="ep-tag ' + (row.week === 1 ? 'ep-ext' : 'ep-src') + '">' + (row.week === 1 ? 'T1 · Cơ sở' : 'T2 · 3 Chốt') + '</span></td>' +
+            '<td><input type="number" min="0" max="1" step="1" data-idx="' + idx + '" data-field="morningGoal" value="' + row.morningGoal + '" aria-label="Viết Đúng Nhỏ Xong sáng ' + row.day + '"></td>' +
+            '<td><input type="number" min="0" max="30" step="1" data-idx="' + idx + '" data-field="resumeNotes" value="' + row.resumeNotes + '" aria-label="Số lần ghi Giấy nhớ 3 dòng ' + row.day + '"></td>' +
+            '<td><input type="text" data-idx="' + idx + '" data-field="lastCaff" value="' + row.lastCaff + '" aria-label="Giờ cữ cà phê cuối ' + row.day + '"></td>' +
+            '<td><input type="number" min="0" max="1" step="1" data-idx="' + idx + '" data-field="closeBook" value="' + row.closeBook + '" aria-label="Đóng sổ trước khi về ' + row.day + '"></td>' +
+            '<td><input type="number" min="0" max="14" step="0.5" data-idx="' + idx + '" data-field="sleepHours" value="' + row.sleepHours + '" aria-label="Thời lượng ngủ ' + row.day + '"></td>' +
+            '<td><input type="number" min="1" max="5" step="0.5" data-idx="' + idx + '" data-field="alertness" value="' + row.alertness + '" aria-label="Độ tỉnh táo chiều ' + row.day + '"></td>' +
+            '<td><input type="number" min="1" max="5" step="0.5" data-idx="' + idx + '" data-field="calmness" value="' + row.calmness + '" aria-label="Độ bình thản tối ' + row.day + '"></td>';
+          tbody.appendChild(tr);
+
+          if (idx === 6) {
+            const avg1 = document.createElement('tr');
+            avg1.id = 'week-avg-1';
+            avg1.className = 'week-avg';
+            tbody.appendChild(avg1);
+          }
+          if (idx === 13) {
+            const avg2 = document.createElement('tr');
+            avg2.id = 'week-avg-2';
+            avg2.className = 'week-avg';
+            tbody.appendChild(avg2);
+          }
         });
-      });
+
+        tbody.querySelectorAll('input').forEach(function(inp) {
+          inp.addEventListener('input', function() {
+            const i = parseInt(inp.getAttribute('data-idx'), 10);
+            const f = inp.getAttribute('data-field');
+            trackerDataGen[i][f] = f === 'lastCaff' ? inp.value : (parseFloat(inp.value) || 0);
+            saveTrackerData();
+            updateSummaryUI();
+          });
+        });
+      } else {
+        theadRow.innerHTML =
+          '<th>Ngày</th>' +
+          '<th>Giai đoạn</th>' +
+          '<th>Nhánh AI</th>' +
+          '<th>Đổi nhánh thô</th>' +
+          '<th>Họp &amp; Sự cố (h)</th>' +
+          '<th>Cà phê cuối</th>' +
+          '<th>Giờ ngủ (h)</th>' +
+          '<th>Nút bật (0–8)</th>' +
+          '<th>Tỉnh táo (1–5)</th>' +
+          '<th>Bình thản (1–5)</th>';
+
+        trackerDataAi.forEach(function(row, idx) {
+          const tr = document.createElement('tr');
+          tr.innerHTML =
+            '<td><strong>' + row.day + '</strong></td>' +
+            '<td><span class="ep-tag ' + (row.week === 1 ? 'ep-ext' : 'ep-src') + '">' + (row.week === 1 ? 'T1 · Cơ sở' : 'T2 · Can thiệp') + '</span></td>' +
+            '<td><input type="number" min="1" max="20" step="1" data-idx="' + idx + '" data-field="branches" value="' + row.branches + '" aria-label="Số nhánh AI ' + row.day + '"></td>' +
+            '<td><input type="number" min="0" max="60" step="1" data-idx="' + idx + '" data-field="unpackedSwitches" value="' + row.unpackedSwitches + '" aria-label="Nhảy nhánh không đóng gói ' + row.day + '"></td>' +
+            '<td><input type="number" min="0" max="16" step="0.5" data-idx="' + idx + '" data-field="meetingIncidentHours" value="' + row.meetingIncidentHours + '" aria-label="Giờ họp và sự cố ' + row.day + '"></td>' +
+            '<td><input type="text" data-idx="' + idx + '" data-field="lastCaff" value="' + row.lastCaff + '" aria-label="Giờ cữ cà phê cuối ' + row.day + '"></td>' +
+            '<td><input type="number" min="0" max="14" step="0.5" data-idx="' + idx + '" data-field="sleepHours" value="' + row.sleepHours + '" aria-label="Thời lượng ngủ ' + row.day + '"></td>' +
+            '<td><input type="number" min="0" max="8" step="1" data-idx="' + idx + '" data-field="nodesUsed" value="' + row.nodesUsed + '" aria-label="Số nút chuyển tiếp ' + row.day + '"></td>' +
+            '<td><input type="number" min="1" max="5" step="0.5" data-idx="' + idx + '" data-field="alertness" value="' + row.alertness + '" aria-label="Độ tỉnh táo ' + row.day + '"></td>' +
+            '<td><input type="number" min="1" max="5" step="0.5" data-idx="' + idx + '" data-field="calmness" value="' + row.calmness + '" aria-label="Độ bình thản ' + row.day + '"></td>';
+          tbody.appendChild(tr);
+
+          if (idx === 6) {
+            const avg1 = document.createElement('tr');
+            avg1.id = 'week-avg-1';
+            avg1.className = 'week-avg';
+            tbody.appendChild(avg1);
+          }
+          if (idx === 13) {
+            const avg2 = document.createElement('tr');
+            avg2.id = 'week-avg-2';
+            avg2.className = 'week-avg';
+            tbody.appendChild(avg2);
+          }
+        });
+
+        tbody.querySelectorAll('input').forEach(function(inp) {
+          inp.addEventListener('input', function() {
+            const i = parseInt(inp.getAttribute('data-idx'), 10);
+            const f = inp.getAttribute('data-field');
+            trackerDataAi[i][f] = f === 'lastCaff' ? inp.value : (parseFloat(inp.value) || 0);
+            saveTrackerData();
+            updateSummaryUI();
+          });
+        });
+      }
 
       updateSummaryUI();
+    }
+
+    function setAudience(aud, skipStorage) {
+      currentAudience = aud === 'ai' ? 'ai' : 'general';
+      const isGen = currentAudience === 'general';
+
+      if (audBtnGeneral && audBtnAi) {
+        audBtnGeneral.classList.toggle('active-audience', isGen);
+        audBtnGeneral.setAttribute('aria-pressed', isGen ? 'true' : 'false');
+        audBtnAi.classList.toggle('active-audience', !isGen);
+        audBtnAi.setAttribute('aria-pressed', !isGen ? 'true' : 'false');
+      }
+
+      if (posterGridGeneral) posterGridGeneral.hidden = !isGen;
+      if (posterStripGeneral) posterStripGeneral.hidden = !isGen;
+      if (gmodeSwitcher) gmodeSwitcher.hidden = !isGen;
+
+      if (posterGridAi) posterGridAi.hidden = isGen;
+      if (posterStripAi) posterStripAi.hidden = isGen;
+      if (aimodeSwitcher) aimodeSwitcher.hidden = isGen;
+
+      if (isGen) {
+        if (barSubtitle) barSubtitle.textContent = 'Cẩm Nang 24 Giờ Trong Đời Sống & Công Việc';
+        if (navPosterLink) navPosterLink.textContent = 'Poster 6 Nhịp';
+        if (posterHeading) posterHeading.textContent = 'Poster Thực Hành 24 Giờ: 3 Chốt Chặn · 6 Nhịp Đời Thường';
+        if (posterSubText) {
+          posterSubText.innerHTML = 'Bảo vệ ba mạng não (<strong>Tập trung CEN · Canh gác cơ thể SN · Mơ màng DMN</strong>) trước 3 áp lực đời thực: <strong>sự cắt ngang từ người thật</strong>, <strong>quãng đường đi làm (commute)</strong> và <strong>“ca hai” gia đình (18:00–21:00)</strong>. <em>(Nhấp nút “🎛️ Bản Kỹ Sư Điều Phối AI” phía trên nếu bạn làm việc với 3–12 tác nhân AI).</em>';
+        }
+        setGeneralMode(currentGeneralMode);
+      } else {
+        if (barSubtitle) barSubtitle.textContent = 'Cẩm Nang 24 Giờ Thời AI (3–12 tác nhân)';
+        if (navPosterLink) navPosterLink.textContent = 'Poster 8 Nút';
+        if (posterHeading) posterHeading.textContent = 'Poster Thực Hành 24 Giờ: 4 Trụ Cột · 8 Nút Chuyển Tiếp';
+        if (posterSubText) {
+          posterSubText.innerHTML = 'Cài các thao tác bảo vệ ba mạng não (<strong>CEN · SN · DMN</strong>) và giữ vững <strong>Nhận thức tình huống (Endsley 1995)</strong> ngay trong <strong>Vòng lặp ở giữa (The Middle Loop · Vella 2026)</strong> qua 8 khe chuyển tiếp sẵn có (~15–25 phút/ngày). <em>(Nhấp nút “👥 Bản Đời Sống &amp; Công Việc” phía trên để xem bản phổ thông cho mọi người &amp; gia đình).</em>';
+        }
+        setOperationMode(currentAiMode);
+      }
+
+      syncInputsForAudience(currentAudience);
+      renderTemplates();
+      renderTrackerTable();
+
+      if (!skipStorage) {
+        try { localStorage.setItem('binh_than_audience_v1', currentAudience); } catch (e) {}
+      }
+    }
+
+    if (audBtnGeneral) {
+      audBtnGeneral.addEventListener('click', function() { setAudience('general'); });
+    }
+    if (audBtnAi) {
+      audBtnAi.addEventListener('click', function() { setAudience('ai'); });
     }
 
     const btnSample = document.getElementById('btn-sample-data');
     if (btnSample) {
       btnSample.addEventListener('click', function() {
-        trackerData = defaultRows();
+        if (currentAudience === 'general') {
+          trackerDataGen = defaultRowsGeneral();
+        } else {
+          trackerDataAi = defaultRowsAi();
+        }
         saveTrackerData();
         renderTrackerTable();
       });
@@ -2385,9 +3059,15 @@
     const btnClear = document.getElementById('btn-clear-data');
     if (btnClear) {
       btnClear.addEventListener('click', function() {
-        trackerData = defaultRows().map(function(r) {
-          return { day: r.day, week: r.week, branches: 0, unpackedSwitches: 0, meetingIncidentHours: 0, lastCaff: '13:00', sleepHours: 7, nodesUsed: 0, alertness: 3, calmness: 3 };
-        });
+        if (currentAudience === 'general') {
+          trackerDataGen = defaultRowsGeneral().map(function(r) {
+            return { day: r.day, week: r.week, morningGoal: 0, resumeNotes: 0, lastCaff: '13:00', closeBook: 0, sleepHours: 7, alertness: 3, calmness: 3 };
+          });
+        } else {
+          trackerDataAi = defaultRowsAi().map(function(r) {
+            return { day: r.day, week: r.week, branches: 0, unpackedSwitches: 0, meetingIncidentHours: 0, lastCaff: '13:00', sleepHours: 7, nodesUsed: 0, alertness: 3, calmness: 3 };
+          });
+        }
         saveTrackerData();
         renderTrackerTable();
       });
@@ -2395,16 +3075,27 @@
     const btnCsv = document.getElementById('btn-export-csv');
     if (btnCsv) {
       btnCsv.addEventListener('click', function() {
-        const headers = ['Ngay', 'Tuan', 'So_Nhanh_AI', 'Nhay_Nhanh_Khong_Dong_Goi', 'Gio_Hop_Su_Co', 'Gio_Ca_Phe_Cuoi', 'Thoi_Luong_Ngu', 'So_Nut_Da_Bat', 'Do_Tinh_Tao', 'Do_Binh_Than'];
-        const lines = [headers.join(',')];
-        trackerData.forEach(function(r) {
-          lines.push([r.day, r.week, r.branches, r.unpackedSwitches, r.meetingIncidentHours, '"' + r.lastCaff + '"', r.sleepHours, r.nodesUsed, r.alertness, r.calmness].join(','));
-        });
+        let headers, lines, filename;
+        if (currentAudience === 'general') {
+          headers = ['Ngay', 'Tuan', 'Dung_Nho_Xong_Sang', 'Giay_Nho_3_Dong', 'Gio_Ca_Phe_Cuoi', 'Dong_So_Ca_Hai', 'Thoi_Luong_Ngu', 'Do_Tinh_Tao_Chieu', 'Do_Binh_Than_Toi'];
+          lines = [headers.join(',')];
+          trackerDataGen.forEach(function(r) {
+            lines.push([r.day, r.week, r.morningGoal, r.resumeNotes, '"' + r.lastCaff + '"', r.closeBook, r.sleepHours, r.alertness, r.calmness].join(','));
+          });
+          filename = 'nhat_ky_14_ngay_doi_song_va_cong_viec.csv';
+        } else {
+          headers = ['Ngay', 'Tuan', 'So_Nhanh_AI', 'Nhay_Nhanh_Khong_Dong_Goi', 'Gio_Hop_Su_Co', 'Gio_Ca_Phe_Cuoi', 'Thoi_Luong_Ngu', 'So_Nut_Da_Bat', 'Do_Tinh_Tao', 'Do_Binh_Than'];
+          lines = [headers.join(',')];
+          trackerDataAi.forEach(function(r) {
+            lines.push([r.day, r.week, r.branches, r.unpackedSwitches, r.meetingIncidentHours, '"' + r.lastCaff + '"', r.sleepHours, r.nodesUsed, r.alertness, r.calmness].join(','));
+          });
+          filename = 'nhat_ky_14_ngay_ky_su_dieu_phoi_ai.csv';
+        }
         const blob = new Blob([lines.join('\n')], { type: 'text/csv;charset=utf-8;' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'nhat_ky_14_ngay_binh_than_voi_dan_nhac.csv';
+        a.download = filename;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
@@ -2412,12 +3103,28 @@
       });
     }
 
+    // Khởi tạo đối tượng độc giả từ URL (?mode=ai hoặc ?mode=doi-song) hoặc localStorage
+    let initAudience = 'general';
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const qMode = (params.get('mode') || '').toLowerCase();
+      const hash = (window.location.hash || '').toLowerCase();
+      const savedAud = localStorage.getItem('binh_than_audience_v1');
+      if (qMode === 'ai' || hash === '#ai') {
+        initAudience = 'ai';
+      } else if (qMode === 'doi-song' || qMode === 'general' || hash === '#doi-song') {
+        initAudience = 'general';
+      } else if (savedAud === 'ai' || savedAud === 'general') {
+        initAudience = savedAud;
+      }
+    } catch (e) {}
+
     // Khởi tạo toàn bộ khi trang tải xong
+    setAudience(initAudience, true);
     updateSim1Readout();
     drawSim1(performance.now());
     drawSim2();
     drawSim3();
-    renderTrackerTable();
     function redrawAllCanvases() {
       drawSim1(performance.now());
       drawSim2();
